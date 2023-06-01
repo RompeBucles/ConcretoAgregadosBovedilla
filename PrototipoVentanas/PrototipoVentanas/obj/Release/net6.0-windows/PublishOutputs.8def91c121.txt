@@ -1,0 +1,5 @@
+C:\Users\cacam\OneDrive\Escritorio\PrototipoVentanas.exe
+C:\Users\cacam\OneDrive\Escritorio\PrototipoVentanas.dll
+C:\Users\cacam\OneDrive\Escritorio\PrototipoVentanas.deps.json
+C:\Users\cacam\OneDrive\Escritorio\PrototipoVentanas.runtimeconfig.json
+C:\Users\cacam\OneDrive\Escritorio\PrototipoVentanas.pdb
