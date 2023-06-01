@@ -39,9 +39,9 @@
             this.buttonEntrar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox8 = new Sistema_de_sanciones.Templates.TextBox();
-            this.rjComboBox1 = new Sistema_de_sanciones.Templates.RjComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // labelUsuario
@@ -49,7 +49,7 @@
             this.labelUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelUsuario.Location = new System.Drawing.Point(349, 59);
+            this.labelUsuario.Location = new System.Drawing.Point(307, 45);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(138, 19);
             this.labelUsuario.TabIndex = 28;
@@ -62,7 +62,7 @@
             this.textUsuario.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textUsuario.BorderFocusColor = System.Drawing.Color.Black;
             this.textUsuario.BorderSize = 2;
-            this.textUsuario.Location = new System.Drawing.Point(12, 121);
+            this.textUsuario.Location = new System.Drawing.Point(21, 121);
             this.textUsuario.Multiline = false;
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.Padding = new System.Windows.Forms.Padding(7);
@@ -96,7 +96,7 @@
             this.textBox2.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textBox2.BorderFocusColor = System.Drawing.Color.Black;
             this.textBox2.BorderSize = 2;
-            this.textBox2.Location = new System.Drawing.Point(558, 121);
+            this.textBox2.Location = new System.Drawing.Point(547, 128);
             this.textBox2.Multiline = false;
             this.textBox2.Name = "textBox2";
             this.textBox2.Padding = new System.Windows.Forms.Padding(7);
@@ -130,7 +130,7 @@
             this.textBox5.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textBox5.BorderFocusColor = System.Drawing.Color.Black;
             this.textBox5.BorderSize = 2;
-            this.textBox5.Location = new System.Drawing.Point(560, 224);
+            this.textBox5.Location = new System.Drawing.Point(549, 231);
             this.textBox5.Multiline = false;
             this.textBox5.Name = "textBox5";
             this.textBox5.Padding = new System.Windows.Forms.Padding(7);
@@ -147,7 +147,7 @@
             this.textBox6.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textBox6.BorderFocusColor = System.Drawing.Color.Black;
             this.textBox6.BorderSize = 2;
-            this.textBox6.Location = new System.Drawing.Point(12, 337);
+            this.textBox6.Location = new System.Drawing.Point(21, 337);
             this.textBox6.Multiline = false;
             this.textBox6.Name = "textBox6";
             this.textBox6.Padding = new System.Windows.Forms.Padding(7);
@@ -182,7 +182,7 @@
             this.buttonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEntrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonEntrar.Location = new System.Drawing.Point(425, 449);
+            this.buttonEntrar.Location = new System.Drawing.Point(465, 464);
             this.buttonEntrar.Name = "buttonEntrar";
             this.buttonEntrar.Size = new System.Drawing.Size(126, 35);
             this.buttonEntrar.TabIndex = 37;
@@ -197,7 +197,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(601, 449);
+            this.button3.Location = new System.Drawing.Point(641, 464);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(115, 35);
             this.button3.TabIndex = 38;
@@ -211,7 +211,7 @@
             this.textBox8.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
             this.textBox8.BorderFocusColor = System.Drawing.Color.Black;
             this.textBox8.BorderSize = 2;
-            this.textBox8.Location = new System.Drawing.Point(560, 337);
+            this.textBox8.Location = new System.Drawing.Point(549, 344);
             this.textBox8.Multiline = false;
             this.textBox8.Name = "textBox8";
             this.textBox8.Padding = new System.Windows.Forms.Padding(7);
@@ -220,29 +220,6 @@
             this.textBox8.TabIndex = 39;
             this.textBox8.Texts = "Nombre de usuario*";
             this.textBox8.UnderlinedStyle = true;
-            // 
-            // rjComboBox1
-            // 
-            this.rjComboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rjComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.rjComboBox1.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.rjComboBox1.BorderSize = 1;
-            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.rjComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rjComboBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjComboBox1.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuario"});
-            this.rjComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.rjComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.rjComboBox1.Location = new System.Drawing.Point(12, 234);
-            this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.rjComboBox1.Name = "rjComboBox1";
-            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(1);
-            this.rjComboBox1.Size = new System.Drawing.Size(200, 30);
-            this.rjComboBox1.TabIndex = 40;
-            this.rjComboBox1.Texts = "Perfil*";
             // 
             // label2
             // 
@@ -262,11 +239,24 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(560, 307);
+            this.label3.Location = new System.Drawing.Point(549, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 16);
             this.label3.TabIndex = 67;
             this.label3.Text = "Confirmar Contraseña*";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuario"});
+            this.comboBox1.Location = new System.Drawing.Point(21, 231);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(196, 23);
+            this.comboBox1.TabIndex = 68;
+            this.comboBox1.Text = "Perfil*";
             // 
             // RegistroUsuario
             // 
@@ -274,9 +264,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(768, 522);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.rjComboBox1);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.buttonEntrar);
@@ -312,8 +302,8 @@
         private Sistema_de_sanciones.Templates.TextBox textBox1;
         private Button buttonEntrar;
         private Button button3;
-        private Sistema_de_sanciones.Templates.RjComboBox rjComboBox1;
         private Label label2;
         private Label label3;
+        private ComboBox comboBox1;
     }
 }
