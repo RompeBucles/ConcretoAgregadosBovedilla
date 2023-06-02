@@ -1,5 +1,3 @@
-using System.Data;
-
 namespace PrototipoVentanas
 {
     public partial class Login : Form
@@ -9,7 +7,7 @@ namespace PrototipoVentanas
             InitializeComponent();
         }
 
-        private void btnUsuario_Enter(object sender, EventArgs e)
+        private void textUsuario_Enter(object sender, EventArgs e)
         {
             if (textUsuario.Texts == "Nombre de usuario*")
             {
@@ -29,21 +27,11 @@ namespace PrototipoVentanas
             }
         }
 
-        private void txtPassword_Enter(object sender, EventArgs e)
+        private void textPassword_Enter(object sender, EventArgs e)
         {
             if (textPassword.Texts == "Contraseña*")
             {
                 textPassword.Texts = "";
-                textPassword.ForeColor = Color.Black;
-
-            }
-        }
-
-        private void textPassword_Leave(object sender, EventArgs e)
-        {
-            if (textPassword.Texts == "")
-            {
-                textPassword.Texts = "Contraseña*";
                 textPassword.ForeColor = Color.Black;
 
             }
@@ -57,12 +45,19 @@ namespace PrototipoVentanas
             textPassword.ForeColor = Color.Black;
 
         }
+        private void textPassword_Leave(object sender, EventArgs e)
+        {
+            if (textPassword.Texts == "")
+            {
+                textPassword.Texts = "Contraseña*";
+                textPassword.ForeColor = Color.Black;
 
+            }
+
+        }
         public void logear(string usuario)
 
         {
-
-
 
             if (usuario == "Administrador")
             {
@@ -79,9 +74,7 @@ namespace PrototipoVentanas
                 MessageBox.Show("Usuario y/o Contraseña Incorrecta");
             }
 
-
         }
-
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             logear(textUsuario.Texts);

@@ -16,5 +16,19 @@ namespace PrototipoVentanas
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult resut = MessageBox.Show("Usuario registrado", "Aviso", MessageBoxButtons.YesNo);
+            if (resut == DialogResult.Yes)
+            {
+                
+
+            }
+            else if (resut == DialogResult.No)
+            {
+                return;
+            }
+        }
     }
 }

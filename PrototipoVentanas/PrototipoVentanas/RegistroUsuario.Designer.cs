@@ -28,262 +28,260 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelUsuario = new System.Windows.Forms.Label();
-            this.textUsuario = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox1 = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox2 = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox4 = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox5 = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox6 = new Sistema_de_sanciones.Templates.TextBox();
-            this.textBox7 = new Sistema_de_sanciones.Templates.TextBox();
-            this.buttonEntrar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox8 = new Sistema_de_sanciones.Templates.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.SuspendLayout();
+            labelUsuario = new Label();
+            textUsuario = new Sistema_de_sanciones.Templates.TextBox();
+            textBox1 = new Sistema_de_sanciones.Templates.TextBox();
+            textBox2 = new Sistema_de_sanciones.Templates.TextBox();
+            textBox4 = new Sistema_de_sanciones.Templates.TextBox();
+            textBox5 = new Sistema_de_sanciones.Templates.TextBox();
+            textBox6 = new Sistema_de_sanciones.Templates.TextBox();
+            textBox7 = new Sistema_de_sanciones.Templates.TextBox();
+            buttonEntrar = new Button();
+            button3 = new Button();
+            textBox8 = new Sistema_de_sanciones.Templates.TextBox();
+            label2 = new Label();
+            label3 = new Label();
+            comboBox1 = new ComboBox();
+            SuspendLayout();
             // 
             // labelUsuario
             // 
-            this.labelUsuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelUsuario.Location = new System.Drawing.Point(307, 45);
-            this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(138, 19);
-            this.labelUsuario.TabIndex = 28;
-            this.labelUsuario.Text = "Registro Usuario";
+            labelUsuario.Anchor = AnchorStyles.Top;
+            labelUsuario.AutoSize = true;
+            labelUsuario.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelUsuario.Location = new Point(307, 45);
+            labelUsuario.Name = "labelUsuario";
+            labelUsuario.Size = new Size(138, 19);
+            labelUsuario.TabIndex = 28;
+            labelUsuario.Text = "Registro Usuario";
             // 
             // textUsuario
             // 
-            this.textUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textUsuario.BackColor = System.Drawing.SystemColors.Control;
-            this.textUsuario.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textUsuario.BorderFocusColor = System.Drawing.Color.Black;
-            this.textUsuario.BorderSize = 2;
-            this.textUsuario.Location = new System.Drawing.Point(21, 121);
-            this.textUsuario.Multiline = false;
-            this.textUsuario.Name = "textUsuario";
-            this.textUsuario.Padding = new System.Windows.Forms.Padding(7);
-            this.textUsuario.PasswordChar = false;
-            this.textUsuario.Size = new System.Drawing.Size(191, 30);
-            this.textUsuario.TabIndex = 29;
-            this.textUsuario.Texts = "Nombre*";
-            this.textUsuario.UnderlinedStyle = true;
+            textUsuario.Anchor = AnchorStyles.None;
+            textUsuario.BackColor = SystemColors.Control;
+            textUsuario.BorderColor = SystemColors.ControlDarkDark;
+            textUsuario.BorderFocusColor = Color.Black;
+            textUsuario.BorderSize = 2;
+            textUsuario.Location = new Point(21, 121);
+            textUsuario.Multiline = false;
+            textUsuario.Name = "textUsuario";
+            textUsuario.Padding = new Padding(7);
+            textUsuario.PasswordChar = false;
+            textUsuario.Size = new Size(191, 30);
+            textUsuario.TabIndex = 29;
+            textUsuario.Texts = "Nombre*";
+            textUsuario.UnderlinedStyle = true;
             // 
             // textBox1
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox1.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox1.BorderSize = 2;
-            this.textBox1.Location = new System.Drawing.Point(275, 121);
-            this.textBox1.Multiline = false;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox1.PasswordChar = false;
-            this.textBox1.Size = new System.Drawing.Size(212, 30);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.Texts = "Apellido paterno*";
-            this.textBox1.UnderlinedStyle = true;
+            textBox1.Anchor = AnchorStyles.None;
+            textBox1.BackColor = SystemColors.Control;
+            textBox1.BorderColor = SystemColors.ControlDarkDark;
+            textBox1.BorderFocusColor = Color.Black;
+            textBox1.BorderSize = 2;
+            textBox1.Location = new Point(275, 121);
+            textBox1.Multiline = false;
+            textBox1.Name = "textBox1";
+            textBox1.Padding = new Padding(7);
+            textBox1.PasswordChar = false;
+            textBox1.Size = new Size(212, 30);
+            textBox1.TabIndex = 30;
+            textBox1.Texts = "Apellido paterno*";
+            textBox1.UnderlinedStyle = true;
             // 
             // textBox2
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox2.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox2.BorderSize = 2;
-            this.textBox2.Location = new System.Drawing.Point(547, 128);
-            this.textBox2.Multiline = false;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox2.PasswordChar = false;
-            this.textBox2.Size = new System.Drawing.Size(198, 30);
-            this.textBox2.TabIndex = 31;
-            this.textBox2.Texts = "Apellido materno*";
-            this.textBox2.UnderlinedStyle = true;
+            textBox2.Anchor = AnchorStyles.None;
+            textBox2.BackColor = SystemColors.Control;
+            textBox2.BorderColor = SystemColors.ControlDarkDark;
+            textBox2.BorderFocusColor = Color.Black;
+            textBox2.BorderSize = 2;
+            textBox2.Location = new Point(547, 128);
+            textBox2.Multiline = false;
+            textBox2.Name = "textBox2";
+            textBox2.Padding = new Padding(7);
+            textBox2.PasswordChar = false;
+            textBox2.Size = new Size(198, 30);
+            textBox2.TabIndex = 31;
+            textBox2.Texts = "Apellido materno*";
+            textBox2.UnderlinedStyle = true;
             // 
             // textBox4
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox4.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox4.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox4.BorderSize = 2;
-            this.textBox4.Location = new System.Drawing.Point(275, 224);
-            this.textBox4.Multiline = false;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox4.PasswordChar = false;
-            this.textBox4.Size = new System.Drawing.Size(212, 30);
-            this.textBox4.TabIndex = 33;
-            this.textBox4.Texts = "Correo electrónico*";
-            this.textBox4.UnderlinedStyle = true;
+            textBox4.Anchor = AnchorStyles.None;
+            textBox4.BackColor = SystemColors.Control;
+            textBox4.BorderColor = SystemColors.ControlDarkDark;
+            textBox4.BorderFocusColor = Color.Black;
+            textBox4.BorderSize = 2;
+            textBox4.Location = new Point(275, 224);
+            textBox4.Multiline = false;
+            textBox4.Name = "textBox4";
+            textBox4.Padding = new Padding(7);
+            textBox4.PasswordChar = false;
+            textBox4.Size = new Size(212, 30);
+            textBox4.TabIndex = 33;
+            textBox4.Texts = "Correo electrónico*";
+            textBox4.UnderlinedStyle = true;
             // 
             // textBox5
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox5.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox5.BorderSize = 2;
-            this.textBox5.Location = new System.Drawing.Point(549, 231);
-            this.textBox5.Multiline = false;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox5.PasswordChar = false;
-            this.textBox5.Size = new System.Drawing.Size(196, 30);
-            this.textBox5.TabIndex = 34;
-            this.textBox5.Texts = "telefono*";
-            this.textBox5.UnderlinedStyle = true;
+            textBox5.Anchor = AnchorStyles.None;
+            textBox5.BackColor = SystemColors.Control;
+            textBox5.BorderColor = SystemColors.ControlDarkDark;
+            textBox5.BorderFocusColor = Color.Black;
+            textBox5.BorderSize = 2;
+            textBox5.Location = new Point(549, 231);
+            textBox5.Multiline = false;
+            textBox5.Name = "textBox5";
+            textBox5.Padding = new Padding(7);
+            textBox5.PasswordChar = false;
+            textBox5.Size = new Size(196, 30);
+            textBox5.TabIndex = 34;
+            textBox5.Texts = "telefono*";
+            textBox5.UnderlinedStyle = true;
             // 
             // textBox6
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox6.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox6.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox6.BorderSize = 2;
-            this.textBox6.Location = new System.Drawing.Point(21, 337);
-            this.textBox6.Multiline = false;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox6.PasswordChar = false;
-            this.textBox6.Size = new System.Drawing.Size(196, 30);
-            this.textBox6.TabIndex = 35;
-            this.textBox6.Texts = "Usuario*";
-            this.textBox6.UnderlinedStyle = true;
+            textBox6.Anchor = AnchorStyles.None;
+            textBox6.BackColor = SystemColors.Control;
+            textBox6.BorderColor = SystemColors.ControlDarkDark;
+            textBox6.BorderFocusColor = Color.Black;
+            textBox6.BorderSize = 2;
+            textBox6.Location = new Point(21, 337);
+            textBox6.Multiline = false;
+            textBox6.Name = "textBox6";
+            textBox6.Padding = new Padding(7);
+            textBox6.PasswordChar = false;
+            textBox6.Size = new Size(196, 30);
+            textBox6.TabIndex = 35;
+            textBox6.Texts = "Usuario*";
+            textBox6.UnderlinedStyle = true;
             // 
             // textBox7
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox7.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox7.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox7.BorderSize = 2;
-            this.textBox7.Location = new System.Drawing.Point(275, 337);
-            this.textBox7.Multiline = false;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox7.PasswordChar = true;
-            this.textBox7.Size = new System.Drawing.Size(196, 30);
-            this.textBox7.TabIndex = 36;
-            this.textBox7.Texts = "Contraseña*";
-            this.textBox7.UnderlinedStyle = true;
+            textBox7.Anchor = AnchorStyles.None;
+            textBox7.BackColor = SystemColors.Control;
+            textBox7.BorderColor = SystemColors.ControlDarkDark;
+            textBox7.BorderFocusColor = Color.Black;
+            textBox7.BorderSize = 2;
+            textBox7.Location = new Point(275, 337);
+            textBox7.Multiline = false;
+            textBox7.Name = "textBox7";
+            textBox7.Padding = new Padding(7);
+            textBox7.PasswordChar = true;
+            textBox7.Size = new Size(196, 30);
+            textBox7.TabIndex = 36;
+            textBox7.Texts = "Contraseña*";
+            textBox7.UnderlinedStyle = true;
             // 
             // buttonEntrar
             // 
-            this.buttonEntrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonEntrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.buttonEntrar.FlatAppearance.BorderSize = 0;
-            this.buttonEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEntrar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonEntrar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttonEntrar.Location = new System.Drawing.Point(465, 464);
-            this.buttonEntrar.Name = "buttonEntrar";
-            this.buttonEntrar.Size = new System.Drawing.Size(126, 35);
-            this.buttonEntrar.TabIndex = 37;
-            this.buttonEntrar.Text = "CANCELAR";
-            this.buttonEntrar.UseVisualStyleBackColor = false;
+            buttonEntrar.Anchor = AnchorStyles.None;
+            buttonEntrar.BackColor = Color.FromArgb(97, 97, 96);
+            buttonEntrar.FlatAppearance.BorderSize = 0;
+            buttonEntrar.FlatStyle = FlatStyle.Flat;
+            buttonEntrar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonEntrar.ForeColor = SystemColors.ButtonFace;
+            buttonEntrar.Location = new Point(465, 464);
+            buttonEntrar.Name = "buttonEntrar";
+            buttonEntrar.Size = new Size(126, 35);
+            buttonEntrar.TabIndex = 37;
+            buttonEntrar.Text = "CANCELAR";
+            buttonEntrar.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(97)))), ((int)(((byte)(96)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(641, 464);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 35);
-            this.button3.TabIndex = 38;
-            this.button3.Text = "GUARDAR";
-            this.button3.UseVisualStyleBackColor = false;
+            button3.Anchor = AnchorStyles.None;
+            button3.BackColor = Color.FromArgb(97, 97, 96);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ButtonFace;
+            button3.Location = new Point(641, 464);
+            button3.Name = "button3";
+            button3.Size = new Size(115, 35);
+            button3.TabIndex = 38;
+            button3.Text = "GUARDAR";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // textBox8
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox8.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox8.BorderColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.textBox8.BorderFocusColor = System.Drawing.Color.Black;
-            this.textBox8.BorderSize = 2;
-            this.textBox8.Location = new System.Drawing.Point(549, 344);
-            this.textBox8.Multiline = false;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Padding = new System.Windows.Forms.Padding(7);
-            this.textBox8.PasswordChar = true;
-            this.textBox8.Size = new System.Drawing.Size(196, 30);
-            this.textBox8.TabIndex = 39;
-            this.textBox8.Texts = "Nombre de usuario*";
-            this.textBox8.UnderlinedStyle = true;
+            textBox8.Anchor = AnchorStyles.None;
+            textBox8.BackColor = SystemColors.Control;
+            textBox8.BorderColor = SystemColors.ControlDarkDark;
+            textBox8.BorderFocusColor = Color.Black;
+            textBox8.BorderSize = 2;
+            textBox8.Location = new Point(549, 344);
+            textBox8.Multiline = false;
+            textBox8.Name = "textBox8";
+            textBox8.Padding = new Padding(7);
+            textBox8.PasswordChar = true;
+            textBox8.Size = new Size(196, 30);
+            textBox8.TabIndex = 39;
+            textBox8.Texts = "Nombre de usuario*";
+            textBox8.UnderlinedStyle = true;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(275, 307);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 16);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Ingresa Contraseña*";
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.DimGray;
+            label2.Location = new Point(275, 307);
+            label2.Name = "label2";
+            label2.Size = new Size(135, 16);
+            label2.TabIndex = 64;
+            label2.Text = "Ingresa Contraseña*";
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(549, 314);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 16);
-            this.label3.TabIndex = 67;
-            this.label3.Text = "Confirmar Contraseña*";
+            label3.Anchor = AnchorStyles.None;
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.DimGray;
+            label3.Location = new Point(549, 314);
+            label3.Name = "label3";
+            label3.Size = new Size(151, 16);
+            label3.TabIndex = 67;
+            label3.Text = "Confirmar Contraseña*";
             // 
             // comboBox1
             // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuario"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 231);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(196, 23);
-            this.comboBox1.TabIndex = 68;
-            this.comboBox1.Text = "Perfil*";
+            comboBox1.Anchor = AnchorStyles.None;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Administrador", "Usuario" });
+            comboBox1.Location = new Point(21, 231);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(196, 23);
+            comboBox1.TabIndex = 68;
+            comboBox1.Text = "Perfil*";
             // 
             // RegistroUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(768, 522);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.buttonEntrar);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textUsuario);
-            this.Controls.Add(this.labelUsuario);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RegistroUsuario";
-            this.Text = "RegistroUsuario";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            ClientSize = new Size(768, 522);
+            Controls.Add(comboBox1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(textBox8);
+            Controls.Add(button3);
+            Controls.Add(buttonEntrar);
+            Controls.Add(textBox7);
+            Controls.Add(textBox6);
+            Controls.Add(textBox5);
+            Controls.Add(textBox4);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
+            Controls.Add(textUsuario);
+            Controls.Add(labelUsuario);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "RegistroUsuario";
+            Text = "RegistroUsuario";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
