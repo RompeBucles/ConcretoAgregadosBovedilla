@@ -108,7 +108,7 @@ namespace PrototipoVentanas
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            //
+            openContenedorForm(new RegistroFormulario());
             hideSubMenu();
         }
 
