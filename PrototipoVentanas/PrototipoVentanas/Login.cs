@@ -11,7 +11,7 @@ namespace PrototipoVentanas
 
         private void btnUsuario_Enter(object sender, EventArgs e)
         {
-             if (textUsuario.Texts == "Nombre de usuario*")
+            if (textUsuario.Texts == "Nombre de usuario*")
             {
                 textUsuario.Texts = "";
                 textUsuario.ForeColor = Color.Black;
@@ -61,25 +61,25 @@ namespace PrototipoVentanas
         public void logear(string usuario)
 
         {
-            
-                
-                
-                if (usuario == "Administrador")
-                {
-                    this.Hide();
-                    new Menu(this, 0).Show();
-                }
-                else if(usuario == "Usuario")
-                {
-                    this.Hide();
-                    new Menu(this, 1).Show();
-                }
-                else
-                {
-                    MessageBox.Show("Usuario y/o Contraseña Incorrecta");
-                }
-           
-          
+
+
+
+            if (usuario == "Administrador")
+            {
+                this.Hide();
+                new Menu(this, 0).Show();
+            }
+            else if (usuario == "Usuario")
+            {
+                this.Hide();
+                new Menu(this, 1).Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario y/o Contraseña Incorrecta");
+            }
+
+
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

@@ -8,19 +8,19 @@
     "net6.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Invitado2022\\.nuget\\packages\\": {}
+    "C:\\Users\\cacam\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Invitado2022\\Documents\\GitHub\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
+      "projectUniqueName": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
       "projectName": "PrototipoVentanas",
-      "projectPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
-      "packagesPath": "C:\\Users\\Invitado2022\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Invitado2022\\Documents\\GitHub\\PrototipoVentanas\\PrototipoVentanas\\obj\\",
+      "projectPath": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
+      "packagesPath": "C:\\Users\\cacam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Invitado2022\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cacam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +64,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

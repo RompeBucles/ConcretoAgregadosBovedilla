@@ -37,14 +37,7 @@
             this.textAutor = new Sistema_de_sanciones.Templates.TextBox();
             this.textBox3 = new Sistema_de_sanciones.Templates.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBoxSiete = new System.Windows.Forms.ComboBox();
-            this.comboBoxSeis = new System.Windows.Forms.ComboBox();
-            this.comboBoxCinco = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxCuatro = new System.Windows.Forms.ComboBox();
-            this.comboBoxUno = new System.Windows.Forms.ComboBox();
-            this.comboBoxTres = new System.Windows.Forms.ComboBox();
-            this.comboBoxDos = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ComboProducto = new System.Windows.Forms.ComboBox();
             this.ComboTecno = new System.Windows.Forms.ComboBox();
@@ -113,7 +106,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.textAutor);
             this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Location = new System.Drawing.Point(-20, 483);
+            this.panel3.Location = new System.Drawing.Point(-28, 483);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(711, 238);
             this.panel3.TabIndex = 80;
@@ -199,22 +192,11 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel2.Controls.Add(this.comboBoxSiete);
-            this.panel2.Controls.Add(this.comboBoxSeis);
-            this.panel2.Controls.Add(this.comboBoxCinco);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.comboBoxCuatro);
-            this.panel2.Controls.Add(this.comboBoxUno);
-            this.panel2.Controls.Add(this.comboBoxTres);
-            this.panel2.Controls.Add(this.comboBoxDos);
-            this.panel2.Location = new System.Drawing.Point(-29, 192);
+            this.panel2.Location = new System.Drawing.Point(-37, 192);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(735, 281);
             this.panel2.TabIndex = 77;
-            // 
-            // comboBoxSiete
-            // 
-            
             // 
             // label1
             // 
@@ -226,12 +208,7 @@
             this.label1.Size = new System.Drawing.Size(133, 19);
             this.label1.TabIndex = 71;
             this.label1.Text = "Tipo de proceso";
-            
             // 
-            // comboBoxUno
-            // 
-            
-            
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -240,7 +217,7 @@
             this.panel1.Controls.Add(this.textOtro);
             this.panel1.Controls.Add(this.labelUsuario);
             this.panel1.Controls.Add(this.textProceso);
-            this.panel1.Location = new System.Drawing.Point(-29, 6);
+            this.panel1.Location = new System.Drawing.Point(-37, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(735, 180);
             this.panel1.TabIndex = 76;
@@ -369,7 +346,7 @@
             this.panel4.Controls.Add(this.textUnidadFuncional);
             this.panel4.Controls.Add(this.textBox7);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(-21, 3);
+            this.panel4.Location = new System.Drawing.Point(-29, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(738, 747);
             this.panel4.TabIndex = 77;
@@ -597,18 +574,11 @@
         private Panel panel1;
         private Sistema_de_sanciones.Templates.TextBox textOtro;
         private Sistema_de_sanciones.Templates.TextBox textProceso;
-        private ComboBox comboBoxTres;
-        private ComboBox comboBoxDos;
-        private ComboBox comboBoxUno;
         private Label label1;
         private Panel panel3;
         private Sistema_de_sanciones.Templates.TextBox textBox3;
         private Label label2;
         private Panel panel2;
-        private ComboBox comboBoxSiete;
-        private ComboBox comboBoxSeis;
-        private ComboBox comboBoxCinco;
-        private ComboBox comboBoxCuatro;
         private Sistema_de_sanciones.Templates.TextBox textCorreo;
         private Sistema_de_sanciones.Templates.TextBox textAutor;
         private Button buttonSiguienteID;
