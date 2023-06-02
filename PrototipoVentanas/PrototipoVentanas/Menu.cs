@@ -114,7 +114,7 @@ namespace PrototipoVentanas
 
         private void btnListaDatos_Click(object sender, EventArgs e)
         {
-            //
+            openContenedorForm(new ListaFormulario());
             hideSubMenu();
         }
 

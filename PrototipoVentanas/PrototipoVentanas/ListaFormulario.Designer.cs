@@ -1,6 +1,6 @@
 ﻿namespace PrototipoVentanas
 {
-    partial class RegistroFormulario
+    partial class ListaFormulario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tabControl1 = new TabControl();
+            tabControl2 = new TabControl();
+            tabPage1 = new TabPage();
+            button3 = new Button();
+            button2 = new Button();
+            dataGridView3 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn16 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn17 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn18 = new DataGridViewTextBoxColumn();
+            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+            dataGridViewCheckBoxColumn1 = new DataGridViewCheckBoxColumn();
             Identificación = new TabPage();
             panel1 = new Panel();
+            label12 = new Label();
+            button8 = new Button();
             comboBox5 = new ComboBox();
             comboBox6 = new ComboBox();
             textBox5 = new Sistema_de_sanciones.Templates.TextBox();
@@ -54,12 +80,14 @@
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
+            button7 = new Button();
+            button6 = new Button();
             buttoAtrasP = new Button();
             buttonSiguenteS = new Button();
             label5 = new Label();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
-            button1 = new Button();
+            button4 = new Button();
+            button5 = new Button();
             comboLimitesSistema = new ComboBox();
             textObjetivoR = new Sistema_de_sanciones.Templates.TextBox();
             comboUnidadUno = new ComboBox();
@@ -86,18 +114,20 @@
             label7 = new Label();
             Geografía = new TabPage();
             panel5 = new Panel();
+            button1 = new Button();
             panel7 = new Panel();
             panel6 = new Panel();
             label11 = new Label();
             trackZoom = new TrackBar();
             buttonGuardarG = new Button();
             gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
-            dataGridView1 = new DataGridView();
+            dataGridView2 = new DataGridView();
             comboBox4 = new ComboBox();
             comboBox2 = new ComboBox();
             label10 = new Label();
-            panel8 = new Panel();
-            tabControl1.SuspendLayout();
+            tabControl2.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             Identificación.SuspendLayout();
             panel1.SuspendLayout();
             Referencia.SuspendLayout();
@@ -111,22 +141,179 @@
             Geografía.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackZoom).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
-            // tabControl1
+            // tabControl2
             // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(Identificación);
-            tabControl1.Controls.Add(Referencia);
-            tabControl1.Controls.Add(Tecnología);
-            tabControl1.Controls.Add(TiempoVálido);
-            tabControl1.Controls.Add(Geografía);
-            tabControl1.Location = new Point(1, 2);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(750, 519);
-            tabControl1.TabIndex = 1;
+            tabControl2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl2.Controls.Add(tabPage1);
+            tabControl2.Controls.Add(Identificación);
+            tabControl2.Controls.Add(Referencia);
+            tabControl2.Controls.Add(Tecnología);
+            tabControl2.Controls.Add(TiempoVálido);
+            tabControl2.Controls.Add(Geografía);
+            tabControl2.Location = new Point(2, 3);
+            tabControl2.Name = "tabControl2";
+            tabControl2.SelectedIndex = 0;
+            tabControl2.Size = new Size(750, 519);
+            tabControl2.TabIndex = 23;
+            // 
+            // tabPage1
+            // 
+            tabPage1.Controls.Add(button3);
+            tabPage1.Controls.Add(button2);
+            tabPage1.Controls.Add(dataGridView3);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Size = new Size(742, 491);
+            tabPage1.TabIndex = 5;
+            tabPage1.Text = "Lista Datos";
+            tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button3.BackColor = Color.FromArgb(97, 97, 96);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = SystemColors.ButtonFace;
+            button3.Location = new Point(401, 422);
+            button3.Name = "button3";
+            button3.Size = new Size(151, 39);
+            button3.TabIndex = 71;
+            button3.Text = "Exportar como PDF";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button2.BackColor = Color.FromArgb(97, 97, 96);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ButtonFace;
+            button2.Location = new Point(582, 422);
+            button2.Name = "button2";
+            button2.Size = new Size(151, 39);
+            button2.TabIndex = 70;
+            button2.Text = "Borra Selección";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView3
+            // 
+            dataGridView3.AllowUserToAddRows = false;
+            dataGridView3.AllowUserToDeleteRows = false;
+            dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18, dataGridViewButtonColumn1, dataGridViewCheckBoxColumn1 });
+            dataGridView3.Location = new Point(2, 3);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowTemplate.Height = 25;
+            dataGridView3.Size = new Size(732, 410);
+            dataGridView3.TabIndex = 28;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Producto-Tecnología";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Tipo de proceso";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Autor";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "Correo";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.HeaderText = "Nombre de la unidad funcional";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.HeaderText = "Valor de referencia";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.HeaderText = "Unidad";
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.HeaderText = "Objetivo";
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.HeaderText = "Limites del sistema";
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewTextBoxColumn10.HeaderText = "Imagen";
+            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            dataGridViewTextBoxColumn11.HeaderText = "Tipo de tecnología";
+            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            dataGridViewTextBoxColumn12.HeaderText = "Condiciones de operación";
+            dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            dataGridViewTextBoxColumn13.HeaderText = "Fecha de referencia";
+            dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            dataGridViewTextBoxColumn14.HeaderText = "Datos válidos";
+            dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            dataGridViewTextBoxColumn15.HeaderText = "Descripción de tiempo";
+            dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            dataGridViewTextBoxColumn16.HeaderText = "Estado";
+            dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            dataGridViewTextBoxColumn17.HeaderText = "Nombre del area";
+            dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            dataGridViewTextBoxColumn18.HeaderText = "Representacion geografica";
+            dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewButtonColumn1.HeaderText = "Editar";
+            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            dataGridViewButtonColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            dataGridViewCheckBoxColumn1.HeaderText = "Eliminar";
+            dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // Identificación
             // 
@@ -143,6 +330,8 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
+            panel1.Controls.Add(label12);
+            panel1.Controls.Add(button8);
             panel1.Controls.Add(comboBox5);
             panel1.Controls.Add(comboBox6);
             panel1.Controls.Add(textBox5);
@@ -164,17 +353,44 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(6, 3);
+            panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Top;
+            label12.AutoSize = true;
+            label12.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = Color.Red;
+            label12.Location = new Point(318, 27);
+            label12.Name = "label12";
+            label12.Size = new Size(111, 19);
+            label12.TabIndex = 97;
+            label12.Text = "Identificación";
+            // 
+            // button8
+            // 
+            button8.Anchor = AnchorStyles.None;
+            button8.BackColor = Color.FromArgb(97, 97, 96);
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button8.ForeColor = SystemColors.ButtonFace;
+            button8.Location = new Point(283, 682);
+            button8.Name = "button8";
+            button8.Size = new Size(115, 35);
+            button8.TabIndex = 96;
+            button8.Text = "Siguiente";
+            button8.UseVisualStyleBackColor = false;
             // 
             // comboBox5
             // 
             comboBox5.Anchor = AnchorStyles.None;
             comboBox5.FormattingEnabled = true;
             comboBox5.Items.AddRange(new object[] { "Cemento", "Concreto", "Acero estructural", "Ladrillos", "Madera", "Vidrio", "Aislamiento térmico", "Pinturas y recubrimientos", "Azulejos y baldosas", "Adhesivos y selladores", "Impermeabilizantes", "Sistemas de fontanería", "Sistemas eléctricos", "Sistemas de climatización" });
-            comboBox5.Location = new Point(7, 42);
+            comboBox5.Location = new Point(7, 164);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(214, 23);
             comboBox5.TabIndex = 92;
@@ -185,7 +401,7 @@
             comboBox6.Anchor = AnchorStyles.None;
             comboBox6.FormattingEnabled = true;
             comboBox6.Items.AddRange(new object[] { "Cemento Portland", "Concreto reforzado", "Concreto premezclado", "Concreto de alto rendimiento", "Ladrillos cerámicos", "Ladrillos de hormigón", "Acero laminado en caliente", "Madera laminada encolada", "Madera tratada", "Vidrio de seguridad laminado", "Vidrio aislante", "Azulejos de cerámica esmaltada", "Baldosas de porcelana", "Espuma de poliestireno expandido (EPS)", "Lana mineral", "Membranas asfálticas", "Pinturas impermeabilizantes" });
-            comboBox6.Location = new Point(241, 42);
+            comboBox6.Location = new Point(241, 164);
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(232, 23);
             comboBox6.TabIndex = 93;
@@ -198,7 +414,7 @@
             textBox5.BorderColor = SystemColors.ControlDarkDark;
             textBox5.BorderFocusColor = Color.Black;
             textBox5.BorderSize = 2;
-            textBox5.Location = new Point(498, 35);
+            textBox5.Location = new Point(498, 157);
             textBox5.Multiline = false;
             textBox5.Name = "textBox5";
             textBox5.Padding = new Padding(7);
@@ -215,7 +431,7 @@
             textProceso.BorderColor = SystemColors.ControlDarkDark;
             textProceso.BorderFocusColor = Color.Black;
             textProceso.BorderSize = 2;
-            textProceso.Location = new Point(6, 120);
+            textProceso.Location = new Point(6, 242);
             textProceso.Multiline = false;
             textProceso.Name = "textProceso";
             textProceso.Padding = new Padding(7);
@@ -231,7 +447,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Crimson;
-            label4.Location = new Point(262, 192);
+            label4.Location = new Point(262, 314);
             label4.Name = "label4";
             label4.Size = new Size(214, 16);
             label4.TabIndex = 91;
@@ -242,91 +458,84 @@
             comboSiete.Anchor = AnchorStyles.None;
             comboSiete.FormattingEnabled = true;
             comboSiete.Items.AddRange(new object[] { "Limpieza", "Almacenamiento", "Salud, servicios sociales, belleza y bienestar", "Reparación y mantenimiento", "Venta y venta al por mayor", "Servicios de comunicación e información", "Financiero, jurídico y de seguros", "Administración y gobierno", "Defensa", "Alojamiento y gastronomía", "Educación", "Investigación y desarrollo", "Entretenimiento", "Alquiler", "Ingeniería y consultoría", "Otros servicios" });
-            comboSiete.Location = new Point(11, 387);
+            comboSiete.Location = new Point(244, 570);
             comboSiete.Name = "comboSiete";
             comboSiete.Size = new Size(213, 23);
             comboSiete.TabIndex = 90;
             comboSiete.Text = "Otros servicios*";
-            comboSiete.SelectedIndexChanged += comboSiete_SelectedIndexChanged;
             // 
             // comboSeis
             // 
             comboSeis.Anchor = AnchorStyles.None;
             comboSeis.FormattingEnabled = true;
             comboSeis.Items.AddRange(new object[] { "Consumo de productos", "Uso de productos que consumen energía", "Otros usos y consumos" });
-            comboSeis.Location = new Point(493, 304);
+            comboSeis.Location = new Point(493, 426);
             comboSeis.Name = "comboSeis";
             comboSeis.Size = new Size(232, 23);
             comboSeis.TabIndex = 89;
             comboSeis.Text = "Uso y consumo*";
-            comboSeis.SelectedIndexChanged += comboSeis_SelectedIndexChanged;
             // 
             // comboCinco
             // 
             comboCinco.Anchor = AnchorStyles.None;
             comboCinco.FormattingEnabled = true;
             comboCinco.Items.AddRange(new object[] { "Carretera", "Ferrocarril", "Agua", "Aire", "Otros transportes" });
-            comboCinco.Location = new Point(248, 304);
+            comboCinco.Location = new Point(248, 426);
             comboCinco.Name = "comboCinco";
             comboCinco.Size = new Size(228, 23);
             comboCinco.TabIndex = 88;
             comboCinco.Text = "Servicios de transporte*";
-            comboCinco.SelectedIndexChanged += comboCinco_SelectedIndexChanged;
             // 
             // comboCuatro
             // 
             comboCuatro.Anchor = AnchorStyles.None;
             comboCuatro.FormattingEnabled = true;
             comboCuatro.Items.AddRange(new object[] { "Reutilización o utilización posterior", "Reciclaje de materiales", "Reciclaje de materias primas", "Reciclaje energético", "Vertedero", "Recogida de residuos", "Tratamiento de aguas residuales", "Tratamiento de gas bruto", "Otros servicios al final de la vida útil" });
-            comboCuatro.Location = new Point(10, 304);
+            comboCuatro.Location = new Point(10, 426);
             comboCuatro.Name = "comboCuatro";
             comboCuatro.Size = new Size(213, 23);
             comboCuatro.TabIndex = 87;
             comboCuatro.Text = "Tratamiento al final de la vida útil*";
-            comboCuatro.SelectedIndexChanged += comboCuatro_SelectedIndexChanged;
             // 
             // comboTres
             // 
             comboTres.Anchor = AnchorStyles.None;
             comboTres.FormattingEnabled = true;
             comboTres.Items.AddRange(new object[] { "Materias primas no energéticas", "Metales y semimetales", "Productos químicos orgánicos", "Productos químicos inorgánicos", "Vidrio y cerámica", "Otros materiales minerales", "Plásticos", "Papel y cartón", "Agua", "Medios de producción agrícola", "Alimentos y materias primas renovables", "Madera", "Otros materiales" });
-            comboTres.Location = new Point(493, 226);
+            comboTres.Location = new Point(493, 348);
             comboTres.Name = "comboTres";
             comboTres.Size = new Size(232, 23);
             comboTres.TabIndex = 87;
             comboTres.Text = "Materiales de producción*";
-            comboTres.SelectedIndexChanged += comboTres_SelectedIndexChanged;
             // 
             // comboDos
             // 
             comboDos.Anchor = AnchorStyles.None;
             comboDos.FormattingEnabled = true;
             comboDos.Items.AddRange(new object[] { "Embalaje", "Electricidad y electrónica", "Vehículos", "Otras maquinas", "Construcción", "Electrodomésticos", "Textiles, muebles y otros interiores", "Partes no especificas", "Pinturas y preparados químicos", "Otros sistemas" });
-            comboDos.Location = new Point(248, 226);
+            comboDos.Location = new Point(248, 348);
             comboDos.Name = "comboDos";
             comboDos.Size = new Size(228, 23);
             comboDos.TabIndex = 86;
             comboDos.Text = "Sistemas*";
-            comboDos.SelectedIndexChanged += comboDos_SelectedIndexChanged;
             // 
             // comboUno
             // 
             comboUno.Anchor = AnchorStyles.None;
             comboUno.FormattingEnabled = true;
             comboUno.Items.AddRange(new object[] { "Materias primas energéticas", "Electricidad", "Calor y vapor", "Energía mecánica", "Combustibles a base de hulla", "Combustibles a base de lignito", "Combustibles a base de petróleo crudo", "Combustibles a base de gas natural", "Combustibles nucleares", "Otros combustibles no renovables", "Combustibles renovables" });
-            comboUno.Location = new Point(10, 226);
+            comboUno.Location = new Point(10, 348);
             comboUno.Name = "comboUno";
             comboUno.Size = new Size(214, 23);
             comboUno.TabIndex = 85;
             comboUno.Text = "Portadores de energía y tecnología *";
-            comboUno.SelectedIndexChanged += comboUno_SelectedIndexChanged;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(302, 173);
+            label2.Location = new Point(302, 295);
             label2.Name = "label2";
             label2.Size = new Size(133, 19);
             label2.TabIndex = 84;
@@ -340,13 +549,13 @@
             buttonSiguienteP.FlatStyle = FlatStyle.Flat;
             buttonSiguienteP.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSiguienteP.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteP.Location = new Point(320, 683);
+            buttonSiguienteP.Location = new Point(583, 1006);
             buttonSiguienteP.Name = "buttonSiguienteP";
             buttonSiguienteP.Size = new Size(115, 35);
             buttonSiguienteP.TabIndex = 83;
             buttonSiguienteP.Text = "Siguiente";
             buttonSiguienteP.UseVisualStyleBackColor = false;
-            buttonSiguienteP.Click += buttonSiguienteP_Click;
+            buttonSiguienteP.Visible = false;
             // 
             // textBox1
             // 
@@ -355,7 +564,7 @@
             textBox1.BorderColor = SystemColors.ControlDarkDark;
             textBox1.BorderFocusColor = Color.Black;
             textBox1.BorderSize = 2;
-            textBox1.Location = new Point(285, 603);
+            textBox1.Location = new Point(548, 926);
             textBox1.Multiline = false;
             textBox1.Name = "textBox1";
             textBox1.Padding = new Padding(7);
@@ -370,7 +579,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(302, 465);
+            label1.Location = new Point(275, 517);
             label1.Name = "label1";
             label1.Size = new Size(148, 19);
             label1.TabIndex = 82;
@@ -383,7 +592,7 @@
             textBox2.BorderColor = SystemColors.ControlDarkDark;
             textBox2.BorderFocusColor = Color.Black;
             textBox2.BorderSize = 2;
-            textBox2.Location = new Point(285, 528);
+            textBox2.Location = new Point(248, 619);
             textBox2.Multiline = false;
             textBox2.Name = "textBox2";
             textBox2.Padding = new Padding(7);
@@ -398,7 +607,7 @@
             ComboProducto.Anchor = AnchorStyles.None;
             ComboProducto.FormattingEnabled = true;
             ComboProducto.Items.AddRange(new object[] { "Cemento", "Concreto", "Acero estructural", "Ladrillos", "Madera", "Vidrio", "Aislamiento térmico", "Pinturas y recubrimientos", "Azulejos y baldosas", "Adhesivos y selladores", "Impermeabilizantes", "Sistemas de fontanería", "Sistemas eléctricos", "Sistemas de climatización" });
-            ComboProducto.Location = new Point(10, -33);
+            ComboProducto.Location = new Point(10, 89);
             ComboProducto.Name = "ComboProducto";
             ComboProducto.Size = new Size(214, 23);
             ComboProducto.TabIndex = 0;
@@ -409,7 +618,7 @@
             ComboTecno.Anchor = AnchorStyles.None;
             ComboTecno.FormattingEnabled = true;
             ComboTecno.Items.AddRange(new object[] { "Cemento Portland", "Concreto reforzado", "Concreto premezclado", "Concreto de alto rendimiento", "Ladrillos cerámicos", "Ladrillos de hormigón", "Acero laminado en caliente", "Madera laminada encolada", "Madera tratada", "Vidrio de seguridad laminado", "Vidrio aislante", "Azulejos de cerámica esmaltada", "Baldosas de porcelana", "Espuma de poliestireno expandido (EPS)", "Lana mineral", "Membranas asfálticas", "Pinturas impermeabilizantes" });
-            ComboTecno.Location = new Point(244, -33);
+            ComboTecno.Location = new Point(244, 89);
             ComboTecno.Name = "ComboTecno";
             ComboTecno.Size = new Size(232, 23);
             ComboTecno.TabIndex = 30;
@@ -422,7 +631,7 @@
             textOtro.BorderColor = SystemColors.ControlDarkDark;
             textOtro.BorderFocusColor = Color.Black;
             textOtro.BorderSize = 2;
-            textOtro.Location = new Point(501, -40);
+            textOtro.Location = new Point(501, 82);
             textOtro.Multiline = false;
             textOtro.Name = "textOtro";
             textOtro.Padding = new Padding(7);
@@ -438,7 +647,7 @@
             labelUsuario.AutoSize = true;
             labelUsuario.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelUsuario.ForeColor = Color.Red;
-            labelUsuario.Location = new Point(324, 18);
+            labelUsuario.Location = new Point(324, -183);
             labelUsuario.Name = "labelUsuario";
             labelUsuario.Size = new Size(111, 19);
             labelUsuario.TabIndex = 29;
@@ -460,12 +669,14 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.AutoScroll = true;
+            panel4.Controls.Add(button7);
+            panel4.Controls.Add(button6);
             panel4.Controls.Add(buttoAtrasP);
             panel4.Controls.Add(buttonSiguenteS);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(pictureBox1);
-            panel4.Controls.Add(button2);
-            panel4.Controls.Add(button1);
+            panel4.Controls.Add(button4);
+            panel4.Controls.Add(button5);
             panel4.Controls.Add(comboLimitesSistema);
             panel4.Controls.Add(textObjetivoR);
             panel4.Controls.Add(comboUnidadUno);
@@ -473,10 +684,40 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(0, 0);
+            panel4.Location = new Point(-31, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
+            // 
+            // button7
+            // 
+            button7.Anchor = AnchorStyles.None;
+            button7.BackColor = Color.FromArgb(97, 97, 96);
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button7.ForeColor = SystemColors.ButtonFace;
+            button7.Location = new Point(199, 668);
+            button7.Name = "button7";
+            button7.Size = new Size(115, 35);
+            button7.TabIndex = 90;
+            button7.Text = "Atras";
+            button7.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            button6.Anchor = AnchorStyles.None;
+            button6.BackColor = Color.FromArgb(97, 97, 96);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button6.ForeColor = SystemColors.ButtonFace;
+            button6.Location = new Point(430, 667);
+            button6.Name = "button6";
+            button6.Size = new Size(115, 35);
+            button6.TabIndex = 89;
+            button6.Text = "Siguiente";
+            button6.UseVisualStyleBackColor = false;
             // 
             // buttoAtrasP
             // 
@@ -486,13 +727,12 @@
             buttoAtrasP.FlatStyle = FlatStyle.Flat;
             buttoAtrasP.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttoAtrasP.ForeColor = SystemColors.ButtonFace;
-            buttoAtrasP.Location = new Point(186, 683);
+            buttoAtrasP.Location = new Point(455, 1006);
             buttoAtrasP.Name = "buttoAtrasP";
             buttoAtrasP.Size = new Size(115, 35);
             buttoAtrasP.TabIndex = 87;
             buttoAtrasP.Text = "Atras";
             buttoAtrasP.UseVisualStyleBackColor = false;
-            buttoAtrasP.Click += buttoAtrasP_Click;
             // 
             // buttonSiguenteS
             // 
@@ -502,20 +742,20 @@
             buttonSiguenteS.FlatStyle = FlatStyle.Flat;
             buttonSiguenteS.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSiguenteS.ForeColor = SystemColors.ButtonFace;
-            buttonSiguenteS.Location = new Point(427, 682);
+            buttonSiguenteS.Location = new Point(696, 1005);
             buttonSiguenteS.Name = "buttonSiguenteS";
             buttonSiguenteS.Size = new Size(115, 35);
             buttonSiguenteS.TabIndex = 86;
             buttonSiguenteS.Text = "Siguiente";
             buttonSiguenteS.UseVisualStyleBackColor = false;
-            buttonSiguenteS.Click += buttonSiguenteS_Click;
+            buttonSiguenteS.Visible = false;
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(283, 435);
+            label5.Location = new Point(281, 421);
             label5.Name = "label5";
             label5.Size = new Size(155, 19);
             label5.TabIndex = 85;
@@ -529,43 +769,42 @@
             pictureBox1.Size = new Size(307, 174);
             pictureBox1.TabIndex = 82;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
-            // button2
+            // button4
             // 
-            button2.Anchor = AnchorStyles.None;
-            button2.BackColor = Color.FromArgb(97, 97, 96);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(474, 1015);
-            button2.Name = "button2";
-            button2.Size = new Size(115, 35);
-            button2.TabIndex = 81;
-            button2.Text = "Atras";
-            button2.UseVisualStyleBackColor = false;
+            button4.Anchor = AnchorStyles.None;
+            button4.BackColor = Color.FromArgb(97, 97, 96);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Location = new Point(583, 1073);
+            button4.Name = "button4";
+            button4.Size = new Size(115, 35);
+            button4.TabIndex = 81;
+            button4.Text = "Atras";
+            button4.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // button5
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.FromArgb(97, 97, 96);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(677, 1015);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 35);
-            button1.TabIndex = 80;
-            button1.Text = "Siguiente";
-            button1.UseVisualStyleBackColor = false;
+            button5.Anchor = AnchorStyles.None;
+            button5.BackColor = Color.FromArgb(97, 97, 96);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = SystemColors.ButtonFace;
+            button5.Location = new Point(786, 1073);
+            button5.Name = "button5";
+            button5.Size = new Size(115, 35);
+            button5.TabIndex = 80;
+            button5.Text = "Siguiente";
+            button5.UseVisualStyleBackColor = false;
             // 
             // comboLimitesSistema
             // 
             comboLimitesSistema.FormattingEnabled = true;
             comboLimitesSistema.Items.AddRange(new object[] { "Limitaciones presupuestarias", "Limitaciones de tiempo", "Limitaciones de recursos naturales", "Limitaciones de espacio", "Limitaciones ambientales", "Limitaciones de capacidad", "Limitaciones geotécnicas", "Limitaciones tecnológicas", "Limitaciones normativas y legales", "Limitaciones de seguridad" });
-            comboLimitesSistema.Location = new Point(248, 357);
+            comboLimitesSistema.Location = new Point(248, 374);
             comboLimitesSistema.Name = "comboLimitesSistema";
             comboLimitesSistema.Size = new Size(230, 23);
             comboLimitesSistema.TabIndex = 76;
@@ -578,7 +817,7 @@
             textObjetivoR.BorderColor = SystemColors.ControlDarkDark;
             textObjetivoR.BorderFocusColor = Color.Black;
             textObjetivoR.BorderSize = 2;
-            textObjetivoR.Location = new Point(248, 268);
+            textObjetivoR.Location = new Point(248, 298);
             textObjetivoR.Multiline = false;
             textObjetivoR.Name = "textObjetivoR";
             textObjetivoR.Padding = new Padding(7);
@@ -592,7 +831,7 @@
             // 
             comboUnidadUno.FormattingEnabled = true;
             comboUnidadUno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)" });
-            comboUnidadUno.Location = new Point(248, 196);
+            comboUnidadUno.Location = new Point(248, 225);
             comboUnidadUno.Name = "comboUnidadUno";
             comboUnidadUno.Size = new Size(230, 23);
             comboUnidadUno.TabIndex = 74;
@@ -600,7 +839,7 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(248, 126);
+            numericUpDown1.Location = new Point(248, 166);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(230, 23);
             numericUpDown1.TabIndex = 72;
@@ -612,7 +851,7 @@
             textUnidadFuncional.BorderColor = SystemColors.ControlDarkDark;
             textUnidadFuncional.BorderFocusColor = Color.Black;
             textUnidadFuncional.BorderSize = 2;
-            textUnidadFuncional.Location = new Point(248, 57);
+            textUnidadFuncional.Location = new Point(248, 80);
             textUnidadFuncional.Multiline = false;
             textUnidadFuncional.Name = "textUnidadFuncional";
             textUnidadFuncional.Padding = new Padding(7);
@@ -629,7 +868,7 @@
             textBox7.BorderColor = SystemColors.ControlDarkDark;
             textBox7.BorderFocusColor = Color.Black;
             textBox7.BorderSize = 2;
-            textBox7.Location = new Point(910, 543);
+            textBox7.Location = new Point(1019, 601);
             textBox7.Multiline = false;
             textBox7.Name = "textBox7";
             textBox7.Padding = new Padding(7);
@@ -645,7 +884,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(320, 13);
+            label3.Location = new Point(315, 23);
             label3.Name = "label3";
             label3.Size = new Size(91, 19);
             label3.TabIndex = 29;
@@ -670,7 +909,7 @@
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(3, 3);
+            panel2.Location = new Point(-4, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(736, 468);
             panel2.TabIndex = 0;
@@ -683,13 +922,12 @@
             buttonAtrasR.FlatStyle = FlatStyle.Flat;
             buttonAtrasR.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAtrasR.ForeColor = SystemColors.ButtonFace;
-            buttonAtrasR.Location = new Point(201, 424);
+            buttonAtrasR.Location = new Point(168, 426);
             buttonAtrasR.Name = "buttonAtrasR";
             buttonAtrasR.Size = new Size(115, 35);
             buttonAtrasR.TabIndex = 89;
             buttonAtrasR.Text = "Atras";
             buttonAtrasR.UseVisualStyleBackColor = false;
-            buttonAtrasR.Click += buttonAtrasR_Click;
             // 
             // buttonSiguienteT
             // 
@@ -699,13 +937,12 @@
             buttonSiguienteT.FlatStyle = FlatStyle.Flat;
             buttonSiguienteT.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSiguienteT.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteT.Location = new Point(439, 424);
+            buttonSiguienteT.Location = new Point(406, 426);
             buttonSiguienteT.Name = "buttonSiguienteT";
             buttonSiguienteT.Size = new Size(115, 35);
             buttonSiguienteT.TabIndex = 88;
             buttonSiguienteT.Text = "Siguiente";
             buttonSiguienteT.UseVisualStyleBackColor = false;
-            buttonSiguienteT.Click += buttonSiguienteT_Click;
             // 
             // textBox3
             // 
@@ -714,7 +951,7 @@
             textBox3.BorderColor = SystemColors.ControlDarkDark;
             textBox3.BorderFocusColor = Color.Black;
             textBox3.BorderSize = 2;
-            textBox3.Location = new Point(260, 148);
+            textBox3.Location = new Point(227, 150);
             textBox3.Multiline = false;
             textBox3.Name = "textBox3";
             textBox3.Padding = new Padding(7);
@@ -729,7 +966,7 @@
             comboBox1.Anchor = AnchorStyles.None;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Innovación (Laboratorio, prototipo, piloto, demostración)", "Moderna", "Actual (más encontrada en operación)", "Antigua", "Mix.Tecnologías" });
-            comboBox1.Location = new Point(260, 56);
+            comboBox1.Location = new Point(227, 58);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(230, 23);
             comboBox1.TabIndex = 75;
@@ -741,7 +978,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.Red;
-            label6.Location = new Point(335, 9);
+            label6.Location = new Point(302, 11);
             label6.Name = "label6";
             label6.Size = new Size(93, 19);
             label6.TabIndex = 30;
@@ -769,7 +1006,7 @@
             panel3.Controls.Add(buttonSiguienteC);
             panel3.Controls.Add(textBox4);
             panel3.Controls.Add(label7);
-            panel3.Location = new Point(3, 3);
+            panel3.Location = new Point(-4, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(739, 470);
             panel3.TabIndex = 1;
@@ -780,7 +1017,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.Crimson;
-            label9.Location = new Point(296, 141);
+            label9.Location = new Point(293, 141);
             label9.Name = "label9";
             label9.Size = new Size(131, 16);
             label9.TabIndex = 93;
@@ -792,7 +1029,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.Crimson;
-            label8.Location = new Point(263, 63);
+            label8.Location = new Point(260, 63);
             label8.Name = "label8";
             label8.Size = new Size(209, 16);
             label8.TabIndex = 92;
@@ -820,13 +1057,12 @@
             buttonAtrasTec.FlatStyle = FlatStyle.Flat;
             buttonAtrasTec.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonAtrasTec.ForeColor = SystemColors.ButtonFace;
-            buttonAtrasTec.Location = new Point(201, 424);
+            buttonAtrasTec.Location = new Point(198, 424);
             buttonAtrasTec.Name = "buttonAtrasTec";
             buttonAtrasTec.Size = new Size(115, 35);
             buttonAtrasTec.TabIndex = 89;
             buttonAtrasTec.Text = "Atras";
             buttonAtrasTec.UseVisualStyleBackColor = false;
-            buttonAtrasTec.Click += buttonAtrasTec_Click;
             // 
             // buttonSiguienteC
             // 
@@ -836,13 +1072,12 @@
             buttonSiguienteC.FlatStyle = FlatStyle.Flat;
             buttonSiguienteC.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSiguienteC.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteC.Location = new Point(439, 424);
+            buttonSiguienteC.Location = new Point(436, 424);
             buttonSiguienteC.Name = "buttonSiguienteC";
             buttonSiguienteC.Size = new Size(115, 35);
             buttonSiguienteC.TabIndex = 88;
             buttonSiguienteC.Text = "Siguiente";
             buttonSiguienteC.UseVisualStyleBackColor = false;
-            buttonSiguienteC.Click += buttonSiguienteC_Click;
             // 
             // textBox4
             // 
@@ -851,7 +1086,7 @@
             textBox4.BorderColor = SystemColors.ControlDarkDark;
             textBox4.BorderFocusColor = Color.Black;
             textBox4.BorderSize = 2;
-            textBox4.Location = new Point(263, 245);
+            textBox4.Location = new Point(260, 245);
             textBox4.Multiline = false;
             textBox4.Name = "textBox4";
             textBox4.Padding = new Padding(7);
@@ -867,7 +1102,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.Red;
-            label7.Location = new Point(271, 13);
+            label7.Location = new Point(268, 13);
             label7.Name = "label7";
             label7.Size = new Size(204, 19);
             label7.TabIndex = 30;
@@ -887,21 +1122,37 @@
             // panel5
             // 
             panel5.Anchor = AnchorStyles.Top;
+            panel5.Controls.Add(button1);
             panel5.Controls.Add(panel7);
             panel5.Controls.Add(panel6);
             panel5.Controls.Add(label11);
             panel5.Controls.Add(trackZoom);
             panel5.Controls.Add(buttonGuardarG);
             panel5.Controls.Add(gMapControl1);
-            panel5.Controls.Add(dataGridView1);
+            panel5.Controls.Add(dataGridView2);
             panel5.Controls.Add(comboBox4);
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(0, 0);
+            panel5.Location = new Point(6, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
             panel5.Paint += panel5_Paint;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(97, 97, 96);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ButtonFace;
+            button1.Location = new Point(285, 715);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 35);
+            button1.TabIndex = 103;
+            button1.Text = "Guardar datos";
+            button1.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -912,7 +1163,7 @@
             // 
             // panel6
             // 
-            panel6.Location = new Point(484, 89);
+            panel6.Location = new Point(484, 15);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 100);
             panel6.TabIndex = 100;
@@ -922,7 +1173,7 @@
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(226, 235);
+            label11.Location = new Point(228, 172);
             label11.Name = "label11";
             label11.Size = new Size(224, 19);
             label11.TabIndex = 99;
@@ -930,7 +1181,7 @@
             // 
             // trackZoom
             // 
-            trackZoom.Location = new Point(192, 722);
+            trackZoom.Location = new Point(196, 619);
             trackZoom.Name = "trackZoom";
             trackZoom.Size = new Size(289, 45);
             trackZoom.TabIndex = 98;
@@ -944,13 +1195,12 @@
             buttonGuardarG.FlatStyle = FlatStyle.Flat;
             buttonGuardarG.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGuardarG.ForeColor = SystemColors.ButtonFace;
-            buttonGuardarG.Location = new Point(281, 841);
+            buttonGuardarG.Location = new Point(540, 1300);
             buttonGuardarG.Name = "buttonGuardarG";
             buttonGuardarG.Size = new Size(115, 35);
             buttonGuardarG.TabIndex = 97;
             buttonGuardarG.Text = "Guardar datos";
             buttonGuardarG.UseVisualStyleBackColor = false;
-            buttonGuardarG.Click += buttonGuardarG_Click;
             // 
             // gMapControl1
             // 
@@ -960,7 +1210,7 @@
             gMapControl1.GrayScaleMode = false;
             gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             gMapControl1.LevelsKeepInMemory = 5;
-            gMapControl1.Location = new Point(4, 268);
+            gMapControl1.Location = new Point(4, 194);
             gMapControl1.MarkersEnabled = true;
             gMapControl1.MaxZoom = 2;
             gMapControl1.MinZoom = 2;
@@ -974,26 +1224,26 @@
             gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             gMapControl1.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
             gMapControl1.ShowTileGridLines = false;
-            gMapControl1.Size = new Size(712, 427);
+            gMapControl1.Size = new Size(712, 387);
             gMapControl1.TabIndex = 96;
             gMapControl1.Zoom = 0D;
             gMapControl1.MouseDoubleClick += gMapControl1_MouseDoubleClick;
             // 
-            // dataGridView1
+            // dataGridView2
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(496, 110);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(121, 60);
-            dataGridView1.TabIndex = 95;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(496, 36);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowTemplate.Height = 25;
+            dataGridView2.Size = new Size(121, 60);
+            dataGridView2.TabIndex = 95;
             // 
             // comboBox4
             // 
             comboBox4.Anchor = AnchorStyles.None;
             comboBox4.FormattingEnabled = true;
             comboBox4.Items.AddRange(new object[] { "Aguascalientes", "Tijuana", "La Paz", "Campeche", "Tuxtla Gutiérrez", "Chihuahua", "Zona centro", "Saltillo", "Colima", "Durango", "León", "Acapulco", "Pachuca", "Guadalajara", "Morelia", "Cuernavaca", "Tepic", "Monterrey", "Oaxaca", "Puebla-Tlaxcala", "Querétaro", "Cancún", "San Luis Potosí", "Culiacán", "Hermosillo", "Villahermosa", "Tampico", "Puebla-Tlaxcala", "Veracruz", "Mérida", "Zacatecas" });
-            comboBox4.Location = new Point(212, 147);
+            comboBox4.Location = new Point(228, 112);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(230, 23);
             comboBox4.TabIndex = 94;
@@ -1004,7 +1254,7 @@
             comboBox2.Anchor = AnchorStyles.None;
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Estado de México ", "Coahuila", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro ", "Quintana Roo", "San Luis Potosí ", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" });
-            comboBox2.Location = new Point(212, 89);
+            comboBox2.Location = new Point(228, 58);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(230, 23);
             comboBox2.TabIndex = 93;
@@ -1016,32 +1266,25 @@
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.Red;
-            label10.Location = new Point(226, 25);
+            label10.Location = new Point(242, 15);
             label10.Name = "label10";
             label10.Size = new Size(204, 19);
             label10.TabIndex = 92;
             label10.Text = "Tiempo válido del estudio";
             // 
-            // panel8
-            // 
-            panel8.BackColor = Color.White;
-            panel8.Location = new Point(8, 5);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(361, 28);
-            panel8.TabIndex = 77;
-            // 
-            // RegistroFormulario
+            // ListaFormulario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(752, 500);
-            Controls.Add(panel8);
-            Controls.Add(tabControl1);
+            Controls.Add(tabControl2);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(500, 500);
-            Name = "RegistroFormulario";
-            Text = "RegistroFormulario";
-            tabControl1.ResumeLayout(false);
+            Name = "ListaFormulario";
+            Text = "ListaFormulario";
+            tabControl2.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             Identificación.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -1060,23 +1303,43 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackZoom).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TabControl tabControl1;
+        private TabControl tabControl2;
         private TabPage Identificación;
         private Panel panel1;
+        private ComboBox comboBox5;
+        private ComboBox comboBox6;
+        private Sistema_de_sanciones.Templates.TextBox textBox5;
+        private Sistema_de_sanciones.Templates.TextBox textProceso;
+        private Label label4;
+        private ComboBox comboSiete;
+        private ComboBox comboSeis;
+        private ComboBox comboCinco;
+        private ComboBox comboCuatro;
+        private ComboBox comboTres;
+        private ComboBox comboDos;
+        private ComboBox comboUno;
+        private Label label2;
+        private Button buttonSiguienteP;
+        private Sistema_de_sanciones.Templates.TextBox textBox1;
+        private Label label1;
+        private Sistema_de_sanciones.Templates.TextBox textBox2;
         private ComboBox ComboProducto;
         private ComboBox ComboTecno;
         private Sistema_de_sanciones.Templates.TextBox textOtro;
         private Label labelUsuario;
         private TabPage Referencia;
         private Panel panel4;
-        private Button button2;
-        private Button button1;
+        private Button buttoAtrasP;
+        private Button buttonSiguenteS;
+        private Label label5;
+        private PictureBox pictureBox1;
+        private Button button4;
+        private Button button5;
         private ComboBox comboLimitesSistema;
         private Sistema_de_sanciones.Templates.TextBox textObjetivoR;
         private ComboBox comboUnidadUno;
@@ -1085,33 +1348,15 @@
         private Sistema_de_sanciones.Templates.TextBox textBox7;
         private Label label3;
         private TabPage Tecnología;
-        private TabPage TiempoVálido;
-        private TabPage Geografía;
-        private Button buttonSiguienteP;
-        private Sistema_de_sanciones.Templates.TextBox textBox1;
-        private Label label1;
-        private Sistema_de_sanciones.Templates.TextBox textBox2;
-        private ComboBox comboTres;
-        private ComboBox comboDos;
-        private ComboBox comboUno;
-        private ComboBox comboBox3;
-        private ComboBox comboCuatro;
-        private ComboBox comboCinco;
-        private ComboBox comboSeis;
-        private ComboBox comboSiete;
-        private Label label4;
-        private Label label2;
-        private Label label5;
-        private PictureBox pictureBox1;
-        private Button buttoAtrasP;
-        private Button buttonSiguenteS;
         private Panel panel2;
+        private Button buttonAtrasR;
+        private Button buttonSiguienteT;
         private Sistema_de_sanciones.Templates.TextBox textBox3;
         private ComboBox comboBox1;
         private Label label6;
-        private Button buttonAtrasR;
-        private Button buttonSiguienteT;
+        private TabPage TiempoVálido;
         private Panel panel3;
+        private Label label9;
         private Label label8;
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
@@ -1119,22 +1364,46 @@
         private Button buttonSiguienteC;
         private Sistema_de_sanciones.Templates.TextBox textBox4;
         private Label label7;
-        private Label label9;
+        private TabPage Geografía;
         private Panel panel5;
+        private Panel panel7;
+        private Panel panel6;
         private Label label11;
         private TrackBar trackZoom;
         private Button buttonGuardarG;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridView2;
         private ComboBox comboBox4;
         private ComboBox comboBox2;
         private Label label10;
-        private Panel panel7;
-        private Panel panel6;
-        private Panel panel8;
-        private ComboBox comboBox5;
-        private ComboBox comboBox6;
-        private Sistema_de_sanciones.Templates.TextBox textBox5;
-        private Sistema_de_sanciones.Templates.TextBox textProceso;
+        private TabPage tabPage1;
+        private Button button3;
+        private Button button2;
+        private DataGridView dataGridView3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private Button button7;
+        private Button button6;
+        private Button button1;
+        private Label label12;
+        private Button button8;
     }
 }

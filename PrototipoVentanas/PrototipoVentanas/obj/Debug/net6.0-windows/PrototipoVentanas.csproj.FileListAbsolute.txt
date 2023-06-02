@@ -61,3 +61,4 @@ C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVe
 C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.csproj.CopyComplete
+C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.ListaFormulario.resources
