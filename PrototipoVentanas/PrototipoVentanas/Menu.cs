@@ -120,18 +120,19 @@ namespace PrototipoVentanas
 
         private void btnEntradasSalidas_Click(object sender, EventArgs e)
         {
+            
             showSubMenu(panelSubEntradas);
         }
 
         private void btnRegistroEntradas_Click(object sender, EventArgs e)
         {
-            //
+            openContenedorForm(new RegistroEntradasSalidas());
             hideSubMenu();
         }
 
         private void btnListaEntradas_Click(object sender, EventArgs e)
         {
-            //
+            openContenedorForm(new ListaEntradasSalidas());
             hideSubMenu();
         }
 
