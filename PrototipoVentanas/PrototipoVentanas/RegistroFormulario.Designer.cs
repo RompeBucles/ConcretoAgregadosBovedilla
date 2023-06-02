@@ -30,6 +30,7 @@
         {
             tabControl1 = new TabControl();
             Identificación = new TabPage();
+            panel8 = new Panel();
             panel1 = new Panel();
             label4 = new Label();
             comboSiete = new ComboBox();
@@ -82,6 +83,17 @@
             textBox4 = new Sistema_de_sanciones.Templates.TextBox();
             label7 = new Label();
             Geografía = new TabPage();
+            panel5 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
+            label11 = new Label();
+            trackZoom = new TrackBar();
+            buttonGuardarG = new Button();
+            gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            dataGridView1 = new DataGridView();
+            comboBox4 = new ComboBox();
+            comboBox2 = new ComboBox();
+            label10 = new Label();
             tabControl1.SuspendLayout();
             Identificación.SuspendLayout();
             panel1.SuspendLayout();
@@ -93,6 +105,10 @@
             panel2.SuspendLayout();
             TiempoVálido.SuspendLayout();
             panel3.SuspendLayout();
+            Geografía.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)trackZoom).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -121,6 +137,14 @@
             Identificación.Text = "Identificación";
             Identificación.UseVisualStyleBackColor = true;
             // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Location = new Point(5, 2);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(361, 28);
+            panel8.TabIndex = 77;
+            // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
@@ -142,9 +166,9 @@
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
             panel1.Controls.Add(textProceso);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(-4, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(725, 900);
+            panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
             // 
             // label4
@@ -153,7 +177,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Crimson;
-            label4.Location = new Point(261, 228);
+            label4.Location = new Point(262, 141);
             label4.Name = "label4";
             label4.Size = new Size(214, 16);
             label4.TabIndex = 91;
@@ -164,7 +188,7 @@
             comboSiete.Anchor = AnchorStyles.None;
             comboSiete.FormattingEnabled = true;
             comboSiete.Items.AddRange(new object[] { "Limpieza", "Almacenamiento", "Salud, servicios sociales, belleza y bienestar", "Reparación y mantenimiento", "Venta y venta al por mayor", "Servicios de comunicación e información", "Financiero, jurídico y de seguros", "Administración y gobierno", "Defensa", "Alojamiento y gastronomía", "Educación", "Investigación y desarrollo", "Entretenimiento", "Alquiler", "Ingeniería y consultoría", "Otros servicios" });
-            comboSiete.Location = new Point(10, 423);
+            comboSiete.Location = new Point(11, 336);
             comboSiete.Name = "comboSiete";
             comboSiete.Size = new Size(213, 23);
             comboSiete.TabIndex = 90;
@@ -176,7 +200,7 @@
             comboSeis.Anchor = AnchorStyles.None;
             comboSeis.FormattingEnabled = true;
             comboSeis.Items.AddRange(new object[] { "Consumo de productos", "Uso de productos que consumen energía", "Otros usos y consumos" });
-            comboSeis.Location = new Point(492, 340);
+            comboSeis.Location = new Point(493, 253);
             comboSeis.Name = "comboSeis";
             comboSeis.Size = new Size(232, 23);
             comboSeis.TabIndex = 89;
@@ -188,7 +212,7 @@
             comboCinco.Anchor = AnchorStyles.None;
             comboCinco.FormattingEnabled = true;
             comboCinco.Items.AddRange(new object[] { "Carretera", "Ferrocarril", "Agua", "Aire", "Otros transportes" });
-            comboCinco.Location = new Point(247, 340);
+            comboCinco.Location = new Point(248, 253);
             comboCinco.Name = "comboCinco";
             comboCinco.Size = new Size(228, 23);
             comboCinco.TabIndex = 88;
@@ -200,7 +224,7 @@
             comboCuatro.Anchor = AnchorStyles.None;
             comboCuatro.FormattingEnabled = true;
             comboCuatro.Items.AddRange(new object[] { "Reutilización o utilización posterior", "Reciclaje de materiales", "Reciclaje de materias primas", "Reciclaje energético", "Vertedero", "Recogida de residuos", "Tratamiento de aguas residuales", "Tratamiento de gas bruto", "Otros servicios al final de la vida útil" });
-            comboCuatro.Location = new Point(9, 340);
+            comboCuatro.Location = new Point(10, 253);
             comboCuatro.Name = "comboCuatro";
             comboCuatro.Size = new Size(213, 23);
             comboCuatro.TabIndex = 87;
@@ -212,7 +236,7 @@
             comboTres.Anchor = AnchorStyles.None;
             comboTres.FormattingEnabled = true;
             comboTres.Items.AddRange(new object[] { "Materias primas no energéticas", "Metales y semimetales", "Productos químicos orgánicos", "Productos químicos inorgánicos", "Vidrio y cerámica", "Otros materiales minerales", "Plásticos", "Papel y cartón", "Agua", "Medios de producción agrícola", "Alimentos y materias primas renovables", "Madera", "Otros materiales" });
-            comboTres.Location = new Point(492, 262);
+            comboTres.Location = new Point(493, 175);
             comboTres.Name = "comboTres";
             comboTres.Size = new Size(232, 23);
             comboTres.TabIndex = 87;
@@ -224,7 +248,7 @@
             comboDos.Anchor = AnchorStyles.None;
             comboDos.FormattingEnabled = true;
             comboDos.Items.AddRange(new object[] { "Embalaje", "Electricidad y electrónica", "Vehículos", "Otras maquinas", "Construcción", "Electrodomésticos", "Textiles, muebles y otros interiores", "Partes no especificas", "Pinturas y preparados químicos", "Otros sistemas" });
-            comboDos.Location = new Point(247, 262);
+            comboDos.Location = new Point(248, 175);
             comboDos.Name = "comboDos";
             comboDos.Size = new Size(228, 23);
             comboDos.TabIndex = 86;
@@ -236,7 +260,7 @@
             comboUno.Anchor = AnchorStyles.None;
             comboUno.FormattingEnabled = true;
             comboUno.Items.AddRange(new object[] { "Materias primas energéticas", "Electricidad", "Calor y vapor", "Energía mecánica", "Combustibles a base de hulla", "Combustibles a base de lignito", "Combustibles a base de petróleo crudo", "Combustibles a base de gas natural", "Combustibles nucleares", "Otros combustibles no renovables", "Combustibles renovables" });
-            comboUno.Location = new Point(9, 262);
+            comboUno.Location = new Point(10, 175);
             comboUno.Name = "comboUno";
             comboUno.Size = new Size(214, 23);
             comboUno.TabIndex = 85;
@@ -248,7 +272,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(301, 209);
+            label2.Location = new Point(302, 122);
             label2.Name = "label2";
             label2.Size = new Size(133, 19);
             label2.TabIndex = 84;
@@ -262,7 +286,7 @@
             buttonSiguienteP.FlatStyle = FlatStyle.Flat;
             buttonSiguienteP.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSiguienteP.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteP.Location = new Point(319, 719);
+            buttonSiguienteP.Location = new Point(320, 632);
             buttonSiguienteP.Name = "buttonSiguienteP";
             buttonSiguienteP.Size = new Size(115, 35);
             buttonSiguienteP.TabIndex = 83;
@@ -277,7 +301,7 @@
             textBox1.BorderColor = SystemColors.ControlDarkDark;
             textBox1.BorderFocusColor = Color.Black;
             textBox1.BorderSize = 2;
-            textBox1.Location = new Point(284, 639);
+            textBox1.Location = new Point(285, 552);
             textBox1.Multiline = false;
             textBox1.Name = "textBox1";
             textBox1.Padding = new Padding(7);
@@ -292,7 +316,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(301, 501);
+            label1.Location = new Point(302, 414);
             label1.Name = "label1";
             label1.Size = new Size(148, 19);
             label1.TabIndex = 82;
@@ -305,7 +329,7 @@
             textBox2.BorderColor = SystemColors.ControlDarkDark;
             textBox2.BorderFocusColor = Color.Black;
             textBox2.BorderSize = 2;
-            textBox2.Location = new Point(284, 564);
+            textBox2.Location = new Point(285, 477);
             textBox2.Multiline = false;
             textBox2.Name = "textBox2";
             textBox2.Padding = new Padding(7);
@@ -320,7 +344,7 @@
             ComboProducto.Anchor = AnchorStyles.None;
             ComboProducto.FormattingEnabled = true;
             ComboProducto.Items.AddRange(new object[] { "Cemento", "Concreto", "Acero estructural", "Ladrillos", "Madera", "Vidrio", "Aislamiento térmico", "Pinturas y recubrimientos", "Azulejos y baldosas", "Adhesivos y selladores", "Impermeabilizantes", "Sistemas de fontanería", "Sistemas eléctricos", "Sistemas de climatización" });
-            ComboProducto.Location = new Point(9, 54);
+            ComboProducto.Location = new Point(10, -33);
             ComboProducto.Name = "ComboProducto";
             ComboProducto.Size = new Size(214, 23);
             ComboProducto.TabIndex = 0;
@@ -331,7 +355,7 @@
             ComboTecno.Anchor = AnchorStyles.None;
             ComboTecno.FormattingEnabled = true;
             ComboTecno.Items.AddRange(new object[] { "Cemento Portland", "Concreto reforzado", "Concreto premezclado", "Concreto de alto rendimiento", "Ladrillos cerámicos", "Ladrillos de hormigón", "Acero laminado en caliente", "Madera laminada encolada", "Madera tratada", "Vidrio de seguridad laminado", "Vidrio aislante", "Azulejos de cerámica esmaltada", "Baldosas de porcelana", "Espuma de poliestireno expandido (EPS)", "Lana mineral", "Membranas asfálticas", "Pinturas impermeabilizantes" });
-            ComboTecno.Location = new Point(243, 54);
+            ComboTecno.Location = new Point(244, -33);
             ComboTecno.Name = "ComboTecno";
             ComboTecno.Size = new Size(232, 23);
             ComboTecno.TabIndex = 30;
@@ -344,7 +368,7 @@
             textOtro.BorderColor = SystemColors.ControlDarkDark;
             textOtro.BorderFocusColor = Color.Black;
             textOtro.BorderSize = 2;
-            textOtro.Location = new Point(500, 47);
+            textOtro.Location = new Point(501, -40);
             textOtro.Multiline = false;
             textOtro.Name = "textOtro";
             textOtro.Padding = new Padding(7);
@@ -360,7 +384,7 @@
             labelUsuario.AutoSize = true;
             labelUsuario.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelUsuario.ForeColor = Color.Red;
-            labelUsuario.Location = new Point(323, 18);
+            labelUsuario.Location = new Point(324, 18);
             labelUsuario.Name = "labelUsuario";
             labelUsuario.Size = new Size(111, 19);
             labelUsuario.TabIndex = 29;
@@ -373,7 +397,7 @@
             textProceso.BorderColor = SystemColors.ControlDarkDark;
             textProceso.BorderFocusColor = Color.Black;
             textProceso.BorderSize = 2;
-            textProceso.Location = new Point(8, 132);
+            textProceso.Location = new Point(9, 45);
             textProceso.Multiline = false;
             textProceso.Name = "textProceso";
             textProceso.Padding = new Padding(7);
@@ -412,7 +436,7 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-17, 0);
+            panel4.Location = new Point(-4, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
@@ -815,6 +839,7 @@
             // Geografía
             // 
             Geografía.AutoScroll = true;
+            Geografía.Controls.Add(panel5);
             Geografía.Location = new Point(4, 24);
             Geografía.Name = "Geografía";
             Geografía.Size = new Size(742, 491);
@@ -822,11 +847,150 @@
             Geografía.Text = "Geografía";
             Geografía.UseVisualStyleBackColor = true;
             // 
+            // panel5
+            // 
+            panel5.Anchor = AnchorStyles.Top;
+            panel5.Controls.Add(panel7);
+            panel5.Controls.Add(panel6);
+            panel5.Controls.Add(label11);
+            panel5.Controls.Add(trackZoom);
+            panel5.Controls.Add(buttonGuardarG);
+            panel5.Controls.Add(gMapControl1);
+            panel5.Controls.Add(dataGridView1);
+            panel5.Controls.Add(comboBox4);
+            panel5.Controls.Add(comboBox2);
+            panel5.Controls.Add(label10);
+            panel5.Location = new Point(-1, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(719, 1019);
+            panel5.TabIndex = 2;
+            panel5.Paint += panel5_Paint;
+            // 
+            // panel7
+            // 
+            panel7.Location = new Point(0, -25);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(387, 23);
+            panel7.TabIndex = 102;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(484, 89);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(200, 100);
+            panel6.TabIndex = 100;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.None;
+            label11.AutoSize = true;
+            label11.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(226, 235);
+            label11.Name = "label11";
+            label11.Size = new Size(224, 19);
+            label11.TabIndex = 99;
+            label11.Text = "Represntatividad geografica";
+            // 
+            // trackZoom
+            // 
+            trackZoom.Location = new Point(192, 722);
+            trackZoom.Name = "trackZoom";
+            trackZoom.Size = new Size(289, 45);
+            trackZoom.TabIndex = 98;
+            trackZoom.ValueChanged += trackZoom_ValueChanged;
+            // 
+            // buttonGuardarG
+            // 
+            buttonGuardarG.Anchor = AnchorStyles.None;
+            buttonGuardarG.BackColor = Color.FromArgb(97, 97, 96);
+            buttonGuardarG.FlatAppearance.BorderSize = 0;
+            buttonGuardarG.FlatStyle = FlatStyle.Flat;
+            buttonGuardarG.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonGuardarG.ForeColor = SystemColors.ButtonFace;
+            buttonGuardarG.Location = new Point(281, 841);
+            buttonGuardarG.Name = "buttonGuardarG";
+            buttonGuardarG.Size = new Size(115, 35);
+            buttonGuardarG.TabIndex = 97;
+            buttonGuardarG.Text = "Guardar datos";
+            buttonGuardarG.UseVisualStyleBackColor = false;
+            buttonGuardarG.Click += buttonGuardarG_Click;
+            // 
+            // gMapControl1
+            // 
+            gMapControl1.Bearing = 0F;
+            gMapControl1.CanDragMap = true;
+            gMapControl1.EmptyTileColor = Color.Navy;
+            gMapControl1.GrayScaleMode = false;
+            gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            gMapControl1.LevelsKeepInMemory = 5;
+            gMapControl1.Location = new Point(4, 268);
+            gMapControl1.MarkersEnabled = true;
+            gMapControl1.MaxZoom = 2;
+            gMapControl1.MinZoom = 2;
+            gMapControl1.MouseWheelZoomEnabled = true;
+            gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            gMapControl1.Name = "gMapControl1";
+            gMapControl1.NegativeMode = false;
+            gMapControl1.PolygonsEnabled = true;
+            gMapControl1.RetryLoadTile = 0;
+            gMapControl1.RoutesEnabled = true;
+            gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            gMapControl1.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
+            gMapControl1.ShowTileGridLines = false;
+            gMapControl1.Size = new Size(712, 427);
+            gMapControl1.TabIndex = 96;
+            gMapControl1.Zoom = 0D;
+            gMapControl1.MouseDoubleClick += gMapControl1_MouseDoubleClick;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(496, 110);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(121, 60);
+            dataGridView1.TabIndex = 95;
+            // 
+            // comboBox4
+            // 
+            comboBox4.Anchor = AnchorStyles.None;
+            comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "Aguascalientes", "Tijuana", "La Paz", "Campeche", "Tuxtla Gutiérrez", "Chihuahua", "Zona centro", "Saltillo", "Colima", "Durango", "León", "Acapulco", "Pachuca", "Guadalajara", "Morelia", "Cuernavaca", "Tepic", "Monterrey", "Oaxaca", "Puebla-Tlaxcala", "Querétaro", "Cancún", "San Luis Potosí", "Culiacán", "Hermosillo", "Villahermosa", "Tampico", "Puebla-Tlaxcala", "Veracruz", "Mérida", "Zacatecas" });
+            comboBox4.Location = new Point(212, 147);
+            comboBox4.Name = "comboBox4";
+            comboBox4.Size = new Size(230, 23);
+            comboBox4.TabIndex = 94;
+            comboBox4.Text = "Nombre del área*";
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.None;
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Estado de México ", "Coahuila", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro ", "Quintana Roo", "San Luis Potosí ", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" });
+            comboBox2.Location = new Point(212, 89);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(230, 23);
+            comboBox2.TabIndex = 93;
+            comboBox2.Text = "Estado*";
+            // 
+            // label10
+            // 
+            label10.Anchor = AnchorStyles.None;
+            label10.AutoSize = true;
+            label10.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.Red;
+            label10.Location = new Point(226, 25);
+            label10.Name = "label10";
+            label10.Size = new Size(204, 19);
+            label10.TabIndex = 92;
+            label10.Text = "Tiempo válido del estudio";
+            // 
             // RegistroFormulario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(752, 500);
+            Controls.Add(panel8);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(500, 500);
@@ -847,6 +1011,11 @@
             TiempoVálido.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            Geografía.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)trackZoom).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -907,5 +1076,17 @@
         private Sistema_de_sanciones.Templates.TextBox textBox4;
         private Label label7;
         private Label label9;
+        private Panel panel5;
+        private Label label11;
+        private TrackBar trackZoom;
+        private Button buttonGuardarG;
+        private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private DataGridView dataGridView1;
+        private ComboBox comboBox4;
+        private ComboBox comboBox2;
+        private Label label10;
+        private Panel panel7;
+        private Panel panel6;
+        private Panel panel8;
     }
 }
