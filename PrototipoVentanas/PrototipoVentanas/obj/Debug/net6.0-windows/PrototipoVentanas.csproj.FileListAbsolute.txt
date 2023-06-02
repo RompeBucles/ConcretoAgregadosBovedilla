@@ -64,3 +64,5 @@ C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVe
 C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.ListaFormulario.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.RegistroEntradasSalidas.resources
 C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.ListaEntradasSalidas.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.NavegacionProcesos.resources
+C:\Users\cacam\OneDrive\Documentos\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.Bitacora.resources

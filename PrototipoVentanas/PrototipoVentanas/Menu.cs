@@ -15,7 +15,7 @@ namespace PrototipoVentanas
 {
     public partial class Menu : Form
     {
-        
+
         private Login logHandler;
         int t;
         public Menu(Login log, int tipo)
@@ -72,14 +72,14 @@ namespace PrototipoVentanas
 
         private void showSubMenu(Panel subMenu)
         {
-            if(subMenu.Visible == false)
+            if (subMenu.Visible == false)
             {
                 hideSubMenu();
                 subMenu.Visible = true;
             }
             else
             {
-                subMenu.Visible = false;   
+                subMenu.Visible = false;
             }
 
         }
@@ -120,7 +120,7 @@ namespace PrototipoVentanas
 
         private void btnEntradasSalidas_Click(object sender, EventArgs e)
         {
-            
+
             showSubMenu(panelSubEntradas);
         }
 
@@ -138,12 +138,14 @@ namespace PrototipoVentanas
 
         private void btnNavegacion_Click(object sender, EventArgs e)
         {
-
+            openContenedorForm(new NavegacionProcesos());
+            hideSubMenu();
         }
 
         private void btnBitacora_Click(object sender, EventArgs e)
         {
-
+            openContenedorForm(new Bitacora());
+            hideSubMenu();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -161,14 +163,14 @@ namespace PrototipoVentanas
             }
         }
 
-        private Form activeForm = null; 
+        private Form activeForm = null;
         private void openContenedorForm(Form contnedorForm)
         {
             if (activeForm != null)
                 activeForm.Close();
             activeForm = contnedorForm;
             contnedorForm.TopLevel = false;
-            contnedorForm.FormBorderStyle=FormBorderStyle.None;
+            contnedorForm.FormBorderStyle = FormBorderStyle.None;
             contnedorForm.Dock = DockStyle.Fill;
             panelContenedor.Controls.Add(contnedorForm);
             panelContenedor.Tag = contnedorForm;
