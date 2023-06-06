@@ -55,14 +55,11 @@
             dataGridViewCheckBoxColumn1 = new DataGridViewCheckBoxColumn();
             Identificación = new TabPage();
             panel1 = new Panel();
+            textBox5 = new Sistema_de_sanciones.Templates.TextBox();
             label12 = new Label();
             button8 = new Button();
-            comboBox5 = new ComboBox();
-            comboBox6 = new ComboBox();
-            textBox5 = new Sistema_de_sanciones.Templates.TextBox();
             textProceso = new Sistema_de_sanciones.Templates.TextBox();
             label4 = new Label();
-            comboSiete = new ComboBox();
             comboSeis = new ComboBox();
             comboCinco = new ComboBox();
             comboCuatro = new ComboBox();
@@ -80,6 +77,7 @@
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
+            label13 = new Label();
             button7 = new Button();
             button6 = new Button();
             buttoAtrasP = new Button();
@@ -330,14 +328,11 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
+            panel1.Controls.Add(textBox5);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(button8);
-            panel1.Controls.Add(comboBox5);
-            panel1.Controls.Add(comboBox6);
-            panel1.Controls.Add(textBox5);
             panel1.Controls.Add(textProceso);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(comboSiete);
             panel1.Controls.Add(comboSeis);
             panel1.Controls.Add(comboCinco);
             panel1.Controls.Add(comboCuatro);
@@ -353,10 +348,27 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-6, 3);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
+            // 
+            // textBox5
+            // 
+            textBox5.Anchor = AnchorStyles.None;
+            textBox5.BackColor = SystemColors.Control;
+            textBox5.BorderColor = SystemColors.ControlDarkDark;
+            textBox5.BorderFocusColor = Color.Black;
+            textBox5.BorderSize = 2;
+            textBox5.Location = new Point(262, 628);
+            textBox5.Multiline = false;
+            textBox5.Name = "textBox5";
+            textBox5.Padding = new Padding(7);
+            textBox5.PasswordChar = false;
+            textBox5.Size = new Size(191, 30);
+            textBox5.TabIndex = 98;
+            textBox5.Texts = "Correo electrónico*";
+            textBox5.UnderlinedStyle = true;
             // 
             // label12
             // 
@@ -385,45 +397,6 @@
             button8.Text = "Siguiente";
             button8.UseVisualStyleBackColor = false;
             // 
-            // comboBox5
-            // 
-            comboBox5.Anchor = AnchorStyles.None;
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { "Cemento", "Concreto", "Acero estructural", "Ladrillos", "Madera", "Vidrio", "Aislamiento térmico", "Pinturas y recubrimientos", "Azulejos y baldosas", "Adhesivos y selladores", "Impermeabilizantes", "Sistemas de fontanería", "Sistemas eléctricos", "Sistemas de climatización" });
-            comboBox5.Location = new Point(7, 164);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(214, 23);
-            comboBox5.TabIndex = 92;
-            comboBox5.Text = "Producto*";
-            // 
-            // comboBox6
-            // 
-            comboBox6.Anchor = AnchorStyles.None;
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Items.AddRange(new object[] { "Cemento Portland", "Concreto reforzado", "Concreto premezclado", "Concreto de alto rendimiento", "Ladrillos cerámicos", "Ladrillos de hormigón", "Acero laminado en caliente", "Madera laminada encolada", "Madera tratada", "Vidrio de seguridad laminado", "Vidrio aislante", "Azulejos de cerámica esmaltada", "Baldosas de porcelana", "Espuma de poliestireno expandido (EPS)", "Lana mineral", "Membranas asfálticas", "Pinturas impermeabilizantes" });
-            comboBox6.Location = new Point(241, 164);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(232, 23);
-            comboBox6.TabIndex = 93;
-            comboBox6.Text = "Tecnología*";
-            // 
-            // textBox5
-            // 
-            textBox5.Anchor = AnchorStyles.None;
-            textBox5.BackColor = SystemColors.Control;
-            textBox5.BorderColor = SystemColors.ControlDarkDark;
-            textBox5.BorderFocusColor = Color.Black;
-            textBox5.BorderSize = 2;
-            textBox5.Location = new Point(498, 157);
-            textBox5.Multiline = false;
-            textBox5.Name = "textBox5";
-            textBox5.Padding = new Padding(7);
-            textBox5.PasswordChar = false;
-            textBox5.Size = new Size(222, 30);
-            textBox5.TabIndex = 94;
-            textBox5.Texts = "Otro*";
-            textBox5.UnderlinedStyle = true;
-            // 
             // textProceso
             // 
             textProceso.Anchor = AnchorStyles.None;
@@ -431,12 +404,12 @@
             textProceso.BorderColor = SystemColors.ControlDarkDark;
             textProceso.BorderFocusColor = Color.Black;
             textProceso.BorderSize = 2;
-            textProceso.Location = new Point(6, 242);
+            textProceso.Location = new Point(15, 149);
             textProceso.Multiline = false;
             textProceso.Name = "textProceso";
             textProceso.Padding = new Padding(7);
             textProceso.PasswordChar = false;
-            textProceso.Size = new Size(214, 30);
+            textProceso.Size = new Size(219, 30);
             textProceso.TabIndex = 95;
             textProceso.Texts = "Nombre del proceso*";
             textProceso.UnderlinedStyle = true;
@@ -452,17 +425,6 @@
             label4.Size = new Size(214, 16);
             label4.TabIndex = 91;
             label4.Text = "Solo puede elegir una sola lista*";
-            // 
-            // comboSiete
-            // 
-            comboSiete.Anchor = AnchorStyles.None;
-            comboSiete.FormattingEnabled = true;
-            comboSiete.Items.AddRange(new object[] { "Limpieza", "Almacenamiento", "Salud, servicios sociales, belleza y bienestar", "Reparación y mantenimiento", "Venta y venta al por mayor", "Servicios de comunicación e información", "Financiero, jurídico y de seguros", "Administración y gobierno", "Defensa", "Alojamiento y gastronomía", "Educación", "Investigación y desarrollo", "Entretenimiento", "Alquiler", "Ingeniería y consultoría", "Otros servicios" });
-            comboSiete.Location = new Point(244, 570);
-            comboSiete.Name = "comboSiete";
-            comboSiete.Size = new Size(213, 23);
-            comboSiete.TabIndex = 90;
-            comboSiete.Text = "Otros servicios*";
             // 
             // comboSeis
             // 
@@ -592,7 +554,7 @@
             textBox2.BorderColor = SystemColors.ControlDarkDark;
             textBox2.BorderFocusColor = Color.Black;
             textBox2.BorderSize = 2;
-            textBox2.Location = new Point(248, 619);
+            textBox2.Location = new Point(262, 565);
             textBox2.Multiline = false;
             textBox2.Name = "textBox2";
             textBox2.Padding = new Padding(7);
@@ -669,6 +631,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.AutoScroll = true;
+            panel4.Controls.Add(label13);
             panel4.Controls.Add(button7);
             panel4.Controls.Add(button6);
             panel4.Controls.Add(buttoAtrasP);
@@ -684,10 +647,21 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-40, 0);
+            panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.None;
+            label13.AutoSize = true;
+            label13.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(324, 144);
+            label13.Name = "label13";
+            label13.Size = new Size(48, 19);
+            label13.TabIndex = 101;
+            label13.Text = "Valor";
             // 
             // button7
             // 
@@ -909,7 +883,7 @@
             panel2.Controls.Add(textBox3);
             panel2.Controls.Add(comboBox1);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(-4, 0);
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(736, 468);
             panel2.TabIndex = 0;
@@ -1133,7 +1107,7 @@
             panel5.Controls.Add(comboBox4);
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-3, 3);
+            panel5.Location = new Point(0, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
@@ -1175,9 +1149,9 @@
             label11.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label11.Location = new Point(228, 172);
             label11.Name = "label11";
-            label11.Size = new Size(224, 19);
+            label11.Size = new Size(233, 19);
             label11.TabIndex = 99;
-            label11.Text = "Represntatividad geografica";
+            label11.Text = "Representatividad geografica";
             // 
             // trackZoom
             // 
@@ -1311,12 +1285,8 @@
         private TabControl tabControl2;
         private TabPage Identificación;
         private Panel panel1;
-        private ComboBox comboBox5;
-        private ComboBox comboBox6;
-        private Sistema_de_sanciones.Templates.TextBox textBox5;
         private Sistema_de_sanciones.Templates.TextBox textProceso;
         private Label label4;
-        private ComboBox comboSiete;
         private ComboBox comboSeis;
         private ComboBox comboCinco;
         private ComboBox comboCuatro;
@@ -1405,5 +1375,7 @@
         private Button button1;
         private Label label12;
         private Button button8;
+        private Sistema_de_sanciones.Templates.TextBox textBox5;
+        private Label label13;
     }
 }

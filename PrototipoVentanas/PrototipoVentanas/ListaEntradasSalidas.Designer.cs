@@ -47,6 +47,7 @@
             Column6 = new DataGridViewCheckBoxColumn();
             EditarUsuarios = new TabPage();
             panel1 = new Panel();
+            button4 = new Button();
             button3 = new Button();
             textBox3 = new Sistema_de_sanciones.Templates.TextBox();
             label5 = new Label();
@@ -65,7 +66,6 @@
             ComboTecno = new ComboBox();
             textOtro = new Sistema_de_sanciones.Templates.TextBox();
             labelUsuario = new Label();
-            button4 = new Button();
             tabControl1.SuspendLayout();
             ListaUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -237,10 +237,25 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-4, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(723, 747);
             panel1.TabIndex = 78;
+            // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.None;
+            button4.BackColor = Color.FromArgb(97, 97, 96);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = SystemColors.ButtonFace;
+            button4.Location = new Point(302, 625);
+            button4.Name = "button4";
+            button4.Size = new Size(115, 35);
+            button4.TabIndex = 105;
+            button4.Text = "Guardar datos";
+            button4.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
@@ -475,21 +490,6 @@
             labelUsuario.Size = new Size(111, 19);
             labelUsuario.TabIndex = 29;
             labelUsuario.Text = "Identificación";
-            // 
-            // button4
-            // 
-            button4.Anchor = AnchorStyles.None;
-            button4.BackColor = Color.FromArgb(97, 97, 96);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(302, 625);
-            button4.Name = "button4";
-            button4.Size = new Size(115, 35);
-            button4.TabIndex = 105;
-            button4.Text = "Guardar datos";
-            button4.UseVisualStyleBackColor = false;
             // 
             // ListaEntradasSalidas
             // 

@@ -54,6 +54,7 @@
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
+            label13 = new Label();
             buttoAtrasP = new Button();
             buttonSiguenteS = new Button();
             label5 = new Label();
@@ -164,7 +165,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(6, 3);
+            panel1.Location = new Point(0, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
@@ -460,6 +461,7 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.AutoScroll = true;
+            panel4.Controls.Add(label13);
             panel4.Controls.Add(buttoAtrasP);
             panel4.Controls.Add(buttonSiguenteS);
             panel4.Controls.Add(label5);
@@ -477,6 +479,17 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.None;
+            label13.AutoSize = true;
+            label13.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(335, 104);
+            label13.Name = "label13";
+            label13.Size = new Size(48, 19);
+            label13.TabIndex = 102;
+            label13.Text = "Valor";
             // 
             // buttoAtrasP
             // 
@@ -924,9 +937,9 @@
             label11.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label11.Location = new Point(226, 235);
             label11.Name = "label11";
-            label11.Size = new Size(224, 19);
+            label11.Size = new Size(233, 19);
             label11.TabIndex = 99;
-            label11.Text = "Represntatividad geografica";
+            label11.Text = "Representatividad geografica";
             // 
             // trackZoom
             // 
@@ -1025,7 +1038,7 @@
             // panel8
             // 
             panel8.BackColor = Color.White;
-            panel8.Location = new Point(8, 5);
+            panel8.Location = new Point(8, 3);
             panel8.Name = "panel8";
             panel8.Size = new Size(361, 28);
             panel8.TabIndex = 77;
@@ -1136,5 +1149,6 @@
         private ComboBox comboBox6;
         private Sistema_de_sanciones.Templates.TextBox textBox5;
         private Sistema_de_sanciones.Templates.TextBox textProceso;
+        private Label label13;
     }
 }

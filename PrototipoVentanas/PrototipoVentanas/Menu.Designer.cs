@@ -83,7 +83,7 @@
             btnBitacora.Dock = DockStyle.Top;
             btnBitacora.FlatAppearance.BorderSize = 0;
             btnBitacora.FlatStyle = FlatStyle.Flat;
-            btnBitacora.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBitacora.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnBitacora.Location = new Point(0, 549);
             btnBitacora.Name = "btnBitacora";
             btnBitacora.Size = new Size(200, 35);
@@ -98,7 +98,7 @@
             btnNavegacion.Dock = DockStyle.Top;
             btnNavegacion.FlatAppearance.BorderSize = 0;
             btnNavegacion.FlatStyle = FlatStyle.Flat;
-            btnNavegacion.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNavegacion.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnNavegacion.Location = new Point(0, 504);
             btnNavegacion.Name = "btnNavegacion";
             btnNavegacion.Size = new Size(200, 45);
@@ -140,7 +140,7 @@
             btnListaEntradas.Dock = DockStyle.Top;
             btnListaEntradas.FlatAppearance.BorderSize = 0;
             btnListaEntradas.FlatStyle = FlatStyle.Flat;
-            btnListaEntradas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnListaEntradas.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnListaEntradas.Location = new Point(0, 35);
             btnListaEntradas.Name = "btnListaEntradas";
             btnListaEntradas.Size = new Size(200, 35);
@@ -155,7 +155,7 @@
             btnRegistroEntradas.Dock = DockStyle.Top;
             btnRegistroEntradas.FlatAppearance.BorderSize = 0;
             btnRegistroEntradas.FlatStyle = FlatStyle.Flat;
-            btnRegistroEntradas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistroEntradas.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistroEntradas.Location = new Point(0, 0);
             btnRegistroEntradas.Name = "btnRegistroEntradas";
             btnRegistroEntradas.Size = new Size(200, 35);
@@ -170,12 +170,12 @@
             btnEntradasSalidas.Dock = DockStyle.Top;
             btnEntradasSalidas.FlatAppearance.BorderSize = 0;
             btnEntradasSalidas.FlatStyle = FlatStyle.Flat;
-            btnEntradasSalidas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEntradasSalidas.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnEntradasSalidas.Location = new Point(0, 387);
             btnEntradasSalidas.Name = "btnEntradasSalidas";
             btnEntradasSalidas.Size = new Size(200, 45);
             btnEntradasSalidas.TabIndex = 7;
-            btnEntradasSalidas.Text = "Entradas y salidas";
+            btnEntradasSalidas.Text = "Entradas / salidas";
             btnEntradasSalidas.UseVisualStyleBackColor = false;
             btnEntradasSalidas.Click += btnEntradasSalidas_Click;
             // 
@@ -196,7 +196,7 @@
             btnListaDatos.Dock = DockStyle.Top;
             btnListaDatos.FlatAppearance.BorderSize = 0;
             btnListaDatos.FlatStyle = FlatStyle.Flat;
-            btnListaDatos.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnListaDatos.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnListaDatos.Location = new Point(0, 35);
             btnListaDatos.Name = "btnListaDatos";
             btnListaDatos.Size = new Size(200, 31);
@@ -211,7 +211,7 @@
             btnRegistro.Dock = DockStyle.Top;
             btnRegistro.FlatAppearance.BorderSize = 0;
             btnRegistro.FlatStyle = FlatStyle.Flat;
-            btnRegistro.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistro.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistro.Location = new Point(0, 0);
             btnRegistro.Name = "btnRegistro";
             btnRegistro.Size = new Size(200, 35);
@@ -226,7 +226,7 @@
             btnFormulario.Dock = DockStyle.Top;
             btnFormulario.FlatAppearance.BorderSize = 0;
             btnFormulario.FlatStyle = FlatStyle.Flat;
-            btnFormulario.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFormulario.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnFormulario.Location = new Point(0, 274);
             btnFormulario.Name = "btnFormulario";
             btnFormulario.Size = new Size(200, 45);
@@ -252,7 +252,7 @@
             btnListarUsuarios.Dock = DockStyle.Top;
             btnListarUsuarios.FlatAppearance.BorderSize = 0;
             btnListarUsuarios.FlatStyle = FlatStyle.Flat;
-            btnListarUsuarios.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnListarUsuarios.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnListarUsuarios.Location = new Point(0, 35);
             btnListarUsuarios.Name = "btnListarUsuarios";
             btnListarUsuarios.Size = new Size(200, 35);
@@ -267,7 +267,7 @@
             btnRegistrarUsuario.Dock = DockStyle.Top;
             btnRegistrarUsuario.FlatAppearance.BorderSize = 0;
             btnRegistrarUsuario.FlatStyle = FlatStyle.Flat;
-            btnRegistrarUsuario.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistrarUsuario.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistrarUsuario.Location = new Point(0, 0);
             btnRegistrarUsuario.Name = "btnRegistrarUsuario";
             btnRegistrarUsuario.Size = new Size(200, 35);
@@ -282,7 +282,7 @@
             btnUsuarios.Dock = DockStyle.Top;
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatStyle = FlatStyle.Flat;
-            btnUsuarios.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUsuarios.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnUsuarios.Location = new Point(0, 158);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(200, 45);
