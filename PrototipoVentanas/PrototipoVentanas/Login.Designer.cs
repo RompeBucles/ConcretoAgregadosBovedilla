@@ -79,7 +79,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(179, 41, 45);
+            label2.ForeColor = Color.FromArgb(190, 31, 36);
             label2.Location = new Point(397, 232);
             label2.Name = "label2";
             label2.Size = new Size(191, 32);
@@ -100,9 +100,10 @@
             // btnEntrar
             // 
             btnEntrar.Anchor = AnchorStyles.None;
-            btnEntrar.BackColor = SystemColors.ScrollBar;
+            btnEntrar.BackColor = Color.FromArgb(190, 31, 36);
             btnEntrar.FlatStyle = FlatStyle.Flat;
             btnEntrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEntrar.ForeColor = Color.White;
             btnEntrar.Location = new Point(450, 432);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.Size = new Size(84, 33);
@@ -114,9 +115,9 @@
             // textUsuario
             // 
             textUsuario.Anchor = AnchorStyles.None;
-            textUsuario.BackColor = SystemColors.Control;
-            textUsuario.BorderColor = SystemColors.ControlDarkDark;
-            textUsuario.BorderFocusColor = Color.Black;
+            textUsuario.BackColor = Color.FromArgb(242, 230, 230);
+            textUsuario.BorderColor = Color.Black;
+            textUsuario.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textUsuario.BorderSize = 2;
             textUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             textUsuario.Location = new Point(349, 294);
@@ -135,9 +136,9 @@
             // textPassword
             // 
             textPassword.Anchor = AnchorStyles.None;
-            textPassword.BackColor = SystemColors.Control;
-            textPassword.BorderColor = SystemColors.ControlDarkDark;
-            textPassword.BorderFocusColor = Color.Black;
+            textPassword.BackColor = Color.FromArgb(242, 230, 230);
+            textPassword.BorderColor = Color.Black;
+            textPassword.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textPassword.BorderSize = 2;
             textPassword.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             textPassword.Location = new Point(349, 355);
@@ -157,6 +158,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(242, 230, 230);
             ClientSize = new Size(984, 561);
             Controls.Add(tableLayoutPanel1);
             MinimumSize = new Size(500, 500);

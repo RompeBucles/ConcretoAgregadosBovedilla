@@ -63,6 +63,7 @@ namespace PrototipoVentanas
             {
                 this.Hide();
                 new Menu(this, 0).Show();
+
             }
             else if (usuario == "Usuario")
             {

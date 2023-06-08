@@ -40,6 +40,11 @@
             Editar = new DataGridViewButtonColumn();
             Column6 = new DataGridViewCheckBoxColumn();
             EditarUsuarios = new TabPage();
+            textBox5 = new Sistema_de_sanciones.Templates.TextBox();
+            textBox2 = new Sistema_de_sanciones.Templates.TextBox();
+            label1 = new Label();
+            radioBtnUser = new RadioButton();
+            radioBtnAdmin = new RadioButton();
             label3 = new Label();
             label2 = new Label();
             textBox8 = new Sistema_de_sanciones.Templates.TextBox();
@@ -65,11 +70,6 @@
             textPrimerApellido = new Sistema_de_sanciones.Templates.TextBox();
             textNombres = new Sistema_de_sanciones.Templates.TextBox();
             label9 = new Label();
-            label1 = new Label();
-            radioBtnUser = new RadioButton();
-            radioBtnAdmin = new RadioButton();
-            textBox5 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox2 = new Sistema_de_sanciones.Templates.TextBox();
             tabControl1.SuspendLayout();
             ListaUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -91,7 +91,7 @@
             // 
             // ListaUsuario
             // 
-            ListaUsuario.BackColor = SystemColors.Control;
+            ListaUsuario.BackColor = Color.FromArgb(242, 230, 230);
             ListaUsuario.Controls.Add(button1);
             ListaUsuario.Controls.Add(dataGridView1);
             ListaUsuario.Location = new Point(4, 24);
@@ -104,7 +104,7 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(97, 97, 96);
+            button1.BackColor = Color.FromArgb(190, 31, 36);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -122,6 +122,7 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.FromArgb(242, 230, 230);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Editar, Column6 });
             dataGridView1.Location = new Point(0, 0);
@@ -168,7 +169,7 @@
             // 
             // EditarUsuarios
             // 
-            EditarUsuarios.BackColor = SystemColors.Control;
+            EditarUsuarios.BackColor = Color.FromArgb(242, 230, 230);
             EditarUsuarios.Controls.Add(textBox5);
             EditarUsuarios.Controls.Add(textBox2);
             EditarUsuarios.Controls.Add(label1);
@@ -192,13 +193,89 @@
             EditarUsuarios.TabIndex = 1;
             EditarUsuarios.Text = "Editar Usuario";
             // 
+            // textBox5
+            // 
+            textBox5.Anchor = AnchorStyles.None;
+            textBox5.BackColor = SystemColors.Control;
+            textBox5.BorderColor = Color.Black;
+            textBox5.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textBox5.BorderSize = 2;
+            textBox5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox5.Location = new Point(555, 149);
+            textBox5.Multiline = false;
+            textBox5.Name = "textBox5";
+            textBox5.Padding = new Padding(7, 8, 7, 8);
+            textBox5.PasswordChar = false;
+            textBox5.Size = new Size(196, 36);
+            textBox5.TabIndex = 83;
+            textBox5.Texts = "Teléfono*";
+            textBox5.UnderlinedStyle = true;
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.None;
+            textBox2.BackColor = SystemColors.Control;
+            textBox2.BorderColor = Color.Black;
+            textBox2.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textBox2.BorderSize = 2;
+            textBox2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Location = new Point(555, 59);
+            textBox2.Multiline = false;
+            textBox2.Name = "textBox2";
+            textBox2.Padding = new Padding(7, 8, 7, 8);
+            textBox2.PasswordChar = false;
+            textBox2.Size = new Size(198, 36);
+            textBox2.TabIndex = 82;
+            textBox2.Texts = "Apellido materno";
+            textBox2.UnderlinedStyle = true;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(190, 31, 36);
+            label1.Location = new Point(80, 134);
+            label1.Name = "label1";
+            label1.Size = new Size(46, 16);
+            label1.TabIndex = 81;
+            label1.Text = "Perfil*";
+            // 
+            // radioBtnUser
+            // 
+            radioBtnUser.Anchor = AnchorStyles.None;
+            radioBtnUser.AutoSize = true;
+            radioBtnUser.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            radioBtnUser.ForeColor = Color.FromArgb(190, 31, 36);
+            radioBtnUser.Location = new Point(131, 164);
+            radioBtnUser.Name = "radioBtnUser";
+            radioBtnUser.Size = new Size(73, 21);
+            radioBtnUser.TabIndex = 80;
+            radioBtnUser.Text = "Usuario";
+            radioBtnUser.UseVisualStyleBackColor = true;
+            // 
+            // radioBtnAdmin
+            // 
+            radioBtnAdmin.Anchor = AnchorStyles.None;
+            radioBtnAdmin.AutoSize = true;
+            radioBtnAdmin.Checked = true;
+            radioBtnAdmin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            radioBtnAdmin.ForeColor = Color.FromArgb(190, 31, 36);
+            radioBtnAdmin.Location = new Point(6, 164);
+            radioBtnAdmin.Name = "radioBtnAdmin";
+            radioBtnAdmin.Size = new Size(115, 21);
+            radioBtnAdmin.TabIndex = 79;
+            radioBtnAdmin.TabStop = true;
+            radioBtnAdmin.Text = "Administrador";
+            radioBtnAdmin.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(555, 238);
+            label3.ForeColor = Color.FromArgb(190, 31, 36);
+            label3.Location = new Point(555, 248);
             label3.Name = "label3";
             label3.Size = new Size(151, 16);
             label3.TabIndex = 78;
@@ -209,8 +286,8 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.DimGray;
-            label2.Location = new Point(272, 238);
+            label2.ForeColor = Color.FromArgb(190, 31, 36);
+            label2.Location = new Point(272, 248);
             label2.Name = "label2";
             label2.Size = new Size(135, 16);
             label2.TabIndex = 77;
@@ -220,15 +297,16 @@
             // 
             textBox8.Anchor = AnchorStyles.None;
             textBox8.BackColor = SystemColors.Control;
-            textBox8.BorderColor = SystemColors.ControlDarkDark;
-            textBox8.BorderFocusColor = Color.Black;
+            textBox8.BorderColor = Color.Black;
+            textBox8.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textBox8.BorderSize = 2;
-            textBox8.Location = new Point(555, 268);
+            textBox8.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox8.Location = new Point(555, 277);
             textBox8.Multiline = false;
             textBox8.Name = "textBox8";
-            textBox8.Padding = new Padding(7);
+            textBox8.Padding = new Padding(7, 8, 7, 8);
             textBox8.PasswordChar = true;
-            textBox8.Size = new Size(196, 30);
+            textBox8.Size = new Size(196, 36);
             textBox8.TabIndex = 75;
             textBox8.Texts = "Nombre de usuario*";
             textBox8.UnderlinedStyle = true;
@@ -237,15 +315,16 @@
             // 
             textBox7.Anchor = AnchorStyles.None;
             textBox7.BackColor = SystemColors.Control;
-            textBox7.BorderColor = SystemColors.ControlDarkDark;
-            textBox7.BorderFocusColor = Color.Black;
+            textBox7.BorderColor = Color.Black;
+            textBox7.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textBox7.BorderSize = 2;
-            textBox7.Location = new Point(272, 268);
+            textBox7.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox7.Location = new Point(272, 277);
             textBox7.Multiline = false;
             textBox7.Name = "textBox7";
-            textBox7.Padding = new Padding(7);
+            textBox7.Padding = new Padding(7, 8, 7, 8);
             textBox7.PasswordChar = true;
-            textBox7.Size = new Size(196, 30);
+            textBox7.Size = new Size(196, 36);
             textBox7.TabIndex = 74;
             textBox7.Texts = "Contraseña*";
             textBox7.UnderlinedStyle = true;
@@ -254,15 +333,16 @@
             // 
             textBox6.Anchor = AnchorStyles.None;
             textBox6.BackColor = SystemColors.Control;
-            textBox6.BorderColor = SystemColors.ControlDarkDark;
-            textBox6.BorderFocusColor = Color.Black;
+            textBox6.BorderColor = Color.Black;
+            textBox6.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textBox6.BorderSize = 2;
-            textBox6.Location = new Point(9, 268);
+            textBox6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox6.Location = new Point(9, 277);
             textBox6.Multiline = false;
             textBox6.Name = "textBox6";
-            textBox6.Padding = new Padding(7);
+            textBox6.Padding = new Padding(7, 8, 7, 8);
             textBox6.PasswordChar = false;
-            textBox6.Size = new Size(196, 30);
+            textBox6.Size = new Size(196, 36);
             textBox6.TabIndex = 73;
             textBox6.Texts = "Usuario*";
             textBox6.UnderlinedStyle = true;
@@ -271,15 +351,16 @@
             // 
             textBox4.Anchor = AnchorStyles.None;
             textBox4.BackColor = SystemColors.Control;
-            textBox4.BorderColor = SystemColors.ControlDarkDark;
-            textBox4.BorderFocusColor = Color.Black;
+            textBox4.BorderColor = Color.Black;
+            textBox4.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textBox4.BorderSize = 2;
-            textBox4.Location = new Point(272, 155);
+            textBox4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox4.Location = new Point(272, 149);
             textBox4.Multiline = false;
             textBox4.Name = "textBox4";
-            textBox4.Padding = new Padding(7);
+            textBox4.Padding = new Padding(7, 8, 7, 8);
             textBox4.PasswordChar = false;
-            textBox4.Size = new Size(212, 30);
+            textBox4.Size = new Size(212, 36);
             textBox4.TabIndex = 71;
             textBox4.Texts = "Correo electrónico*";
             textBox4.UnderlinedStyle = true;
@@ -288,15 +369,16 @@
             // 
             textBox1.Anchor = AnchorStyles.None;
             textBox1.BackColor = SystemColors.Control;
-            textBox1.BorderColor = SystemColors.ControlDarkDark;
-            textBox1.BorderFocusColor = Color.Black;
+            textBox1.BorderColor = Color.Black;
+            textBox1.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textBox1.BorderSize = 2;
-            textBox1.Location = new Point(272, 52);
+            textBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(272, 59);
             textBox1.Multiline = false;
             textBox1.Name = "textBox1";
-            textBox1.Padding = new Padding(7);
+            textBox1.Padding = new Padding(7, 8, 7, 8);
             textBox1.PasswordChar = false;
-            textBox1.Size = new Size(212, 30);
+            textBox1.Size = new Size(212, 36);
             textBox1.TabIndex = 69;
             textBox1.Texts = "Apellido paterno*";
             textBox1.UnderlinedStyle = true;
@@ -305,15 +387,16 @@
             // 
             textUsuario.Anchor = AnchorStyles.None;
             textUsuario.BackColor = SystemColors.Control;
-            textUsuario.BorderColor = SystemColors.ControlDarkDark;
-            textUsuario.BorderFocusColor = Color.Black;
+            textUsuario.BorderColor = Color.Black;
+            textUsuario.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textUsuario.BorderSize = 2;
-            textUsuario.Location = new Point(9, 52);
+            textUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textUsuario.Location = new Point(9, 59);
             textUsuario.Multiline = false;
             textUsuario.Name = "textUsuario";
-            textUsuario.Padding = new Padding(7);
+            textUsuario.Padding = new Padding(7, 8, 7, 8);
             textUsuario.PasswordChar = false;
-            textUsuario.Size = new Size(191, 30);
+            textUsuario.Size = new Size(191, 36);
             textUsuario.TabIndex = 68;
             textUsuario.Texts = "Nombre*";
             textUsuario.UnderlinedStyle = true;
@@ -321,7 +404,7 @@
             // buttonCancelar_Mod
             // 
             buttonCancelar_Mod.Anchor = AnchorStyles.None;
-            buttonCancelar_Mod.BackColor = Color.FromArgb(97, 97, 96);
+            buttonCancelar_Mod.BackColor = Color.FromArgb(190, 31, 36);
             buttonCancelar_Mod.FlatAppearance.BorderSize = 0;
             buttonCancelar_Mod.FlatStyle = FlatStyle.Flat;
             buttonCancelar_Mod.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -336,7 +419,7 @@
             // buttonGuardar_Mod
             // 
             buttonGuardar_Mod.Anchor = AnchorStyles.None;
-            buttonGuardar_Mod.BackColor = Color.FromArgb(97, 97, 96);
+            buttonGuardar_Mod.BackColor = Color.FromArgb(190, 31, 36);
             buttonGuardar_Mod.FlatAppearance.BorderSize = 0;
             buttonGuardar_Mod.FlatStyle = FlatStyle.Flat;
             buttonGuardar_Mod.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -353,6 +436,7 @@
             label8.Anchor = AnchorStyles.Top;
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(190, 31, 36);
             label8.Location = new Point(301, 12);
             label8.Name = "label8";
             label8.Size = new Size(143, 19);
@@ -598,83 +682,12 @@
             label9.TabIndex = 63;
             label9.Text = "Datos Usuario";
             // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(80, 134);
-            label1.Name = "label1";
-            label1.Size = new Size(46, 16);
-            label1.TabIndex = 81;
-            label1.Text = "Perfil*";
-            // 
-            // radioBtnUser
-            // 
-            radioBtnUser.Anchor = AnchorStyles.None;
-            radioBtnUser.AutoSize = true;
-            radioBtnUser.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioBtnUser.Location = new Point(131, 164);
-            radioBtnUser.Name = "radioBtnUser";
-            radioBtnUser.Size = new Size(71, 21);
-            radioBtnUser.TabIndex = 80;
-            radioBtnUser.Text = "Usuario";
-            radioBtnUser.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnAdmin
-            // 
-            radioBtnAdmin.Anchor = AnchorStyles.None;
-            radioBtnAdmin.AutoSize = true;
-            radioBtnAdmin.Checked = true;
-            radioBtnAdmin.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            radioBtnAdmin.Location = new Point(6, 164);
-            radioBtnAdmin.Name = "radioBtnAdmin";
-            radioBtnAdmin.Size = new Size(109, 21);
-            radioBtnAdmin.TabIndex = 79;
-            radioBtnAdmin.TabStop = true;
-            radioBtnAdmin.Text = "Administrador";
-            radioBtnAdmin.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            textBox5.Anchor = AnchorStyles.None;
-            textBox5.BackColor = SystemColors.Control;
-            textBox5.BorderColor = SystemColors.ControlDarkDark;
-            textBox5.BorderFocusColor = Color.Black;
-            textBox5.BorderSize = 2;
-            textBox5.Location = new Point(555, 155);
-            textBox5.Multiline = false;
-            textBox5.Name = "textBox5";
-            textBox5.Padding = new Padding(7);
-            textBox5.PasswordChar = false;
-            textBox5.Size = new Size(196, 30);
-            textBox5.TabIndex = 83;
-            textBox5.Texts = "Teléfono*";
-            textBox5.UnderlinedStyle = true;
-            // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.BackColor = SystemColors.Control;
-            textBox2.BorderColor = SystemColors.ControlDarkDark;
-            textBox2.BorderFocusColor = Color.Black;
-            textBox2.BorderSize = 2;
-            textBox2.Location = new Point(555, 52);
-            textBox2.Multiline = false;
-            textBox2.Name = "textBox2";
-            textBox2.Padding = new Padding(7);
-            textBox2.PasswordChar = false;
-            textBox2.Size = new Size(198, 30);
-            textBox2.TabIndex = 82;
-            textBox2.Texts = "Apellido materno";
-            textBox2.UnderlinedStyle = true;
-            // 
             // ListarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            BackColor = Color.FromArgb(242, 230, 230);
             ClientSize = new Size(768, 522);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.None;

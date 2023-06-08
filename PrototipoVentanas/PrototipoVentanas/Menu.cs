@@ -25,6 +25,7 @@ namespace PrototipoVentanas
             t = tipo;
             tipoUser();
             logHandler = log;
+
         }
         private void tipoUser()
         {
@@ -152,12 +153,14 @@ namespace PrototipoVentanas
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult resut = MessageBox.Show("¿Está seguro de cerrar sesión?", "Aviso", MessageBoxButtons.YesNo);
+            DialogResult resut = MessageBox.Show("¿Está seguro de cerrar sesión?", "Warning", MessageBoxButtons.YesNo);
             if (resut == DialogResult.Yes)
             {
-                this.Close();
-                Login login = new Login();
-                login.Show();
+                // log.logoutx(idper);
+                //Login inicioSesion = new Login();
+                //inicioSesion.Show();
+                logHandler.Show();
+                this.Hide();
             }
             else if (resut == DialogResult.No)
             {
@@ -181,6 +184,13 @@ namespace PrototipoVentanas
 
 
 
+        }
+
+        //evento que asegura que al cerrar el form se cierre la aplicacion y se haga un logout al usuario
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //log.logoutx(idper);
+            logHandler.Close();
         }
     }
 }

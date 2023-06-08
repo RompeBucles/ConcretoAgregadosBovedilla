@@ -47,9 +47,9 @@
             btnUsuarios = new Button();
             pictureBox1 = new PictureBox();
             panelContenedor = new Panel();
+            labelPerfilU = new Label();
             labelPerfil = new Label();
             pictureBox2 = new PictureBox();
-            labelPerfilU = new Label();
             panelLateral.SuspendLayout();
             panelSubEntradas.SuspendLayout();
             panelSubFormulario.SuspendLayout();
@@ -61,7 +61,7 @@
             // 
             // panelLateral
             // 
-            panelLateral.BackColor = Color.DarkGray;
+            panelLateral.BackColor = Color.FromArgb(224, 224, 224);
             panelLateral.Controls.Add(btnBitacora);
             panelLateral.Controls.Add(btnNavegacion);
             panelLateral.Controls.Add(btnCerrar);
@@ -75,16 +75,17 @@
             panelLateral.Dock = DockStyle.Left;
             panelLateral.Location = new Point(0, 0);
             panelLateral.Name = "panelLateral";
-            panelLateral.Size = new Size(200, 561);
+            panelLateral.Size = new Size(200, 600);
             panelLateral.TabIndex = 0;
             // 
             // btnBitacora
             // 
-            btnBitacora.BackColor = Color.White;
+            btnBitacora.BackColor = Color.FromArgb(190, 31, 36);
             btnBitacora.Dock = DockStyle.Top;
             btnBitacora.FlatAppearance.BorderSize = 0;
             btnBitacora.FlatStyle = FlatStyle.Flat;
             btnBitacora.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBitacora.ForeColor = Color.White;
             btnBitacora.Location = new Point(0, 549);
             btnBitacora.Name = "btnBitacora";
             btnBitacora.Size = new Size(200, 35);
@@ -95,11 +96,12 @@
             // 
             // btnNavegacion
             // 
-            btnNavegacion.BackColor = Color.White;
+            btnNavegacion.BackColor = Color.FromArgb(190, 31, 36);
             btnNavegacion.Dock = DockStyle.Top;
             btnNavegacion.FlatAppearance.BorderSize = 0;
             btnNavegacion.FlatStyle = FlatStyle.Flat;
             btnNavegacion.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNavegacion.ForeColor = Color.White;
             btnNavegacion.Location = new Point(0, 504);
             btnNavegacion.Name = "btnNavegacion";
             btnNavegacion.Size = new Size(200, 45);
@@ -110,13 +112,13 @@
             // 
             // btnCerrar
             // 
-            btnCerrar.BackColor = Color.Black;
+            btnCerrar.BackColor = Color.FromArgb(190, 31, 36);
             btnCerrar.Dock = DockStyle.Bottom;
             btnCerrar.FlatAppearance.BorderSize = 0;
             btnCerrar.FlatStyle = FlatStyle.Flat;
             btnCerrar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnCerrar.ForeColor = SystemColors.Control;
-            btnCerrar.Location = new Point(0, 526);
+            btnCerrar.Location = new Point(0, 565);
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(200, 35);
             btnCerrar.TabIndex = 10;
@@ -137,11 +139,11 @@
             // 
             // btnListaEntradas
             // 
-            btnListaEntradas.BackColor = Color.Gray;
+            btnListaEntradas.BackColor = Color.FromArgb(242, 230, 230);
             btnListaEntradas.Dock = DockStyle.Top;
             btnListaEntradas.FlatAppearance.BorderSize = 0;
             btnListaEntradas.FlatStyle = FlatStyle.Flat;
-            btnListaEntradas.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnListaEntradas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnListaEntradas.Location = new Point(0, 35);
             btnListaEntradas.Name = "btnListaEntradas";
             btnListaEntradas.Size = new Size(200, 35);
@@ -152,11 +154,11 @@
             // 
             // btnRegistroEntradas
             // 
-            btnRegistroEntradas.BackColor = Color.Gray;
+            btnRegistroEntradas.BackColor = Color.FromArgb(242, 230, 230);
             btnRegistroEntradas.Dock = DockStyle.Top;
             btnRegistroEntradas.FlatAppearance.BorderSize = 0;
             btnRegistroEntradas.FlatStyle = FlatStyle.Flat;
-            btnRegistroEntradas.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistroEntradas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistroEntradas.Location = new Point(0, 0);
             btnRegistroEntradas.Name = "btnRegistroEntradas";
             btnRegistroEntradas.Size = new Size(200, 35);
@@ -167,11 +169,12 @@
             // 
             // btnEntradasSalidas
             // 
-            btnEntradasSalidas.BackColor = Color.White;
+            btnEntradasSalidas.BackColor = Color.FromArgb(190, 31, 36);
             btnEntradasSalidas.Dock = DockStyle.Top;
             btnEntradasSalidas.FlatAppearance.BorderSize = 0;
             btnEntradasSalidas.FlatStyle = FlatStyle.Flat;
             btnEntradasSalidas.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEntradasSalidas.ForeColor = Color.White;
             btnEntradasSalidas.Location = new Point(0, 387);
             btnEntradasSalidas.Name = "btnEntradasSalidas";
             btnEntradasSalidas.Size = new Size(200, 45);
@@ -193,11 +196,11 @@
             // 
             // btnListaDatos
             // 
-            btnListaDatos.BackColor = Color.Gray;
+            btnListaDatos.BackColor = Color.FromArgb(242, 230, 230);
             btnListaDatos.Dock = DockStyle.Top;
             btnListaDatos.FlatAppearance.BorderSize = 0;
             btnListaDatos.FlatStyle = FlatStyle.Flat;
-            btnListaDatos.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnListaDatos.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnListaDatos.Location = new Point(0, 35);
             btnListaDatos.Name = "btnListaDatos";
             btnListaDatos.Size = new Size(200, 31);
@@ -208,11 +211,11 @@
             // 
             // btnRegistro
             // 
-            btnRegistro.BackColor = Color.Gray;
+            btnRegistro.BackColor = Color.FromArgb(242, 230, 230);
             btnRegistro.Dock = DockStyle.Top;
             btnRegistro.FlatAppearance.BorderSize = 0;
             btnRegistro.FlatStyle = FlatStyle.Flat;
-            btnRegistro.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistro.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistro.Location = new Point(0, 0);
             btnRegistro.Name = "btnRegistro";
             btnRegistro.Size = new Size(200, 35);
@@ -223,11 +226,12 @@
             // 
             // btnFormulario
             // 
-            btnFormulario.BackColor = Color.White;
+            btnFormulario.BackColor = Color.FromArgb(190, 31, 36);
             btnFormulario.Dock = DockStyle.Top;
             btnFormulario.FlatAppearance.BorderSize = 0;
             btnFormulario.FlatStyle = FlatStyle.Flat;
             btnFormulario.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnFormulario.ForeColor = Color.White;
             btnFormulario.Location = new Point(0, 274);
             btnFormulario.Name = "btnFormulario";
             btnFormulario.Size = new Size(200, 45);
@@ -249,11 +253,11 @@
             // 
             // btnListarUsuarios
             // 
-            btnListarUsuarios.BackColor = Color.Gray;
+            btnListarUsuarios.BackColor = Color.FromArgb(242, 230, 230);
             btnListarUsuarios.Dock = DockStyle.Top;
             btnListarUsuarios.FlatAppearance.BorderSize = 0;
             btnListarUsuarios.FlatStyle = FlatStyle.Flat;
-            btnListarUsuarios.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnListarUsuarios.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnListarUsuarios.Location = new Point(0, 35);
             btnListarUsuarios.Name = "btnListarUsuarios";
             btnListarUsuarios.Size = new Size(200, 35);
@@ -264,11 +268,11 @@
             // 
             // btnRegistrarUsuario
             // 
-            btnRegistrarUsuario.BackColor = Color.Gray;
+            btnRegistrarUsuario.BackColor = Color.FromArgb(242, 230, 230);
             btnRegistrarUsuario.Dock = DockStyle.Top;
             btnRegistrarUsuario.FlatAppearance.BorderSize = 0;
             btnRegistrarUsuario.FlatStyle = FlatStyle.Flat;
-            btnRegistrarUsuario.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnRegistrarUsuario.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegistrarUsuario.Location = new Point(0, 0);
             btnRegistrarUsuario.Name = "btnRegistrarUsuario";
             btnRegistrarUsuario.Size = new Size(200, 35);
@@ -279,11 +283,12 @@
             // 
             // btnUsuarios
             // 
-            btnUsuarios.BackColor = Color.White;
+            btnUsuarios.BackColor = Color.FromArgb(190, 31, 36);
             btnUsuarios.Dock = DockStyle.Top;
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUsuarios.ForeColor = Color.White;
             btnUsuarios.Location = new Point(0, 158);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(200, 45);
@@ -305,14 +310,27 @@
             // 
             // panelContenedor
             // 
+            panelContenedor.BackColor = Color.FromArgb(242, 230, 230);
             panelContenedor.Controls.Add(labelPerfilU);
             panelContenedor.Controls.Add(labelPerfil);
             panelContenedor.Controls.Add(pictureBox2);
             panelContenedor.Dock = DockStyle.Fill;
             panelContenedor.Location = new Point(200, 0);
             panelContenedor.Name = "panelContenedor";
-            panelContenedor.Size = new Size(784, 561);
+            panelContenedor.Size = new Size(784, 600);
             panelContenedor.TabIndex = 1;
+            // 
+            // labelPerfilU
+            // 
+            labelPerfilU.Anchor = AnchorStyles.None;
+            labelPerfilU.AutoSize = true;
+            labelPerfilU.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelPerfilU.ForeColor = Color.FromArgb(179, 41, 45);
+            labelPerfilU.Location = new Point(384, 126);
+            labelPerfilU.Name = "labelPerfilU";
+            labelPerfilU.Size = new Size(117, 32);
+            labelPerfilU.TabIndex = 18;
+            labelPerfilU.Text = "Usuario";
             // 
             // labelPerfil
             // 
@@ -320,7 +338,7 @@
             labelPerfil.AutoSize = true;
             labelPerfil.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelPerfil.ForeColor = Color.FromArgb(179, 41, 45);
-            labelPerfil.Location = new Point(342, 106);
+            labelPerfil.Location = new Point(342, 126);
             labelPerfil.Name = "labelPerfil";
             labelPerfil.Size = new Size(204, 32);
             labelPerfil.TabIndex = 17;
@@ -330,35 +348,24 @@
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(283, 154);
+            pictureBox2.Location = new Point(283, 174);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(316, 231);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // labelPerfilU
-            // 
-            labelPerfilU.Anchor = AnchorStyles.None;
-            labelPerfilU.AutoSize = true;
-            labelPerfilU.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelPerfilU.ForeColor = Color.FromArgb(179, 41, 45);
-            labelPerfilU.Location = new Point(384, 106);
-            labelPerfilU.Name = "labelPerfilU";
-            labelPerfilU.Size = new Size(117, 32);
-            labelPerfilU.TabIndex = 18;
-            labelPerfilU.Text = "Usuario";
-            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(984, 561);
+            ClientSize = new Size(984, 600);
             Controls.Add(panelContenedor);
             Controls.Add(panelLateral);
             MinimumSize = new Size(980, 600);
             Name = "Menu";
             Text = "Menu";
+            FormClosing += Menu_FormClosing;
             panelLateral.ResumeLayout(false);
             panelSubEntradas.ResumeLayout(false);
             panelSubFormulario.ResumeLayout(false);

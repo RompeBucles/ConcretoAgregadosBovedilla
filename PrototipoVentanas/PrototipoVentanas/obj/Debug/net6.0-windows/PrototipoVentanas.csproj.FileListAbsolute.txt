@@ -112,3 +112,4 @@ C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\Pro
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.pdb
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.genruntimeconfig.cache
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\ref\PrototipoVentanas.dll
+C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\PrototipoVentanas\PrototipoVentanas\obj\Debug\net6.0-windows\PrototipoVentanas.Properties.Resources.resources
