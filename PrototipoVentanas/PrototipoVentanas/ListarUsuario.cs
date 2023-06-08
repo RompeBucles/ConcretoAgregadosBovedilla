@@ -43,7 +43,7 @@ namespace PrototipoVentanas
             DialogResult resut = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo);
             if (resut == DialogResult.Yes)
             {
-                
+
             }
             else if (resut == DialogResult.No)
             {

@@ -475,7 +475,7 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(0, 0);
+            panel4.Location = new Point(-9, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
@@ -910,7 +910,7 @@
             panel5.Controls.Add(comboBox4);
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(0, 0);
+            panel5.Location = new Point(-9, 0);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;

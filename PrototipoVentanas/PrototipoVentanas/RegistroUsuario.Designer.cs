@@ -41,7 +41,9 @@
             textBox8 = new Sistema_de_sanciones.Templates.TextBox();
             label2 = new Label();
             label3 = new Label();
-            comboBox1 = new ComboBox();
+            radioBtnAdmin = new RadioButton();
+            radioBtnUser = new RadioButton();
+            label1 = new Label();
             SuspendLayout();
             // 
             // labelUsuario
@@ -133,7 +135,7 @@
             textBox5.Location = new Point(547, 224);
             textBox5.Multiline = false;
             textBox5.Name = "textBox5";
-            textBox5.Padding = new Padding(7, 7, 7, 7);
+            textBox5.Padding = new Padding(7);
             textBox5.PasswordChar = false;
             textBox5.Size = new Size(196, 30);
             textBox5.TabIndex = 34;
@@ -246,16 +248,43 @@
             label3.TabIndex = 67;
             label3.Text = "Confirmar Contraseña*";
             // 
-            // comboBox1
+            // radioBtnAdmin
             // 
-            comboBox1.Anchor = AnchorStyles.None;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Administrador", "Usuario" });
-            comboBox1.Location = new Point(21, 231);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(196, 23);
-            comboBox1.TabIndex = 68;
-            comboBox1.Text = "Perfil*";
+            radioBtnAdmin.Anchor = AnchorStyles.None;
+            radioBtnAdmin.AutoSize = true;
+            radioBtnAdmin.Checked = true;
+            radioBtnAdmin.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBtnAdmin.Location = new Point(21, 233);
+            radioBtnAdmin.Name = "radioBtnAdmin";
+            radioBtnAdmin.Size = new Size(109, 21);
+            radioBtnAdmin.TabIndex = 68;
+            radioBtnAdmin.TabStop = true;
+            radioBtnAdmin.Text = "Administrador";
+            radioBtnAdmin.UseVisualStyleBackColor = true;
+            // 
+            // radioBtnUser
+            // 
+            radioBtnUser.Anchor = AnchorStyles.None;
+            radioBtnUser.AutoSize = true;
+            radioBtnUser.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBtnUser.Location = new Point(146, 233);
+            radioBtnUser.Name = "radioBtnUser";
+            radioBtnUser.Size = new Size(71, 21);
+            radioBtnUser.TabIndex = 69;
+            radioBtnUser.Text = "Usuario";
+            radioBtnUser.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.DimGray;
+            label1.Location = new Point(95, 203);
+            label1.Name = "label1";
+            label1.Size = new Size(46, 16);
+            label1.TabIndex = 70;
+            label1.Text = "Perfil*";
             // 
             // RegistroUsuario
             // 
@@ -263,7 +292,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             ClientSize = new Size(768, 522);
-            Controls.Add(comboBox1);
+            Controls.Add(label1);
+            Controls.Add(radioBtnUser);
+            Controls.Add(radioBtnAdmin);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(textBox8);
@@ -302,6 +333,8 @@
         private Button button3;
         private Label label2;
         private Label label3;
-        private ComboBox comboBox1;
+        private RadioButton radioBtnAdmin;
+        private RadioButton radioBtnUser;
+        private Label label1;
     }
 }
