@@ -65,7 +65,7 @@
             textUsuario.Location = new Point(21, 121);
             textUsuario.Multiline = false;
             textUsuario.Name = "textUsuario";
-            textUsuario.Padding = new Padding(7, 7, 7, 7);
+            textUsuario.Padding = new Padding(7);
             textUsuario.PasswordChar = false;
             textUsuario.Size = new Size(191, 30);
             textUsuario.TabIndex = 29;
@@ -82,7 +82,7 @@
             textBox1.Location = new Point(275, 121);
             textBox1.Multiline = false;
             textBox1.Name = "textBox1";
-            textBox1.Padding = new Padding(7, 7, 7, 7);
+            textBox1.Padding = new Padding(7);
             textBox1.PasswordChar = false;
             textBox1.Size = new Size(212, 30);
             textBox1.TabIndex = 30;
@@ -96,14 +96,14 @@
             textBox2.BorderColor = SystemColors.ControlDarkDark;
             textBox2.BorderFocusColor = Color.Black;
             textBox2.BorderSize = 2;
-            textBox2.Location = new Point(547, 128);
+            textBox2.Location = new Point(549, 121);
             textBox2.Multiline = false;
             textBox2.Name = "textBox2";
-            textBox2.Padding = new Padding(7, 7, 7, 7);
+            textBox2.Padding = new Padding(7);
             textBox2.PasswordChar = false;
             textBox2.Size = new Size(198, 30);
             textBox2.TabIndex = 31;
-            textBox2.Texts = "Apellido materno*";
+            textBox2.Texts = "Apellido materno";
             textBox2.UnderlinedStyle = true;
             // 
             // textBox4
@@ -116,7 +116,7 @@
             textBox4.Location = new Point(275, 224);
             textBox4.Multiline = false;
             textBox4.Name = "textBox4";
-            textBox4.Padding = new Padding(7, 7, 7, 7);
+            textBox4.Padding = new Padding(7);
             textBox4.PasswordChar = false;
             textBox4.Size = new Size(212, 30);
             textBox4.TabIndex = 33;
@@ -130,14 +130,14 @@
             textBox5.BorderColor = SystemColors.ControlDarkDark;
             textBox5.BorderFocusColor = Color.Black;
             textBox5.BorderSize = 2;
-            textBox5.Location = new Point(549, 231);
+            textBox5.Location = new Point(547, 224);
             textBox5.Multiline = false;
             textBox5.Name = "textBox5";
             textBox5.Padding = new Padding(7, 7, 7, 7);
             textBox5.PasswordChar = false;
             textBox5.Size = new Size(196, 30);
             textBox5.TabIndex = 34;
-            textBox5.Texts = "telefono*";
+            textBox5.Texts = "Teléfono*";
             textBox5.UnderlinedStyle = true;
             // 
             // textBox6
@@ -150,7 +150,7 @@
             textBox6.Location = new Point(21, 337);
             textBox6.Multiline = false;
             textBox6.Name = "textBox6";
-            textBox6.Padding = new Padding(7, 7, 7, 7);
+            textBox6.Padding = new Padding(7);
             textBox6.PasswordChar = false;
             textBox6.Size = new Size(196, 30);
             textBox6.TabIndex = 35;
@@ -167,7 +167,7 @@
             textBox7.Location = new Point(275, 337);
             textBox7.Multiline = false;
             textBox7.Name = "textBox7";
-            textBox7.Padding = new Padding(7, 7, 7, 7);
+            textBox7.Padding = new Padding(7);
             textBox7.PasswordChar = true;
             textBox7.Size = new Size(196, 30);
             textBox7.TabIndex = 36;
@@ -212,10 +212,10 @@
             textBox8.BorderColor = SystemColors.ControlDarkDark;
             textBox8.BorderFocusColor = Color.Black;
             textBox8.BorderSize = 2;
-            textBox8.Location = new Point(549, 344);
+            textBox8.Location = new Point(547, 337);
             textBox8.Multiline = false;
             textBox8.Name = "textBox8";
-            textBox8.Padding = new Padding(7, 7, 7, 7);
+            textBox8.Padding = new Padding(7);
             textBox8.PasswordChar = true;
             textBox8.Size = new Size(196, 30);
             textBox8.TabIndex = 39;
@@ -240,7 +240,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(549, 314);
+            label3.Location = new Point(547, 307);
             label3.Name = "label3";
             label3.Size = new Size(151, 16);
             label3.TabIndex = 67;

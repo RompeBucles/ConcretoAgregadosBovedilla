@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cjduwZrGfu3zpqSM6+JJbSJHjZBU3XPaa3Fjk1FRYtGsircD5ZSPaePufYQ92kltvx0BeF1Cc483RQSgGUHtSw==",
+  "dgSpecHash": "mzM0hOhBcLIet0oGpWGszU8pgRzCmL8aPNkiwyTnTTmiwkmQ8iwMNJ9qfW5SIH9EOTI2FVZmAM60iPo0804IDQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
+  "projectFilePath": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cacam\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\cacam\\.nuget\\packages\\gmap.net.core\\2.1.7\\gmap.net.core.2.1.7.nupkg.sha512",

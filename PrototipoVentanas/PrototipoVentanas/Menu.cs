@@ -37,6 +37,7 @@ namespace PrototipoVentanas
                 btnEntradasSalidas.Visible = true;
                 btnNavegacion.Visible = true;
                 btnBitacora.Visible = true;
+                labelPerfilU.Visible = false;
                 labelPerfil.Text = "Administrador";
 
             }
@@ -49,7 +50,8 @@ namespace PrototipoVentanas
                 btnEntradasSalidas.Visible = true;
                 btnNavegacion.Visible = true;
                 btnBitacora.Visible = false;
-                labelPerfil.Text = "Usuario";
+                labelPerfil.Visible = false;
+                labelPerfilU.Text = "Usuario";
             }
         }
 

@@ -49,6 +49,7 @@
             panelContenedor = new Panel();
             labelPerfil = new Label();
             pictureBox2 = new PictureBox();
+            labelPerfilU = new Label();
             panelLateral.SuspendLayout();
             panelSubEntradas.SuspendLayout();
             panelSubFormulario.SuspendLayout();
@@ -304,6 +305,7 @@
             // 
             // panelContenedor
             // 
+            panelContenedor.Controls.Add(labelPerfilU);
             panelContenedor.Controls.Add(labelPerfil);
             panelContenedor.Controls.Add(pictureBox2);
             panelContenedor.Dock = DockStyle.Fill;
@@ -318,11 +320,11 @@
             labelPerfil.AutoSize = true;
             labelPerfil.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             labelPerfil.ForeColor = Color.FromArgb(179, 41, 45);
-            labelPerfil.Location = new Point(368, 87);
+            labelPerfil.Location = new Point(342, 106);
             labelPerfil.Name = "labelPerfil";
-            labelPerfil.Size = new Size(82, 32);
+            labelPerfil.Size = new Size(204, 32);
             labelPerfil.TabIndex = 17;
-            labelPerfil.Text = "perfil";
+            labelPerfil.Text = "Administrador";
             // 
             // pictureBox2
             // 
@@ -334,6 +336,18 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
+            // 
+            // labelPerfilU
+            // 
+            labelPerfilU.Anchor = AnchorStyles.None;
+            labelPerfilU.AutoSize = true;
+            labelPerfilU.Font = new Font("Arial", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            labelPerfilU.ForeColor = Color.FromArgb(179, 41, 45);
+            labelPerfilU.Location = new Point(384, 106);
+            labelPerfilU.Name = "labelPerfilU";
+            labelPerfilU.Size = new Size(117, 32);
+            labelPerfilU.TabIndex = 18;
+            labelPerfilU.Text = "Usuario";
             // 
             // Menu
             // 
@@ -378,5 +392,6 @@
         private Panel panelContenedor;
         private PictureBox pictureBox2;
         private Label labelPerfil;
+        private Label labelPerfilU;
     }
 }

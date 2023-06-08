@@ -22,7 +22,7 @@ namespace PrototipoVentanas
             DialogResult resut = MessageBox.Show("Usuario registrado", "Aviso", MessageBoxButtons.YesNo);
             if (resut == DialogResult.Yes)
             {
-                
+
 
             }
             else if (resut == DialogResult.No)

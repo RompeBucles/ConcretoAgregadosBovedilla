@@ -1353,11 +1353,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
+      "projectUniqueName": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
       "projectName": "PrototipoVentanas",
-      "projectPath": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
+      "projectPath": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\PrototipoVentanas.csproj",
       "packagesPath": "C:\\Users\\cacam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cacam\\OneDrive\\Documentos\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\obj\\",
+      "outputPath": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\PrototipoVentanas\\PrototipoVentanas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cacam\\AppData\\Roaming\\NuGet\\NuGet.Config",
