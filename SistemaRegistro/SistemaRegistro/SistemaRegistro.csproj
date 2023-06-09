@@ -10,10 +10,12 @@
 
   <ItemGroup>
     <Folder Include="Imagenes\" />
+    <Folder Include="Modelo\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="GMap.NET.WinForms" Version="2.1.7" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>

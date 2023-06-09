@@ -158,6 +158,26 @@ namespace SistemaRegistro
                 textConfPassword.ForeColor = Color.Gray;
             }
         }
+        private void Limpiar()
+        {
+            textNombre.Texts = "Ejemplo: Juan";
+            textNombre.ForeColor = Color.Gray;
+            textApellidoP.Texts = "Ejemplo: Pérez";
+            textApellidoP.ForeColor = Color.Gray;
+            textApellidoM.Texts = "Ejemplo: Hernández";
+            textApellidoM.ForeColor = Color.Gray;
+            textCorreo.Texts = "ejemplo@unam.org.mx";
+            textCorreo.ForeColor = Color.Gray;
+            textTelefono.Texts = "Ejemplo: 2281144037";
+            textTelefono.ForeColor = Color.Gray;
+            textUsuario.Texts = "Ejemplo: jperez";
+            textUsuario.ForeColor = Color.Gray;
+            textPassword.Texts = "Contraseña*";
+            textPassword.ForeColor = Color.Gray;
+            textConfPassword.Texts = "Contraseña*";
+            textConfPassword.ForeColor = Color.Gray;
+
+        }
         private void Guardar_Click(object sender, EventArgs e)
         {
             DialogResult resut = MessageBox.Show("Usuario registrado", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);

@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualBasic.Logging;
+using SistemaRegistro.ConexionBD;
+using SistemaRegistro.Controladores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,15 +18,28 @@ namespace SistemaRegistro
     public partial class Menu : Form
     {
 
+        logout log = new logout();
+        //handler que nos ayudara a poder acceder a las funciones del form login
         private Login logHandler;
+        //variable de tipo de usuario
         int t;
-        public Menu(Login log, int tipo)
+        //ariable de id de usuario
+        int idper;
+        //instancia de conexion que no se usa
+        private Conexion ConexionBD = new Conexion();
+        public Menu(Login log, string nombre, int tipo, int id)
         {
             InitializeComponent();
             costomizeDesing();
+          
+            //se asigna el tipo a la variable global
             t = tipo;
+            //se manda a llamar la funcion que hace la distincion entre los tipos de usuarios
             tipoUser();
+            //asignamos la instancia que llega al mandar a llamar este form a nuestro handler para poder usarlo correctamente en el resto de la ejecucion de este form
             logHandler = log;
+            //asignamos el id a la variable global
+            
 
         }
         private void tipoUser()

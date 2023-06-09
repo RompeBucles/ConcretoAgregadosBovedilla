@@ -82,6 +82,7 @@
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
+            button2 = new Button();
             label13 = new Label();
             label19 = new Label();
             label18 = new Label();
@@ -102,6 +103,7 @@
             label3 = new Label();
             Tecnología = new TabPage();
             panel2 = new Panel();
+            label20 = new Label();
             buttonAtrasR = new Button();
             buttonSiguienteT = new Button();
             textBox3 = new Sistema_de_sanciones.Templates.TextBox();
@@ -109,6 +111,7 @@
             label6 = new Label();
             TiempoVálido = new TabPage();
             panel3 = new Panel();
+            label21 = new Label();
             label9 = new Label();
             label8 = new Label();
             dateTimePicker2 = new DateTimePicker();
@@ -130,9 +133,6 @@
             comboBox4 = new ComboBox();
             comboBox2 = new ComboBox();
             label10 = new Label();
-            button2 = new Button();
-            label20 = new Label();
-            label21 = new Label();
             tabControl2.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -382,7 +382,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-9, 0);
+            panel1.Location = new Point(-18, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
@@ -504,7 +504,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Crimson;
-            label4.Location = new Point(262, 314);
+            label4.Location = new Point(260, 281);
             label4.Name = "label4";
             label4.Size = new Size(214, 16);
             label4.TabIndex = 91;
@@ -515,7 +515,7 @@
             comboSeis.Anchor = AnchorStyles.None;
             comboSeis.FormattingEnabled = true;
             comboSeis.Items.AddRange(new object[] { "Consumo de productos", "Uso de productos que consumen energía", "Otros usos y consumos" });
-            comboSeis.Location = new Point(493, 426);
+            comboSeis.Location = new Point(491, 393);
             comboSeis.Name = "comboSeis";
             comboSeis.Size = new Size(232, 23);
             comboSeis.TabIndex = 89;
@@ -526,7 +526,7 @@
             comboCinco.Anchor = AnchorStyles.None;
             comboCinco.FormattingEnabled = true;
             comboCinco.Items.AddRange(new object[] { "Carretera", "Ferrocarril", "Agua", "Aire", "Otros transportes" });
-            comboCinco.Location = new Point(248, 426);
+            comboCinco.Location = new Point(246, 393);
             comboCinco.Name = "comboCinco";
             comboCinco.Size = new Size(228, 23);
             comboCinco.TabIndex = 88;
@@ -537,7 +537,7 @@
             comboCuatro.Anchor = AnchorStyles.None;
             comboCuatro.FormattingEnabled = true;
             comboCuatro.Items.AddRange(new object[] { "Reutilización o utilización posterior", "Reciclaje de materiales", "Reciclaje de materias primas", "Reciclaje energético", "Vertedero", "Recogida de residuos", "Tratamiento de aguas residuales", "Tratamiento de gas bruto", "Otros servicios al final de la vida útil" });
-            comboCuatro.Location = new Point(10, 426);
+            comboCuatro.Location = new Point(8, 393);
             comboCuatro.Name = "comboCuatro";
             comboCuatro.Size = new Size(213, 23);
             comboCuatro.TabIndex = 87;
@@ -548,7 +548,7 @@
             comboTres.Anchor = AnchorStyles.None;
             comboTres.FormattingEnabled = true;
             comboTres.Items.AddRange(new object[] { "Materias primas no energéticas", "Metales y semimetales", "Productos químicos orgánicos", "Productos químicos inorgánicos", "Vidrio y cerámica", "Otros materiales minerales", "Plásticos", "Papel y cartón", "Agua", "Medios de producción agrícola", "Alimentos y materias primas renovables", "Madera", "Otros materiales" });
-            comboTres.Location = new Point(493, 348);
+            comboTres.Location = new Point(491, 315);
             comboTres.Name = "comboTres";
             comboTres.Size = new Size(232, 23);
             comboTres.TabIndex = 87;
@@ -559,7 +559,7 @@
             comboDos.Anchor = AnchorStyles.None;
             comboDos.FormattingEnabled = true;
             comboDos.Items.AddRange(new object[] { "Embalaje", "Electricidad y electrónica", "Vehículos", "Otras maquinas", "Construcción", "Electrodomésticos", "Textiles, muebles y otros interiores", "Partes no especificas", "Pinturas y preparados químicos", "Otros sistemas" });
-            comboDos.Location = new Point(248, 348);
+            comboDos.Location = new Point(246, 315);
             comboDos.Name = "comboDos";
             comboDos.Size = new Size(228, 23);
             comboDos.TabIndex = 86;
@@ -570,7 +570,7 @@
             comboUno.Anchor = AnchorStyles.None;
             comboUno.FormattingEnabled = true;
             comboUno.Items.AddRange(new object[] { "Materias primas energéticas", "Electricidad", "Calor y vapor", "Energía mecánica", "Combustibles a base de hulla", "Combustibles a base de lignito", "Combustibles a base de petróleo crudo", "Combustibles a base de gas natural", "Combustibles nucleares", "Otros combustibles no renovables", "Combustibles renovables" });
-            comboUno.Location = new Point(10, 348);
+            comboUno.Location = new Point(8, 315);
             comboUno.Name = "comboUno";
             comboUno.Size = new Size(214, 23);
             comboUno.TabIndex = 85;
@@ -581,7 +581,7 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(302, 295);
+            label2.Location = new Point(300, 262);
             label2.Name = "label2";
             label2.Size = new Size(133, 19);
             label2.TabIndex = 84;
@@ -737,10 +737,25 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(0, 0);
+            panel4.Location = new Point(-9, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.None;
+            button2.BackColor = Color.FromArgb(190, 31, 36);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ButtonFace;
+            button2.Location = new Point(306, 612);
+            button2.Name = "button2";
+            button2.Size = new Size(121, 36);
+            button2.TabIndex = 114;
+            button2.Text = "Eliminar imagen";
+            button2.UseVisualStyleBackColor = false;
             // 
             // label13
             // 
@@ -1007,6 +1022,18 @@
             panel2.Size = new Size(736, 468);
             panel2.TabIndex = 0;
             // 
+            // label20
+            // 
+            label20.Anchor = AnchorStyles.None;
+            label20.AutoSize = true;
+            label20.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label20.ForeColor = Color.FromArgb(190, 31, 36);
+            label20.Location = new Point(227, 131);
+            label20.Name = "label20";
+            label20.Size = new Size(178, 16);
+            label20.TabIndex = 112;
+            label20.Text = "Condiciones de operación*";
+            // 
             // buttonAtrasR
             // 
             buttonAtrasR.Anchor = AnchorStyles.None;
@@ -1106,6 +1133,18 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(739, 470);
             panel3.TabIndex = 1;
+            // 
+            // label21
+            // 
+            label21.Anchor = AnchorStyles.None;
+            label21.AutoSize = true;
+            label21.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.ForeColor = Color.FromArgb(190, 31, 36);
+            label21.Location = new Point(198, 235);
+            label21.Name = "label21";
+            label21.Size = new Size(231, 16);
+            label21.TabIndex = 113;
+            label21.Text = "Descripción del periodo de tiempo*";
             // 
             // label9
             // 
@@ -1231,7 +1270,7 @@
             panel5.Controls.Add(comboBox4);
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-33, 3);
+            panel5.Location = new Point(-42, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
@@ -1369,45 +1408,6 @@
             label10.Size = new Size(204, 19);
             label10.TabIndex = 92;
             label10.Text = "Tiempo válido del estudio";
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.None;
-            button2.BackColor = Color.FromArgb(190, 31, 36);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(306, 612);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 36);
-            button2.TabIndex = 114;
-            button2.Text = "Eliminar imagen";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // label20
-            // 
-            label20.Anchor = AnchorStyles.None;
-            label20.AutoSize = true;
-            label20.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.ForeColor = Color.FromArgb(190, 31, 36);
-            label20.Location = new Point(227, 131);
-            label20.Name = "label20";
-            label20.Size = new Size(178, 16);
-            label20.TabIndex = 112;
-            label20.Text = "Condiciones de operación*";
-            // 
-            // label21
-            // 
-            label21.Anchor = AnchorStyles.None;
-            label21.AutoSize = true;
-            label21.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label21.ForeColor = Color.FromArgb(190, 31, 36);
-            label21.Location = new Point(198, 235);
-            label21.Name = "label21";
-            label21.Size = new Size(231, 16);
-            label21.TabIndex = 113;
-            label21.Text = "Descripción del periodo de tiempo*";
             // 
             // ListaFormulario
             // 

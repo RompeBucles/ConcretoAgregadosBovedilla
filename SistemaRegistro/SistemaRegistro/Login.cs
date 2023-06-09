@@ -1,7 +1,15 @@
+using System.Data.SqlClient;
+using System.Data;
+using SistemaRegistro.ConexionBD;
+using SistemaRegistro.Controladores;
+
 namespace SistemaRegistro
 {
     public partial class Login : Form
     {
+        //Instancia de la BD
+        private Conexion ConexionBD = new Conexion();
+
         public Login()
         {
             InitializeComponent();
@@ -57,30 +65,57 @@ namespace SistemaRegistro
 
         }
 
-        public void logear(string usuario)
+        public void logear(string usuario, string password)
 
         {
-
-            if (usuario == "Administrador")
+            try
             {
-                this.Hide();
-                new Menu(this, 0).Show();
+                //manda a llamar el procedimieto almacenado login que consulta si existen el usuario y la contraseña en la base de datos
+                SqlCommand comando = new SqlCommand("login");
+                comando.Connection = ConexionBD.AbrirConexion();
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.Parameters.AddWithValue("@Usuario", usuario);
+                comando.Parameters.AddWithValue("@Contrasena", password);
+                SqlDataAdapter sda = new SqlDataAdapter(comando);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                //Según corresponda su perfil en la B.D accederá a los módulos correspondientes.  
+                //comprueba que haya habido una coincidencia en la base de datos
+                if (dt.Rows.Count == 1)
+                {
+                    this.Hide();
+                    //this.Close();
+                    if (dt.Rows[0][1].ToString() == "Administrador")
+                    {
+                        new Menu(this, dt.Rows[0][0].ToString(), 0, Convert.ToInt32(dt.Rows[0][2].ToString())).Show();
+
+                    }
+                    else if (dt.Rows[0][1].ToString() == "Usuario")
+                    {
+                        new Menu(this, dt.Rows[0][0].ToString(), 1, Convert.ToInt32(dt.Rows[0][2].ToString())).Show();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario y/o Contraseña Incorrecta", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
 
             }
-            else if (usuario == "Usuario")
+            catch (Exception e)
             {
-                this.Hide();
-                new Menu(this, 1).Show();
+                MessageBox.Show(e.Message);
             }
-            else
+            finally
             {
-                MessageBox.Show("Usuario y/o Contraseña Incorrecta");
-            }
+                ConexionBD.CerrarConexion();
 
+
+            }
         }
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            logear(textUsuario.Texts);
+            //manda a llamar el procedimiento almacenado logear, para verificar los campos correspondientes
+            logear(textUsuario.Texts, Encrypt.GetSHA256(textPassword.Texts.Trim()));
             limpiar();
         }
     }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y4PbMTmccqP9kSMHJ1g59t5b8mPp6tiMVbuyugWBNahXlleCjPbasDqdQzK1JGlQyu6xpNWw+mZJl4904zMQfg==",
+  "dgSpecHash": "8BRapgkrTqRdpy45b/rTFtW34XC+Z7QvNIZP2xqkQH1M626Nh3r3LbQD5V+ZlLGonIPYuMJ3ywag+5Ew2ELR7A==",
   "success": true,
   "projectFilePath": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\SistemaRegistro.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,7 @@
     "C:\\Users\\cacam\\.nuget\\packages\\system.codedom\\4.7.0\\system.codedom.4.7.0.nupkg.sha512",
     "C:\\Users\\cacam\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\cacam\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
-    "C:\\Users\\cacam\\.nuget\\packages\\system.data.sqlclient\\4.8.3\\system.data.sqlclient.4.8.3.nupkg.sha512",
+    "C:\\Users\\cacam\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\cacam\\.nuget\\packages\\system.data.sqlite\\1.0.115.5\\system.data.sqlite.1.0.115.5.nupkg.sha512",
     "C:\\Users\\cacam\\.nuget\\packages\\system.data.sqlite.core\\1.0.115.5\\system.data.sqlite.core.1.0.115.5.nupkg.sha512",
     "C:\\Users\\cacam\\.nuget\\packages\\system.data.sqlite.ef6\\1.0.115.5\\system.data.sqlite.ef6.1.0.115.5.nupkg.sha512",
