@@ -4,13 +4,13 @@
 <br>
 Credenciales para inciar sesión como Administrador:<br>
 Usuario:<br>
-admin
+admin<br>
 Contraseña:<br>
-admin
+admin<br>
 *-*-*-*-*-*-*--*-*-**<br>
 Credenciales para inciar sesión como Usuario:<br>
 Usuario:<br>
-usuario
+usuario<br>
 Contraseña:<br>
-usuario
+usuario<br>
 
