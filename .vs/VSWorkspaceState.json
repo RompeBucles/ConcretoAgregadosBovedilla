@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PrototipoVentanas",
-    "\\PrototipoVentanas\\PrototipoVentanas"
+    "\\SistemaRegistro",
+    "\\SistemaRegistro\\SistemaRegistro"
   ],
-  "SelectedNode": "\\PrototipoVentanas\\PrototipoVentanas.sln",
+  "SelectedNode": "\\SistemaRegistro\\SistemaRegistro\\Login.cs",
   "PreviewInSolutionExplorer": false
 }
