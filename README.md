@@ -1,6 +1,6 @@
 # ConcretoAgregadosBovedilla
 1.- Instalar SQLserver<br>
-2.- Ejecutar el "scriptBD" que se encuentra en este repositorio<br>
+2.- Ejecutar el "scriptBD.sql" que se encuentra en este repositorio<br>
 <br>
 Credenciales para inciar sesión como Administrador:<br>
 Usuario:<br>
