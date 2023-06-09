@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GMap.NET.MapProviders;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 
 namespace SistemaRegistro
 {
@@ -127,6 +128,27 @@ namespace SistemaRegistro
         private void trackZoom_ValueChanged(object sender, EventArgs e)
         {
             gMapControl1.Zoom = trackZoom.Value;
+        }
+
+        private void btnSeleccionarT_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.dataGridView3.Rows)
+            {
+                row.Cells[19].Value = row.Cells[19].Value == null ? false : !(bool)row.Cells[19].Value;
+            }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            DialogResult resut = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resut == DialogResult.Yes)
+            {
+
+            }
+            else if (resut == DialogResult.No)
+            {
+                return;
+            }
         }
     }
 }

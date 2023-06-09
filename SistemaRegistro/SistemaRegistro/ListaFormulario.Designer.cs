@@ -30,8 +30,9 @@
         {
             tabControl2 = new TabControl();
             tabPage1 = new TabPage();
+            btnSeleccionarT = new Button();
             button3 = new Button();
-            button2 = new Button();
+            btnBorrar = new Button();
             dataGridView3 = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
@@ -77,7 +78,6 @@
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
-            label13 = new Label();
             button7 = new Button();
             button6 = new Button();
             buttoAtrasP = new Button();
@@ -123,6 +123,13 @@
             comboBox4 = new ComboBox();
             comboBox2 = new ComboBox();
             label10 = new Label();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            label19 = new Label();
+            label13 = new Label();
             tabControl2.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -160,14 +167,31 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.FromArgb(242, 230, 230);
+            tabPage1.Controls.Add(btnSeleccionarT);
             tabPage1.Controls.Add(button3);
-            tabPage1.Controls.Add(button2);
+            tabPage1.Controls.Add(btnBorrar);
             tabPage1.Controls.Add(dataGridView3);
             tabPage1.Location = new Point(4, 24);
             tabPage1.Name = "tabPage1";
             tabPage1.Size = new Size(742, 491);
             tabPage1.TabIndex = 5;
             tabPage1.Text = "Lista Datos";
+            // 
+            // btnSeleccionarT
+            // 
+            btnSeleccionarT.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSeleccionarT.BackColor = Color.FromArgb(190, 31, 36);
+            btnSeleccionarT.FlatAppearance.BorderSize = 0;
+            btnSeleccionarT.FlatStyle = FlatStyle.Flat;
+            btnSeleccionarT.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSeleccionarT.ForeColor = SystemColors.ButtonFace;
+            btnSeleccionarT.Location = new Point(399, 422);
+            btnSeleccionarT.Name = "btnSeleccionarT";
+            btnSeleccionarT.Size = new Size(151, 39);
+            btnSeleccionarT.TabIndex = 72;
+            btnSeleccionarT.Text = "Seleccionar todo";
+            btnSeleccionarT.UseVisualStyleBackColor = false;
+            btnSeleccionarT.Click += btnSeleccionarT_Click;
             // 
             // button3
             // 
@@ -177,27 +201,28 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(401, 422);
+            button3.Location = new Point(214, 422);
             button3.Name = "button3";
             button3.Size = new Size(151, 39);
             button3.TabIndex = 71;
             button3.Text = "Exportar como PDF";
             button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnBorrar
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.BackColor = Color.FromArgb(190, 31, 36);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(582, 422);
-            button2.Name = "button2";
-            button2.Size = new Size(151, 39);
-            button2.TabIndex = 70;
-            button2.Text = "Borra Selección";
-            button2.UseVisualStyleBackColor = false;
+            btnBorrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnBorrar.BackColor = Color.FromArgb(190, 31, 36);
+            btnBorrar.FlatAppearance.BorderSize = 0;
+            btnBorrar.FlatStyle = FlatStyle.Flat;
+            btnBorrar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBorrar.ForeColor = SystemColors.ButtonFace;
+            btnBorrar.Location = new Point(582, 422);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(151, 39);
+            btnBorrar.TabIndex = 70;
+            btnBorrar.Text = "Borra Selección";
+            btnBorrar.UseVisualStyleBackColor = false;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // dataGridView3
             // 
@@ -330,6 +355,10 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
+            panel1.Controls.Add(label17);
+            panel1.Controls.Add(label16);
+            panel1.Controls.Add(label15);
+            panel1.Controls.Add(label14);
             panel1.Controls.Add(textBox5);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(button8);
@@ -350,7 +379,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
@@ -360,8 +389,9 @@
             textBox5.Anchor = AnchorStyles.None;
             textBox5.BackColor = SystemColors.Control;
             textBox5.BorderColor = SystemColors.ControlDarkDark;
-            textBox5.BorderFocusColor = Color.Black;
+            textBox5.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textBox5.BorderSize = 2;
+            textBox5.ForeColor = Color.DimGray;
             textBox5.Location = new Point(262, 628);
             textBox5.Multiline = false;
             textBox5.Name = "textBox5";
@@ -369,7 +399,7 @@
             textBox5.PasswordChar = false;
             textBox5.Size = new Size(191, 30);
             textBox5.TabIndex = 98;
-            textBox5.Texts = "Correo electrónico*";
+            textBox5.Texts = "ejemplo@unam.gob.mx";
             textBox5.UnderlinedStyle = true;
             // 
             // label12
@@ -404,8 +434,9 @@
             textProceso.Anchor = AnchorStyles.None;
             textProceso.BackColor = SystemColors.Control;
             textProceso.BorderColor = SystemColors.ControlDarkDark;
-            textProceso.BorderFocusColor = Color.Black;
+            textProceso.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textProceso.BorderSize = 2;
+            textProceso.ForeColor = Color.DimGray;
             textProceso.Location = new Point(15, 149);
             textProceso.Multiline = false;
             textProceso.Name = "textProceso";
@@ -413,7 +444,7 @@
             textProceso.PasswordChar = false;
             textProceso.Size = new Size(219, 30);
             textProceso.TabIndex = 95;
-            textProceso.Texts = "Nombre del proceso*";
+            textProceso.Texts = "Ejemplo: Elaboración de concreto simple";
             textProceso.UnderlinedStyle = true;
             // 
             // label4
@@ -543,7 +574,7 @@
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(275, 517);
+            label1.Location = new Point(281, 505);
             label1.Name = "label1";
             label1.Size = new Size(148, 19);
             label1.TabIndex = 82;
@@ -554,16 +585,17 @@
             textBox2.Anchor = AnchorStyles.None;
             textBox2.BackColor = SystemColors.Control;
             textBox2.BorderColor = SystemColors.ControlDarkDark;
-            textBox2.BorderFocusColor = Color.Black;
+            textBox2.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textBox2.BorderSize = 2;
+            textBox2.ForeColor = Color.DimGray;
             textBox2.Location = new Point(262, 565);
-            textBox2.Multiline = false;
+            textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Padding = new Padding(7);
             textBox2.PasswordChar = false;
             textBox2.Size = new Size(191, 30);
             textBox2.TabIndex = 80;
-            textBox2.Texts = "Auto ACV*";
+            textBox2.Texts = "Ejemplo: Centro Mario Molina";
             textBox2.UnderlinedStyle = true;
             // 
             // ComboProducto
@@ -595,6 +627,7 @@
             textOtro.BorderColor = SystemColors.ControlDarkDark;
             textOtro.BorderFocusColor = Color.Black;
             textOtro.BorderSize = 2;
+            textOtro.ForeColor = Color.DimGray;
             textOtro.Location = new Point(501, 82);
             textOtro.Multiline = false;
             textOtro.Name = "textOtro";
@@ -602,7 +635,7 @@
             textOtro.PasswordChar = false;
             textOtro.Size = new Size(222, 30);
             textOtro.TabIndex = 69;
-            textOtro.Texts = "Otro*";
+            textOtro.Texts = "Ejemplo: grava y arena";
             textOtro.UnderlinedStyle = true;
             // 
             // labelUsuario
@@ -635,6 +668,8 @@
             panel4.AutoScroll = true;
             panel4.BackColor = Color.FromArgb(242, 230, 230);
             panel4.Controls.Add(label13);
+            panel4.Controls.Add(label19);
+            panel4.Controls.Add(label18);
             panel4.Controls.Add(button7);
             panel4.Controls.Add(button6);
             panel4.Controls.Add(buttoAtrasP);
@@ -650,21 +685,10 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-18, 0);
+            panel4.Location = new Point(-45, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
-            // 
-            // label13
-            // 
-            label13.Anchor = AnchorStyles.None;
-            label13.AutoSize = true;
-            label13.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.Location = new Point(324, 144);
-            label13.Name = "label13";
-            label13.Size = new Size(48, 19);
-            label13.TabIndex = 101;
-            label13.Text = "Valor";
             // 
             // button7
             // 
@@ -828,14 +852,15 @@
             textUnidadFuncional.BorderColor = SystemColors.ControlDarkDark;
             textUnidadFuncional.BorderFocusColor = Color.Black;
             textUnidadFuncional.BorderSize = 2;
+            textUnidadFuncional.ForeColor = Color.DimGray;
             textUnidadFuncional.Location = new Point(248, 80);
-            textUnidadFuncional.Multiline = false;
+            textUnidadFuncional.Multiline = true;
             textUnidadFuncional.Name = "textUnidadFuncional";
             textUnidadFuncional.Padding = new Padding(7);
             textUnidadFuncional.PasswordChar = false;
             textUnidadFuncional.Size = new Size(230, 30);
             textUnidadFuncional.TabIndex = 71;
-            textUnidadFuncional.Texts = "Nombre de la unidad funcional*";
+            textUnidadFuncional.Texts = "Ejemplo: Elaboración de concreto simple";
             textUnidadFuncional.UnderlinedStyle = true;
             // 
             // textBox7
@@ -1113,7 +1138,7 @@
             panel5.Controls.Add(comboBox4);
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(3, 3);
+            panel5.Location = new Point(-24, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
@@ -1252,6 +1277,90 @@
             label10.TabIndex = 92;
             label10.Text = "Tiempo válido del estudio";
             // 
+            // label14
+            // 
+            label14.Anchor = AnchorStyles.None;
+            label14.AutoSize = true;
+            label14.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.ForeColor = Color.FromArgb(190, 31, 36);
+            label14.Location = new Point(501, 63);
+            label14.Name = "label14";
+            label14.Size = new Size(39, 16);
+            label14.TabIndex = 108;
+            label14.Text = "Otro*";
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.None;
+            label15.AutoSize = true;
+            label15.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.FromArgb(190, 31, 36);
+            label15.Location = new Point(15, 130);
+            label15.Name = "label15";
+            label15.Size = new Size(140, 16);
+            label15.TabIndex = 109;
+            label15.Text = "Nombre del proceso*";
+            // 
+            // label16
+            // 
+            label16.Anchor = AnchorStyles.None;
+            label16.AutoSize = true;
+            label16.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.ForeColor = Color.FromArgb(190, 31, 36);
+            label16.Location = new Point(262, 545);
+            label16.Name = "label16";
+            label16.Size = new Size(77, 16);
+            label16.TabIndex = 110;
+            label16.Text = "Autor ACV*";
+            // 
+            // label17
+            // 
+            label17.Anchor = AnchorStyles.None;
+            label17.AutoSize = true;
+            label17.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.ForeColor = Color.FromArgb(190, 31, 36);
+            label17.Location = new Point(262, 611);
+            label17.Name = "label17";
+            label17.Size = new Size(130, 16);
+            label17.TabIndex = 111;
+            label17.Text = "Correo electrónico*";
+            // 
+            // label18
+            // 
+            label18.Anchor = AnchorStyles.None;
+            label18.AutoSize = true;
+            label18.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.ForeColor = Color.FromArgb(190, 31, 36);
+            label18.Location = new Point(248, 61);
+            label18.Name = "label18";
+            label18.Size = new Size(77, 16);
+            label18.TabIndex = 111;
+            label18.Text = "Autor ACV*";
+            // 
+            // label19
+            // 
+            label19.Anchor = AnchorStyles.None;
+            label19.AutoSize = true;
+            label19.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.ForeColor = Color.FromArgb(190, 31, 36);
+            label19.Location = new Point(248, 279);
+            label19.Name = "label19";
+            label19.Size = new Size(77, 16);
+            label19.TabIndex = 112;
+            label19.Text = "Autor ACV*";
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.None;
+            label13.AutoSize = true;
+            label13.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.ForeColor = Color.FromArgb(190, 31, 36);
+            label13.Location = new Point(248, 147);
+            label13.Name = "label13";
+            label13.Size = new Size(77, 16);
+            label13.TabIndex = 113;
+            label13.Text = "Autor ACV*";
+            // 
             // ListaFormulario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1355,7 +1464,7 @@
         private Label label10;
         private TabPage tabPage1;
         private Button button3;
-        private Button button2;
+        private Button btnBorrar;
         private DataGridView dataGridView3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -1383,6 +1492,13 @@
         private Label label12;
         private Button button8;
         private Sistema_de_sanciones.Templates.TextBox textBox5;
+        private Button btnSeleccionarT;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
         private Label label13;
+        private Label label19;
+        private Label label18;
     }
 }

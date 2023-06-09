@@ -160,7 +160,7 @@ namespace SistemaRegistro
         }
         private void Guardar_Click(object sender, EventArgs e)
         {
-            DialogResult resut = MessageBox.Show("Usuario registrado", "Aviso", MessageBoxButtons.YesNo);
+            DialogResult resut = MessageBox.Show("Usuario registrado", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (resut == DialogResult.Yes)
             {
 

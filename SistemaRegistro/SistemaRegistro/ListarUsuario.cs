@@ -40,7 +40,7 @@ namespace SistemaRegistro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult resut = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo);
+            DialogResult resut = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             if (resut == DialogResult.Yes)
             {
 
@@ -48,6 +48,14 @@ namespace SistemaRegistro
             else if (resut == DialogResult.No)
             {
                 return;
+            }
+        }
+
+        private void btnSeleccionT_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.dataGridView1.Rows)
+            {
+                row.Cells[6].Value = row.Cells[6].Value == null? false : !(bool)row.Cells[6].Value;
             }
         }
     }

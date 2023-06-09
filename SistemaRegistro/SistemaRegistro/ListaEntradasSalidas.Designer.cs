@@ -30,7 +30,8 @@
         {
             tabControl1 = new TabControl();
             ListaUsuario = new TabPage();
-            button2 = new Button();
+            btnSeleccionarT = new Button();
+            btnBorrar = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
             Column11 = new DataGridViewTextBoxColumn();
@@ -50,7 +51,6 @@
             button4 = new Button();
             button3 = new Button();
             textBox3 = new Sistema_de_sanciones.Templates.TextBox();
-            label5 = new Label();
             numericUpDown1 = new NumericUpDown();
             label3 = new Label();
             label12 = new Label();
@@ -66,6 +66,10 @@
             ComboTecno = new ComboBox();
             textOtro = new Sistema_de_sanciones.Templates.TextBox();
             labelUsuario = new Label();
+            label4 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            label5 = new Label();
             tabControl1.SuspendLayout();
             ListaUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -88,7 +92,8 @@
             // ListaUsuario
             // 
             ListaUsuario.BackColor = Color.FromArgb(242, 230, 230);
-            ListaUsuario.Controls.Add(button2);
+            ListaUsuario.Controls.Add(btnSeleccionarT);
+            ListaUsuario.Controls.Add(btnBorrar);
             ListaUsuario.Controls.Add(button1);
             ListaUsuario.Controls.Add(dataGridView1);
             ListaUsuario.Location = new Point(4, 24);
@@ -98,20 +103,37 @@
             ListaUsuario.TabIndex = 0;
             ListaUsuario.Text = "ListaEntradas / Salidas";
             // 
-            // button2
+            // btnSeleccionarT
             // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.BackColor = Color.FromArgb(97, 97, 96);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(569, 428);
-            button2.Name = "button2";
-            button2.Size = new Size(151, 39);
-            button2.TabIndex = 71;
-            button2.Text = "Borra Selección";
-            button2.UseVisualStyleBackColor = false;
+            btnSeleccionarT.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSeleccionarT.BackColor = Color.FromArgb(190, 31, 36);
+            btnSeleccionarT.FlatAppearance.BorderSize = 0;
+            btnSeleccionarT.FlatStyle = FlatStyle.Flat;
+            btnSeleccionarT.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSeleccionarT.ForeColor = SystemColors.ButtonFace;
+            btnSeleccionarT.Location = new Point(383, 428);
+            btnSeleccionarT.Name = "btnSeleccionarT";
+            btnSeleccionarT.Size = new Size(151, 39);
+            btnSeleccionarT.TabIndex = 72;
+            btnSeleccionarT.Text = "Seleccionar todo";
+            btnSeleccionarT.UseVisualStyleBackColor = false;
+            btnSeleccionarT.Click += btnSeleccionarT_Click;
+            // 
+            // btnBorrar
+            // 
+            btnBorrar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnBorrar.BackColor = Color.FromArgb(190, 31, 36);
+            btnBorrar.FlatAppearance.BorderSize = 0;
+            btnBorrar.FlatStyle = FlatStyle.Flat;
+            btnBorrar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBorrar.ForeColor = SystemColors.ButtonFace;
+            btnBorrar.Location = new Point(569, 428);
+            btnBorrar.Name = "btnBorrar";
+            btnBorrar.Size = new Size(151, 39);
+            btnBorrar.TabIndex = 71;
+            btnBorrar.Text = "Borra Selección";
+            btnBorrar.UseVisualStyleBackColor = false;
+            btnBorrar.Click += btnBorrar_Click;
             // 
             // button1
             // 
@@ -219,10 +241,13 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(numericUpDown1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label12);
@@ -238,7 +263,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-18, 0);
+            panel1.Location = new Point(3, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(723, 747);
             panel1.TabIndex = 78;
@@ -280,6 +305,7 @@
             textBox3.BorderColor = SystemColors.ControlDarkDark;
             textBox3.BorderFocusColor = Color.Black;
             textBox3.BorderSize = 2;
+            textBox3.ForeColor = Color.DimGray;
             textBox3.Location = new Point(134, 512);
             textBox3.Multiline = false;
             textBox3.Name = "textBox3";
@@ -287,19 +313,8 @@
             textBox3.PasswordChar = false;
             textBox3.Size = new Size(451, 30);
             textBox3.TabIndex = 101;
-            textBox3.Texts = "Comentario*";
+            textBox3.Texts = "Ejemplo: \"Expreso este comentario\"";
             textBox3.UnderlinedStyle = true;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(85, 235);
-            label5.Name = "label5";
-            label5.Size = new Size(48, 19);
-            label5.TabIndex = 100;
-            label5.Text = "Valor";
             // 
             // numericUpDown1
             // 
@@ -374,16 +389,17 @@
             textProceso.Anchor = AnchorStyles.None;
             textProceso.BackColor = SystemColors.Control;
             textProceso.BorderColor = SystemColors.ControlDarkDark;
-            textProceso.BorderFocusColor = Color.Black;
+            textProceso.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textProceso.BorderSize = 2;
+            textProceso.ForeColor = Color.DimGray;
             textProceso.Location = new Point(362, 396);
-            textProceso.Multiline = false;
+            textProceso.Multiline = true;
             textProceso.Name = "textProceso";
             textProceso.Padding = new Padding(7);
             textProceso.PasswordChar = false;
             textProceso.Size = new Size(324, 30);
             textProceso.TabIndex = 95;
-            textProceso.Texts = "Citas-Referencias*";
+            textProceso.Texts = "Ejemplo: “Manual del Ingeniero civil”";
             textProceso.UnderlinedStyle = true;
             // 
             // comboSeis
@@ -468,16 +484,17 @@
             textOtro.Anchor = AnchorStyles.None;
             textOtro.BackColor = SystemColors.Control;
             textOtro.BorderColor = SystemColors.ControlDarkDark;
-            textOtro.BorderFocusColor = Color.Black;
+            textOtro.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textOtro.BorderSize = 2;
+            textOtro.ForeColor = Color.DimGray;
             textOtro.Location = new Point(11, 148);
-            textOtro.Multiline = false;
+            textOtro.Multiline = true;
             textOtro.Name = "textOtro";
             textOtro.Padding = new Padding(7);
             textOtro.PasswordChar = false;
             textOtro.Size = new Size(222, 30);
             textOtro.TabIndex = 69;
-            textOtro.Texts = "Nombre de flujo*";
+            textOtro.Texts = "Ejemplo: Cemento Portland";
             textOtro.UnderlinedStyle = true;
             // 
             // labelUsuario
@@ -491,6 +508,54 @@
             labelUsuario.Size = new Size(111, 19);
             labelUsuario.TabIndex = 29;
             labelUsuario.Text = "Identificación";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(190, 31, 36);
+            label4.Location = new Point(11, 119);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 16);
+            label4.TabIndex = 106;
+            label4.Text = "Nombre de flujo*";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(190, 31, 36);
+            label1.Location = new Point(362, 377);
+            label1.Name = "label1";
+            label1.Size = new Size(122, 16);
+            label1.TabIndex = 107;
+            label1.Text = "Citas-Referencias*";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(190, 31, 36);
+            label2.Location = new Point(133, 491);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 16);
+            label2.TabIndex = 108;
+            label2.Text = "Comentario";
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.None;
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(190, 31, 36);
+            label5.Location = new Point(10, 248);
+            label5.Name = "label5";
+            label5.Size = new Size(45, 16);
+            label5.TabIndex = 109;
+            label5.Text = "Valor*";
             // 
             // ListaEntradasSalidas
             // 
@@ -519,7 +584,7 @@
         private TabPage ListaUsuario;
         private Button button1;
         private DataGridView dataGridView1;
-        private Button button2;
+        private Button btnBorrar;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
@@ -536,7 +601,6 @@
         private Panel panel1;
         private Button button3;
         private Sistema_de_sanciones.Templates.TextBox textBox3;
-        private Label label5;
         private NumericUpDown numericUpDown1;
         private Label label3;
         private Label label12;
@@ -553,5 +617,10 @@
         private Sistema_de_sanciones.Templates.TextBox textOtro;
         private Label labelUsuario;
         private Button button4;
+        private Button btnSeleccionarT;
+        private Label label1;
+        private Label label4;
+        private Label label2;
+        private Label label5;
     }
 }

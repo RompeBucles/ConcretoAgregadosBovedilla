@@ -73,7 +73,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(1, 0);
+            panel1.Location = new Point(2, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 77;
@@ -317,6 +317,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            BackColor = Color.FromArgb(242, 230, 230);
             ClientSize = new Size(736, 500);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
