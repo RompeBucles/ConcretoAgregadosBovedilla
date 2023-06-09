@@ -122,7 +122,7 @@ namespace SistemaRegistro
                 textUsuario.ForeColor = Color.Gray;
             }
         }
-       
+
         private void textPassword_Enter(object sender, EventArgs e)
         {
             if (textPassword.Texts == "Contraseña*")
@@ -137,7 +137,7 @@ namespace SistemaRegistro
             if (textPassword.Texts == "")
             {
                 textPassword.Texts = "Contraseña*";
-                textPassword.ForeColor = Color.Black;
+                textPassword.ForeColor = Color.Gray;
             }
         }
 
@@ -155,7 +155,7 @@ namespace SistemaRegistro
             if (textConfPassword.Texts == "")
             {
                 textConfPassword.Texts = "Contraseña*";
-                textConfPassword.ForeColor = Color.Black;
+                textConfPassword.ForeColor = Color.Gray;
             }
         }
         private void Guardar_Click(object sender, EventArgs e)

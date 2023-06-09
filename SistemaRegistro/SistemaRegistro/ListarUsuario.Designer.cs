@@ -43,29 +43,30 @@
             textNombres = new Sistema_de_sanciones.Templates.TextBox();
             label9 = new Label();
             EditarUsuarios = new TabPage();
+            textConfPassword = new Sistema_de_sanciones.Templates.TextBox();
+            textPassword = new Sistema_de_sanciones.Templates.TextBox();
+            textUsuario = new Sistema_de_sanciones.Templates.TextBox();
+            textTelefono = new Sistema_de_sanciones.Templates.TextBox();
+            textCorreo = new Sistema_de_sanciones.Templates.TextBox();
+            textApellidoM = new Sistema_de_sanciones.Templates.TextBox();
+            textApellidoP = new Sistema_de_sanciones.Templates.TextBox();
+            textNombre = new Sistema_de_sanciones.Templates.TextBox();
             label4 = new Label();
             label5 = new Label();
             label7 = new Label();
             label6 = new Label();
             label12 = new Label();
             label13 = new Label();
-            textBox5 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox2 = new Sistema_de_sanciones.Templates.TextBox();
             label1 = new Label();
             radioBtnUser = new RadioButton();
             radioBtnAdmin = new RadioButton();
             label3 = new Label();
             label2 = new Label();
-            textBox8 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox7 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox6 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox4 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox1 = new Sistema_de_sanciones.Templates.TextBox();
-            textUsuario = new Sistema_de_sanciones.Templates.TextBox();
             buttonCancelar_Mod = new Button();
             buttonGuardar_Mod = new Button();
             label8 = new Label();
             ListaUsuario = new TabPage();
+            btnSeleccionT = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -76,7 +77,6 @@
             Editar = new DataGridViewButtonColumn();
             Column6 = new DataGridViewCheckBoxColumn();
             tabControl1 = new TabControl();
-            btnSeleccionT = new Button();
             VerUsuario.SuspendLayout();
             EditarUsuarios.SuspendLayout();
             ListaUsuario.SuspendLayout();
@@ -326,25 +326,25 @@
             // EditarUsuarios
             // 
             EditarUsuarios.BackColor = Color.FromArgb(242, 230, 230);
+            EditarUsuarios.Controls.Add(textConfPassword);
+            EditarUsuarios.Controls.Add(textPassword);
+            EditarUsuarios.Controls.Add(textUsuario);
+            EditarUsuarios.Controls.Add(textTelefono);
+            EditarUsuarios.Controls.Add(textCorreo);
+            EditarUsuarios.Controls.Add(textApellidoM);
+            EditarUsuarios.Controls.Add(textApellidoP);
+            EditarUsuarios.Controls.Add(textNombre);
             EditarUsuarios.Controls.Add(label4);
             EditarUsuarios.Controls.Add(label5);
             EditarUsuarios.Controls.Add(label7);
             EditarUsuarios.Controls.Add(label6);
             EditarUsuarios.Controls.Add(label12);
             EditarUsuarios.Controls.Add(label13);
-            EditarUsuarios.Controls.Add(textBox5);
-            EditarUsuarios.Controls.Add(textBox2);
             EditarUsuarios.Controls.Add(label1);
             EditarUsuarios.Controls.Add(radioBtnUser);
             EditarUsuarios.Controls.Add(radioBtnAdmin);
             EditarUsuarios.Controls.Add(label3);
             EditarUsuarios.Controls.Add(label2);
-            EditarUsuarios.Controls.Add(textBox8);
-            EditarUsuarios.Controls.Add(textBox7);
-            EditarUsuarios.Controls.Add(textBox6);
-            EditarUsuarios.Controls.Add(textBox4);
-            EditarUsuarios.Controls.Add(textBox1);
-            EditarUsuarios.Controls.Add(textUsuario);
             EditarUsuarios.Controls.Add(buttonCancelar_Mod);
             EditarUsuarios.Controls.Add(buttonGuardar_Mod);
             EditarUsuarios.Controls.Add(label8);
@@ -354,6 +354,174 @@
             EditarUsuarios.Size = new Size(760, 491);
             EditarUsuarios.TabIndex = 1;
             EditarUsuarios.Text = "Editar Usuario";
+            // 
+            // textConfPassword
+            // 
+            textConfPassword.Anchor = AnchorStyles.None;
+            textConfPassword.BackColor = SystemColors.Control;
+            textConfPassword.BorderColor = Color.Black;
+            textConfPassword.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textConfPassword.BorderSize = 2;
+            textConfPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textConfPassword.ForeColor = Color.DimGray;
+            textConfPassword.Location = new Point(555, 304);
+            textConfPassword.Multiline = false;
+            textConfPassword.Name = "textConfPassword";
+            textConfPassword.Padding = new Padding(7, 8, 7, 8);
+            textConfPassword.PasswordChar = true;
+            textConfPassword.Size = new Size(196, 36);
+            textConfPassword.TabIndex = 99;
+            textConfPassword.Texts = "Contraseña*";
+            textConfPassword.UnderlinedStyle = true;
+            textConfPassword.Enter += textConfPassword_Enter;
+            textConfPassword.Leave += textConfPassword_Leave;
+            // 
+            // textPassword
+            // 
+            textPassword.Anchor = AnchorStyles.None;
+            textPassword.BackColor = SystemColors.Control;
+            textPassword.BorderColor = Color.Black;
+            textPassword.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textPassword.BorderSize = 2;
+            textPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textPassword.ForeColor = Color.DimGray;
+            textPassword.Location = new Point(272, 304);
+            textPassword.Multiline = false;
+            textPassword.Name = "textPassword";
+            textPassword.Padding = new Padding(7, 8, 7, 8);
+            textPassword.PasswordChar = true;
+            textPassword.Size = new Size(196, 36);
+            textPassword.TabIndex = 98;
+            textPassword.Texts = "Contraseña*";
+            textPassword.UnderlinedStyle = true;
+            textPassword.Enter += textPassword_Enter;
+            textPassword.Leave += textPassword_Leave;
+            // 
+            // textUsuario
+            // 
+            textUsuario.Anchor = AnchorStyles.None;
+            textUsuario.BackColor = SystemColors.Control;
+            textUsuario.BorderColor = Color.Black;
+            textUsuario.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textUsuario.BorderSize = 2;
+            textUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textUsuario.ForeColor = Color.DimGray;
+            textUsuario.Location = new Point(11, 304);
+            textUsuario.Multiline = false;
+            textUsuario.Name = "textUsuario";
+            textUsuario.Padding = new Padding(7, 8, 7, 8);
+            textUsuario.PasswordChar = false;
+            textUsuario.Size = new Size(196, 36);
+            textUsuario.TabIndex = 97;
+            textUsuario.Texts = "Ejemplo: jperez";
+            textUsuario.UnderlinedStyle = true;
+            textUsuario.Enter += textUsuario_Enter;
+            textUsuario.Leave += textUsuario_Leave;
+            // 
+            // textTelefono
+            // 
+            textTelefono.Anchor = AnchorStyles.None;
+            textTelefono.BackColor = SystemColors.Control;
+            textTelefono.BorderColor = Color.Black;
+            textTelefono.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textTelefono.BorderSize = 2;
+            textTelefono.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textTelefono.ForeColor = Color.DimGray;
+            textTelefono.Location = new Point(555, 180);
+            textTelefono.Multiline = false;
+            textTelefono.Name = "textTelefono";
+            textTelefono.Padding = new Padding(7, 8, 7, 8);
+            textTelefono.PasswordChar = false;
+            textTelefono.Size = new Size(196, 36);
+            textTelefono.TabIndex = 96;
+            textTelefono.Texts = "Ejemplo: 2281144037";
+            textTelefono.UnderlinedStyle = true;
+            textTelefono.Enter += textTelefono_Enter;
+            textTelefono.Leave += textTelefono_Leave;
+            // 
+            // textCorreo
+            // 
+            textCorreo.Anchor = AnchorStyles.None;
+            textCorreo.BackColor = SystemColors.Control;
+            textCorreo.BorderColor = Color.Black;
+            textCorreo.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textCorreo.BorderSize = 2;
+            textCorreo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textCorreo.ForeColor = Color.DimGray;
+            textCorreo.Location = new Point(272, 180);
+            textCorreo.Multiline = false;
+            textCorreo.Name = "textCorreo";
+            textCorreo.Padding = new Padding(7, 8, 7, 8);
+            textCorreo.PasswordChar = false;
+            textCorreo.Size = new Size(212, 36);
+            textCorreo.TabIndex = 95;
+            textCorreo.Texts = "ejemplo@unam.org.mx";
+            textCorreo.UnderlinedStyle = true;
+            textCorreo.Enter += textCorreo_Enter;
+            textCorreo.Leave += textCorreo_Leave;
+            // 
+            // textApellidoM
+            // 
+            textApellidoM.Anchor = AnchorStyles.None;
+            textApellidoM.BackColor = SystemColors.Control;
+            textApellidoM.BorderColor = Color.Black;
+            textApellidoM.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textApellidoM.BorderSize = 2;
+            textApellidoM.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textApellidoM.ForeColor = Color.DimGray;
+            textApellidoM.Location = new Point(555, 80);
+            textApellidoM.Multiline = false;
+            textApellidoM.Name = "textApellidoM";
+            textApellidoM.Padding = new Padding(7, 8, 7, 8);
+            textApellidoM.PasswordChar = false;
+            textApellidoM.Size = new Size(198, 36);
+            textApellidoM.TabIndex = 94;
+            textApellidoM.Texts = "Ejemplo: Hernández";
+            textApellidoM.UnderlinedStyle = true;
+            textApellidoM.Enter += textApellidoM_Enter;
+            textApellidoM.Leave += textApellidoM_Leave;
+            // 
+            // textApellidoP
+            // 
+            textApellidoP.Anchor = AnchorStyles.None;
+            textApellidoP.BackColor = SystemColors.Control;
+            textApellidoP.BorderColor = Color.Black;
+            textApellidoP.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textApellidoP.BorderSize = 2;
+            textApellidoP.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textApellidoP.ForeColor = Color.DimGray;
+            textApellidoP.Location = new Point(272, 80);
+            textApellidoP.Multiline = false;
+            textApellidoP.Name = "textApellidoP";
+            textApellidoP.Padding = new Padding(7, 8, 7, 8);
+            textApellidoP.PasswordChar = false;
+            textApellidoP.Size = new Size(212, 36);
+            textApellidoP.TabIndex = 93;
+            textApellidoP.Texts = "Ejemplo: Pérez";
+            textApellidoP.UnderlinedStyle = true;
+            textApellidoP.Enter += textApellidoP_Enter;
+            textApellidoP.Leave += textApellidoP_Leave;
+            // 
+            // textNombre
+            // 
+            textNombre.Anchor = AnchorStyles.None;
+            textNombre.BackColor = SystemColors.Control;
+            textNombre.BorderColor = Color.Black;
+            textNombre.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textNombre.BorderSize = 2;
+            textNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textNombre.ForeColor = Color.DimGray;
+            textNombre.Location = new Point(11, 80);
+            textNombre.Multiline = false;
+            textNombre.Name = "textNombre";
+            textNombre.Padding = new Padding(7, 8, 7, 8);
+            textNombre.PasswordChar = false;
+            textNombre.Size = new Size(191, 36);
+            textNombre.TabIndex = 92;
+            textNombre.Texts = "Ejemplo: Juan";
+            textNombre.UnderlinedStyle = true;
+            textNombre.Enter += textNombre_Enter;
+            textNombre.Leave += textNombre_Leave;
             // 
             // label4
             // 
@@ -427,42 +595,6 @@
             label13.TabIndex = 86;
             label13.Text = "Nombre*";
             // 
-            // textBox5
-            // 
-            textBox5.Anchor = AnchorStyles.None;
-            textBox5.BackColor = SystemColors.Control;
-            textBox5.BorderColor = Color.Black;
-            textBox5.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox5.BorderSize = 2;
-            textBox5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(555, 180);
-            textBox5.Multiline = false;
-            textBox5.Name = "textBox5";
-            textBox5.Padding = new Padding(7, 8, 7, 8);
-            textBox5.PasswordChar = false;
-            textBox5.Size = new Size(196, 36);
-            textBox5.TabIndex = 83;
-            textBox5.Texts = "Teléfono*";
-            textBox5.UnderlinedStyle = true;
-            // 
-            // textBox2
-            // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.BackColor = SystemColors.Control;
-            textBox2.BorderColor = Color.Black;
-            textBox2.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox2.BorderSize = 2;
-            textBox2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(555, 90);
-            textBox2.Multiline = false;
-            textBox2.Name = "textBox2";
-            textBox2.Padding = new Padding(7, 8, 7, 8);
-            textBox2.PasswordChar = false;
-            textBox2.Size = new Size(198, 36);
-            textBox2.TabIndex = 82;
-            textBox2.Texts = "Apellido materno";
-            textBox2.UnderlinedStyle = true;
-            // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
@@ -481,7 +613,7 @@
             radioBtnUser.AutoSize = true;
             radioBtnUser.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             radioBtnUser.ForeColor = Color.Black;
-            radioBtnUser.Location = new Point(131, 195);
+            radioBtnUser.Location = new Point(142, 191);
             radioBtnUser.Name = "radioBtnUser";
             radioBtnUser.Size = new Size(73, 21);
             radioBtnUser.TabIndex = 80;
@@ -495,7 +627,7 @@
             radioBtnAdmin.Checked = true;
             radioBtnAdmin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             radioBtnAdmin.ForeColor = Color.Black;
-            radioBtnAdmin.Location = new Point(6, 195);
+            radioBtnAdmin.Location = new Point(17, 191);
             radioBtnAdmin.Name = "radioBtnAdmin";
             radioBtnAdmin.Size = new Size(115, 21);
             radioBtnAdmin.TabIndex = 79;
@@ -526,114 +658,6 @@
             label2.Size = new Size(135, 16);
             label2.TabIndex = 77;
             label2.Text = "Ingresa Contraseña*";
-            // 
-            // textBox8
-            // 
-            textBox8.Anchor = AnchorStyles.None;
-            textBox8.BackColor = SystemColors.Control;
-            textBox8.BorderColor = Color.Black;
-            textBox8.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox8.BorderSize = 2;
-            textBox8.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox8.Location = new Point(555, 308);
-            textBox8.Multiline = false;
-            textBox8.Name = "textBox8";
-            textBox8.Padding = new Padding(7, 8, 7, 8);
-            textBox8.PasswordChar = true;
-            textBox8.Size = new Size(196, 36);
-            textBox8.TabIndex = 75;
-            textBox8.Texts = "Nombre de usuario*";
-            textBox8.UnderlinedStyle = true;
-            // 
-            // textBox7
-            // 
-            textBox7.Anchor = AnchorStyles.None;
-            textBox7.BackColor = SystemColors.Control;
-            textBox7.BorderColor = Color.Black;
-            textBox7.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox7.BorderSize = 2;
-            textBox7.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox7.Location = new Point(272, 308);
-            textBox7.Multiline = false;
-            textBox7.Name = "textBox7";
-            textBox7.Padding = new Padding(7, 8, 7, 8);
-            textBox7.PasswordChar = true;
-            textBox7.Size = new Size(196, 36);
-            textBox7.TabIndex = 74;
-            textBox7.Texts = "Contraseña*";
-            textBox7.UnderlinedStyle = true;
-            // 
-            // textBox6
-            // 
-            textBox6.Anchor = AnchorStyles.None;
-            textBox6.BackColor = SystemColors.Control;
-            textBox6.BorderColor = Color.Black;
-            textBox6.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox6.BorderSize = 2;
-            textBox6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox6.Location = new Point(9, 308);
-            textBox6.Multiline = false;
-            textBox6.Name = "textBox6";
-            textBox6.Padding = new Padding(7, 8, 7, 8);
-            textBox6.PasswordChar = false;
-            textBox6.Size = new Size(196, 36);
-            textBox6.TabIndex = 73;
-            textBox6.Texts = "Usuario*";
-            textBox6.UnderlinedStyle = true;
-            // 
-            // textBox4
-            // 
-            textBox4.Anchor = AnchorStyles.None;
-            textBox4.BackColor = SystemColors.Control;
-            textBox4.BorderColor = Color.Black;
-            textBox4.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox4.BorderSize = 2;
-            textBox4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(272, 180);
-            textBox4.Multiline = false;
-            textBox4.Name = "textBox4";
-            textBox4.Padding = new Padding(7, 8, 7, 8);
-            textBox4.PasswordChar = false;
-            textBox4.Size = new Size(212, 36);
-            textBox4.TabIndex = 71;
-            textBox4.Texts = "Correo electrónico*";
-            textBox4.UnderlinedStyle = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.BackColor = SystemColors.Control;
-            textBox1.BorderColor = Color.Black;
-            textBox1.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox1.BorderSize = 2;
-            textBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(272, 90);
-            textBox1.Multiline = false;
-            textBox1.Name = "textBox1";
-            textBox1.Padding = new Padding(7, 8, 7, 8);
-            textBox1.PasswordChar = false;
-            textBox1.Size = new Size(212, 36);
-            textBox1.TabIndex = 69;
-            textBox1.Texts = "Apellido paterno*";
-            textBox1.UnderlinedStyle = true;
-            // 
-            // textUsuario
-            // 
-            textUsuario.Anchor = AnchorStyles.None;
-            textUsuario.BackColor = SystemColors.Control;
-            textUsuario.BorderColor = Color.Black;
-            textUsuario.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textUsuario.BorderSize = 2;
-            textUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textUsuario.Location = new Point(9, 90);
-            textUsuario.Multiline = false;
-            textUsuario.Name = "textUsuario";
-            textUsuario.Padding = new Padding(7, 8, 7, 8);
-            textUsuario.PasswordChar = false;
-            textUsuario.Size = new Size(191, 36);
-            textUsuario.TabIndex = 68;
-            textUsuario.Texts = "Nombre*";
-            textUsuario.UnderlinedStyle = true;
             // 
             // buttonCancelar_Mod
             // 
@@ -689,6 +713,22 @@
             ListaUsuario.Size = new Size(760, 491);
             ListaUsuario.TabIndex = 0;
             ListaUsuario.Text = "Lista Usuario";
+            // 
+            // btnSeleccionT
+            // 
+            btnSeleccionT.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSeleccionT.BackColor = Color.FromArgb(190, 31, 36);
+            btnSeleccionT.FlatAppearance.BorderSize = 0;
+            btnSeleccionT.FlatStyle = FlatStyle.Flat;
+            btnSeleccionT.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSeleccionT.ForeColor = SystemColors.ButtonFace;
+            btnSeleccionT.Location = new Point(444, 449);
+            btnSeleccionT.Name = "btnSeleccionT";
+            btnSeleccionT.Size = new Size(144, 39);
+            btnSeleccionT.TabIndex = 68;
+            btnSeleccionT.Text = "Seleccionar todo";
+            btnSeleccionT.UseVisualStyleBackColor = false;
+            btnSeleccionT.Click += btnSeleccionT_Click;
             // 
             // button1
             // 
@@ -769,22 +809,6 @@
             tabControl1.Size = new Size(768, 519);
             tabControl1.TabIndex = 21;
             // 
-            // btnSeleccionT
-            // 
-            btnSeleccionT.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnSeleccionT.BackColor = Color.FromArgb(190, 31, 36);
-            btnSeleccionT.FlatAppearance.BorderSize = 0;
-            btnSeleccionT.FlatStyle = FlatStyle.Flat;
-            btnSeleccionT.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnSeleccionT.ForeColor = SystemColors.ButtonFace;
-            btnSeleccionT.Location = new Point(444, 449);
-            btnSeleccionT.Name = "btnSeleccionT";
-            btnSeleccionT.Size = new Size(144, 39);
-            btnSeleccionT.TabIndex = 68;
-            btnSeleccionT.Text = "Seleccionar todo";
-            btnSeleccionT.UseVisualStyleBackColor = false;
-            btnSeleccionT.Click += btnSeleccionT_Click;
-            // 
             // ListarUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -829,19 +853,11 @@
         private Label label6;
         private Label label12;
         private Label label13;
-        private Sistema_de_sanciones.Templates.TextBox textBox5;
-        private Sistema_de_sanciones.Templates.TextBox textBox2;
         private Label label1;
         private RadioButton radioBtnUser;
         private RadioButton radioBtnAdmin;
         private Label label3;
         private Label label2;
-        private Sistema_de_sanciones.Templates.TextBox textBox8;
-        private Sistema_de_sanciones.Templates.TextBox textBox7;
-        private Sistema_de_sanciones.Templates.TextBox textBox6;
-        private Sistema_de_sanciones.Templates.TextBox textBox4;
-        private Sistema_de_sanciones.Templates.TextBox textBox1;
-        private Sistema_de_sanciones.Templates.TextBox textUsuario;
         private Button buttonCancelar_Mod;
         private Button buttonGuardar_Mod;
         private Label label8;
@@ -857,5 +873,13 @@
         private DataGridViewCheckBoxColumn Column6;
         private TabControl tabControl1;
         private Button btnSeleccionT;
+        private Sistema_de_sanciones.Templates.TextBox textConfPassword;
+        private Sistema_de_sanciones.Templates.TextBox textPassword;
+        private Sistema_de_sanciones.Templates.TextBox textUsuario;
+        private Sistema_de_sanciones.Templates.TextBox textTelefono;
+        private Sistema_de_sanciones.Templates.TextBox textCorreo;
+        private Sistema_de_sanciones.Templates.TextBox textApellidoM;
+        private Sistema_de_sanciones.Templates.TextBox textApellidoP;
+        private Sistema_de_sanciones.Templates.TextBox textNombre;
     }
 }

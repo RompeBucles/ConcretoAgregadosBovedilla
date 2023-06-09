@@ -30,7 +30,6 @@
         {
             panel1 = new Panel();
             button1 = new Button();
-            textBox3 = new Sistema_de_sanciones.Templates.TextBox();
             label5 = new Label();
             numericUpDown1 = new NumericUpDown();
             label3 = new Label();
@@ -38,7 +37,6 @@
             button8 = new Button();
             comboBox5 = new ComboBox();
             comboBox6 = new ComboBox();
-            textProceso = new Sistema_de_sanciones.Templates.TextBox();
             comboSeis = new ComboBox();
             comboDos = new ComboBox();
             comboUno = new ComboBox();
@@ -47,6 +45,11 @@
             ComboTecno = new ComboBox();
             textOtro = new Sistema_de_sanciones.Templates.TextBox();
             labelUsuario = new Label();
+            label15 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            textBox3 = new Sistema_de_sanciones.Templates.TextBox();
+            textProceso = new Sistema_de_sanciones.Templates.TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
@@ -55,8 +58,12 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(textProceso);
+            panel1.Controls.Add(label15);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(numericUpDown1);
             panel1.Controls.Add(label3);
@@ -64,7 +71,6 @@
             panel1.Controls.Add(button8);
             panel1.Controls.Add(comboBox5);
             panel1.Controls.Add(comboBox6);
-            panel1.Controls.Add(textProceso);
             panel1.Controls.Add(comboSeis);
             panel1.Controls.Add(comboDos);
             panel1.Controls.Add(comboUno);
@@ -73,7 +79,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(2, 1);
+            panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 77;
@@ -81,7 +87,7 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.FromArgb(97, 97, 96);
+            button1.BackColor = Color.FromArgb(190, 31, 36);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -92,23 +98,6 @@
             button1.TabIndex = 104;
             button1.Text = "Guardar datos";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox3
-            // 
-            textBox3.Anchor = AnchorStyles.None;
-            textBox3.BackColor = SystemColors.Control;
-            textBox3.BorderColor = SystemColors.ControlDarkDark;
-            textBox3.BorderFocusColor = Color.Black;
-            textBox3.BorderSize = 2;
-            textBox3.Location = new Point(141, 556);
-            textBox3.Multiline = false;
-            textBox3.Name = "textBox3";
-            textBox3.Padding = new Padding(7);
-            textBox3.PasswordChar = false;
-            textBox3.Size = new Size(451, 30);
-            textBox3.TabIndex = 101;
-            textBox3.Texts = "Comentario*";
-            textBox3.UnderlinedStyle = true;
             // 
             // label5
             // 
@@ -188,23 +177,6 @@
             comboBox6.Size = new Size(232, 23);
             comboBox6.TabIndex = 93;
             comboBox6.Text = "Emisiones *";
-            // 
-            // textProceso
-            // 
-            textProceso.Anchor = AnchorStyles.None;
-            textProceso.BackColor = SystemColors.Control;
-            textProceso.BorderColor = SystemColors.ControlDarkDark;
-            textProceso.BorderFocusColor = Color.Black;
-            textProceso.BorderSize = 2;
-            textProceso.Location = new Point(347, 424);
-            textProceso.Multiline = false;
-            textProceso.Name = "textProceso";
-            textProceso.Padding = new Padding(7);
-            textProceso.PasswordChar = false;
-            textProceso.Size = new Size(324, 30);
-            textProceso.TabIndex = 95;
-            textProceso.Texts = "Citas-Referencias*";
-            textProceso.UnderlinedStyle = true;
             // 
             // comboSeis
             // 
@@ -288,8 +260,9 @@
             textOtro.Anchor = AnchorStyles.None;
             textOtro.BackColor = SystemColors.Control;
             textOtro.BorderColor = SystemColors.ControlDarkDark;
-            textOtro.BorderFocusColor = Color.Black;
+            textOtro.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textOtro.BorderSize = 2;
+            textOtro.ForeColor = Color.DimGray;
             textOtro.Location = new Point(11, 168);
             textOtro.Multiline = false;
             textOtro.Name = "textOtro";
@@ -297,7 +270,7 @@
             textOtro.PasswordChar = false;
             textOtro.Size = new Size(222, 30);
             textOtro.TabIndex = 69;
-            textOtro.Texts = "Nombre de flujo*";
+            textOtro.Texts = "Ejemplo: Arena de mina";
             textOtro.UnderlinedStyle = true;
             // 
             // labelUsuario
@@ -311,6 +284,78 @@
             labelUsuario.Size = new Size(111, 19);
             labelUsuario.TabIndex = 29;
             labelUsuario.Text = "Identificación";
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.None;
+            label15.AutoSize = true;
+            label15.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.FromArgb(190, 31, 36);
+            label15.Location = new Point(11, 149);
+            label15.Name = "label15";
+            label15.Size = new Size(114, 16);
+            label15.TabIndex = 110;
+            label15.Text = "Nombre de flujo*";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(190, 31, 36);
+            label2.Location = new Point(143, 523);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 16);
+            label2.TabIndex = 114;
+            label2.Text = "Comentario";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(190, 31, 36);
+            label1.Location = new Point(372, 409);
+            label1.Name = "label1";
+            label1.Size = new Size(122, 16);
+            label1.TabIndex = 113;
+            label1.Text = "Citas-Referencias*";
+            // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.None;
+            textBox3.BackColor = SystemColors.Control;
+            textBox3.BorderColor = SystemColors.ControlDarkDark;
+            textBox3.BorderFocusColor = Color.Black;
+            textBox3.BorderSize = 2;
+            textBox3.ForeColor = Color.DimGray;
+            textBox3.Location = new Point(144, 544);
+            textBox3.Multiline = false;
+            textBox3.Name = "textBox3";
+            textBox3.Padding = new Padding(7);
+            textBox3.PasswordChar = false;
+            textBox3.Size = new Size(451, 30);
+            textBox3.TabIndex = 112;
+            textBox3.Texts = "Ejemplo: \"Expreso este comentario\"";
+            textBox3.UnderlinedStyle = true;
+            // 
+            // textProceso
+            // 
+            textProceso.Anchor = AnchorStyles.None;
+            textProceso.BackColor = SystemColors.Control;
+            textProceso.BorderColor = SystemColors.ControlDarkDark;
+            textProceso.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textProceso.BorderSize = 2;
+            textProceso.ForeColor = Color.DimGray;
+            textProceso.Location = new Point(372, 428);
+            textProceso.Multiline = true;
+            textProceso.Name = "textProceso";
+            textProceso.Padding = new Padding(7);
+            textProceso.PasswordChar = false;
+            textProceso.Size = new Size(324, 30);
+            textProceso.TabIndex = 111;
+            textProceso.Texts = "Ejemplo: “Manual del Ingeniero civil”";
+            textProceso.UnderlinedStyle = true;
             // 
             // RegistroEntradasSalidas
             // 
@@ -337,7 +382,6 @@
         private Button button8;
         private ComboBox comboBox5;
         private ComboBox comboBox6;
-        private Sistema_de_sanciones.Templates.TextBox textProceso;
         private ComboBox comboSeis;
         private ComboBox comboDos;
         private ComboBox comboUno;
@@ -347,9 +391,13 @@
         private Sistema_de_sanciones.Templates.TextBox textOtro;
         private Label labelUsuario;
         private Label label3;
-        private Sistema_de_sanciones.Templates.TextBox textBox3;
         private Label label5;
         private NumericUpDown numericUpDown1;
         private Button button1;
+        private Label label15;
+        private Label label2;
+        private Label label1;
+        private Sistema_de_sanciones.Templates.TextBox textBox3;
+        private Sistema_de_sanciones.Templates.TextBox textProceso;
     }
 }

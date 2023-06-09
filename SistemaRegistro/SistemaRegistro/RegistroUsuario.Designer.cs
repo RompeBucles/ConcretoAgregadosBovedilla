@@ -197,7 +197,7 @@
             textPassword.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textPassword.BorderSize = 2;
             textPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textPassword.ForeColor = SystemColors.ControlText;
+            textPassword.ForeColor = Color.DimGray;
             textPassword.Location = new Point(275, 333);
             textPassword.Multiline = false;
             textPassword.Name = "textPassword";
@@ -234,7 +234,7 @@
             textConfPassword.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textConfPassword.BorderSize = 2;
             textConfPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textConfPassword.ForeColor = SystemColors.ControlText;
+            textConfPassword.ForeColor = Color.DimGray;
             textConfPassword.Location = new Point(545, 333);
             textConfPassword.Multiline = false;
             textConfPassword.Name = "textConfPassword";
