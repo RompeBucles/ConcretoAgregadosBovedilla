@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuario));
             labelUsuario = new Label();
-            textNombre = new Sistema_de_sanciones.Templates.TextBox();
-            textApellidoP = new Sistema_de_sanciones.Templates.TextBox();
-            textApellidoM = new Sistema_de_sanciones.Templates.TextBox();
-            textCorreo = new Sistema_de_sanciones.Templates.TextBox();
-            textTelefono = new Sistema_de_sanciones.Templates.TextBox();
-            textUsuario = new Sistema_de_sanciones.Templates.TextBox();
-            textPassword = new Sistema_de_sanciones.Templates.TextBox();
+            textNombre = new Templates.TextBox();
+            textApellidoP = new Templates.TextBox();
+            textApellidoM = new Templates.TextBox();
+            textCorreo = new Templates.TextBox();
+            textTelefono = new Templates.TextBox();
+            textUsuario = new Templates.TextBox();
+            textPassword = new Templates.TextBox();
             Guardar = new Button();
-            textConfPassword = new Sistema_de_sanciones.Templates.TextBox();
+            textConfPassword = new Templates.TextBox();
             label2 = new Label();
             label3 = new Label();
             radioBtnAdmin = new RadioButton();
@@ -49,6 +51,16 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
+            pbMostrar = new PictureBox();
+            pbOcultar1 = new PictureBox();
+            pbMostrar1 = new PictureBox();
+            pbOcultar = new PictureBox();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)pbMostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // labelUsuario
@@ -124,6 +136,7 @@
             textApellidoM.Texts = "Ejemplo: Hernández";
             textApellidoM.UnderlinedStyle = true;
             textApellidoM.Enter += textApellidoM_Enter;
+            textApellidoM.KeyPress += textApelldioM_KeyPress;
             textApellidoM.Leave += textApellidoM_Leave;
             // 
             // textCorreo
@@ -142,7 +155,7 @@
             textCorreo.PasswordChar = false;
             textCorreo.Size = new Size(212, 36);
             textCorreo.TabIndex = 33;
-            textCorreo.Texts = "ejemplo@unam.org.mx";
+            textCorreo.Texts = " ejemplo@unam.org.mx";
             textCorreo.UnderlinedStyle = true;
             textCorreo.Enter += textCorreo_Enter;
             textCorreo.Leave += textCorreo_Leave;
@@ -383,6 +396,62 @@
             label9.TabIndex = 76;
             label9.Text = "Usuario*";
             // 
+            // pbMostrar
+            // 
+            pbMostrar.Anchor = AnchorStyles.None;
+            pbMostrar.Cursor = Cursors.Hand;
+            pbMostrar.Image = (Image)resources.GetObject("pbMostrar.Image");
+            pbMostrar.Location = new Point(424, 340);
+            pbMostrar.Name = "pbMostrar";
+            pbMostrar.Size = new Size(47, 23);
+            pbMostrar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbMostrar.TabIndex = 77;
+            pbMostrar.TabStop = false;
+            pbMostrar.Click += pbMostrar_Click;
+            // 
+            // pbOcultar1
+            // 
+            pbOcultar1.Anchor = AnchorStyles.None;
+            pbOcultar1.Cursor = Cursors.Hand;
+            pbOcultar1.Image = (Image)resources.GetObject("pbOcultar1.Image");
+            pbOcultar1.Location = new Point(697, 340);
+            pbOcultar1.Name = "pbOcultar1";
+            pbOcultar1.Size = new Size(44, 23);
+            pbOcultar1.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOcultar1.TabIndex = 78;
+            pbOcultar1.TabStop = false;
+            pbOcultar1.Click += pbOcultar1_Click;
+            // 
+            // pbMostrar1
+            // 
+            pbMostrar1.Anchor = AnchorStyles.None;
+            pbMostrar1.Cursor = Cursors.Hand;
+            pbMostrar1.Image = (Image)resources.GetObject("pbMostrar1.Image");
+            pbMostrar1.Location = new Point(697, 340);
+            pbMostrar1.Name = "pbMostrar1";
+            pbMostrar1.Size = new Size(46, 23);
+            pbMostrar1.SizeMode = PictureBoxSizeMode.Zoom;
+            pbMostrar1.TabIndex = 79;
+            pbMostrar1.TabStop = false;
+            pbMostrar1.Click += pbMostrar1_Click;
+            // 
+            // pbOcultar
+            // 
+            pbOcultar.Anchor = AnchorStyles.None;
+            pbOcultar.Cursor = Cursors.Hand;
+            pbOcultar.Image = (Image)resources.GetObject("pbOcultar.Image");
+            pbOcultar.Location = new Point(424, 340);
+            pbOcultar.Name = "pbOcultar";
+            pbOcultar.Size = new Size(47, 23);
+            pbOcultar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOcultar.TabIndex = 80;
+            pbOcultar.TabStop = false;
+            pbOcultar.Click += pbOcultar_Click;
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
             // RegistroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -390,6 +459,9 @@
             AutoScroll = true;
             BackColor = Color.FromArgb(242, 230, 230);
             ClientSize = new Size(768, 522);
+            Controls.Add(pbMostrar1);
+            Controls.Add(pbOcultar1);
+            Controls.Add(pbMostrar);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -411,10 +483,16 @@
             Controls.Add(textApellidoP);
             Controls.Add(textNombre);
             Controls.Add(labelUsuario);
+            Controls.Add(pbOcultar);
             ForeColor = Color.FromArgb(190, 31, 36);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RegistroUsuario";
             Text = "RegistroUsuario";
+            ((System.ComponentModel.ISupportInitialize)pbMostrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -425,14 +503,14 @@
         private TextBox textBox10;
         private TextBox textBox12;
         private TextBox textBox13;
-        private Sistema_de_sanciones.Templates.TextBox textApellidoM;
-        private Sistema_de_sanciones.Templates.TextBox textCorreo;
-        private Sistema_de_sanciones.Templates.TextBox textTelefono;
-        private Sistema_de_sanciones.Templates.TextBox textUsuario;
-        private Sistema_de_sanciones.Templates.TextBox textPassword;
-        private Sistema_de_sanciones.Templates.TextBox textConfPassword;
-        private Sistema_de_sanciones.Templates.TextBox textNombre;
-        private Sistema_de_sanciones.Templates.TextBox textApellidoP;
+        private SistemaRegistro.Templates.TextBox textApellidoM;
+        private SistemaRegistro.Templates.TextBox textCorreo;
+        private SistemaRegistro.Templates.TextBox textTelefono;
+        private SistemaRegistro.Templates.TextBox textUsuario;
+        private SistemaRegistro.Templates.TextBox textPassword;
+        private SistemaRegistro.Templates.TextBox textConfPassword;
+        private SistemaRegistro.Templates.TextBox textNombre;
+        private SistemaRegistro.Templates.TextBox textApellidoP;
         private Button Guardar;
         private Label label2;
         private Label label3;
@@ -445,5 +523,10 @@
         private Label label7;
         private Label label8;
         private Label label9;
+        private PictureBox pbMostrar;
+        private PictureBox pbOcultar1;
+        private PictureBox pbMostrar1;
+        private PictureBox pbOcultar;
+        private ErrorProvider errorProvider1;
     }
 }

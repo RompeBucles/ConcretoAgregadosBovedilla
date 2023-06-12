@@ -118,5 +118,17 @@ namespace SistemaRegistro
             logear(textUsuario.Texts, Encrypt.GetSHA256(textPassword.Texts.Trim()));
             limpiar();
         }
+
+        private void pbMostrar_Click(object sender, EventArgs e)
+        {
+            pbOcultar.BringToFront();
+            textPassword.PasswordChar = false;
+        }
+
+        private void pbOcultar_Click(object sender, EventArgs e)
+        {
+            pbMostrar.BringToFront();
+            textPassword.PasswordChar = true;
+        }
     }
 }

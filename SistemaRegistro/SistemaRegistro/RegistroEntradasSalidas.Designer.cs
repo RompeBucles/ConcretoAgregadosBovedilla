@@ -41,15 +41,15 @@
             comboDos = new ComboBox();
             comboUno = new ComboBox();
             buttonSiguienteP = new Button();
-            textBox1 = new Sistema_de_sanciones.Templates.TextBox();
+            textBox1 = new SistemaRegistro.Templates.TextBox();
             ComboTecno = new ComboBox();
-            textOtro = new Sistema_de_sanciones.Templates.TextBox();
+            textOtro = new SistemaRegistro.Templates.TextBox();
             labelUsuario = new Label();
             label15 = new Label();
             label2 = new Label();
             label1 = new Label();
-            textBox3 = new Sistema_de_sanciones.Templates.TextBox();
-            textProceso = new Sistema_de_sanciones.Templates.TextBox();
+            textBox3 = new SistemaRegistro.Templates.TextBox();
+            textProceso = new SistemaRegistro.Templates.TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
@@ -386,9 +386,9 @@
         private ComboBox comboDos;
         private ComboBox comboUno;
         private Button buttonSiguienteP;
-        private Sistema_de_sanciones.Templates.TextBox textBox1;
+        private SistemaRegistro.Templates.TextBox textBox1;
         private ComboBox ComboTecno;
-        private Sistema_de_sanciones.Templates.TextBox textOtro;
+        private SistemaRegistro.Templates.TextBox textOtro;
         private Label labelUsuario;
         private Label label3;
         private Label label5;
@@ -397,7 +397,7 @@
         private Label label15;
         private Label label2;
         private Label label1;
-        private Sistema_de_sanciones.Templates.TextBox textBox3;
-        private Sistema_de_sanciones.Templates.TextBox textProceso;
+        private SistemaRegistro.Templates.TextBox textBox3;
+        private SistemaRegistro.Templates.TextBox textProceso;
     }
 }

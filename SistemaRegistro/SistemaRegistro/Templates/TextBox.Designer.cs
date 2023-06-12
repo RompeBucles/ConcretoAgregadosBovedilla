@@ -1,4 +1,4 @@
-﻿namespace Sistema_de_sanciones.Templates
+﻿namespace SistemaRegistro.Templates
 {
     partial class TextBox
     {

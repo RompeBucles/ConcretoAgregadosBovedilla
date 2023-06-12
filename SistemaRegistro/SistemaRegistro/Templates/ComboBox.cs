@@ -10,7 +10,7 @@ using System.Drawing.Drawing2D;
 using System.ComponentModel;
 using System.Drawing.Design;
 
-namespace Sistema_de_sanciones.Templates
+namespace SistemaRegistro.Templates
 {
     [DefaultEvent("OnSelectedIndexChanged")]
     internal class RjComboBox : UserControl

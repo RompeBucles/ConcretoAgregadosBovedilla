@@ -37,12 +37,12 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textOtro = new Sistema_de_sanciones.Templates.TextBox();
-            textBox1 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox2 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox3 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox4 = new Sistema_de_sanciones.Templates.TextBox();
-            textBox5 = new Sistema_de_sanciones.Templates.TextBox();
+            textOtro = new SistemaRegistro.Templates.TextBox();
+            textBox1 = new SistemaRegistro.Templates.TextBox();
+            textBox2 = new SistemaRegistro.Templates.TextBox();
+            textBox3 = new SistemaRegistro.Templates.TextBox();
+            textBox4 = new SistemaRegistro.Templates.TextBox();
+            textBox5 = new SistemaRegistro.Templates.TextBox();
             SuspendLayout();
             // 
             // label3
@@ -287,11 +287,11 @@
         private Label label5;
         private Label label6;
         private Label label7;
-        private Sistema_de_sanciones.Templates.TextBox textOtro;
-        private Sistema_de_sanciones.Templates.TextBox textBox1;
-        private Sistema_de_sanciones.Templates.TextBox textBox2;
-        private Sistema_de_sanciones.Templates.TextBox textBox3;
-        private Sistema_de_sanciones.Templates.TextBox textBox4;
-        private Sistema_de_sanciones.Templates.TextBox textBox5;
+        private SistemaRegistro.Templates.TextBox textOtro;
+        private SistemaRegistro.Templates.TextBox textBox1;
+        private SistemaRegistro.Templates.TextBox textBox2;
+        private SistemaRegistro.Templates.TextBox textBox3;
+        private SistemaRegistro.Templates.TextBox textBox4;
+        private SistemaRegistro.Templates.TextBox textBox5;
     }
 }

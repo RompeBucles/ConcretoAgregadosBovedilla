@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Sistema_de_sanciones.Templates
+namespace SistemaRegistro.Templates
 {
     public partial class TextBox : UserControl
     {

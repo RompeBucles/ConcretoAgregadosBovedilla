@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
-namespace Sistema_de_sanciones.Templates
+namespace SistemaRegistro.Templates
 {
     public class RJToggleButton : CheckBox
     {

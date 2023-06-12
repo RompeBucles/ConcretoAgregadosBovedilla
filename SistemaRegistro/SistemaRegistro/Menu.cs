@@ -39,7 +39,7 @@ namespace SistemaRegistro
             //asignamos la instancia que llega al mandar a llamar este form a nuestro handler para poder usarlo correctamente en el resto de la ejecucion de este form
             logHandler = log;
             //asignamos el id a la variable global
-            
+            idper = id;
 
         }
         private void tipoUser()
@@ -168,12 +168,10 @@ namespace SistemaRegistro
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult resut = MessageBox.Show("¿Está seguro de cerrar sesión?", "Warning", MessageBoxButtons.YesNo);
+            DialogResult resut = MessageBox.Show("¿Está seguro de cerrar sesión?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (resut == DialogResult.Yes)
             {
-                // log.logoutx(idper);
-                //Login inicioSesion = new Login();
-                //inicioSesion.Show();
+                log.logoutx(idper);
                 logHandler.Show();
                 this.Hide();
             }
@@ -204,7 +202,7 @@ namespace SistemaRegistro
         //evento que asegura que al cerrar el form se cierre la aplicacion y se haga un logout al usuario
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //log.logoutx(idper);
+            log.logoutx(idper);
             logHandler.Close();
         }
     }

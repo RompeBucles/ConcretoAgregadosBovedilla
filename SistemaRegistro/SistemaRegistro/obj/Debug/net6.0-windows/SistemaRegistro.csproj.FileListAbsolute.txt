@@ -32,8 +32,6 @@ C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\Siste
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.RegistroEntradasSalidas.resources
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.RegistroFormulario.resources
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.RegistroUsuario.resources
-C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\Sistema_de_sanciones.Templates.RjComboBox.resources
-C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\Sistema_de_sanciones.Templates.TextBox.resources
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.csproj.GenerateResource.cache
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.AssemblyInfoInputs.cache
@@ -45,3 +43,5 @@ C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\Siste
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.pdb
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.genruntimeconfig.cache
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\ref\SistemaRegistro.dll
+C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.Templates.RjComboBox.resources
+C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.Templates.TextBox.resources
