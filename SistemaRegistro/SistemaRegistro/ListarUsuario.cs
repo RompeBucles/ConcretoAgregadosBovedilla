@@ -21,20 +21,20 @@ namespace SistemaRegistro
         private void CargarDG()
         {
 
-            dataGridView1.Rows.Add("Omar Suárez Casas", "Administrador", "omar@gmail.com", "2281115", "OmarSC");
+            dataGridView1.Rows.Add("Marco Antonio Nieto Buitimea", "Administrador", "Marco@gmail.com", "2281115", "MarcoA");
             dataGridView1.Rows.Add("Juan Ramirez Hernadez", "Usuario", "osdr@gmail.com", "22411755", "JuanSC");
-            dataGridView1.Rows.Add("Pepe Ignacio Perez", "Usuario", "dsds@gmail.com", "78778", "PEPE");
-            dataGridView1.Rows.Add("Mario Roberto Ochoa", "Usuario", "sfds@gmail.com", "7897252", "MarioR");
-            dataGridView1.Rows.Add("Pedro Perez Hernadez", "Administrador", "sdf@gmail.com", "787778", "PedroPP");
-            dataGridView1.Rows.Add("Ignacio Perez perez", "Usuario", "omar@gmail.com", "688686", "IgnacioPe");
-            dataGridView1.Rows.Add("Omar Suárez Casas", "Usuario", "omar@gamail.com", "86868", "OmarSC");
-            dataGridView1.Rows.Add("Pedro Perez Hernadez", "Administrador", "sdf@gmail.com", "787778", "PedroPP");
-            dataGridView1.Rows.Add("Ignacio Perez perez", "Usuario", "omar@gmail.com", "688686", "IgnacioPe");
-            dataGridView1.Rows.Add("Omar Suárez Casas", "Usuario", "omar@gamail.com", "86868", "OmarSC");
-            dataGridView1.Rows.Add("Omar Suárez Casas", "Administrador", "omar@gmail.com", "2281115", "OmarSC");
-            dataGridView1.Rows.Add("Juan Ramirez Hernadez", "Usuario", "osdr@gmail.com", "22411755", "JuanSC");
-            dataGridView1.Rows.Add("Pepe Ignacio Perez", "Usuario", "dsds@gmail.com", "78778", "PEPE");
-            dataGridView1.Rows.Add("Mario Roberto Ochoa", "Usuario", "sfds@gmail.com", "7897252", "MarioR");
+            dataGridView1.Rows.Add("Pepe Ignacio Perez", "Usuario", "Pepe@gmail.com", "78778", "PEPE");
+            dataGridView1.Rows.Add("Mario Roberto Ochoa", "Usuario", "Pepe@gmail.com", "7897252", "MarioR");
+            dataGridView1.Rows.Add("Pedro Perez Hernadez", "Administrador", "Pepe@gmail.com", "787778", "PedroPP");
+            dataGridView1.Rows.Add("Ignacio Perez perez", "Usuario", "Pepe@gmail.com", "688686", "IgnacioPe");
+            dataGridView1.Rows.Add("Marco Antonio Nieto Buitimea", "Usuario", "Pepe@gamail.com", "86868", "OmarSC");
+            dataGridView1.Rows.Add("Pedro Perez Hernadez", "Administrador", "Pepe@gmail.com", "787778", "PedroPP");
+            dataGridView1.Rows.Add("Ignacio Perez perez", "Usuario", "Pepe@gmail.com", "688686", "IgnacioPe");
+            dataGridView1.Rows.Add("Omar Suárez Casas", "Usuario", "Pepe@gamail.com", "86868", "OmarSC");
+            dataGridView1.Rows.Add("Omar Suárez Casas", "Administrador", "Pepe@gmail.com", "2281115", "OmarSC");
+            dataGridView1.Rows.Add("Juan Ramirez Hernadez", "Usuario", "Pepe@gmail.com", "22411755", "JuanSC");
+            dataGridView1.Rows.Add("Pepe Ignacio Perez", "Usuario", "Pepe@gmail.com", "78778", "PEPE");
+            dataGridView1.Rows.Add("Mario Roberto Ochoa", "Usuario", "Pepe@gmail.com", "7897252", "MarioR");
             dataGridView1.Rows.Add("Omar Suárez Casas", "Administrador", "omar@gamail.com", "2281115", "OmarSC"); dataGridView1.Rows.Add("Omar Suárez Casas", "Administrador", "omar@gamail.com", "2281115", "OmarSC");
         }
 

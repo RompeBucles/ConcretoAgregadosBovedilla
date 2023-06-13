@@ -21,7 +21,7 @@ namespace SistemaRegistro
         modeloUsuarios usu = new modeloUsuarios();
         private Usuarios usuarios = new Usuarios();
         ControladorUsuario controladorUsuario = new ControladorUsuario();
-        bool retorno = true;
+       
         DataSet dsTabla;
         private SqlDataReader LeerFilas;
         private int valorSeleccionadoPerfil;
@@ -48,19 +48,9 @@ namespace SistemaRegistro
                 errorProvider1.SetError(textNombre, "Se necesita ingresar un nombre");
                 textNombre.ForeColor = Color.Gray;
             }
-            Regex Nombre = new Regex(@"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$");
-            Match NombreValido = Nombre.Match(textNombre.Texts);
-
-            if (NombreValido.Success)
+            else
             {
-                usu.nombre = textNombre.Texts;
                 errorProvider1.SetError(textNombre, String.Empty);
-
-            }
-            else 
-            {
-                errorProvider1.SetError(textNombre, "Nombre no válido");
-                retorno = false;
             }
         }
 
@@ -81,18 +71,11 @@ namespace SistemaRegistro
                 errorProvider1.SetError(textApellidoP, "Se necesita ingresar el apellido paterno");
                 textApellidoP.ForeColor = Color.Gray;
             }
-            string ApellidoPPattern = @"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$";
-            bool ApellidoPValido = Regex.IsMatch(textApellidoP.Texts, ApellidoPPattern);
-
-            if (!ApellidoPValido)
-            {
-                errorProvider1.SetError(textApellidoP, "Apellido paterno no válido");
-                
-            }
             else
             {
                 errorProvider1.SetError(textApellidoP, String.Empty);
             }
+            
         }
         private void textApellidoM_Enter(object sender, EventArgs e)
         {
@@ -131,18 +114,11 @@ namespace SistemaRegistro
                 errorProvider1.SetError(textCorreo, "Se necesita ingresar un correo");
                 textCorreo.ForeColor = Color.Gray;
             }
-            string emailPattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
-            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
-
-            if (!isEmailValid)
-            {
-                errorProvider1.SetError(textCorreo, "Correo no válido");
-            
-            }
             else
             {
                 errorProvider1.SetError(textCorreo, String.Empty);
             }
+           
         }
 
         private void textTelefono_Enter(object sender, EventArgs e)
@@ -161,14 +137,6 @@ namespace SistemaRegistro
                 textTelefono.Texts = "Ejemplo: 2281144037";
                 errorProvider1.SetError(textTelefono, "Se necesita ingresar un teléfono, nota: Debe de tener 10 dígitos");
                 textTelefono.ForeColor = Color.Gray;
-            }
-            string telefonoPattern = @"^[0-9]{10,10}$";
-            bool isTelefonoValid = Regex.IsMatch(textTelefono.Texts, telefonoPattern);
-
-            if (!isTelefonoValid)
-            {
-                errorProvider1.SetError(textTelefono, "Teléfono no válido");
-              
             }
             else
             {
@@ -193,14 +161,6 @@ namespace SistemaRegistro
                 errorProvider1.SetError(textUsuario, "Se necesita ingresar un usuario");
                 textUsuario.ForeColor = Color.Gray;
             }
-            string UsuarioPPattern = @"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$";
-            bool UsuarioValido = Regex.IsMatch(textUsuario.Texts, UsuarioPPattern);
-
-            if (!UsuarioValido)
-            {
-                errorProvider1.SetError(textUsuario, "Usuario no válido");
-              
-            }
             else
             {
                 errorProvider1.SetError(textUsuario, String.Empty);
@@ -223,6 +183,10 @@ namespace SistemaRegistro
                 textPassword.Texts = "Contraseña*";
                 textPassword.ForeColor = Color.Gray;
             }
+            else
+            {
+                errorProvider1.SetError(textPassword, String.Empty);
+            }
         }
 
         private void textConfPassword_Enter(object sender, EventArgs e)
@@ -240,6 +204,10 @@ namespace SistemaRegistro
             {
                 textConfPassword.Texts = "Contraseña*";
                 textConfPassword.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(textConfPassword, String.Empty);
             }
         }
         private void Limpiar()
@@ -277,82 +245,141 @@ namespace SistemaRegistro
                 return false;
             }
         }
+         private bool guardar()
+         {
+            bool retorno = true;
+            try
+            {
+
+                Regex Nombre = new Regex(@"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$");
+                Match NombreValido = Nombre.Match(textNombre.Texts);
+                Regex ApellidoP = new Regex(@"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$");
+                Match ApellidoPValido = ApellidoP.Match(textApellidoP.Texts);
+                Regex email = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
+                Match isEmailValid = email.Match(textCorreo.Texts);
+                Regex telefono = new Regex(@"^[0-9]{10,10}$");
+                Match isTelefonoValid = telefono.Match(textTelefono.Texts);
+                Regex Usuario = new Regex(@"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$");
+                Match UsuarioValido = Usuario.Match(textUsuario.Texts);
+                Regex Contra = new Regex(@"^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$");
+                Match ContraValido = Contra.Match(textPassword.Texts);
+
+
+                if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textApellidoM.Texts == "Ejemplo: Hernández" || textCorreo.Texts == " ejemplo@unam.org.mx"
+                    || textTelefono.Texts == "Ejemplo: 2281144037" || textUsuario.Texts == "Ejemplo: jperez" || textPassword.Texts == "Contraseña*" || textConfPassword.Texts == "Contraseña*")
+                {
+                    MessageBox.Show("Hay datos que aún no se han proporcionado");
+                    retorno = false;
+                }
+                if (NombreValido.Success)
+                {
+                    usu.nombre = textNombre.Texts;
+                    errorProvider1.SetError(textNombre, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textNombre, "Nombre no válido");
+                    retorno = false;
+                }
+                if (ApellidoPValido.Success)
+                {
+                    usu.apellidoP = textApellidoP.Texts;
+                    errorProvider1.SetError(textApellidoP, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textApellidoP, "Apellido paterno no válido");
+                    retorno = false;
+                }
+                if (isEmailValid.Success)
+                {
+                    usu.correo = textCorreo.Texts;
+                    errorProvider1.SetError(textCorreo, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textCorreo, "Correo no válido");
+                    retorno = false;
+                }
+                if (isTelefonoValid.Success)
+                {
+                    usu.telefono = textTelefono.Texts;
+                    errorProvider1.SetError(textTelefono, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textTelefono, "Teléfono no válido");
+                }
+                if (UsuarioValido.Success)
+                {
+                    usu.usuario = textUsuario.Texts;
+                    errorProvider1.SetError(textUsuario, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textUsuario, "Usuario no válido");
+                }
+
+                if (ContraValido.Success)
+                {
+                    usu.usuario = textUsuario.Texts;
+                    errorProvider1.SetError(textPassword, String.Empty);
+                }
+                else
+                {
+                    errorProvider1.SetError(textPassword, "Ingrese una contraseña válida nota: Debe tener al menos 8 caracteres, al menos una mayúscula, al menos número, al menos carácter especial");
+                    retorno = false;
+                }
+                if (!textPassword.Texts.Equals(textConfPassword.Texts))
+                {
+                    errorProvider1.SetError(textPassword, "Las contraseñas no coinciden");
+                    errorProvider1.SetError(textConfPassword, "Las contraseñas no coinciden");
+                    retorno = false;
+                }
+                else
+                {
+                    errorProvider1.SetError(textConfPassword, String.Empty);
+                }
+                if (!valiUserName(textUsuario.Texts))
+                {
+                    errorProvider1.SetError(textUsuario, "El usuario ya existe, intente con otro");
+                    retorno = false;
+                }
+
+                if (radioBtnAdmin.Checked)
+                {
+                    valorSeleccionadoPerfil = 1;
+                }
+                else if (radioBtnUser.Checked)
+                {
+                    valorSeleccionadoPerfil = 2;
+                }
+                //son campos no obligatorios sse asignan sin condicional
+                usu.apellidoM = textApellidoM.Texts;
+                usu.perfil = valorSeleccionadoPerfil;
+                
+
+                if (retorno == true)
+                {
+                    string cadenaEncriptada = Encrypt.GetSHA256(textPassword.Texts.Trim());
+                    usu.contrasena = cadenaEncriptada;
+                    controladorUsuario.InsertarUsuario(usu);
+                    MessageBox.Show("Usuario guardado con éxito");
+                    Limpiar();
+                    pbOcultar.ResetText();
+                    errorProvider1.Clear();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Inténtelo de nuevo, {ex.Message}");
+            }
+            return retorno;
+         }
         private void Guardar_Click(object sender, EventArgs e)
         {
-           
-            string NombrePattern = @"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$";
-            bool NombreValido = Regex.IsMatch(textNombre.Texts, NombrePattern);
-
-            string ApellidoPPattern = @"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$";
-            bool ApellidoPValido = Regex.IsMatch(textApellidoP.Texts, ApellidoPPattern);
-
-            string ApellidoMPattern = @"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{0,50}$";
-            bool ApellidoMValido = Regex.IsMatch(textApellidoM.Texts, ApellidoMPattern);
-
-            string emailPattern = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
-            bool isEmailValid = Regex.IsMatch(textCorreo.Texts, emailPattern);
-
-            string telefonoPattern = @"^[0-9]{10,10}$";
-            bool isTelefonoValid = Regex.IsMatch(textTelefono.Texts, telefonoPattern);
-
-            string UsuarioPPattern = @"^[A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ]{3,50}$";
-            bool UsuarioValido = Regex.IsMatch(textUsuario.Texts, UsuarioPPattern);
-
-            
-            if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textApellidoM.Texts == "Ejemplo: Hernández" || textCorreo.Texts == " ejemplo@unam.org.mx"
-                || textTelefono.Texts == "Ejemplo: 2281144037" || textUsuario.Texts == "Ejemplo: jperez" || textPassword.Texts == "Contraseña*" || textConfPassword.Texts == "Contraseña*")
-            {
-                MessageBox.Show("Hay datos que aún no se han proporcionado");
-                retorno = false;
-            }
-
-            if (!usuarios.textBoxEvent.validadContrasena(textPassword.Texts) || !usuarios.textBoxEvent.validadContrasena(textConfPassword.Texts))
-            {
-                errorProvider1.SetError(textPassword, "Ingrese una contraseña valida nota: Debe tener almenos 8 caracteres, una mayúscula, un número, un carácter especial");
-                errorProvider1.SetError(textConfPassword, "Ingrese una contraseña valida");
-                retorno = false;
-            }
-            if (!textPassword.Texts.Equals(textConfPassword.Texts))
-            {
-                errorProvider1.SetError(textPassword, "Las contraseña no coinciden");
-                errorProvider1.SetError(textConfPassword, "Las contraseña no coinciden");
-                retorno = false;
-            }
-            if (!valiUserName(textUsuario.Texts))
-            {
-                errorProvider1.SetError(textUsuario, "El usuario ya existe, intente con otro");
-                retorno = false;
-            }
-
-            if (radioBtnAdmin.Checked)
-            {
-                valorSeleccionadoPerfil = 1;
-            }
-            else if (radioBtnUser.Checked)
-            {
-                valorSeleccionadoPerfil = 2;
-            }
-           
-          
-          
-            usu.apellidoP = textApellidoP.Texts;
-            usu.apellidoM = textApellidoM.Texts;
-            usu.correo = textCorreo.Texts;
-            usu.telefono = textTelefono.Texts;
-            usu.usuario = textUsuario.Texts;
-            usu.perfil = valorSeleccionadoPerfil;
-          
-
-            if (retorno == true)
-            {
-                string cadenaEncriptada = Encrypt.GetSHA256(textPassword.Texts.Trim());
-                usu.contrasena = cadenaEncriptada;
-                //controladorUsuario.InsertarUsuario(usu);
-                MessageBox.Show("Usuario guardado con éxito");
-                Limpiar();
-                pbOcultar.ResetText();
-                errorProvider1.Clear();
-            }
+            guardar();
         }
 
 

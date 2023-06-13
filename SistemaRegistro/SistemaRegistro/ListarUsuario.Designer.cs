@@ -28,29 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             VerUsuario = new TabPage();
             label11 = new Label();
             label10 = new Label();
             fechaActualizacion = new DateTimePicker();
             fecha_Alta = new DateTimePicker();
             buttonCancelar_Ver = new Button();
-            textUserName = new SistemaRegistro.Templates.TextBox();
-            textNum = new SistemaRegistro.Templates.TextBox();
-            textCorreoE = new SistemaRegistro.Templates.TextBox();
-            textCargo1 = new SistemaRegistro.Templates.TextBox();
-            textSegundoApellido = new SistemaRegistro.Templates.TextBox();
-            textPrimerApellido = new SistemaRegistro.Templates.TextBox();
-            textNombres = new SistemaRegistro.Templates.TextBox();
+            textUserName = new Templates.TextBox();
+            textNum = new Templates.TextBox();
+            textCorreoE = new Templates.TextBox();
+            textCargo1 = new Templates.TextBox();
+            textSegundoApellido = new Templates.TextBox();
+            textPrimerApellido = new Templates.TextBox();
+            textNombres = new Templates.TextBox();
             label9 = new Label();
             EditarUsuarios = new TabPage();
-            textConfPassword = new SistemaRegistro.Templates.TextBox();
-            textPassword = new SistemaRegistro.Templates.TextBox();
-            textUsuario = new SistemaRegistro.Templates.TextBox();
-            textTelefono = new SistemaRegistro.Templates.TextBox();
-            textCorreo = new SistemaRegistro.Templates.TextBox();
-            textApellidoM = new SistemaRegistro.Templates.TextBox();
-            textApellidoP = new SistemaRegistro.Templates.TextBox();
-            textNombre = new SistemaRegistro.Templates.TextBox();
+            textConfPassword = new Templates.TextBox();
+            textPassword = new Templates.TextBox();
+            textUsuario = new Templates.TextBox();
+            textTelefono = new Templates.TextBox();
+            textCorreo = new Templates.TextBox();
+            textApellidoM = new Templates.TextBox();
+            textApellidoP = new Templates.TextBox();
+            textNombre = new Templates.TextBox();
             label4 = new Label();
             label5 = new Label();
             label7 = new Label();
@@ -69,6 +74,7 @@
             btnSeleccionT = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            tabControl1 = new TabControl();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -76,7 +82,6 @@
             Column5 = new DataGridViewTextBoxColumn();
             Editar = new DataGridViewButtonColumn();
             Column6 = new DataGridViewCheckBoxColumn();
-            tabControl1 = new TabControl();
             VerUsuario.SuspendLayout();
             EditarUsuarios.SuspendLayout();
             ListaUsuario.SuspendLayout();
@@ -761,28 +766,50 @@
             dataGridView1.Size = new Size(757, 443);
             dataGridView1.TabIndex = 27;
             // 
+            // tabControl1
+            // 
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Controls.Add(ListaUsuario);
+            tabControl1.Controls.Add(EditarUsuarios);
+            tabControl1.Controls.Add(VerUsuario);
+            tabControl1.Location = new Point(-3, 2);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(768, 519);
+            tabControl1.TabIndex = 21;
+            // 
             // Column1
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter;
+            Column1.DefaultCellStyle = dataGridViewCellStyle1;
             Column1.HeaderText = "Nombre completo";
             Column1.Name = "Column1";
             // 
             // Column2
             // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
+            Column2.DefaultCellStyle = dataGridViewCellStyle2;
             Column2.HeaderText = "Perfil";
             Column2.Name = "Column2";
             // 
             // Column3
             // 
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
+            Column3.DefaultCellStyle = dataGridViewCellStyle3;
             Column3.HeaderText = "Correo electrónico";
             Column3.Name = "Column3";
             // 
             // Column4
             // 
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopCenter;
+            Column4.DefaultCellStyle = dataGridViewCellStyle4;
             Column4.HeaderText = "Telefono";
             Column4.Name = "Column4";
             // 
             // Column5
             // 
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.TopCenter;
+            Column5.DefaultCellStyle = dataGridViewCellStyle5;
             Column5.HeaderText = "Usuario";
             Column5.Name = "Column5";
             // 
@@ -796,18 +823,6 @@
             // 
             Column6.HeaderText = "Eliminar";
             Column6.Name = "Column6";
-            // 
-            // tabControl1
-            // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(ListaUsuario);
-            tabControl1.Controls.Add(EditarUsuarios);
-            tabControl1.Controls.Add(VerUsuario);
-            tabControl1.Location = new Point(-3, 2);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(768, 519);
-            tabControl1.TabIndex = 21;
             // 
             // ListarUsuario
             // 
@@ -864,13 +879,6 @@
         private TabPage ListaUsuario;
         private Button button1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewButtonColumn Editar;
-        private DataGridViewCheckBoxColumn Column6;
         private TabControl tabControl1;
         private Button btnSeleccionT;
         private SistemaRegistro.Templates.TextBox textConfPassword;
@@ -881,5 +889,12 @@
         private SistemaRegistro.Templates.TextBox textApellidoM;
         private SistemaRegistro.Templates.TextBox textApellidoP;
         private SistemaRegistro.Templates.TextBox textNombre;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewButtonColumn Editar;
+        private DataGridViewCheckBoxColumn Column6;
     }
 }
