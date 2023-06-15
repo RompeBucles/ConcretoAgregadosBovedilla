@@ -34,6 +34,39 @@ namespace SistemaRegistro.Controladores
             comando.Parameters.Clear();
             ConexionBD.CerrarConexion();
         }
+        public DataTable SeleccionarDatosUsuario()
+        {
+            DataTable Tabla = new DataTable();
+            SqlCommand comando = new SqlCommand("seleccionarDatosUsuario");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            LeerFilas = comando.ExecuteReader();
+            Tabla.Load(LeerFilas);
+            LeerFilas.Close();
+            ConexionBD.CerrarConexion();
+            return Tabla;
+        }
+
+        public bool EditarUsuario(modeloUsuarios usuarios,int id)
+        {
+            SqlCommand comando = new SqlCommand("editarUsuario");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@ID", id);
+            comando.Parameters.AddWithValue("@Nombre", usuarios.nombre);
+            comando.Parameters.AddWithValue("@ApellidoP", usuarios.apellidoP);
+            comando.Parameters.AddWithValue("@ApellidoM", usuarios.apellidoM);
+            comando.Parameters.AddWithValue("@Perfil", usuarios.perfil);
+            comando.Parameters.AddWithValue("@CorreoElectronico", usuarios.correo);
+            comando.Parameters.AddWithValue("@Telefono", usuarios.telefono);
+            comando.Parameters.AddWithValue("@Usuario", usuarios.usuario);
+            comando.Parameters.AddWithValue("@Contraseña", usuarios.contrasena);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            ConexionBD.CerrarConexion();
+            return true;
+
+        }
 
     }
 }

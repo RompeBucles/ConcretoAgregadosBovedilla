@@ -21,7 +21,7 @@ namespace SistemaRegistro
         modeloUsuarios usu = new modeloUsuarios();
         private Usuarios usuarios = new Usuarios();
         ControladorUsuario controladorUsuario = new ControladorUsuario();
-       
+
         DataSet dsTabla;
         private SqlDataReader LeerFilas;
         private int valorSeleccionadoPerfil;
@@ -75,7 +75,7 @@ namespace SistemaRegistro
             {
                 errorProvider1.SetError(textApellidoP, String.Empty);
             }
-            
+
         }
         private void textApellidoM_Enter(object sender, EventArgs e)
         {
@@ -118,7 +118,7 @@ namespace SistemaRegistro
             {
                 errorProvider1.SetError(textCorreo, String.Empty);
             }
-           
+
         }
 
         private void textTelefono_Enter(object sender, EventArgs e)
@@ -245,8 +245,8 @@ namespace SistemaRegistro
                 return false;
             }
         }
-         private bool guardar()
-         {
+        private bool guardar()
+        {
             bool retorno = true;
             try
             {
@@ -309,6 +309,7 @@ namespace SistemaRegistro
                 else
                 {
                     errorProvider1.SetError(textTelefono, "Teléfono no válido");
+                    retorno = false;
                 }
                 if (UsuarioValido.Success)
                 {
@@ -318,6 +319,7 @@ namespace SistemaRegistro
                 else
                 {
                     errorProvider1.SetError(textUsuario, "Usuario no válido");
+                    retorno = false;
                 }
 
                 if (ContraValido.Success)
@@ -357,7 +359,7 @@ namespace SistemaRegistro
                 //son campos no obligatorios sse asignan sin condicional
                 usu.apellidoM = textApellidoM.Texts;
                 usu.perfil = valorSeleccionadoPerfil;
-                
+
 
                 if (retorno == true)
                 {
@@ -376,7 +378,7 @@ namespace SistemaRegistro
                 MessageBox.Show($"Inténtelo de nuevo, {ex.Message}");
             }
             return retorno;
-         }
+        }
         private void Guardar_Click(object sender, EventArgs e)
         {
             guardar();

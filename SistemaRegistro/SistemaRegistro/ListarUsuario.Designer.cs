@@ -28,28 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarUsuario));
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            VerUsuario = new TabPage();
-            label11 = new Label();
-            label10 = new Label();
-            fechaActualizacion = new DateTimePicker();
-            fecha_Alta = new DateTimePicker();
-            buttonCancelar_Ver = new Button();
-            textUserName = new Templates.TextBox();
-            textNum = new Templates.TextBox();
-            textCorreoE = new Templates.TextBox();
-            textCargo1 = new Templates.TextBox();
-            textSegundoApellido = new Templates.TextBox();
-            textPrimerApellido = new Templates.TextBox();
-            textNombres = new Templates.TextBox();
-            label9 = new Label();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             EditarUsuarios = new TabPage();
+            pbMostrar1 = new PictureBox();
+            pbOcultar1 = new PictureBox();
+            pbMostrar = new PictureBox();
             textConfPassword = new Templates.TextBox();
             textPassword = new Templates.TextBox();
+            pbOcultar = new PictureBox();
             textUsuario = new Templates.TextBox();
             textTelefono = new Templates.TextBox();
             textCorreo = new Templates.TextBox();
@@ -75,264 +66,27 @@
             button1 = new Button();
             dataGridView1 = new DataGridView();
             tabControl1 = new TabControl();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Editar = new DataGridViewButtonColumn();
-            Column6 = new DataGridViewCheckBoxColumn();
-            VerUsuario.SuspendLayout();
+            errorProvider1 = new ErrorProvider(components);
             EditarUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar).BeginInit();
             ListaUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
-            // 
-            // VerUsuario
-            // 
-            VerUsuario.BackColor = SystemColors.Control;
-            VerUsuario.Controls.Add(label11);
-            VerUsuario.Controls.Add(label10);
-            VerUsuario.Controls.Add(fechaActualizacion);
-            VerUsuario.Controls.Add(fecha_Alta);
-            VerUsuario.Controls.Add(buttonCancelar_Ver);
-            VerUsuario.Controls.Add(textUserName);
-            VerUsuario.Controls.Add(textNum);
-            VerUsuario.Controls.Add(textCorreoE);
-            VerUsuario.Controls.Add(textCargo1);
-            VerUsuario.Controls.Add(textSegundoApellido);
-            VerUsuario.Controls.Add(textPrimerApellido);
-            VerUsuario.Controls.Add(textNombres);
-            VerUsuario.Controls.Add(label9);
-            VerUsuario.Location = new Point(4, 24);
-            VerUsuario.Name = "VerUsuario";
-            VerUsuario.Padding = new Padding(3);
-            VerUsuario.Size = new Size(760, 491);
-            VerUsuario.TabIndex = 2;
-            VerUsuario.Text = "Ver Usuario";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.Brown;
-            label11.Location = new Point(465, 263);
-            label11.Name = "label11";
-            label11.Size = new Size(116, 15);
-            label11.TabIndex = 79;
-            label11.Text = "Fecha Modificación";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.Brown;
-            label10.Location = new Point(-110, 233);
-            label10.Name = "label10";
-            label10.Size = new Size(66, 15);
-            label10.TabIndex = 78;
-            label10.Text = "Fecha Alta";
-            // 
-            // fechaActualizacion
-            // 
-            fechaActualizacion.CustomFormat = "dddd dd MMMM yyyy, hh:mm:ss";
-            fechaActualizacion.Enabled = false;
-            fechaActualizacion.Format = DateTimePickerFormat.Custom;
-            fechaActualizacion.Location = new Point(444, 281);
-            fechaActualizacion.Name = "fechaActualizacion";
-            fechaActualizacion.Size = new Size(240, 23);
-            fechaActualizacion.TabIndex = 77;
-            // 
-            // fecha_Alta
-            // 
-            fecha_Alta.CustomFormat = "dddd dd MMMM yyyy, hh:mm:ss";
-            fecha_Alta.Enabled = false;
-            fecha_Alta.Format = DateTimePickerFormat.Custom;
-            fecha_Alta.Location = new Point(97, 281);
-            fecha_Alta.Name = "fecha_Alta";
-            fecha_Alta.Size = new Size(240, 23);
-            fecha_Alta.TabIndex = 76;
-            fecha_Alta.Value = new DateTime(2022, 11, 2, 0, 0, 0, 0);
-            // 
-            // buttonCancelar_Ver
-            // 
-            buttonCancelar_Ver.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonCancelar_Ver.BackColor = Color.FromArgb(97, 97, 96);
-            buttonCancelar_Ver.FlatAppearance.BorderSize = 0;
-            buttonCancelar_Ver.FlatStyle = FlatStyle.Flat;
-            buttonCancelar_Ver.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonCancelar_Ver.ForeColor = SystemColors.ButtonFace;
-            buttonCancelar_Ver.Location = new Point(616, 449);
-            buttonCancelar_Ver.Name = "buttonCancelar_Ver";
-            buttonCancelar_Ver.Size = new Size(126, 35);
-            buttonCancelar_Ver.TabIndex = 75;
-            buttonCancelar_Ver.Text = "CANCELAR";
-            buttonCancelar_Ver.UseVisualStyleBackColor = false;
-            // 
-            // textUserName
-            // 
-            textUserName.Anchor = AnchorStyles.Top;
-            textUserName.BackColor = SystemColors.Control;
-            textUserName.BorderColor = Color.DimGray;
-            textUserName.BorderFocusColor = Color.IndianRed;
-            textUserName.BorderSize = 2;
-            textUserName.Enabled = false;
-            textUserName.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textUserName.ForeColor = Color.Black;
-            textUserName.Location = new Point(509, 178);
-            textUserName.Margin = new Padding(3, 4, 3, 4);
-            textUserName.Multiline = false;
-            textUserName.Name = "textUserName";
-            textUserName.Padding = new Padding(7);
-            textUserName.PasswordChar = false;
-            textUserName.Size = new Size(173, 31);
-            textUserName.TabIndex = 71;
-            textUserName.Texts = "Nombre de Usuario *";
-            textUserName.UnderlinedStyle = true;
-            // 
-            // textNum
-            // 
-            textNum.Anchor = AnchorStyles.Top;
-            textNum.BackColor = SystemColors.Control;
-            textNum.BorderColor = Color.DimGray;
-            textNum.BorderFocusColor = Color.IndianRed;
-            textNum.BorderSize = 2;
-            textNum.Enabled = false;
-            textNum.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textNum.ForeColor = Color.Black;
-            textNum.Location = new Point(304, 178);
-            textNum.Margin = new Padding(3, 4, 3, 4);
-            textNum.Multiline = false;
-            textNum.Name = "textNum";
-            textNum.Padding = new Padding(7);
-            textNum.PasswordChar = false;
-            textNum.Size = new Size(173, 31);
-            textNum.TabIndex = 69;
-            textNum.Texts = "Número de teléfono *";
-            textNum.UnderlinedStyle = true;
-            // 
-            // textCorreoE
-            // 
-            textCorreoE.Anchor = AnchorStyles.Top;
-            textCorreoE.BackColor = SystemColors.Control;
-            textCorreoE.BorderColor = Color.DimGray;
-            textCorreoE.BorderFocusColor = Color.IndianRed;
-            textCorreoE.BorderSize = 2;
-            textCorreoE.Enabled = false;
-            textCorreoE.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textCorreoE.ForeColor = Color.Black;
-            textCorreoE.Location = new Point(95, 178);
-            textCorreoE.Margin = new Padding(3, 4, 3, 4);
-            textCorreoE.Multiline = false;
-            textCorreoE.Name = "textCorreoE";
-            textCorreoE.Padding = new Padding(7);
-            textCorreoE.PasswordChar = false;
-            textCorreoE.Size = new Size(173, 31);
-            textCorreoE.TabIndex = 68;
-            textCorreoE.Texts = "Correo eléctronico *";
-            textCorreoE.UnderlinedStyle = true;
-            // 
-            // textCargo1
-            // 
-            textCargo1.Anchor = AnchorStyles.Top;
-            textCargo1.BackColor = SystemColors.Control;
-            textCargo1.BorderColor = Color.DimGray;
-            textCargo1.BorderFocusColor = Color.IndianRed;
-            textCargo1.BorderSize = 2;
-            textCargo1.Enabled = false;
-            textCargo1.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textCargo1.ForeColor = Color.Black;
-            textCargo1.Location = new Point(95, 352);
-            textCargo1.Margin = new Padding(3, 4, 3, 4);
-            textCargo1.Multiline = false;
-            textCargo1.Name = "textCargo1";
-            textCargo1.Padding = new Padding(7);
-            textCargo1.PasswordChar = false;
-            textCargo1.Size = new Size(173, 31);
-            textCargo1.TabIndex = 67;
-            textCargo1.Texts = "Cargo *";
-            textCargo1.UnderlinedStyle = true;
-            // 
-            // textSegundoApellido
-            // 
-            textSegundoApellido.Anchor = AnchorStyles.Top;
-            textSegundoApellido.BackColor = SystemColors.Control;
-            textSegundoApellido.BorderColor = Color.DimGray;
-            textSegundoApellido.BorderFocusColor = Color.IndianRed;
-            textSegundoApellido.BorderSize = 2;
-            textSegundoApellido.Enabled = false;
-            textSegundoApellido.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textSegundoApellido.ForeColor = Color.Black;
-            textSegundoApellido.Location = new Point(509, 91);
-            textSegundoApellido.Margin = new Padding(3, 4, 3, 4);
-            textSegundoApellido.Multiline = false;
-            textSegundoApellido.Name = "textSegundoApellido";
-            textSegundoApellido.Padding = new Padding(7);
-            textSegundoApellido.PasswordChar = false;
-            textSegundoApellido.Size = new Size(173, 31);
-            textSegundoApellido.TabIndex = 66;
-            textSegundoApellido.Texts = "Segundo Apellido";
-            textSegundoApellido.UnderlinedStyle = true;
-            // 
-            // textPrimerApellido
-            // 
-            textPrimerApellido.Anchor = AnchorStyles.Top;
-            textPrimerApellido.BackColor = SystemColors.Control;
-            textPrimerApellido.BorderColor = Color.DimGray;
-            textPrimerApellido.BorderFocusColor = Color.IndianRed;
-            textPrimerApellido.BorderSize = 2;
-            textPrimerApellido.Enabled = false;
-            textPrimerApellido.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textPrimerApellido.ForeColor = Color.Black;
-            textPrimerApellido.Location = new Point(304, 91);
-            textPrimerApellido.Margin = new Padding(3, 4, 3, 4);
-            textPrimerApellido.Multiline = false;
-            textPrimerApellido.Name = "textPrimerApellido";
-            textPrimerApellido.Padding = new Padding(7);
-            textPrimerApellido.PasswordChar = false;
-            textPrimerApellido.Size = new Size(173, 31);
-            textPrimerApellido.TabIndex = 65;
-            textPrimerApellido.Texts = "Primer Apellido *";
-            textPrimerApellido.UnderlinedStyle = true;
-            // 
-            // textNombres
-            // 
-            textNombres.Anchor = AnchorStyles.Top;
-            textNombres.BackColor = SystemColors.Control;
-            textNombres.BorderColor = Color.DimGray;
-            textNombres.BorderFocusColor = Color.IndianRed;
-            textNombres.BorderSize = 2;
-            textNombres.Enabled = false;
-            textNombres.Font = new Font("Arial", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            textNombres.ForeColor = Color.Black;
-            textNombres.Location = new Point(95, 91);
-            textNombres.Margin = new Padding(3, 4, 3, 4);
-            textNombres.Multiline = false;
-            textNombres.Name = "textNombres";
-            textNombres.Padding = new Padding(7);
-            textNombres.PasswordChar = false;
-            textNombres.Size = new Size(173, 31);
-            textNombres.TabIndex = 64;
-            textNombres.Texts = "Nombres *";
-            textNombres.UnderlinedStyle = true;
-            // 
-            // label9
-            // 
-            label9.Anchor = AnchorStyles.Top;
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(349, 16);
-            label9.Name = "label9";
-            label9.Size = new Size(118, 19);
-            label9.TabIndex = 63;
-            label9.Text = "Datos Usuario";
             // 
             // EditarUsuarios
             // 
             EditarUsuarios.BackColor = Color.FromArgb(242, 230, 230);
+            EditarUsuarios.Controls.Add(pbMostrar1);
+            EditarUsuarios.Controls.Add(pbOcultar1);
+            EditarUsuarios.Controls.Add(pbMostrar);
             EditarUsuarios.Controls.Add(textConfPassword);
             EditarUsuarios.Controls.Add(textPassword);
+            EditarUsuarios.Controls.Add(pbOcultar);
             EditarUsuarios.Controls.Add(textUsuario);
             EditarUsuarios.Controls.Add(textTelefono);
             EditarUsuarios.Controls.Add(textCorreo);
@@ -356,9 +110,48 @@
             EditarUsuarios.Location = new Point(4, 24);
             EditarUsuarios.Name = "EditarUsuarios";
             EditarUsuarios.Padding = new Padding(3);
-            EditarUsuarios.Size = new Size(760, 491);
+            EditarUsuarios.Size = new Size(764, 492);
             EditarUsuarios.TabIndex = 1;
             EditarUsuarios.Text = "Editar Usuario";
+            // 
+            // pbMostrar1
+            // 
+            pbMostrar1.Anchor = AnchorStyles.None;
+            pbMostrar1.Cursor = Cursors.Hand;
+            pbMostrar1.Image = (Image)resources.GetObject("pbMostrar1.Image");
+            pbMostrar1.Location = new Point(689, 290);
+            pbMostrar1.Name = "pbMostrar1";
+            pbMostrar1.Size = new Size(46, 23);
+            pbMostrar1.SizeMode = PictureBoxSizeMode.Zoom;
+            pbMostrar1.TabIndex = 102;
+            pbMostrar1.TabStop = false;
+            pbMostrar1.Click += pbMostrar1_Click;
+            // 
+            // pbOcultar1
+            // 
+            pbOcultar1.Anchor = AnchorStyles.None;
+            pbOcultar1.Cursor = Cursors.Hand;
+            pbOcultar1.Image = (Image)resources.GetObject("pbOcultar1.Image");
+            pbOcultar1.Location = new Point(689, 290);
+            pbOcultar1.Name = "pbOcultar1";
+            pbOcultar1.Size = new Size(44, 23);
+            pbOcultar1.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOcultar1.TabIndex = 101;
+            pbOcultar1.TabStop = false;
+            pbOcultar1.Click += pbOcultar1_Click;
+            // 
+            // pbMostrar
+            // 
+            pbMostrar.Anchor = AnchorStyles.None;
+            pbMostrar.Cursor = Cursors.Hand;
+            pbMostrar.Image = (Image)resources.GetObject("pbMostrar.Image");
+            pbMostrar.Location = new Point(416, 290);
+            pbMostrar.Name = "pbMostrar";
+            pbMostrar.Size = new Size(47, 23);
+            pbMostrar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbMostrar.TabIndex = 100;
+            pbMostrar.TabStop = false;
+            pbMostrar.Click += pbMostrar_Click;
             // 
             // textConfPassword
             // 
@@ -369,7 +162,7 @@
             textConfPassword.BorderSize = 2;
             textConfPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textConfPassword.ForeColor = Color.DimGray;
-            textConfPassword.Location = new Point(555, 304);
+            textConfPassword.Location = new Point(537, 283);
             textConfPassword.Multiline = false;
             textConfPassword.Name = "textConfPassword";
             textConfPassword.Padding = new Padding(7, 8, 7, 8);
@@ -390,7 +183,7 @@
             textPassword.BorderSize = 2;
             textPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textPassword.ForeColor = Color.DimGray;
-            textPassword.Location = new Point(272, 304);
+            textPassword.Location = new Point(267, 283);
             textPassword.Multiline = false;
             textPassword.Name = "textPassword";
             textPassword.Padding = new Padding(7, 8, 7, 8);
@@ -402,6 +195,19 @@
             textPassword.Enter += textPassword_Enter;
             textPassword.Leave += textPassword_Leave;
             // 
+            // pbOcultar
+            // 
+            pbOcultar.Anchor = AnchorStyles.None;
+            pbOcultar.Cursor = Cursors.Hand;
+            pbOcultar.Image = (Image)resources.GetObject("pbOcultar.Image");
+            pbOcultar.Location = new Point(416, 290);
+            pbOcultar.Name = "pbOcultar";
+            pbOcultar.Size = new Size(47, 23);
+            pbOcultar.SizeMode = PictureBoxSizeMode.Zoom;
+            pbOcultar.TabIndex = 103;
+            pbOcultar.TabStop = false;
+            pbOcultar.Click += pbOcultar_Click;
+            // 
             // textUsuario
             // 
             textUsuario.Anchor = AnchorStyles.None;
@@ -409,9 +215,10 @@
             textUsuario.BorderColor = Color.Black;
             textUsuario.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textUsuario.BorderSize = 2;
+            textUsuario.Enabled = false;
             textUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textUsuario.ForeColor = Color.DimGray;
-            textUsuario.Location = new Point(11, 304);
+            textUsuario.Location = new Point(6, 283);
             textUsuario.Multiline = false;
             textUsuario.Name = "textUsuario";
             textUsuario.Padding = new Padding(7, 8, 7, 8);
@@ -432,7 +239,7 @@
             textTelefono.BorderSize = 2;
             textTelefono.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textTelefono.ForeColor = Color.DimGray;
-            textTelefono.Location = new Point(555, 180);
+            textTelefono.Location = new Point(550, 159);
             textTelefono.Multiline = false;
             textTelefono.Name = "textTelefono";
             textTelefono.Padding = new Padding(7, 8, 7, 8);
@@ -453,7 +260,7 @@
             textCorreo.BorderSize = 2;
             textCorreo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textCorreo.ForeColor = Color.DimGray;
-            textCorreo.Location = new Point(272, 180);
+            textCorreo.Location = new Point(267, 159);
             textCorreo.Multiline = false;
             textCorreo.Name = "textCorreo";
             textCorreo.Padding = new Padding(7, 8, 7, 8);
@@ -474,7 +281,7 @@
             textApellidoM.BorderSize = 2;
             textApellidoM.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textApellidoM.ForeColor = Color.DimGray;
-            textApellidoM.Location = new Point(555, 80);
+            textApellidoM.Location = new Point(550, 59);
             textApellidoM.Multiline = false;
             textApellidoM.Name = "textApellidoM";
             textApellidoM.Padding = new Padding(7, 8, 7, 8);
@@ -484,6 +291,7 @@
             textApellidoM.Texts = "Ejemplo: Hernández";
             textApellidoM.UnderlinedStyle = true;
             textApellidoM.Enter += textApellidoM_Enter;
+            textApellidoM.KeyPress += textApelldioM_KeyPress;
             textApellidoM.Leave += textApellidoM_Leave;
             // 
             // textApellidoP
@@ -495,7 +303,7 @@
             textApellidoP.BorderSize = 2;
             textApellidoP.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textApellidoP.ForeColor = Color.DimGray;
-            textApellidoP.Location = new Point(272, 80);
+            textApellidoP.Location = new Point(267, 59);
             textApellidoP.Multiline = false;
             textApellidoP.Name = "textApellidoP";
             textApellidoP.Padding = new Padding(7, 8, 7, 8);
@@ -516,7 +324,7 @@
             textNombre.BorderSize = 2;
             textNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textNombre.ForeColor = Color.DimGray;
-            textNombre.Location = new Point(11, 80);
+            textNombre.Location = new Point(6, 59);
             textNombre.Multiline = false;
             textNombre.Name = "textNombre";
             textNombre.Padding = new Padding(7, 8, 7, 8);
@@ -534,7 +342,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(190, 31, 36);
-            label4.Location = new Point(11, 273);
+            label4.Location = new Point(6, 252);
             label4.Name = "label4";
             label4.Size = new Size(60, 16);
             label4.TabIndex = 91;
@@ -546,7 +354,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(190, 31, 36);
-            label5.Location = new Point(555, 151);
+            label5.Location = new Point(550, 130);
             label5.Name = "label5";
             label5.Size = new Size(67, 16);
             label5.TabIndex = 90;
@@ -558,7 +366,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(190, 31, 36);
-            label7.Location = new Point(272, 151);
+            label7.Location = new Point(267, 130);
             label7.Name = "label7";
             label7.Size = new Size(130, 16);
             label7.TabIndex = 89;
@@ -570,7 +378,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(190, 31, 36);
-            label6.Location = new Point(555, 61);
+            label6.Location = new Point(550, 40);
             label6.Name = "label6";
             label6.Size = new Size(117, 16);
             label6.TabIndex = 88;
@@ -582,7 +390,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.FromArgb(190, 31, 36);
-            label12.Location = new Point(272, 61);
+            label12.Location = new Point(267, 40);
             label12.Name = "label12";
             label12.Size = new Size(118, 16);
             label12.TabIndex = 87;
@@ -594,7 +402,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(190, 31, 36);
-            label13.Location = new Point(9, 61);
+            label13.Location = new Point(4, 40);
             label13.Name = "label13";
             label13.Size = new Size(62, 16);
             label13.TabIndex = 86;
@@ -606,7 +414,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(190, 31, 36);
-            label1.Location = new Point(86, 151);
+            label1.Location = new Point(81, 130);
             label1.Name = "label1";
             label1.Size = new Size(46, 16);
             label1.TabIndex = 81;
@@ -618,7 +426,7 @@
             radioBtnUser.AutoSize = true;
             radioBtnUser.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             radioBtnUser.ForeColor = Color.Black;
-            radioBtnUser.Location = new Point(142, 191);
+            radioBtnUser.Location = new Point(137, 170);
             radioBtnUser.Name = "radioBtnUser";
             radioBtnUser.Size = new Size(73, 21);
             radioBtnUser.TabIndex = 80;
@@ -632,7 +440,7 @@
             radioBtnAdmin.Checked = true;
             radioBtnAdmin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             radioBtnAdmin.ForeColor = Color.Black;
-            radioBtnAdmin.Location = new Point(17, 191);
+            radioBtnAdmin.Location = new Point(12, 170);
             radioBtnAdmin.Name = "radioBtnAdmin";
             radioBtnAdmin.Size = new Size(115, 21);
             radioBtnAdmin.TabIndex = 79;
@@ -646,7 +454,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(190, 31, 36);
-            label3.Location = new Point(555, 273);
+            label3.Location = new Point(550, 252);
             label3.Name = "label3";
             label3.Size = new Size(151, 16);
             label3.TabIndex = 78;
@@ -658,7 +466,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(190, 31, 36);
-            label2.Location = new Point(272, 273);
+            label2.Location = new Point(267, 252);
             label2.Name = "label2";
             label2.Size = new Size(135, 16);
             label2.TabIndex = 77;
@@ -672,12 +480,13 @@
             buttonCancelar_Mod.FlatStyle = FlatStyle.Flat;
             buttonCancelar_Mod.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCancelar_Mod.ForeColor = SystemColors.ButtonFace;
-            buttonCancelar_Mod.Location = new Point(487, 439);
+            buttonCancelar_Mod.Location = new Point(482, 418);
             buttonCancelar_Mod.Name = "buttonCancelar_Mod";
             buttonCancelar_Mod.Size = new Size(126, 35);
             buttonCancelar_Mod.TabIndex = 67;
             buttonCancelar_Mod.Text = "CANCELAR";
             buttonCancelar_Mod.UseVisualStyleBackColor = false;
+            buttonCancelar_Mod.Click += buttonCancelar_Mod_Click;
             // 
             // buttonGuardar_Mod
             // 
@@ -687,12 +496,13 @@
             buttonGuardar_Mod.FlatStyle = FlatStyle.Flat;
             buttonGuardar_Mod.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGuardar_Mod.ForeColor = SystemColors.ButtonFace;
-            buttonGuardar_Mod.Location = new Point(638, 439);
+            buttonGuardar_Mod.Location = new Point(633, 418);
             buttonGuardar_Mod.Name = "buttonGuardar_Mod";
             buttonGuardar_Mod.Size = new Size(115, 35);
             buttonGuardar_Mod.TabIndex = 66;
             buttonGuardar_Mod.Text = "GUARDAR";
             buttonGuardar_Mod.UseVisualStyleBackColor = false;
+            buttonGuardar_Mod.Click += buttonGuardar_Mod_Click;
             // 
             // label8
             // 
@@ -700,7 +510,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(190, 31, 36);
-            label8.Location = new Point(301, 12);
+            label8.Location = new Point(296, 12);
             label8.Name = "label8";
             label8.Size = new Size(143, 19);
             label8.TabIndex = 52;
@@ -715,7 +525,7 @@
             ListaUsuario.Location = new Point(4, 24);
             ListaUsuario.Name = "ListaUsuario";
             ListaUsuario.Padding = new Padding(3);
-            ListaUsuario.Size = new Size(760, 491);
+            ListaUsuario.Size = new Size(764, 492);
             ListaUsuario.TabIndex = 0;
             ListaUsuario.Text = "Lista Usuario";
             // 
@@ -727,10 +537,10 @@
             btnSeleccionT.FlatStyle = FlatStyle.Flat;
             btnSeleccionT.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSeleccionT.ForeColor = SystemColors.ButtonFace;
-            btnSeleccionT.Location = new Point(444, 449);
+            btnSeleccionT.Location = new Point(444, 447);
             btnSeleccionT.Name = "btnSeleccionT";
             btnSeleccionT.Size = new Size(144, 39);
-            btnSeleccionT.TabIndex = 68;
+            btnSeleccionT.TabIndex = 72;
             btnSeleccionT.Text = "Seleccionar todo";
             btnSeleccionT.UseVisualStyleBackColor = false;
             btnSeleccionT.Click += btnSeleccionT_Click;
@@ -743,10 +553,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(609, 449);
+            button1.Location = new Point(608, 447);
             button1.Name = "button1";
             button1.Size = new Size(151, 39);
-            button1.TabIndex = 67;
+            button1.TabIndex = 71;
             button1.Text = "Borra Selección";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
@@ -755,74 +565,73 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.Anchor = AnchorStyles.None;
             dataGridView1.BackgroundColor = Color.FromArgb(242, 230, 230);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Editar, Column6 });
-            dataGridView1.GridColor = Color.FromArgb(242, 230, 230);
-            dataGridView1.Location = new Point(0, 0);
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = SystemColors.Control;
+            dataGridView1.Location = new Point(2, 22);
             dataGridView1.Name = "dataGridView1";
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Firebrick;
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(757, 443);
-            dataGridView1.TabIndex = 27;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(762, 417);
+            dataGridView1.TabIndex = 69;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellPainting += dataGridView1_CellPainting;
+            dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
             // 
             // tabControl1
             // 
             tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(ListaUsuario);
             tabControl1.Controls.Add(EditarUsuarios);
-            tabControl1.Controls.Add(VerUsuario);
             tabControl1.Location = new Point(-3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(768, 519);
+            tabControl1.Size = new Size(772, 520);
             tabControl1.TabIndex = 21;
             // 
-            // Column1
+            // errorProvider1
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter;
-            Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            Column1.HeaderText = "Nombre completo";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
-            Column2.DefaultCellStyle = dataGridViewCellStyle2;
-            Column2.HeaderText = "Perfil";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
-            Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            Column3.HeaderText = "Correo electrónico";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopCenter;
-            Column4.DefaultCellStyle = dataGridViewCellStyle4;
-            Column4.HeaderText = "Telefono";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.TopCenter;
-            Column5.DefaultCellStyle = dataGridViewCellStyle5;
-            Column5.HeaderText = "Usuario";
-            Column5.Name = "Column5";
-            // 
-            // Editar
-            // 
-            Editar.HeaderText = "Editar";
-            Editar.Name = "Editar";
-            Editar.Resizable = DataGridViewTriState.True;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Eliminar";
-            Column6.Name = "Column6";
+            errorProvider1.ContainerControl = this;
             // 
             // ListarUsuario
             // 
@@ -835,32 +644,21 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "ListarUsuario";
             Text = "ListarUsuario";
-            VerUsuario.ResumeLayout(false);
-            VerUsuario.PerformLayout();
+            Load += ListarUsuarios_Load;
             EditarUsuarios.ResumeLayout(false);
             EditarUsuarios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbMostrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbOcultar).EndInit();
             ListaUsuario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TabPage VerUsuario;
-        private Label label11;
-        private Label label10;
-        public DateTimePicker fechaActualizacion;
-        public DateTimePicker fecha_Alta;
-        private Button buttonCancelar_Ver;
-        public SistemaRegistro.Templates.TextBox textUserName;
-        public SistemaRegistro.Templates.TextBox textNum;
-        public SistemaRegistro.Templates.TextBox textCorreoE;
-        public SistemaRegistro.Templates.TextBox textCargo1;
-        public SistemaRegistro.Templates.TextBox textSegundoApellido;
-        public SistemaRegistro.Templates.TextBox textPrimerApellido;
-        public SistemaRegistro.Templates.TextBox textNombres;
-        private Label label9;
         private TabPage EditarUsuarios;
         private Label label4;
         private Label label5;
@@ -877,24 +675,22 @@
         private Button buttonGuardar_Mod;
         private Label label8;
         private TabPage ListaUsuario;
-        private Button button1;
-        private DataGridView dataGridView1;
         private TabControl tabControl1;
-        private Button btnSeleccionT;
-        private SistemaRegistro.Templates.TextBox textConfPassword;
-        private SistemaRegistro.Templates.TextBox textPassword;
         private SistemaRegistro.Templates.TextBox textUsuario;
         private SistemaRegistro.Templates.TextBox textTelefono;
         private SistemaRegistro.Templates.TextBox textCorreo;
         private SistemaRegistro.Templates.TextBox textApellidoM;
         private SistemaRegistro.Templates.TextBox textApellidoP;
         private SistemaRegistro.Templates.TextBox textNombre;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewButtonColumn Editar;
-        private DataGridViewCheckBoxColumn Column6;
+        private DataGridView dataGridView1;
+        private ErrorProvider errorProvider1;
+        private Button btnSeleccionT;
+        private Button button1;
+        private PictureBox pbMostrar1;
+        private PictureBox pbOcultar1;
+        private PictureBox pbMostrar;
+        private Templates.TextBox textConfPassword;
+        private Templates.TextBox textPassword;
+        private PictureBox pbOcultar;
     }
 }
