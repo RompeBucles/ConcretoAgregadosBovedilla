@@ -178,7 +178,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-2, 3);
+            panel1.Location = new Point(6, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
@@ -544,7 +544,7 @@
             panel4.Controls.Add(numericUpDown1);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-18, 0);
+            panel4.Location = new Point(7, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(739, 747);
             panel4.TabIndex = 77;

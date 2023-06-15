@@ -42,8 +42,6 @@ namespace SistemaRegistro
             dataGridView1.Columns[3].Visible = true;//Registros
             dataGridView1.Columns[4].Visible = true;//Usuario
 
-
-
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Ajusta el ancho de las columnas según el contenido de las celdas
             dataGridView1.AutoResizeColumns();
 
