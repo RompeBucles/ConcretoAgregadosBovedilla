@@ -34,6 +34,31 @@
             btnBorrar = new Button();
             button1 = new Button();
             dataGridView1 = new DataGridView();
+            EditarUsuarios = new TabPage();
+            panel1 = new Panel();
+            label5 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            label4 = new Label();
+            button4 = new Button();
+            button3 = new Button();
+            textBox3 = new Templates.TextBox();
+            numericUpDown1 = new NumericUpDown();
+            label3 = new Label();
+            label12 = new Label();
+            button8 = new Button();
+            comboBox5 = new ComboBox();
+            comboBox6 = new ComboBox();
+            textProceso = new Templates.TextBox();
+            comboSeis = new ComboBox();
+            comboDos = new ComboBox();
+            comboUno = new ComboBox();
+            buttonSiguienteP = new Button();
+            textBox1 = new Templates.TextBox();
+            ComboTecno = new ComboBox();
+            textOtro = new Templates.TextBox();
+            labelUsuario = new Label();
+            id = new DataGridViewTextBoxColumn();
             Column11 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -46,30 +71,6 @@
             Column10 = new DataGridViewTextBoxColumn();
             Editar = new DataGridViewButtonColumn();
             Column6 = new DataGridViewCheckBoxColumn();
-            EditarUsuarios = new TabPage();
-            panel1 = new Panel();
-            button4 = new Button();
-            button3 = new Button();
-            textBox3 = new SistemaRegistro.Templates.TextBox();
-            numericUpDown1 = new NumericUpDown();
-            label3 = new Label();
-            label12 = new Label();
-            button8 = new Button();
-            comboBox5 = new ComboBox();
-            comboBox6 = new ComboBox();
-            textProceso = new SistemaRegistro.Templates.TextBox();
-            comboSeis = new ComboBox();
-            comboDos = new ComboBox();
-            comboUno = new ComboBox();
-            buttonSiguienteP = new Button();
-            textBox1 = new SistemaRegistro.Templates.TextBox();
-            ComboTecno = new ComboBox();
-            textOtro = new SistemaRegistro.Templates.TextBox();
-            labelUsuario = new Label();
-            label4 = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label5 = new Label();
             tabControl1.SuspendLayout();
             ListaUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -158,73 +159,12 @@
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.BackgroundColor = Color.FromArgb(242, 230, 230);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column11, Column1, Column2, Column3, Column4, Column5, Column7, Column8, Column9, Column10, Editar, Column6 });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, Column11, Column1, Column2, Column3, Column4, Column5, Column7, Column8, Column9, Column10, Editar, Column6 });
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(719, 399);
             dataGridView1.TabIndex = 27;
-            // 
-            // Column11
-            // 
-            Column11.HeaderText = "Producto_tecnologia_otro";
-            Column11.Name = "Column11";
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Nombre de flujo ";
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Tipo de flujo ";
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Recursos";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Emisiones ";
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Valor";
-            Column5.Name = "Column5";
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Unidades";
-            Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Tratamiento de dato";
-            Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Citas-Referencias";
-            Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            Column10.HeaderText = "Comentario";
-            Column10.Name = "Column10";
-            // 
-            // Editar
-            // 
-            Editar.HeaderText = "Editar";
-            Editar.Name = "Editar";
-            Editar.Resizable = DataGridViewTriState.True;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Eliminar";
-            Column6.Name = "Column6";
             // 
             // EditarUsuarios
             // 
@@ -263,10 +203,58 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(-6, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(723, 747);
             panel1.TabIndex = 78;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.None;
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(190, 31, 36);
+            label5.Location = new Point(10, 248);
+            label5.Name = "label5";
+            label5.Size = new Size(45, 16);
+            label5.TabIndex = 109;
+            label5.Text = "Valor*";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(190, 31, 36);
+            label2.Location = new Point(133, 491);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 16);
+            label2.TabIndex = 108;
+            label2.Text = "Comentario";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(190, 31, 36);
+            label1.Location = new Point(362, 377);
+            label1.Name = "label1";
+            label1.Size = new Size(122, 16);
+            label1.TabIndex = 107;
+            label1.Text = "Citas-Referencias*";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(190, 31, 36);
+            label4.Location = new Point(11, 119);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 16);
+            label4.TabIndex = 106;
+            label4.Text = "Nombre de flujo*";
             // 
             // button4
             // 
@@ -509,53 +497,71 @@
             labelUsuario.TabIndex = 29;
             labelUsuario.Text = "Identificación";
             // 
-            // label4
+            // id
             // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.FromArgb(190, 31, 36);
-            label4.Location = new Point(11, 119);
-            label4.Name = "label4";
-            label4.Size = new Size(114, 16);
-            label4.TabIndex = 106;
-            label4.Text = "Nombre de flujo*";
+            id.HeaderText = "id";
+            id.Name = "id";
             // 
-            // label1
+            // Column11
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(190, 31, 36);
-            label1.Location = new Point(362, 377);
-            label1.Name = "label1";
-            label1.Size = new Size(122, 16);
-            label1.TabIndex = 107;
-            label1.Text = "Citas-Referencias*";
+            Column11.HeaderText = "Producto_tecnologia_otro";
+            Column11.Name = "Column11";
             // 
-            // label2
+            // Column1
             // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(190, 31, 36);
-            label2.Location = new Point(133, 491);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 16);
-            label2.TabIndex = 108;
-            label2.Text = "Comentario";
+            Column1.HeaderText = "Nombre de flujo ";
+            Column1.Name = "Column1";
             // 
-            // label5
+            // Column2
             // 
-            label5.Anchor = AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(190, 31, 36);
-            label5.Location = new Point(10, 248);
-            label5.Name = "label5";
-            label5.Size = new Size(45, 16);
-            label5.TabIndex = 109;
-            label5.Text = "Valor*";
+            Column2.HeaderText = "Tipo de flujo ";
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Recursos";
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Emisiones ";
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Valor";
+            Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Unidades";
+            Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Tratamiento de dato";
+            Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Citas-Referencias";
+            Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            Column10.HeaderText = "Comentario";
+            Column10.Name = "Column10";
+            // 
+            // Editar
+            // 
+            Editar.HeaderText = "Editar";
+            Editar.Name = "Editar";
+            Editar.Resizable = DataGridViewTriState.True;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Eliminar";
+            Column6.Name = "Column6";
             // 
             // ListaEntradasSalidas
             // 
@@ -585,18 +591,6 @@
         private Button button1;
         private DataGridView dataGridView1;
         private Button btnBorrar;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewButtonColumn Editar;
-        private DataGridViewCheckBoxColumn Column6;
         private TabPage EditarUsuarios;
         private Panel panel1;
         private Button button3;
@@ -622,5 +616,18 @@
         private Label label4;
         private Label label2;
         private Label label5;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewButtonColumn Editar;
+        private DataGridViewCheckBoxColumn Column6;
     }
 }
