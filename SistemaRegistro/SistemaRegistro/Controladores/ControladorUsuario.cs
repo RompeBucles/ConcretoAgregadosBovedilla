@@ -60,6 +60,7 @@ namespace SistemaRegistro.Controladores
             comando.Parameters.AddWithValue("@CorreoElectronico", usuarios.correo);
             comando.Parameters.AddWithValue("@Telefono", usuarios.telefono);
             comando.Parameters.AddWithValue("@Usuario", usuarios.usuario);
+            comando.Parameters.AddWithValue("@Estatus", usuarios.estatus);
             comando.Parameters.AddWithValue("@Contraseña", usuarios.contrasena);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
@@ -67,6 +68,19 @@ namespace SistemaRegistro.Controladores
             return true;
 
         }
+        public void EliminarUsuario(int id)
+        {
+
+            SqlCommand comando = new SqlCommand("eliminarUsuario");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", id);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            ConexionBD.CerrarConexion();
+
+        }
+
 
     }
 }

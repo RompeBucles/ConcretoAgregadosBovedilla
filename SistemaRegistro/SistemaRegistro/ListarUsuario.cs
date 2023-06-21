@@ -16,6 +16,7 @@ using System.Windows.Forms.VisualStyles;
 using System.Runtime.ConstrainedExecution;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using System.Data.Common;
 
 namespace SistemaRegistro
 {
@@ -37,6 +38,11 @@ namespace SistemaRegistro
             InitializeComponent();
             CargarDG();
 
+            //Asigna opciones a la lista desplegable
+            List<string> estatus = new List<string>();
+            estatus.Add("Activo");
+            estatus.Add("Inactivo");
+            comboEstatus.DataSource = estatus;
         }
         private void CargarDG()
         {
@@ -53,16 +59,25 @@ namespace SistemaRegistro
             dataGridView1.Columns[6].HeaderText = "Correo";
             dataGridView1.Columns[7].HeaderText = "Teléfono";
             dataGridView1.Columns[8].HeaderText = "Usuario";
+            dataGridView1.Columns[9].HeaderText = "Estatus";
+
 
             dataGridView1.Columns[0].Visible = false;//ID no visible
             dataGridView1.Columns[1].Visible = true;//Nombre completo
+            dataGridView1.Columns[1].ReadOnly = true;//Nombre completo
             dataGridView1.Columns[2].Visible = false;//Nombre
             dataGridView1.Columns[3].Visible = false;//ApellidoP
             dataGridView1.Columns[4].Visible = false;//ApellidoM
             dataGridView1.Columns[5].Visible = true;//Cargo
+            dataGridView1.Columns[5].ReadOnly = true;//Cargo
             dataGridView1.Columns[6].Visible = true;//correo
+            dataGridView1.Columns[6].ReadOnly = true;//correo
             dataGridView1.Columns[7].Visible = true;//telefono
+            dataGridView1.Columns[7].ReadOnly = true;//telefono
             dataGridView1.Columns[8].Visible = true;//usuario
+            dataGridView1.Columns[8].ReadOnly = true;//usuario
+            dataGridView1.Columns[9].Visible = true;//Estatus
+            dataGridView1.Columns[9].ReadOnly = true;//Estatus
 
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Ajusta el ancho de las columnas según el contenido de las celdas
@@ -81,12 +96,23 @@ namespace SistemaRegistro
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
 
+
             DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
             checkColumn.HeaderText = "Eliminar";
             checkColumn.Name = "Eliminar";
             checkColumn.ReadOnly = false; // Permitir interacción del usuario
             dataGridView1.Columns.Add(checkColumn);
-
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Index == 0)
+                {
+                    row.Cells["Eliminar"].ReadOnly = true;
+                }
+                else
+                {
+                    row.Cells["Eliminar"].ReadOnly = false;
+                }
+            }
 
         }
         private void ListarUsuarios_Load(object sender, EventArgs e)
@@ -258,40 +284,50 @@ namespace SistemaRegistro
         {
             try
             {
-                DialogResult resut = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (resut == DialogResult.Yes)
+                DialogResult result = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
                 {
                     List<DataGridViewRow> filasEliminar = new List<DataGridViewRow>();
-
+                    bool elementosSeleccionados = false;
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        DataGridViewCheckBoxCell checkBoxCell = row.Cells[10] as DataGridViewCheckBoxCell;
+                        DataGridViewCheckBoxCell checkBoxCell = row.Cells[11] as DataGridViewCheckBoxCell;
                         if (checkBoxCell != null && checkBoxCell.Value != null)
                         {
                             bool isChecked = (bool)checkBoxCell.Value;
 
                             if (isChecked)
                             {
+                                elementosSeleccionados = true;
                                 int usuarioID = Convert.ToInt32(row.Cells[0].Value); // Suponiendo que el ID del usuario está en la primera columna
-                                MessageBox.Show($"{usuarioID}");
-                                //usuariosEliminar.Add(usuarioID);
+
+                                controladorUsuario.EliminarUsuario(usuarioID);                                                   // MessageBox.Show($"{usuarioID}");
+                                                                                                                                 // controladorUsuario.EliminarUsuario(usuarioID);
                                 filasEliminar.Add(row);
                             }
                         }
                     }
                     //solcion 2
-                    // CargarDG();
-                    // CargarBotones();
+                    //this.Controls.Clear();
+                    //this.InitializeComponent();
+                    //CargarDG(); //Carga el DataGridView
+                    //CargarBotones(); 
 
-                    foreach (DataGridViewRow rowEliminar in filasEliminar)
+                    if (elementosSeleccionados)
                     {
-                        dataGridView1.Rows.Remove(rowEliminar);
+                        foreach (DataGridViewRow rowEliminar in filasEliminar)
+                        {
+                            dataGridView1.Rows.Remove(rowEliminar);
+                        }
+
+                        MessageBox.Show("Registro(s) inhabilitado(s)");
                     }
-
-                    MessageBox.Show("Registros Eliminados");
-
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado ningún elemento para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-                else if (resut == DialogResult.No)
+                else if (result == DialogResult.No)
                 {
                     return;
                 }
@@ -307,9 +343,9 @@ namespace SistemaRegistro
         {
             try
             {
-                foreach (DataGridViewRow row in this.dataGridView1.Rows)
+                for (int i = 1; i < dataGridView1.Rows.Count; i++)
                 {
-                    row.Cells[10].Value = row.Cells[10].Value == null ? false : !(bool)row.Cells[10].Value;
+                    dataGridView1.Rows[i].Cells[11].Value = dataGridView1.Rows[i].Cells[11].Value == null ? false : !(bool)dataGridView1.Rows[i].Cells[11].Value;
                 }
             }
             catch (Exception ex)
@@ -346,12 +382,13 @@ namespace SistemaRegistro
                         textCorreo.Texts = dataGridView1.CurrentRow.Cells[6].Value.ToString();
                         textTelefono.Texts = dataGridView1.CurrentRow.Cells[7].Value.ToString();
                         textUsuario.Texts = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                        comboEstatus.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
 
                         tabControl1.SelectedTab = EditarUsuarios;
 
                     }
                 }
-                if (e.ColumnIndex == 10 && e.RowIndex >= 0)
+                if (e.ColumnIndex == 11 && e.RowIndex != 0)
                 {
                     var cell = dataGridView1[e.ColumnIndex, e.RowIndex] as DataGridViewCheckBoxCell;
                     if (cell != null)
@@ -372,22 +409,22 @@ namespace SistemaRegistro
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            /*
 
-            if (e.ColumnIndex == 6)
+
+            if (e.ColumnIndex == 10 && e.RowIndex != -1)  // Se verifica que sea la columna 10 y no sea el encabezado
             {
-                Image someImage = Properties.Resources.editar;
+                Image someImage = Properties.Resources.lapiz;
 
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var w = Properties.Resources.editar.Width;
-                var h = Properties.Resources.editar.Height;
+                var w = Properties.Resources.lapiz.Width;
+                var h = Properties.Resources.lapiz.Height;
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
                 e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
-            */
+
             /*
 
             if (e.ColumnIndex == 7 && e.RowIndex >= 0)
@@ -418,6 +455,7 @@ namespace SistemaRegistro
             }
             */
         }
+        //pinta los numeros de cada registro
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             using (SolidBrush brs = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
@@ -441,6 +479,7 @@ namespace SistemaRegistro
             textCorreo.ForeColor = Color.Black;
             textTelefono.ForeColor = Color.Black;
             textUsuario.ForeColor = Color.Black;
+            comboEstatus.ForeColor = Color.Black;
         }
 
         private bool guardar()
@@ -464,7 +503,7 @@ namespace SistemaRegistro
                 Match ContraValido = Contra.Match(textPassword.Texts);
 
 
-                if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textApellidoM.Texts == "Ejemplo: Hernández" || textCorreo.Texts == " ejemplo@unam.org.mx"
+                if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textCorreo.Texts == " ejemplo@unam.org.mx"
                     || textTelefono.Texts == "Ejemplo: 2281144037")
                 {
                     MessageBox.Show("Hay datos que aún no se han proporcionado");
@@ -565,19 +604,20 @@ namespace SistemaRegistro
                 //son campos no obligatorios sse asignan sin condicional
                 usu.apellidoM = textApellidoM.Texts;
                 usu.perfil = valorSeleccionadoPerfil;
-
+                usu.estatus = comboEstatus.Text;
 
                 if (retorno == true)
                 {
 
                     controladorUsuario.EditarUsuario(usu, id);
                     MessageBox.Show("Usuario modificado con éxito");
-
                     tabControl1.SelectedTab = ListaUsuario;
                     this.Controls.Clear();
                     this.InitializeComponent();
                     CargarDG(); //Carga el DataGridView
                     CargarBotones(); //Se vuelven a generar los botónes.
+
+
 
                 }
 

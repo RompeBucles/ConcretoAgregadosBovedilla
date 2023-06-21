@@ -63,9 +63,9 @@ namespace SistemaRegistro.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap editar {
+        internal static System.Drawing.Bitmap lapiz {
             get {
-                object obj = ResourceManager.GetObject("editar", resourceCulture);
+                object obj = ResourceManager.GetObject("lapiz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

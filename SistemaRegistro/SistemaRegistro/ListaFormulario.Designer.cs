@@ -34,28 +34,9 @@
             button3 = new Button();
             btnBorrar = new Button();
             dataGridView3 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn16 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn17 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn18 = new DataGridViewTextBoxColumn();
-            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
-            dataGridViewCheckBoxColumn1 = new DataGridViewCheckBoxColumn();
             Identificación = new TabPage();
             panel1 = new Panel();
+            comboEstatus = new ComboBox();
             label17 = new Label();
             label16 = new Label();
             label15 = new Label();
@@ -133,6 +114,27 @@
             comboBox4 = new ComboBox();
             comboBox2 = new ComboBox();
             label10 = new Label();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn16 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn17 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn18 = new DataGridViewTextBoxColumn();
+            dataGridViewButtonColumn1 = new DataGridViewButtonColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            dataGridViewCheckBoxColumn1 = new DataGridViewCheckBoxColumn();
             tabControl2.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
@@ -234,113 +236,12 @@
             dataGridView3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView3.BackgroundColor = Color.FromArgb(242, 230, 230);
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18, dataGridViewButtonColumn1, dataGridViewCheckBoxColumn1 });
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15, dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18, dataGridViewButtonColumn1, Column1, dataGridViewCheckBoxColumn1 });
             dataGridView3.Location = new Point(2, 3);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowTemplate.Height = 25;
             dataGridView3.Size = new Size(732, 410);
             dataGridView3.TabIndex = 28;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Producto-Tecnología";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Tipo de proceso";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.HeaderText = "Autor";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.HeaderText = "Correo";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.HeaderText = "Nombre de la unidad funcional";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewTextBoxColumn6.HeaderText = "Valor de referencia";
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            dataGridViewTextBoxColumn7.HeaderText = "Unidad";
-            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            dataGridViewTextBoxColumn8.HeaderText = "Objetivo";
-            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            dataGridViewTextBoxColumn9.HeaderText = "Limites del sistema";
-            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            dataGridViewTextBoxColumn10.HeaderText = "Imagen";
-            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            dataGridViewTextBoxColumn11.HeaderText = "Tipo de tecnología";
-            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            dataGridViewTextBoxColumn12.HeaderText = "Condiciones de operación";
-            dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            dataGridViewTextBoxColumn13.HeaderText = "Fecha de referencia";
-            dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            dataGridViewTextBoxColumn14.HeaderText = "Datos válidos";
-            dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            dataGridViewTextBoxColumn15.HeaderText = "Descripción de tiempo";
-            dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            dataGridViewTextBoxColumn16.HeaderText = "Estado";
-            dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            dataGridViewTextBoxColumn17.HeaderText = "Nombre del area";
-            dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            dataGridViewTextBoxColumn18.HeaderText = "Representacion geografica";
-            dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            dataGridViewButtonColumn1.HeaderText = "Editar";
-            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            dataGridViewButtonColumn1.Resizable = DataGridViewTriState.True;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            dataGridViewCheckBoxColumn1.HeaderText = "Eliminar";
-            dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
             // Identificación
             // 
@@ -358,6 +259,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
+            panel1.Controls.Add(comboEstatus);
             panel1.Controls.Add(label17);
             panel1.Controls.Add(label16);
             panel1.Controls.Add(label15);
@@ -382,10 +284,22 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(3, 3);
+            panel1.Location = new Point(-24, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
+            // 
+            // comboEstatus
+            // 
+            comboEstatus.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboEstatus.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboEstatus.ForeColor = Color.FromArgb(97, 97, 96);
+            comboEstatus.FormattingEnabled = true;
+            comboEstatus.Items.AddRange(new object[] { "Vigente", "No vigente" });
+            comboEstatus.Location = new Point(302, 122);
+            comboEstatus.Name = "comboEstatus";
+            comboEstatus.Size = new Size(172, 24);
+            comboEstatus.TabIndex = 112;
             // 
             // label17
             // 
@@ -737,7 +651,7 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(8, 0);
+            panel4.Location = new Point(-19, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
@@ -1270,7 +1184,7 @@
             panel5.Controls.Add(comboBox4);
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(6, 3);
+            panel5.Location = new Point(-21, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
@@ -1409,6 +1323,112 @@
             label10.TabIndex = 92;
             label10.Text = "Tiempo válido del estudio";
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Producto-Tecnología";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Tipo de proceso";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Autor";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "Correo";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.HeaderText = "Nombre de la unidad funcional";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.HeaderText = "Valor de referencia";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.HeaderText = "Unidad";
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.HeaderText = "Objetivo";
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.HeaderText = "Limites del sistema";
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewTextBoxColumn10.HeaderText = "Imagen";
+            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            dataGridViewTextBoxColumn11.HeaderText = "Tipo de tecnología";
+            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            dataGridViewTextBoxColumn12.HeaderText = "Condiciones de operación";
+            dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            dataGridViewTextBoxColumn13.HeaderText = "Fecha de referencia";
+            dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            dataGridViewTextBoxColumn14.HeaderText = "Datos válidos";
+            dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            dataGridViewTextBoxColumn15.HeaderText = "Descripción de tiempo";
+            dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            dataGridViewTextBoxColumn16.HeaderText = "Estado";
+            dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            dataGridViewTextBoxColumn17.HeaderText = "Nombre del area";
+            dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            dataGridViewTextBoxColumn18.HeaderText = "Representacion geografica";
+            dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            dataGridViewButtonColumn1.HeaderText = "Editar";
+            dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            dataGridViewButtonColumn1.Resizable = DataGridViewTriState.True;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ver imagen";
+            Column1.Name = "Column1";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            dataGridViewCheckBoxColumn1.HeaderText = "Eliminar";
+            dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
             // ListaFormulario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1514,6 +1534,24 @@
         private Button button3;
         private Button btnBorrar;
         private DataGridView dataGridView3;
+        private Button button7;
+        private Button button6;
+        private Button button1;
+        private Label label12;
+        private Button button8;
+        private SistemaRegistro.Templates.TextBox textBox5;
+        private Button btnSeleccionarT;
+        private Label label17;
+        private Label label16;
+        private Label label15;
+        private Label label14;
+        private Label label13;
+        private Label label19;
+        private Label label18;
+        private Button button2;
+        private Label label20;
+        private Label label21;
+        private ComboBox comboEstatus;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -1533,23 +1571,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private DataGridViewButtonColumn dataGridViewButtonColumn1;
+        private DataGridViewTextBoxColumn Column1;
         private DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private Button button7;
-        private Button button6;
-        private Button button1;
-        private Label label12;
-        private Button button8;
-        private SistemaRegistro.Templates.TextBox textBox5;
-        private Button btnSeleccionarT;
-        private Label label17;
-        private Label label16;
-        private Label label15;
-        private Label label14;
-        private Label label13;
-        private Label label19;
-        private Label label18;
-        private Button button2;
-        private Label label20;
-        private Label label21;
     }
 }

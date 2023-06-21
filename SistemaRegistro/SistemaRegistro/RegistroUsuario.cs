@@ -18,6 +18,7 @@ namespace SistemaRegistro
     public partial class RegistroUsuario : Form
     {
         private Conexion ConexionBD = new Conexion();
+  
         modeloUsuarios usu = new modeloUsuarios();
         private Usuarios usuarios = new Usuarios();
         ControladorUsuario controladorUsuario = new ControladorUsuario();
@@ -29,7 +30,6 @@ namespace SistemaRegistro
         {
             InitializeComponent();
         }
-
 
         private void textNombre_Enter(object sender, EventArgs e)
         {

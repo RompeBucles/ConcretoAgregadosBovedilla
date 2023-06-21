@@ -2,6 +2,7 @@ using System.Data.SqlClient;
 using System.Data;
 using SistemaRegistro.ConexionBD;
 using SistemaRegistro.Controladores;
+using Microsoft.VisualBasic.Logging;
 
 namespace SistemaRegistro
 {
@@ -84,6 +85,7 @@ namespace SistemaRegistro
                 if (dt.Rows.Count == 1)
                 {
                     this.Hide();
+                   
                     //this.Close();
                     if (dt.Rows[0][1].ToString() == "Administrador")
                     {

@@ -11,6 +11,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SistemaRegistro
@@ -31,7 +32,7 @@ namespace SistemaRegistro
         {
             InitializeComponent();
             costomizeDesing();
-          
+         
             //se asigna el tipo a la variable global
             t = tipo;
             //se manda a llamar la funcion que hace la distincion entre los tipos de usuarios
