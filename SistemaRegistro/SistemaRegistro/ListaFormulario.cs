@@ -12,11 +12,28 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GMap.NET.MapProviders;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using SistemaRegistro.Controladores;
+using SistemaRegistro.Modelo;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Data.SqlClient;
+using Image = System.Drawing.Image;
+using Rectangle = System.Drawing.Rectangle;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaRegistro
 {
     public partial class ListaFormulario : Form
     {
+        //instacia controlador formualario
+        ControladorDatosFormulario controladorDatosFormulario = new ControladorDatosFormulario();
+        //instacia modelo formulario
+        modeloIngresoDatos modeloDatos = new modeloIngresoDatos();
+        DataTable dsTabla;
+        //se declaro el id del ingresoDatos para guardar y posteriormente usarlo en procedimiento almacenado de modificar
+        private int id;
+
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -33,22 +50,128 @@ namespace SistemaRegistro
         public ListaFormulario()
         {
             InitializeComponent();
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
-            dataGridView3.Rows.Add("Concreto simple,mecánico, f’c 200kg/cm2", "Elaboración de concreto simple hecho en obra con medios mecánicos, con una resistencia de f'c 200 kg/cm2, usado en estructuras habitacionales.", "Marco", "Marcod@gmail.com", "Marcod@gmail.com", "Elaboración de concreto simple de resistencia f’c 200kg/cm2, hecho en obra con revolvedora mecánica y medios manuales, con cemento Portland compuesto, agua tratada, y agregado máxim de 20mm; inlcuye desperdicios.", "MJ", "12", "Estimar la huella de carbono y la demanda acumulada de ", "e consideran las emisiones generadas por la combustión de combustibles fósiles en la maquinaría para la construcción. ", "1", "Actual (más encontrada en operación)", "ste estudio se considera una revolvedora de concreto Joper modelo R2 con capacidad de un saco, con motor a gasolina de 8hp Magnum Kolher con trompo 30/35 rpm.", "12/02/200", "12/15/2000", "Jalisco", "Guadalajara", "19.5701420282982, -96.888427734375");
+            CargarDG();
+        }
+
+        private void CargarDG()
+        {
+            dsTabla = controladorDatosFormulario.SeleccionarDatosFormulario(); //La tabla se recarga con el procedimiento almacenado Seleccionar_Datos_User.
+
+            //int p = panel2.Width;
+
+            dataGridView1.DataSource = dsTabla;
+            //dataGridView1.ScrollBars = ScrollBars.None; //Desactivar ScrollBar del DataGridView
 
 
+            dataGridView1.Columns[1].HeaderText = "Producto_Tecnología_otro";
+            dataGridView1.Columns[5].HeaderText = "Nombre del proceso";
+            dataGridView1.Columns[6].HeaderText = "Tipo del proceso";
+            dataGridView1.Columns[7].HeaderText = "Autor";
+            dataGridView1.Columns[8].HeaderText = "Correo";
+            dataGridView1.Columns[9].HeaderText = "Nombre del flujo de referencia";
+            dataGridView1.Columns[10].HeaderText = "Unidad";
+            dataGridView1.Columns[11].HeaderText = "Valor referencia";
+            dataGridView1.Columns[12].HeaderText = "Objetivo";
+            dataGridView1.Columns[13].HeaderText = "Limites del sistema";
+            dataGridView1.Columns[15].HeaderText = "Tipo de tecnología";
+            dataGridView1.Columns[16].HeaderText = "Condiciones de operacíon";
+            dataGridView1.Columns[17].HeaderText = "Fecha de referencia del estudio";
+            dataGridView1.Columns[18].HeaderText = "Datos válidos hasta";
+            dataGridView1.Columns[19].HeaderText = "Descripción";
+            dataGridView1.Columns[20].HeaderText = "Nombre del estado";
+            dataGridView1.Columns[21].HeaderText = "Nombre del área";
+            dataGridView1.Columns[22].HeaderText = "Representatividad geografíca";
+
+
+            dataGridView1.Columns[0].Visible = false;//ID no visible
+            dataGridView1.Columns[1].Visible = true;//producto, tecnología, otro
+            dataGridView1.Columns[1].ReadOnly = true;//producto, tecnología, otro
+            dataGridView1.Columns[2].Visible = false;//Producto
+            dataGridView1.Columns[3].Visible = false;//Tecnología
+            dataGridView1.Columns[4].Visible = false;//otro
+            dataGridView1.Columns[5].Visible = true;//Nombre proceso
+            dataGridView1.Columns[5].ReadOnly = true;//Nombre proceso
+            dataGridView1.Columns[6].Visible = true;//tipoProceso 
+            dataGridView1.Columns[6].ReadOnly = true;//tipoProceso
+            dataGridView1.Columns[7].Visible = true;//autor 
+            dataGridView1.Columns[7].ReadOnly = true;//autor
+            dataGridView1.Columns[8].Visible = true;//correo 
+            dataGridView1.Columns[8].ReadOnly = true;//correo
+            dataGridView1.Columns[9].Visible = true;//nombreFlujoR 
+            dataGridView1.Columns[9].ReadOnly = true;//nombreFlujoR
+            dataGridView1.Columns[10].Visible = true;//unidad 
+            dataGridView1.Columns[10].ReadOnly = true;//unidad
+            dataGridView1.Columns[11].Visible = true;//valorR 
+            dataGridView1.Columns[11].ReadOnly = true;//valorR
+            dataGridView1.Columns[12].Visible = true;//objetivo 
+            dataGridView1.Columns[12].ReadOnly = true;//objetivo
+            dataGridView1.Columns[13].Visible = true;//limitesSistema 
+            dataGridView1.Columns[13].ReadOnly = true;//limitesSistema
+            dataGridView1.Columns[14].Visible = false;//imagen
+            dataGridView1.Columns[15].Visible = true;//tipoTecnologia 
+            dataGridView1.Columns[15].ReadOnly = true;//tipoTecnologia
+            dataGridView1.Columns[16].Visible = true;//condicionesOperacion 
+            dataGridView1.Columns[16].ReadOnly = true;//condicionesOperacion 
+            dataGridView1.Columns[17].Visible = true;//fechaReferencia 
+            dataGridView1.Columns[17].ReadOnly = true;//fechaReferencia 
+            dataGridView1.Columns[18].Visible = true;//datosValidos 
+            dataGridView1.Columns[18].ReadOnly = true;//datosValidos 
+            dataGridView1.Columns[19].Visible = true;//descripcion 
+            dataGridView1.Columns[19].ReadOnly = true;//descripcion 
+            dataGridView1.Columns[20].Visible = true;//valorEstado
+            dataGridView1.Columns[20].ReadOnly = true;//valorEstado
+            dataGridView1.Columns[21].Visible = true;//valorArea
+            dataGridView1.Columns[21].ReadOnly = true;//valorArea
+            dataGridView1.Columns[22].Visible = true;//representacionGeografica
+            dataGridView1.Columns[22].ReadOnly = true;//representacionGeografica
+            dataGridView1.Columns[23].Visible = false;//latitud
+            dataGridView1.Columns[24].Visible = false;//longitud
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Ajusta el ancho de las columnas según el contenido de las celdas
+            dataGridView1.AutoResizeColumns();
+
+        }
+
+        private void CargarBotones()
+        {
+
+            DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
+            editar.HeaderText = "Editar";
+            editar.Name = "Editar";
+            editar.Width = 90;
+            editar.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(editar);
+
+            DataGridViewButtonColumn verImagen = new DataGridViewButtonColumn();
+            verImagen.HeaderText = "Ver imagen";
+            verImagen.Name = "Ver imagen";
+            verImagen.Width = 90;
+            verImagen.FlatStyle = FlatStyle.Flat;
+            dataGridView1.Columns.Add(verImagen);
+
+            DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+            checkColumn.HeaderText = "Eliminar";
+            checkColumn.Name = "Eliminar";
+            checkColumn.ReadOnly = false; // Permitir interacción del usuario
+            dataGridView1.Columns.Add(checkColumn);
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Index == 0)
+                {
+                    row.Cells["Eliminar"].ReadOnly = true;
+                }
+                else
+                {
+                    row.Cells["Eliminar"].ReadOnly = false;
+                }
+            }
+
+        }
+        private void ListaFormulario_Load(object sender, EventArgs e)
+        {
+            //Se genera 3 nuevas columas con botones.
+            CargarBotones();
+            tabControl2.SetBounds(tabControl2.Left, tabControl2.Top, 768, 519);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -61,6 +184,77 @@ namespace SistemaRegistro
             else if (resut == DialogResult.No)
             {
                 return;
+            }
+        }
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+
+            if (e.ColumnIndex == 25 && e.RowIndex != -1)  // Se verifica que sea la columna 10 y no sea el encabezado
+            {
+                Image someImage = Properties.Resources.lapiz;
+
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.lapiz.Width;
+                var h = Properties.Resources.lapiz.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+
+            if (e.ColumnIndex == 26 && e.RowIndex != -1)  // Se verifica que sea la columna 10 y no sea el encabezado
+            {
+                Image someImage = Properties.Resources.ojo;
+
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var w = Properties.Resources.ojo.Width;
+                var h = Properties.Resources.ojo.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+
+            /*
+
+            if (e.ColumnIndex == 7 && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var checkboxSize = 14;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - checkboxSize) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - checkboxSize) / 2;
+
+                bool isChecked = e.Value != null && (bool)e.Value;
+                CheckBoxState state = isChecked ? CheckBoxState.CheckedNormal : CheckBoxState.UncheckedNormal;
+                CheckBoxRenderer.DrawCheckBox(e.Graphics, new Point(x, y), state);
+
+                e.Handled = true;
+
+                // Cambiar el valor de la casilla de verificación cuando se hace clic en la celda
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && e.Button == MouseButtons.Left)
+                {
+                    var cell = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    if (cell != null)
+                    {
+                        bool currentValue = (bool)cell.Value;
+                        cell.Value = !currentValue;
+                        dataGridView1.EndEdit(); // Finalizar la edición de la celda
+                    }
+                }
+            }
+            */
+        }
+        //pinta los numeros de cada registro
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            using (SolidBrush brs = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
+            {
+                e.Graphics.DrawString((e.RowIndex + 1).ToString(), e.InheritedRowStyle.Font, brs, e.RowBounds.Location.X + 10, e.RowBounds.Y + 10);
             }
         }
 
@@ -133,9 +327,9 @@ namespace SistemaRegistro
 
         private void btnSeleccionarT_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.dataGridView3.Rows)
+            foreach (DataGridViewRow row in this.dataGridView1.Rows)
             {
-                row.Cells[19].Value = row.Cells[19].Value == null ? false : !(bool)row.Cells[19].Value;
+                row.Cells[27].Value = row.Cells[27].Value == null ? false : !(bool)row.Cells[27].Value;
             }
         }
 
@@ -149,6 +343,114 @@ namespace SistemaRegistro
             else if (resut == DialogResult.No)
             {
                 return;
+            }
+        }
+
+        private void btnExportarCSV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                //declara el filedialog
+                using (var fd = new SaveFileDialog())
+                {
+                    //en casi de dar aceptar
+                    if (fd.ShowDialog() == DialogResult.OK)
+                    {
+                        //genera el csv y lo guarda en la direccion dada por el filedialog
+                        controladorDatosFormulario.aCSV(dataGridView1, @"" + fd.FileName + ".csv");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Intentelo de nuevo o mas tarde");
+            }
+        }
+
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    SaveFileDialog save = new SaveFileDialog();
+                    save.Filter = "PDF (*.pdf)|*.pdf";
+                    save.FileName = "Result.pdf";
+                    bool ErrorMessage = false;
+                    if (save.ShowDialog() == DialogResult.OK)
+                    {
+                        if (File.Exists(save.FileName))
+                        {
+                            try
+                            {
+                                File.Delete(save.FileName);
+                            }
+                            catch (Exception ex)
+                            {
+                                ErrorMessage = true;
+                                MessageBox.Show("No se pueden escribir datos en el disco" + ex.Message);
+                            }
+                        }
+                        if (!ErrorMessage)
+                        {
+                            try
+                            {
+                                PdfPTable pTable = new PdfPTable(dataGridView1.Columns.Count);
+                                pTable.DefaultCell.Padding = 2;
+                                pTable.WidthPercentage = 200;
+                                pTable.HorizontalAlignment = Element.ALIGN_LEFT;
+                                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                                {
+                                    PdfPCell pCell = new PdfPCell(new Phrase(col.HeaderText));
+                                    pTable.AddCell(pCell);
+                                }
+
+                                foreach (DataGridViewRow viewRow in dataGridView1.Rows)
+                                {
+                                    foreach (DataGridViewCell dcell in viewRow.Cells)
+                                    {
+                                        if (dcell.Value != null)
+                                        {
+                                            pTable.AddCell(dcell.Value.ToString());
+                                        }
+                                        else
+                                        {
+                                            pTable.AddCell(string.Empty);
+                                        }
+                                    }
+                                }
+
+                                using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
+
+                                {
+
+                                    Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);
+                                    PdfWriter.GetInstance(document, fileStream);
+                                    document.Open();
+                                    document.Add(pTable);
+                                    document.Close();
+                                    fileStream.Close();
+                                }
+                                MessageBox.Show("Exportación de datos con éxito", "info");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Error al exportar datos" + ex.Message);
+                            }
+                        }
+                    }
+                }
+                else
+
+                {
+                    MessageBox.Show("ningún record fue encontrado", "Info");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Intentelo de nuevo o mas tarde");
             }
         }
     }

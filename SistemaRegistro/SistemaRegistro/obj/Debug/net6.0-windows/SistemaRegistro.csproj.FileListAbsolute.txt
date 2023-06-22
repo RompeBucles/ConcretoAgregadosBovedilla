@@ -45,3 +45,5 @@ C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\Siste
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\ref\SistemaRegistro.dll
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.Templates.RjComboBox.resources
 C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\obj\Debug\net6.0-windows\SistemaRegistro.Templates.TextBox.resources
+C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\cacam\Documents\GitHub\ConcretoAgregadosBovedilla\SistemaRegistro\SistemaRegistro\bin\Debug\net6.0-windows\itextsharp.dll

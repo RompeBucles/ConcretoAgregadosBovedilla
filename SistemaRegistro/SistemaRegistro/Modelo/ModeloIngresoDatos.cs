@@ -13,7 +13,7 @@ namespace SistemaRegistro.Modelo
         public string tecnologia { get; set; }
         public string otro { get; set; }
         public string nombreProceso { get; set; }
-        public string tipoProcesos { get; set; }
+        public string tipoProceso { get; set; }
         public string autor { get; set; }
         public string correo { get; set; }
         public string nombreFlujoR { get; set; }
@@ -21,7 +21,7 @@ namespace SistemaRegistro.Modelo
         public decimal valorR { get; set; }
         public string objetivo {get; set;}
         public string limitesSistema { get; set; }
-        public Image Imagen { get; set; }    
+        public Image imagen { get; set; }    
         public string tipoTecnologia { get; set; }
         public string condicionesOperacion { get; set; }
         public string fechaReferencia { get; set; }
