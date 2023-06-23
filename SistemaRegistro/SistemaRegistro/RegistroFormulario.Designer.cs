@@ -28,17 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             Identificación = new TabPage();
             panel1 = new Panel();
+            ComboProducto = new ComboBox();
+            ComboTecno = new ComboBox();
+            label27 = new Label();
+            label26 = new Label();
+            label25 = new Label();
+            label24 = new Label();
+            label23 = new Label();
+            label18 = new Label();
+            label12 = new Label();
             label17 = new Label();
             label16 = new Label();
-            textBox1 = new Templates.TextBox();
-            textBox6 = new Templates.TextBox();
+            textCorreo = new Templates.TextBox();
+            textAutor = new Templates.TextBox();
             label15 = new Label();
             label14 = new Label();
             textProceso = new Templates.TextBox();
-            textBox5 = new Templates.TextBox();
+            textOtro = new Templates.TextBox();
             label4 = new Label();
             comboSiete = new ComboBox();
             comboSeis = new ComboBox();
@@ -48,37 +58,30 @@
             comboDos = new ComboBox();
             comboUno = new ComboBox();
             label2 = new Label();
-            buttonSiguienteP = new Button();
             label1 = new Label();
-            ComboProducto = new ComboBox();
-            ComboTecno = new ComboBox();
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
-            button3 = new Button();
+            textValor = new Templates.TextBox();
+            btnEliminarImagen = new Button();
             label13 = new Label();
             label19 = new Label();
             label20 = new Label();
             textObjetivoR = new Templates.TextBox();
             textUnidadFuncional = new Templates.TextBox();
-            buttoAtrasP = new Button();
-            buttonSiguenteS = new Button();
             label5 = new Label();
             pictureBox1 = new PictureBox();
             button2 = new Button();
             button1 = new Button();
             comboLimitesSistema = new ComboBox();
             comboUnidadUno = new ComboBox();
-            numericUpDown1 = new NumericUpDown();
             textBox7 = new Templates.TextBox();
             label3 = new Label();
             Tecnología = new TabPage();
             panel2 = new Panel();
             label21 = new Label();
-            textBox3 = new Templates.TextBox();
-            buttonAtrasR = new Button();
-            buttonSiguienteT = new Button();
-            comboBox1 = new ComboBox();
+            textCondicionesOpe = new Templates.TextBox();
+            ComboTipoTecnologia = new ComboBox();
             label6 = new Label();
             TiempoVálido = new TabPage();
             panel3 = new Panel();
@@ -87,29 +90,30 @@
             label22 = new Label();
             dateTimePicker2 = new DateTimePicker();
             dateTimePicker1 = new DateTimePicker();
-            textBox4 = new Templates.TextBox();
-            buttonAtrasTec = new Button();
-            buttonSiguienteC = new Button();
+            textDescripcionPeriodo = new Templates.TextBox();
             label7 = new Label();
             Geografía = new TabPage();
             panel5 = new Panel();
-            panel7 = new Panel();
+            gMapControl2 = new GMap.NET.WindowsForms.GMapControl();
             panel6 = new Panel();
+            txtlongitud = new TextBox();
+            txtlatitud = new TextBox();
+            panel7 = new Panel();
             label11 = new Label();
             trackZoom = new TrackBar();
             buttonGuardarG = new Button();
-            gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             dataGridView1 = new DataGridView();
-            comboBox4 = new ComboBox();
-            comboBox2 = new ComboBox();
+            comboArea = new ComboBox();
+            comboEstado = new ComboBox();
             label10 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            timer1 = new System.Windows.Forms.Timer(components);
             tabControl1.SuspendLayout();
             Identificación.SuspendLayout();
             panel1.SuspendLayout();
             Referencia.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             Tecnología.SuspendLayout();
             panel2.SuspendLayout();
             TiempoVálido.SuspendLayout();
@@ -118,6 +122,7 @@
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackZoom).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // tabControl1
@@ -128,6 +133,7 @@
             tabControl1.Controls.Add(Tecnología);
             tabControl1.Controls.Add(TiempoVálido);
             tabControl1.Controls.Add(Geografía);
+            tabControl1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             tabControl1.Location = new Point(1, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -139,10 +145,10 @@
             Identificación.AutoScroll = true;
             Identificación.BackColor = Color.FromArgb(242, 230, 230);
             Identificación.Controls.Add(panel1);
-            Identificación.Location = new Point(4, 24);
+            Identificación.Location = new Point(4, 26);
             Identificación.Name = "Identificación";
             Identificación.Padding = new Padding(3);
-            Identificación.Size = new Size(742, 491);
+            Identificación.Size = new Size(742, 489);
             Identificación.TabIndex = 0;
             Identificación.Text = "Identificación";
             // 
@@ -150,14 +156,23 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
+            panel1.Controls.Add(ComboProducto);
+            panel1.Controls.Add(ComboTecno);
+            panel1.Controls.Add(label27);
+            panel1.Controls.Add(label26);
+            panel1.Controls.Add(label25);
+            panel1.Controls.Add(label24);
+            panel1.Controls.Add(label23);
+            panel1.Controls.Add(label18);
+            panel1.Controls.Add(label12);
             panel1.Controls.Add(label17);
             panel1.Controls.Add(label16);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(textBox6);
+            panel1.Controls.Add(textCorreo);
+            panel1.Controls.Add(textAutor);
             panel1.Controls.Add(label15);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(textProceso);
-            panel1.Controls.Add(textBox5);
+            panel1.Controls.Add(textOtro);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(comboSiete);
             panel1.Controls.Add(comboSeis);
@@ -167,16 +182,121 @@
             panel1.Controls.Add(comboDos);
             panel1.Controls.Add(comboUno);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(buttonSiguienteP);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(ComboProducto);
-            panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-10, 3);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
+            // 
+            // ComboProducto
+            // 
+            ComboProducto.FormattingEnabled = true;
+            ComboProducto.Items.AddRange(new object[] { "Cemento", "Concreto", "Acero estructural", "Ladrillos", "Madera", "Vidrio", "Aislamiento térmico", "Pinturas y recubrimientos", "Azulejos y baldosas", "Adhesivos y selladores", "Impermeabilizantes", "Sistemas de fontanería", "Sistemas eléctricos", "Sistemas de climatización" });
+            ComboProducto.Location = new Point(37, 70);
+            ComboProducto.Name = "ComboProducto";
+            ComboProducto.Size = new Size(222, 24);
+            ComboProducto.TabIndex = 130;
+            ComboProducto.Text = "Producto*";
+            ComboProducto.Enter += ComboProducto_Enter;
+            ComboProducto.Leave += ComboProducto_Leave;
+            // 
+            // ComboTecno
+            // 
+            ComboTecno.FormattingEnabled = true;
+            ComboTecno.Items.AddRange(new object[] { "Cemento Portland", "Concreto reforzado", "Concreto premezclado", "Concreto de alto rendimiento", "Ladrillos cerámicos", "Ladrillos de hormigón", "Acero laminado en caliente", "Madera laminada encolada", "Madera tratada", "Vidrio de seguridad laminado", "Vidrio aislante", "Azulejos de cerámica esmaltada", "Baldosas de porcelana", "Espuma de poliestireno expandido (EPS)", "Lana mineral", "Membranas asfálticas", "Pinturas impermeabilizantes" });
+            ComboTecno.Location = new Point(274, 70);
+            ComboTecno.Name = "ComboTecno";
+            ComboTecno.Size = new Size(219, 24);
+            ComboTecno.TabIndex = 129;
+            ComboTecno.Text = "Tecnología*";
+            ComboTecno.Enter += ComboTecno_Enter;
+            ComboTecno.Leave += ComboTecno_Leave;
+            // 
+            // label27
+            // 
+            label27.Anchor = AnchorStyles.None;
+            label27.AutoSize = true;
+            label27.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label27.ForeColor = Color.FromArgb(190, 31, 36);
+            label27.Location = new Point(92, 445);
+            label27.Name = "label27";
+            label27.Size = new Size(99, 16);
+            label27.TabIndex = 128;
+            label27.Text = "Otros servicios";
+            // 
+            // label26
+            // 
+            label26.Anchor = AnchorStyles.None;
+            label26.AutoSize = true;
+            label26.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label26.ForeColor = Color.FromArgb(190, 31, 36);
+            label26.Location = new Point(384, 378);
+            label26.Name = "label26";
+            label26.Size = new Size(102, 16);
+            label26.TabIndex = 127;
+            label26.Text = "Uso y consumo";
+            // 
+            // label25
+            // 
+            label25.Anchor = AnchorStyles.None;
+            label25.AutoSize = true;
+            label25.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label25.ForeColor = Color.FromArgb(190, 31, 36);
+            label25.Location = new Point(91, 378);
+            label25.Name = "label25";
+            label25.Size = new Size(157, 16);
+            label25.TabIndex = 126;
+            label25.Text = "Servicios de transporte:";
+            // 
+            // label24
+            // 
+            label24.Anchor = AnchorStyles.None;
+            label24.AutoSize = true;
+            label24.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label24.ForeColor = Color.FromArgb(190, 31, 36);
+            label24.Location = new Point(384, 317);
+            label24.Name = "label24";
+            label24.Size = new Size(222, 16);
+            label24.TabIndex = 125;
+            label24.Text = "Tratamiento al final de la vida útil";
+            // 
+            // label23
+            // 
+            label23.Anchor = AnchorStyles.None;
+            label23.AutoSize = true;
+            label23.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label23.ForeColor = Color.FromArgb(190, 31, 36);
+            label23.Location = new Point(91, 317);
+            label23.Name = "label23";
+            label23.Size = new Size(168, 16);
+            label23.TabIndex = 124;
+            label23.Text = "Materiales de producción";
+            // 
+            // label18
+            // 
+            label18.Anchor = AnchorStyles.None;
+            label18.AutoSize = true;
+            label18.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.ForeColor = Color.FromArgb(190, 31, 36);
+            label18.Location = new Point(384, 260);
+            label18.Name = "label18";
+            label18.Size = new Size(64, 16);
+            label18.TabIndex = 123;
+            label18.Text = "Sistemas";
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.None;
+            label12.AutoSize = true;
+            label12.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = Color.FromArgb(190, 31, 36);
+            label12.Location = new Point(91, 260);
+            label12.Name = "label12";
+            label12.Size = new Size(235, 16);
+            label12.TabIndex = 122;
+            label12.Text = "Portadores de energía y tecnología ";
             // 
             // label17
             // 
@@ -202,41 +322,45 @@
             label16.TabIndex = 120;
             label16.Text = "Autor ACV*";
             // 
-            // textBox1
+            // textCorreo
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.BackColor = SystemColors.Control;
-            textBox1.BorderColor = SystemColors.ControlDarkDark;
-            textBox1.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox1.BorderSize = 2;
-            textBox1.ForeColor = Color.DimGray;
-            textBox1.Location = new Point(258, 662);
-            textBox1.Multiline = false;
-            textBox1.Name = "textBox1";
-            textBox1.Padding = new Padding(8, 7, 8, 7);
-            textBox1.PasswordChar = false;
-            textBox1.Size = new Size(218, 31);
-            textBox1.TabIndex = 117;
-            textBox1.Texts = "ejemplo@unam.gob.mx";
-            textBox1.UnderlinedStyle = true;
+            textCorreo.Anchor = AnchorStyles.None;
+            textCorreo.BackColor = SystemColors.Control;
+            textCorreo.BorderColor = SystemColors.ControlDarkDark;
+            textCorreo.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textCorreo.BorderSize = 2;
+            textCorreo.ForeColor = Color.DimGray;
+            textCorreo.Location = new Point(258, 662);
+            textCorreo.Multiline = false;
+            textCorreo.Name = "textCorreo";
+            textCorreo.Padding = new Padding(8, 7, 8, 7);
+            textCorreo.PasswordChar = false;
+            textCorreo.Size = new Size(218, 31);
+            textCorreo.TabIndex = 117;
+            textCorreo.Texts = "ejemplo@unam.gob.mx";
+            textCorreo.UnderlinedStyle = true;
+            textCorreo.Enter += textCorreo_Enter;
+            textCorreo.Leave += textCorreo_Leave;
             // 
-            // textBox6
+            // textAutor
             // 
-            textBox6.Anchor = AnchorStyles.None;
-            textBox6.BackColor = SystemColors.Control;
-            textBox6.BorderColor = SystemColors.ControlDarkDark;
-            textBox6.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox6.BorderSize = 2;
-            textBox6.ForeColor = Color.DimGray;
-            textBox6.Location = new Point(258, 592);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Padding = new Padding(8, 7, 8, 7);
-            textBox6.PasswordChar = false;
-            textBox6.Size = new Size(218, 32);
-            textBox6.TabIndex = 115;
-            textBox6.Texts = "Ejemplo: Centro Mario Molina";
-            textBox6.UnderlinedStyle = true;
+            textAutor.Anchor = AnchorStyles.None;
+            textAutor.BackColor = SystemColors.Control;
+            textAutor.BorderColor = SystemColors.ControlDarkDark;
+            textAutor.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textAutor.BorderSize = 2;
+            textAutor.ForeColor = Color.DimGray;
+            textAutor.Location = new Point(258, 592);
+            textAutor.Multiline = true;
+            textAutor.Name = "textAutor";
+            textAutor.Padding = new Padding(8, 7, 8, 7);
+            textAutor.PasswordChar = false;
+            textAutor.Size = new Size(218, 32);
+            textAutor.TabIndex = 115;
+            textAutor.Texts = "Ejemplo: Centro Mario Molina";
+            textAutor.UnderlinedStyle = true;
+            textAutor.Enter += textAutor_Enter;
+            textAutor.Leave += textAutor_Leave;
             // 
             // label15
             // 
@@ -244,7 +368,7 @@
             label15.AutoSize = true;
             label15.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label15.ForeColor = Color.FromArgb(190, 31, 36);
-            label15.Location = new Point(17, 116);
+            label15.Location = new Point(52, 126);
             label15.Name = "label15";
             label15.Size = new Size(140, 16);
             label15.TabIndex = 113;
@@ -256,7 +380,7 @@
             label14.AutoSize = true;
             label14.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.FromArgb(190, 31, 36);
-            label14.Location = new Point(488, 39);
+            label14.Location = new Point(510, 44);
             label14.Name = "label14";
             label14.Size = new Size(39, 16);
             label14.TabIndex = 112;
@@ -270,33 +394,37 @@
             textProceso.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textProceso.BorderSize = 2;
             textProceso.ForeColor = Color.DimGray;
-            textProceso.Location = new Point(17, 135);
+            textProceso.Location = new Point(52, 145);
             textProceso.Multiline = false;
             textProceso.Name = "textProceso";
             textProceso.Padding = new Padding(8, 7, 8, 7);
             textProceso.PasswordChar = false;
-            textProceso.Size = new Size(250, 31);
+            textProceso.Size = new Size(277, 31);
             textProceso.TabIndex = 111;
             textProceso.Texts = "Ejemplo: Elaboración de concreto simple";
             textProceso.UnderlinedStyle = true;
+            textProceso.Enter += textProceso_Enter;
+            textProceso.Leave += textProceso_Leave;
             // 
-            // textBox5
+            // textOtro
             // 
-            textBox5.Anchor = AnchorStyles.None;
-            textBox5.BackColor = SystemColors.Control;
-            textBox5.BorderColor = SystemColors.ControlDarkDark;
-            textBox5.BorderFocusColor = Color.Black;
-            textBox5.BorderSize = 2;
-            textBox5.ForeColor = Color.DimGray;
-            textBox5.Location = new Point(488, 62);
-            textBox5.Multiline = false;
-            textBox5.Name = "textBox5";
-            textBox5.Padding = new Padding(8, 7, 8, 7);
-            textBox5.PasswordChar = false;
-            textBox5.Size = new Size(241, 31);
-            textBox5.TabIndex = 110;
-            textBox5.Texts = "Ejemplo: grava y arena";
-            textBox5.UnderlinedStyle = true;
+            textOtro.Anchor = AnchorStyles.None;
+            textOtro.BackColor = SystemColors.Control;
+            textOtro.BorderColor = SystemColors.ControlDarkDark;
+            textOtro.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textOtro.BorderSize = 2;
+            textOtro.ForeColor = Color.DimGray;
+            textOtro.Location = new Point(510, 63);
+            textOtro.Multiline = false;
+            textOtro.Name = "textOtro";
+            textOtro.Padding = new Padding(8, 7, 8, 7);
+            textOtro.PasswordChar = false;
+            textOtro.Size = new Size(207, 31);
+            textOtro.TabIndex = 110;
+            textOtro.Texts = "Ejemplo: grava y arena";
+            textOtro.UnderlinedStyle = true;
+            textOtro.Enter += textOtro_Enter;
+            textOtro.Leave += textOtro_Leave;
             // 
             // label4
             // 
@@ -304,101 +432,101 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Crimson;
-            label4.Location = new Point(254, 213);
+            label4.Location = new Point(274, 224);
             label4.Name = "label4";
-            label4.Size = new Size(214, 16);
+            label4.Size = new Size(209, 16);
             label4.TabIndex = 91;
-            label4.Text = "Solo puede elegir una sola lista*";
+            label4.Text = "Solo puede elegir una sola lista";
             // 
             // comboSiete
             // 
             comboSiete.Anchor = AnchorStyles.None;
+            comboSiete.DropDownStyle = ComboBoxStyle.DropDownList;
             comboSiete.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboSiete.FormattingEnabled = true;
             comboSiete.Items.AddRange(new object[] { "Limpieza", "Almacenamiento", "Salud, servicios sociales, belleza y bienestar", "Reparación y mantenimiento", "Venta y venta al por mayor", "Servicios de comunicación e información", "Financiero, jurídico y de seguros", "Administración y gobierno", "Defensa", "Alojamiento y gastronomía", "Educación", "Investigación y desarrollo", "Entretenimiento", "Alquiler", "Ingeniería y consultoría", "Otros servicios" });
-            comboSiete.Location = new Point(79, 436);
+            comboSiete.Location = new Point(91, 464);
             comboSiete.Name = "comboSiete";
             comboSiete.Size = new Size(266, 24);
             comboSiete.TabIndex = 90;
-            comboSiete.Text = "Otros servicios*";
             comboSiete.SelectedIndexChanged += comboSiete_SelectedIndexChanged;
             // 
             // comboSeis
             // 
             comboSeis.Anchor = AnchorStyles.None;
+            comboSeis.DropDownStyle = ComboBoxStyle.DropDownList;
             comboSeis.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboSeis.FormattingEnabled = true;
             comboSeis.Items.AddRange(new object[] { "Consumo de productos", "Uso de productos que consumen energía", "Otros usos y consumos" });
-            comboSeis.Location = new Point(372, 369);
+            comboSeis.Location = new Point(384, 397);
             comboSeis.Name = "comboSeis";
             comboSeis.Size = new Size(265, 24);
             comboSeis.TabIndex = 89;
-            comboSeis.Text = "Uso y consumo*";
             comboSeis.SelectedIndexChanged += comboSeis_SelectedIndexChanged;
             // 
             // comboCinco
             // 
             comboCinco.Anchor = AnchorStyles.None;
+            comboCinco.DropDownStyle = ComboBoxStyle.DropDownList;
             comboCinco.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboCinco.FormattingEnabled = true;
             comboCinco.Items.AddRange(new object[] { "Carretera", "Ferrocarril", "Agua", "Aire", "Otros transportes" });
-            comboCinco.Location = new Point(79, 369);
+            comboCinco.Location = new Point(91, 397);
             comboCinco.Name = "comboCinco";
             comboCinco.Size = new Size(266, 24);
             comboCinco.TabIndex = 88;
-            comboCinco.Text = "Servicios de transporte*";
             comboCinco.SelectedIndexChanged += comboCinco_SelectedIndexChanged;
             // 
             // comboCuatro
             // 
             comboCuatro.Anchor = AnchorStyles.None;
+            comboCuatro.DropDownStyle = ComboBoxStyle.DropDownList;
             comboCuatro.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboCuatro.FormattingEnabled = true;
             comboCuatro.Items.AddRange(new object[] { "Reutilización o utilización posterior", "Reciclaje de materiales", "Reciclaje de materias primas", "Reciclaje energético", "Vertedero", "Recogida de residuos", "Tratamiento de aguas residuales", "Tratamiento de gas bruto", "Otros servicios al final de la vida útil" });
-            comboCuatro.Location = new Point(372, 308);
+            comboCuatro.Location = new Point(384, 336);
             comboCuatro.Name = "comboCuatro";
             comboCuatro.Size = new Size(265, 24);
             comboCuatro.TabIndex = 87;
-            comboCuatro.Text = "Tratamiento al final de la vida útil*";
             comboCuatro.SelectedIndexChanged += comboCuatro_SelectedIndexChanged;
             // 
             // comboTres
             // 
             comboTres.Anchor = AnchorStyles.None;
+            comboTres.DropDownStyle = ComboBoxStyle.DropDownList;
             comboTres.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboTres.FormattingEnabled = true;
             comboTres.Items.AddRange(new object[] { "Materias primas no energéticas", "Metales y semimetales", "Productos químicos orgánicos", "Productos químicos inorgánicos", "Vidrio y cerámica", "Otros materiales minerales", "Plásticos", "Papel y cartón", "Agua", "Medios de producción agrícola", "Alimentos y materias primas renovables", "Madera", "Otros materiales" });
-            comboTres.Location = new Point(79, 308);
+            comboTres.Location = new Point(91, 336);
             comboTres.Name = "comboTres";
             comboTres.Size = new Size(266, 24);
             comboTres.TabIndex = 87;
-            comboTres.Text = "Materiales de producción*";
             comboTres.SelectedIndexChanged += comboTres_SelectedIndexChanged;
             // 
             // comboDos
             // 
             comboDos.Anchor = AnchorStyles.None;
+            comboDos.DropDownStyle = ComboBoxStyle.DropDownList;
             comboDos.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboDos.FormattingEnabled = true;
             comboDos.Items.AddRange(new object[] { "Embalaje", "Electricidad y electrónica", "Vehículos", "Otras maquinas", "Construcción", "Electrodomésticos", "Textiles, muebles y otros interiores", "Partes no especificas", "Pinturas y preparados químicos", "Otros sistemas" });
-            comboDos.Location = new Point(372, 251);
+            comboDos.Location = new Point(384, 279);
             comboDos.Name = "comboDos";
             comboDos.Size = new Size(265, 24);
             comboDos.TabIndex = 86;
-            comboDos.Text = "Sistemas*";
             comboDos.SelectedIndexChanged += comboDos_SelectedIndexChanged;
             // 
             // comboUno
             // 
             comboUno.Anchor = AnchorStyles.None;
+            comboUno.DropDownStyle = ComboBoxStyle.DropDownList;
             comboUno.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboUno.FormattingEnabled = true;
             comboUno.Items.AddRange(new object[] { "Materias primas energéticas", "Electricidad", "Calor y vapor", "Energía mecánica", "Combustibles a base de hulla", "Combustibles a base de lignito", "Combustibles a base de petróleo crudo", "Combustibles a base de gas natural", "Combustibles nucleares", "Otros combustibles no renovables", "Combustibles renovables" });
-            comboUno.Location = new Point(79, 251);
+            comboUno.Location = new Point(91, 279);
             comboUno.Name = "comboUno";
             comboUno.Size = new Size(266, 24);
             comboUno.TabIndex = 85;
-            comboUno.Text = "Portadores de energía y tecnología *";
             comboUno.SelectedIndexChanged += comboUno_SelectedIndexChanged;
             // 
             // label2
@@ -406,60 +534,22 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(294, 194);
+            label2.Location = new Point(314, 205);
             label2.Name = "label2";
             label2.Size = new Size(133, 19);
             label2.TabIndex = 84;
             label2.Text = "Tipo de proceso";
-            // 
-            // buttonSiguienteP
-            // 
-            buttonSiguienteP.Anchor = AnchorStyles.None;
-            buttonSiguienteP.BackColor = Color.FromArgb(190, 31, 36);
-            buttonSiguienteP.FlatAppearance.BorderSize = 0;
-            buttonSiguienteP.FlatStyle = FlatStyle.Flat;
-            buttonSiguienteP.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonSiguienteP.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteP.Location = new Point(316, 724);
-            buttonSiguienteP.Name = "buttonSiguienteP";
-            buttonSiguienteP.Size = new Size(115, 35);
-            buttonSiguienteP.TabIndex = 83;
-            buttonSiguienteP.Text = "Siguiente";
-            buttonSiguienteP.UseVisualStyleBackColor = false;
-            buttonSiguienteP.Click += buttonSiguienteP_Click;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(279, 523);
+            label1.Location = new Point(294, 530);
             label1.Name = "label1";
             label1.Size = new Size(148, 19);
             label1.TabIndex = 82;
             label1.Text = "Datos de contacto";
-            // 
-            // ComboProducto
-            // 
-            ComboProducto.Anchor = AnchorStyles.None;
-            ComboProducto.FormattingEnabled = true;
-            ComboProducto.Items.AddRange(new object[] { "Cemento", "Concreto", "Acero estructural", "Ladrillos", "Madera", "Vidrio", "Aislamiento térmico", "Pinturas y recubrimientos", "Azulejos y baldosas", "Adhesivos y selladores", "Impermeabilizantes", "Sistemas de fontanería", "Sistemas eléctricos", "Sistemas de climatización" });
-            ComboProducto.Location = new Point(16, 69);
-            ComboProducto.Name = "ComboProducto";
-            ComboProducto.Size = new Size(214, 24);
-            ComboProducto.TabIndex = 0;
-            ComboProducto.Text = "Producto*";
-            // 
-            // ComboTecno
-            // 
-            ComboTecno.Anchor = AnchorStyles.None;
-            ComboTecno.FormattingEnabled = true;
-            ComboTecno.Items.AddRange(new object[] { "Cemento Portland", "Concreto reforzado", "Concreto premezclado", "Concreto de alto rendimiento", "Ladrillos cerámicos", "Ladrillos de hormigón", "Acero laminado en caliente", "Madera laminada encolada", "Madera tratada", "Vidrio de seguridad laminado", "Vidrio aislante", "Azulejos de cerámica esmaltada", "Baldosas de porcelana", "Espuma de poliestireno expandido (EPS)", "Lana mineral", "Membranas asfálticas", "Pinturas impermeabilizantes" });
-            ComboTecno.Location = new Point(236, 69);
-            ComboTecno.Name = "ComboTecno";
-            ComboTecno.Size = new Size(232, 24);
-            ComboTecno.TabIndex = 30;
-            ComboTecno.Text = "Tecnología*";
             // 
             // labelUsuario
             // 
@@ -478,10 +568,10 @@
             Referencia.AutoScroll = true;
             Referencia.BackColor = Color.FromArgb(242, 230, 230);
             Referencia.Controls.Add(panel4);
-            Referencia.Location = new Point(4, 24);
+            Referencia.Location = new Point(4, 26);
             Referencia.Name = "Referencia";
             Referencia.Padding = new Padding(3);
-            Referencia.Size = new Size(742, 491);
+            Referencia.Size = new Size(742, 489);
             Referencia.TabIndex = 1;
             Referencia.Text = "Referencia";
             // 
@@ -490,42 +580,61 @@
             panel4.Anchor = AnchorStyles.Top;
             panel4.AutoScroll = true;
             panel4.BackColor = Color.FromArgb(242, 230, 230);
-            panel4.Controls.Add(button3);
+            panel4.Controls.Add(textValor);
+            panel4.Controls.Add(btnEliminarImagen);
             panel4.Controls.Add(label13);
             panel4.Controls.Add(label19);
             panel4.Controls.Add(label20);
             panel4.Controls.Add(textObjetivoR);
             panel4.Controls.Add(textUnidadFuncional);
-            panel4.Controls.Add(buttoAtrasP);
-            panel4.Controls.Add(buttonSiguenteS);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(pictureBox1);
             panel4.Controls.Add(button2);
             panel4.Controls.Add(button1);
             panel4.Controls.Add(comboLimitesSistema);
             panel4.Controls.Add(comboUnidadUno);
-            panel4.Controls.Add(numericUpDown1);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-69, 3);
+            panel4.Location = new Point(-36, 3);
             panel4.Name = "panel4";
-            panel4.Size = new Size(739, 747);
+            panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
             // 
-            // button3
+            // textValor
             // 
-            button3.Anchor = AnchorStyles.None;
-            button3.BackColor = Color.FromArgb(190, 31, 36);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = SystemColors.ButtonFace;
-            button3.Location = new Point(300, 606);
-            button3.Name = "button3";
-            button3.Size = new Size(121, 36);
-            button3.TabIndex = 119;
-            button3.Text = "Eliminar imagen";
-            button3.UseVisualStyleBackColor = false;
+            textValor.Anchor = AnchorStyles.None;
+            textValor.BackColor = SystemColors.Control;
+            textValor.BorderColor = SystemColors.ControlDarkDark;
+            textValor.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textValor.BorderSize = 2;
+            textValor.ForeColor = Color.DimGray;
+            textValor.Location = new Point(231, 219);
+            textValor.Multiline = true;
+            textValor.Name = "textValor";
+            textValor.Padding = new Padding(7, 9, 7, 9);
+            textValor.PasswordChar = false;
+            textValor.Size = new Size(278, 39);
+            textValor.TabIndex = 120;
+            textValor.Texts = "Ejemplo: 0";
+            textValor.UnderlinedStyle = true;
+            textValor.Enter += textValor_Enter;
+            textValor.Leave += textValor_Leave;
+            // 
+            // btnEliminarImagen
+            // 
+            btnEliminarImagen.Anchor = AnchorStyles.None;
+            btnEliminarImagen.BackColor = Color.FromArgb(190, 31, 36);
+            btnEliminarImagen.FlatAppearance.BorderSize = 0;
+            btnEliminarImagen.FlatStyle = FlatStyle.Flat;
+            btnEliminarImagen.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarImagen.ForeColor = SystemColors.ButtonFace;
+            btnEliminarImagen.Location = new Point(327, 925);
+            btnEliminarImagen.Name = "btnEliminarImagen";
+            btnEliminarImagen.Size = new Size(121, 36);
+            btnEliminarImagen.TabIndex = 119;
+            btnEliminarImagen.Text = "Eliminar imagen";
+            btnEliminarImagen.UseVisualStyleBackColor = false;
+            btnEliminarImagen.Click += btnEliminarImagen_Click;
             // 
             // label13
             // 
@@ -533,7 +642,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(190, 31, 36);
-            label13.Location = new Point(248, 127);
+            label13.Location = new Point(354, 200);
             label13.Name = "label13";
             label13.Size = new Size(45, 16);
             label13.TabIndex = 118;
@@ -545,7 +654,7 @@
             label19.AutoSize = true;
             label19.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.FromArgb(190, 31, 36);
-            label19.Location = new Point(248, 264);
+            label19.Location = new Point(334, 342);
             label19.Name = "label19";
             label19.Size = new Size(65, 16);
             label19.TabIndex = 117;
@@ -557,7 +666,7 @@
             label20.AutoSize = true;
             label20.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label20.ForeColor = Color.FromArgb(190, 31, 36);
-            label20.Location = new Point(248, 53);
+            label20.Location = new Point(267, 56);
             label20.Name = "label20";
             label20.Size = new Size(207, 16);
             label20.TabIndex = 116;
@@ -571,15 +680,17 @@
             textObjetivoR.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textObjetivoR.BorderSize = 2;
             textObjetivoR.ForeColor = Color.DimGray;
-            textObjetivoR.Location = new Point(248, 283);
+            textObjetivoR.Location = new Point(231, 361);
             textObjetivoR.Multiline = true;
             textObjetivoR.Name = "textObjetivoR";
-            textObjetivoR.Padding = new Padding(7);
+            textObjetivoR.Padding = new Padding(7, 8, 7, 8);
             textObjetivoR.PasswordChar = false;
-            textObjetivoR.Size = new Size(230, 30);
+            textObjetivoR.Size = new Size(278, 34);
             textObjetivoR.TabIndex = 115;
             textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
             textObjetivoR.UnderlinedStyle = true;
+            textObjetivoR.Enter += textObjetivoR_Enter;
+            textObjetivoR.Leave += textObjetivoR_Leave;
             // 
             // textUnidadFuncional
             // 
@@ -589,54 +700,24 @@
             textUnidadFuncional.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textUnidadFuncional.BorderSize = 2;
             textUnidadFuncional.ForeColor = Color.DimGray;
-            textUnidadFuncional.Location = new Point(248, 72);
+            textUnidadFuncional.Location = new Point(231, 75);
             textUnidadFuncional.Multiline = true;
             textUnidadFuncional.Name = "textUnidadFuncional";
-            textUnidadFuncional.Padding = new Padding(7);
+            textUnidadFuncional.Padding = new Padding(7, 8, 7, 8);
             textUnidadFuncional.PasswordChar = false;
-            textUnidadFuncional.Size = new Size(230, 30);
+            textUnidadFuncional.Size = new Size(278, 34);
             textUnidadFuncional.TabIndex = 114;
             textUnidadFuncional.Texts = "Ejemplo: Elaboración de concreto simple";
             textUnidadFuncional.UnderlinedStyle = true;
-            // 
-            // buttoAtrasP
-            // 
-            buttoAtrasP.Anchor = AnchorStyles.None;
-            buttoAtrasP.BackColor = Color.FromArgb(190, 31, 36);
-            buttoAtrasP.FlatAppearance.BorderSize = 0;
-            buttoAtrasP.FlatStyle = FlatStyle.Flat;
-            buttoAtrasP.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttoAtrasP.ForeColor = SystemColors.ButtonFace;
-            buttoAtrasP.Location = new Point(186, 683);
-            buttoAtrasP.Name = "buttoAtrasP";
-            buttoAtrasP.Size = new Size(115, 35);
-            buttoAtrasP.TabIndex = 87;
-            buttoAtrasP.Text = "Atrás";
-            buttoAtrasP.UseVisualStyleBackColor = false;
-            buttoAtrasP.Click += buttoAtrasP_Click;
-            // 
-            // buttonSiguenteS
-            // 
-            buttonSiguenteS.Anchor = AnchorStyles.None;
-            buttonSiguenteS.BackColor = Color.FromArgb(190, 31, 36);
-            buttonSiguenteS.FlatAppearance.BorderSize = 0;
-            buttonSiguenteS.FlatStyle = FlatStyle.Flat;
-            buttonSiguenteS.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonSiguenteS.ForeColor = SystemColors.ButtonFace;
-            buttonSiguenteS.Location = new Point(427, 682);
-            buttonSiguenteS.Name = "buttonSiguenteS";
-            buttonSiguenteS.Size = new Size(115, 35);
-            buttonSiguenteS.TabIndex = 86;
-            buttonSiguenteS.Text = "Siguiente";
-            buttonSiguenteS.UseVisualStyleBackColor = false;
-            buttonSiguenteS.Click += buttonSiguenteS_Click;
+            textUnidadFuncional.Enter += textUnidadFuncional_Enter;
+            textUnidadFuncional.Leave += textUnidadFuncional_Leave;
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(278, 404);
+            label5.Location = new Point(298, 426);
             label5.Name = "label5";
             label5.Size = new Size(155, 19);
             label5.TabIndex = 85;
@@ -645,9 +726,9 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Gray;
-            pictureBox1.Location = new Point(209, 426);
+            pictureBox1.Location = new Point(91, 448);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(307, 174);
+            pictureBox1.Size = new Size(596, 474);
             pictureBox1.TabIndex = 82;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -660,7 +741,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(474, 1015);
+            button2.Location = new Point(480, 1176);
             button2.Name = "button2";
             button2.Size = new Size(115, 35);
             button2.TabIndex = 81;
@@ -675,7 +756,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(677, 1015);
+            button1.Location = new Point(683, 1176);
             button1.Name = "button1";
             button1.Size = new Size(115, 35);
             button1.TabIndex = 80;
@@ -684,30 +765,29 @@
             // 
             // comboLimitesSistema
             // 
+            comboLimitesSistema.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboLimitesSistema.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboLimitesSistema.FormattingEnabled = true;
             comboLimitesSistema.Items.AddRange(new object[] { "Limitaciones presupuestarias", "Limitaciones de tiempo", "Limitaciones de recursos naturales", "Limitaciones de espacio", "Limitaciones ambientales", "Limitaciones de capacidad", "Limitaciones geotécnicas", "Limitaciones tecnológicas", "Limitaciones normativas y legales", "Limitaciones de seguridad" });
-            comboLimitesSistema.Location = new Point(248, 357);
+            comboLimitesSistema.Location = new Point(231, 288);
             comboLimitesSistema.Name = "comboLimitesSistema";
-            comboLimitesSistema.Size = new Size(230, 23);
+            comboLimitesSistema.Size = new Size(278, 25);
             comboLimitesSistema.TabIndex = 76;
-            comboLimitesSistema.Text = "Limites del sistema*";
+            comboLimitesSistema.Enter += comboLimitesSistema_Enter;
+            comboLimitesSistema.Leave += comboLimitesSistema_Leave;
             // 
             // comboUnidadUno
             // 
+            comboUnidadUno.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboUnidadUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboUnidadUno.FormattingEnabled = true;
             comboUnidadUno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)" });
-            comboUnidadUno.Location = new Point(248, 210);
+            comboUnidadUno.Location = new Point(231, 143);
             comboUnidadUno.Name = "comboUnidadUno";
-            comboUnidadUno.Size = new Size(230, 23);
+            comboUnidadUno.Size = new Size(278, 25);
             comboUnidadUno.TabIndex = 74;
-            comboUnidadUno.Text = "Unidad*";
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(248, 146);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(230, 23);
-            numericUpDown1.TabIndex = 72;
+            comboUnidadUno.Enter += comboUnidadUno_Enter;
+            comboUnidadUno.Leave += comboUnidadUno_Leave;
             // 
             // textBox7
             // 
@@ -716,12 +796,12 @@
             textBox7.BorderColor = SystemColors.ControlDarkDark;
             textBox7.BorderFocusColor = Color.Black;
             textBox7.BorderSize = 2;
-            textBox7.Location = new Point(910, 543);
+            textBox7.Location = new Point(916, 776);
             textBox7.Multiline = false;
             textBox7.Name = "textBox7";
-            textBox7.Padding = new Padding(7);
+            textBox7.Padding = new Padding(7, 8, 7, 8);
             textBox7.PasswordChar = false;
-            textBox7.Size = new Size(222, 30);
+            textBox7.Size = new Size(222, 32);
             textBox7.TabIndex = 69;
             textBox7.Texts = "Otro*";
             textBox7.UnderlinedStyle = true;
@@ -732,7 +812,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(320, 13);
+            label3.Location = new Point(326, 13);
             label3.Name = "label3";
             label3.Size = new Size(91, 19);
             label3.TabIndex = 29;
@@ -743,9 +823,9 @@
             Tecnología.AutoScroll = true;
             Tecnología.BackColor = Color.FromArgb(242, 230, 230);
             Tecnología.Controls.Add(panel2);
-            Tecnología.Location = new Point(4, 24);
+            Tecnología.Location = new Point(4, 26);
             Tecnología.Name = "Tecnología";
-            Tecnología.Size = new Size(742, 491);
+            Tecnología.Size = new Size(742, 489);
             Tecnología.TabIndex = 2;
             Tecnología.Text = "Tecnología";
             // 
@@ -754,12 +834,10 @@
             panel2.Anchor = AnchorStyles.None;
             panel2.BackColor = Color.FromArgb(242, 230, 230);
             panel2.Controls.Add(label21);
-            panel2.Controls.Add(textBox3);
-            panel2.Controls.Add(buttonAtrasR);
-            panel2.Controls.Add(buttonSiguienteT);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(textCondicionesOpe);
+            panel2.Controls.Add(ComboTipoTecnologia);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(-3, 3);
+            panel2.Location = new Point(-3, 2);
             panel2.Name = "panel2";
             panel2.Size = new Size(736, 468);
             panel2.TabIndex = 0;
@@ -770,72 +848,45 @@
             label21.AutoSize = true;
             label21.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label21.ForeColor = Color.FromArgb(190, 31, 36);
-            label21.Location = new Point(260, 115);
+            label21.Location = new Point(284, 159);
             label21.Name = "label21";
             label21.Size = new Size(178, 16);
             label21.TabIndex = 114;
             label21.Text = "Condiciones de operación*";
             // 
-            // textBox3
+            // textCondicionesOpe
             // 
-            textBox3.Anchor = AnchorStyles.None;
-            textBox3.BackColor = SystemColors.Control;
-            textBox3.BorderColor = SystemColors.ControlDarkDark;
-            textBox3.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox3.BorderSize = 2;
-            textBox3.ForeColor = Color.DimGray;
-            textBox3.Location = new Point(260, 134);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Padding = new Padding(7);
-            textBox3.PasswordChar = false;
-            textBox3.Size = new Size(230, 30);
-            textBox3.TabIndex = 113;
-            textBox3.Texts = "Ejemplo: En este estudio se considera una revolvedora";
-            textBox3.UnderlinedStyle = true;
+            textCondicionesOpe.Anchor = AnchorStyles.None;
+            textCondicionesOpe.BackColor = SystemColors.Control;
+            textCondicionesOpe.BorderColor = SystemColors.ControlDarkDark;
+            textCondicionesOpe.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textCondicionesOpe.BorderSize = 2;
+            textCondicionesOpe.ForeColor = Color.DimGray;
+            textCondicionesOpe.Location = new Point(193, 178);
+            textCondicionesOpe.Multiline = true;
+            textCondicionesOpe.Name = "textCondicionesOpe";
+            textCondicionesOpe.Padding = new Padding(7, 8, 7, 8);
+            textCondicionesOpe.PasswordChar = false;
+            textCondicionesOpe.Size = new Size(360, 34);
+            textCondicionesOpe.TabIndex = 113;
+            textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
+            textCondicionesOpe.UnderlinedStyle = true;
+            textCondicionesOpe.Enter += textCondicionesOpe_Enter;
+            textCondicionesOpe.Leave += textCondicionesOpe_Leave;
             // 
-            // buttonAtrasR
+            // ComboTipoTecnologia
             // 
-            buttonAtrasR.Anchor = AnchorStyles.None;
-            buttonAtrasR.BackColor = Color.FromArgb(190, 31, 36);
-            buttonAtrasR.FlatAppearance.BorderSize = 0;
-            buttonAtrasR.FlatStyle = FlatStyle.Flat;
-            buttonAtrasR.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonAtrasR.ForeColor = SystemColors.ButtonFace;
-            buttonAtrasR.Location = new Point(201, 424);
-            buttonAtrasR.Name = "buttonAtrasR";
-            buttonAtrasR.Size = new Size(115, 35);
-            buttonAtrasR.TabIndex = 89;
-            buttonAtrasR.Text = "Atrás";
-            buttonAtrasR.UseVisualStyleBackColor = false;
-            buttonAtrasR.Click += buttonAtrasR_Click;
-            // 
-            // buttonSiguienteT
-            // 
-            buttonSiguienteT.Anchor = AnchorStyles.None;
-            buttonSiguienteT.BackColor = Color.FromArgb(190, 31, 36);
-            buttonSiguienteT.FlatAppearance.BorderSize = 0;
-            buttonSiguienteT.FlatStyle = FlatStyle.Flat;
-            buttonSiguienteT.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonSiguienteT.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteT.Location = new Point(439, 424);
-            buttonSiguienteT.Name = "buttonSiguienteT";
-            buttonSiguienteT.Size = new Size(115, 35);
-            buttonSiguienteT.TabIndex = 88;
-            buttonSiguienteT.Text = "Siguiente";
-            buttonSiguienteT.UseVisualStyleBackColor = false;
-            buttonSiguienteT.Click += buttonSiguienteT_Click;
-            // 
-            // comboBox1
-            // 
-            comboBox1.Anchor = AnchorStyles.None;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Innovación (Laboratorio, prototipo, piloto, demostración)", "Moderna", "Actual (más encontrada en operación)", "Antigua", "Mix.Tecnologías" });
-            comboBox1.Location = new Point(260, 56);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(230, 23);
-            comboBox1.TabIndex = 75;
-            comboBox1.Text = "Tipo de tecnología*";
+            ComboTipoTecnologia.Anchor = AnchorStyles.None;
+            ComboTipoTecnologia.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboTipoTecnologia.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboTipoTecnologia.FormattingEnabled = true;
+            ComboTipoTecnologia.Items.AddRange(new object[] { "Innovación (Laboratorio, prototipo, piloto, demostración)", "Moderna", "Actual (más encontrada en operación)", "Antigua", "Mix.Tecnologías" });
+            ComboTipoTecnologia.Location = new Point(208, 75);
+            ComboTipoTecnologia.Name = "ComboTipoTecnologia";
+            ComboTipoTecnologia.Size = new Size(323, 25);
+            ComboTipoTecnologia.TabIndex = 75;
+            ComboTipoTecnologia.Enter += ComboTipoTecnologia_Enter;
+            ComboTipoTecnologia.Leave += ComboTipoTecnologia_Leave;
             // 
             // label6
             // 
@@ -854,9 +905,9 @@
             TiempoVálido.AutoScroll = true;
             TiempoVálido.BackColor = Color.FromArgb(242, 230, 230);
             TiempoVálido.Controls.Add(panel3);
-            TiempoVálido.Location = new Point(4, 24);
+            TiempoVálido.Location = new Point(4, 26);
             TiempoVálido.Name = "TiempoVálido";
-            TiempoVálido.Size = new Size(742, 491);
+            TiempoVálido.Size = new Size(742, 489);
             TiempoVálido.TabIndex = 3;
             TiempoVálido.Text = "TiempoVálido";
             // 
@@ -869,11 +920,9 @@
             panel3.Controls.Add(label22);
             panel3.Controls.Add(dateTimePicker2);
             panel3.Controls.Add(dateTimePicker1);
-            panel3.Controls.Add(textBox4);
-            panel3.Controls.Add(buttonAtrasTec);
-            panel3.Controls.Add(buttonSiguienteC);
+            panel3.Controls.Add(textDescripcionPeriodo);
             panel3.Controls.Add(label7);
-            panel3.Location = new Point(-3, 3);
+            panel3.Location = new Point(-3, 2);
             panel3.Name = "panel3";
             panel3.Size = new Size(739, 470);
             panel3.TabIndex = 1;
@@ -884,11 +933,11 @@
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(190, 31, 36);
-            label8.Location = new Point(210, 240);
+            label8.Location = new Point(258, 266);
             label8.Name = "label8";
-            label8.Size = new Size(231, 16);
+            label8.Size = new Size(226, 16);
             label8.TabIndex = 119;
-            label8.Text = "Descripción del periodo de tiempo*";
+            label8.Text = "Descripción del periodo de tiempo";
             // 
             // label9
             // 
@@ -896,7 +945,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.Crimson;
-            label9.Location = new Point(210, 146);
+            label9.Location = new Point(299, 146);
             label9.Name = "label9";
             label9.Size = new Size(131, 16);
             label9.TabIndex = 118;
@@ -908,7 +957,7 @@
             label22.AutoSize = true;
             label22.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label22.ForeColor = Color.Crimson;
-            label22.Location = new Point(210, 77);
+            label22.Location = new Point(266, 77);
             label22.Name = "label22";
             label22.Size = new Size(209, 16);
             label22.TabIndex = 117;
@@ -916,67 +965,40 @@
             // 
             // dateTimePicker2
             // 
+            dateTimePicker2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker2.Location = new Point(210, 165);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(329, 23);
+            dateTimePicker2.Size = new Size(329, 25);
             dateTimePicker2.TabIndex = 116;
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dateTimePicker1.Location = new Point(210, 96);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(329, 23);
+            dateTimePicker1.Size = new Size(329, 25);
             dateTimePicker1.TabIndex = 115;
             // 
-            // textBox4
+            // textDescripcionPeriodo
             // 
-            textBox4.Anchor = AnchorStyles.None;
-            textBox4.BackColor = SystemColors.Control;
-            textBox4.BorderColor = SystemColors.ControlDarkDark;
-            textBox4.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textBox4.BorderSize = 2;
-            textBox4.ForeColor = Color.DimGray;
-            textBox4.Location = new Point(210, 259);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Padding = new Padding(7);
-            textBox4.PasswordChar = false;
-            textBox4.Size = new Size(329, 30);
-            textBox4.TabIndex = 114;
-            textBox4.Texts = "Ejemplo: Se solicita este tiempo para el análisis del estudio";
-            textBox4.UnderlinedStyle = true;
-            // 
-            // buttonAtrasTec
-            // 
-            buttonAtrasTec.Anchor = AnchorStyles.None;
-            buttonAtrasTec.BackColor = Color.FromArgb(190, 31, 36);
-            buttonAtrasTec.FlatAppearance.BorderSize = 0;
-            buttonAtrasTec.FlatStyle = FlatStyle.Flat;
-            buttonAtrasTec.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonAtrasTec.ForeColor = SystemColors.ButtonFace;
-            buttonAtrasTec.Location = new Point(201, 424);
-            buttonAtrasTec.Name = "buttonAtrasTec";
-            buttonAtrasTec.Size = new Size(115, 35);
-            buttonAtrasTec.TabIndex = 89;
-            buttonAtrasTec.Text = "Atrás";
-            buttonAtrasTec.UseVisualStyleBackColor = false;
-            buttonAtrasTec.Click += buttonAtrasTec_Click;
-            // 
-            // buttonSiguienteC
-            // 
-            buttonSiguienteC.Anchor = AnchorStyles.None;
-            buttonSiguienteC.BackColor = Color.FromArgb(190, 31, 36);
-            buttonSiguienteC.FlatAppearance.BorderSize = 0;
-            buttonSiguienteC.FlatStyle = FlatStyle.Flat;
-            buttonSiguienteC.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonSiguienteC.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteC.Location = new Point(439, 424);
-            buttonSiguienteC.Name = "buttonSiguienteC";
-            buttonSiguienteC.Size = new Size(115, 35);
-            buttonSiguienteC.TabIndex = 88;
-            buttonSiguienteC.Text = "Siguiente";
-            buttonSiguienteC.UseVisualStyleBackColor = false;
-            buttonSiguienteC.Click += buttonSiguienteC_Click;
+            textDescripcionPeriodo.Anchor = AnchorStyles.None;
+            textDescripcionPeriodo.BackColor = SystemColors.Control;
+            textDescripcionPeriodo.BorderColor = SystemColors.ControlDarkDark;
+            textDescripcionPeriodo.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textDescripcionPeriodo.BorderSize = 2;
+            textDescripcionPeriodo.ForeColor = Color.DimGray;
+            textDescripcionPeriodo.Location = new Point(179, 294);
+            textDescripcionPeriodo.Multiline = true;
+            textDescripcionPeriodo.Name = "textDescripcionPeriodo";
+            textDescripcionPeriodo.Padding = new Padding(7, 8, 7, 8);
+            textDescripcionPeriodo.PasswordChar = false;
+            textDescripcionPeriodo.Size = new Size(395, 34);
+            textDescripcionPeriodo.TabIndex = 114;
+            textDescripcionPeriodo.Texts = "Ejemplo: Se solicita este tiempo para el análisis del estudio";
+            textDescripcionPeriodo.UnderlinedStyle = true;
+            textDescripcionPeriodo.Enter += textDescripcionPeriodo_Enter;
+            textDescripcionPeriodo.KeyPress += textDescripcionPeriodo_KeyPress;
+            textDescripcionPeriodo.Leave += textDescripcionPeriodo_Leave;
             // 
             // label7
             // 
@@ -995,9 +1017,9 @@
             Geografía.AutoScroll = true;
             Geografía.BackColor = Color.FromArgb(242, 230, 230);
             Geografía.Controls.Add(panel5);
-            Geografía.Location = new Point(4, 24);
+            Geografía.Location = new Point(4, 26);
             Geografía.Name = "Geografía";
-            Geografía.Size = new Size(742, 491);
+            Geografía.Size = new Size(742, 489);
             Geografía.TabIndex = 4;
             Geografía.Text = "Geografía";
             // 
@@ -1005,21 +1027,71 @@
             // 
             panel5.Anchor = AnchorStyles.Top;
             panel5.BackColor = Color.FromArgb(242, 230, 230);
-            panel5.Controls.Add(panel7);
+            panel5.Controls.Add(gMapControl2);
             panel5.Controls.Add(panel6);
+            panel5.Controls.Add(txtlongitud);
+            panel5.Controls.Add(txtlatitud);
+            panel5.Controls.Add(panel7);
             panel5.Controls.Add(label11);
             panel5.Controls.Add(trackZoom);
             panel5.Controls.Add(buttonGuardarG);
-            panel5.Controls.Add(gMapControl1);
             panel5.Controls.Add(dataGridView1);
-            panel5.Controls.Add(comboBox4);
-            panel5.Controls.Add(comboBox2);
+            panel5.Controls.Add(comboArea);
+            panel5.Controls.Add(comboEstado);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-70, 3);
+            panel5.Location = new Point(-36, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
-            panel5.Paint += panel5_Paint;
+            // 
+            // gMapControl2
+            // 
+            gMapControl2.Bearing = 0F;
+            gMapControl2.CanDragMap = true;
+            gMapControl2.EmptyTileColor = Color.Navy;
+            gMapControl2.GrayScaleMode = false;
+            gMapControl2.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            gMapControl2.LevelsKeepInMemory = 5;
+            gMapControl2.Location = new Point(0, 293);
+            gMapControl2.MarkersEnabled = true;
+            gMapControl2.MaxZoom = 2;
+            gMapControl2.MinZoom = 2;
+            gMapControl2.MouseWheelZoomEnabled = true;
+            gMapControl2.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            gMapControl2.Name = "gMapControl2";
+            gMapControl2.NegativeMode = false;
+            gMapControl2.PolygonsEnabled = true;
+            gMapControl2.RetryLoadTile = 0;
+            gMapControl2.RoutesEnabled = true;
+            gMapControl2.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            gMapControl2.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
+            gMapControl2.ShowTileGridLines = false;
+            gMapControl2.Size = new Size(709, 385);
+            gMapControl2.TabIndex = 105;
+            gMapControl2.Zoom = 0D;
+            gMapControl2.Load += RegistroFormulario_Load;
+            gMapControl2.MouseDoubleClick += gMapControl2_MouseDoubleClick;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(496, 100);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(158, 112);
+            panel6.TabIndex = 100;
+            // 
+            // txtlongitud
+            // 
+            txtlongitud.Location = new Point(496, 187);
+            txtlongitud.Name = "txtlongitud";
+            txtlongitud.Size = new Size(100, 25);
+            txtlongitud.TabIndex = 104;
+            // 
+            // txtlatitud
+            // 
+            txtlatitud.Location = new Point(496, 167);
+            txtlatitud.Name = "txtlatitud";
+            txtlatitud.Size = new Size(100, 25);
+            txtlatitud.TabIndex = 103;
             // 
             // panel7
             // 
@@ -1027,13 +1099,6 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(387, 23);
             panel7.TabIndex = 102;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(477, 89);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(200, 100);
-            panel6.TabIndex = 100;
             // 
             // label11
             // 
@@ -1048,7 +1113,7 @@
             // 
             // trackZoom
             // 
-            trackZoom.Location = new Point(192, 722);
+            trackZoom.Location = new Point(190, 708);
             trackZoom.Name = "trackZoom";
             trackZoom.Size = new Size(289, 45);
             trackZoom.TabIndex = 98;
@@ -1070,33 +1135,6 @@
             buttonGuardarG.UseVisualStyleBackColor = false;
             buttonGuardarG.Click += buttonGuardarG_Click;
             // 
-            // gMapControl1
-            // 
-            gMapControl1.Bearing = 0F;
-            gMapControl1.CanDragMap = true;
-            gMapControl1.EmptyTileColor = Color.Navy;
-            gMapControl1.GrayScaleMode = false;
-            gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            gMapControl1.LevelsKeepInMemory = 5;
-            gMapControl1.Location = new Point(4, 268);
-            gMapControl1.MarkersEnabled = true;
-            gMapControl1.MaxZoom = 2;
-            gMapControl1.MinZoom = 2;
-            gMapControl1.MouseWheelZoomEnabled = true;
-            gMapControl1.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            gMapControl1.Name = "gMapControl1";
-            gMapControl1.NegativeMode = false;
-            gMapControl1.PolygonsEnabled = true;
-            gMapControl1.RetryLoadTile = 0;
-            gMapControl1.RoutesEnabled = true;
-            gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            gMapControl1.SelectedAreaFillColor = Color.FromArgb(33, 65, 105, 225);
-            gMapControl1.ShowTileGridLines = false;
-            gMapControl1.Size = new Size(712, 427);
-            gMapControl1.TabIndex = 96;
-            gMapControl1.Zoom = 0D;
-            gMapControl1.MouseDoubleClick += gMapControl1_MouseDoubleClick;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1105,28 +1143,36 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(121, 60);
             dataGridView1.TabIndex = 95;
+            dataGridView1.CellMouseClick += SelecionarRegistro;
             // 
-            // comboBox4
+            // comboArea
             // 
-            comboBox4.Anchor = AnchorStyles.None;
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "Aguascalientes", "Tijuana", "La Paz", "Campeche", "Tuxtla Gutiérrez", "Chihuahua", "Zona centro", "Saltillo", "Colima", "Durango", "León", "Acapulco", "Pachuca", "Guadalajara", "Morelia", "Cuernavaca", "Tepic", "Monterrey", "Oaxaca", "Puebla-Tlaxcala", "Querétaro", "Cancún", "San Luis Potosí", "Culiacán", "Hermosillo", "Villahermosa", "Tampico", "Puebla-Tlaxcala", "Veracruz", "Mérida", "Zacatecas" });
-            comboBox4.Location = new Point(212, 147);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(230, 23);
-            comboBox4.TabIndex = 94;
-            comboBox4.Text = "Nombre del área*";
+            comboArea.Anchor = AnchorStyles.None;
+            comboArea.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboArea.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboArea.FormattingEnabled = true;
+            comboArea.Items.AddRange(new object[] { "Aguascalientes", "Tijuana", "La Paz", "Campeche", "Tuxtla Gutiérrez", "Chihuahua", "Zona centro", "Saltillo", "Colima", "Durango", "León", "Acapulco", "Pachuca", "Guadalajara", "Morelia", "Cuernavaca", "Tepic", "Monterrey", "Oaxaca", "Puebla-Tlaxcala", "Querétaro", "Cancún", "San Luis Potosí", "Culiacán", "Hermosillo", "Villahermosa", "Tampico", "Puebla-Tlaxcala", "Veracruz", "Mérida", "Zacatecas" });
+            comboArea.Location = new Point(212, 147);
+            comboArea.Name = "comboArea";
+            comboArea.Size = new Size(230, 25);
+            comboArea.TabIndex = 94;
+            comboArea.Enter += comboArea_Enter;
+            comboArea.Leave += comboArea_Leave;
             // 
-            // comboBox2
+            // comboEstado
             // 
-            comboBox2.Anchor = AnchorStyles.None;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Estado de México ", "Coahuila", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro ", "Quintana Roo", "San Luis Potosí ", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" });
-            comboBox2.Location = new Point(212, 89);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(230, 23);
-            comboBox2.TabIndex = 93;
-            comboBox2.Text = "Estado*";
+            comboEstado.Anchor = AnchorStyles.None;
+            comboEstado.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboEstado.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboEstado.FormattingEnabled = true;
+            comboEstado.Items.AddRange(new object[] { "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Estado de México ", "Coahuila", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro ", "Quintana Roo", "San Luis Potosí ", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" });
+            comboEstado.Location = new Point(212, 89);
+            comboEstado.Name = "comboEstado";
+            comboEstado.Size = new Size(230, 25);
+            comboEstado.TabIndex = 93;
+            comboEstado.SelectedValueChanged += comboEstado_SelectedValueChanged;
+            comboEstado.Enter += comboEstado_Enter;
+            comboEstado.Leave += comboEstado_Leave;
             // 
             // label10
             // 
@@ -1139,6 +1185,14 @@
             label10.Size = new Size(204, 19);
             label10.TabIndex = 92;
             label10.Text = "Tiempo válido del estudio";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
             // 
             // RegistroFormulario
             // 
@@ -1159,7 +1213,6 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             Tecnología.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -1171,6 +1224,7 @@
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackZoom).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -1179,8 +1233,6 @@
         private TabControl tabControl1;
         private TabPage Identificación;
         private Panel panel1;
-        private ComboBox ComboProducto;
-        private ComboBox ComboTecno;
         private Label labelUsuario;
         private TabPage Referencia;
         private Panel panel4;
@@ -1188,13 +1240,11 @@
         private Button button1;
         private ComboBox comboLimitesSistema;
         private ComboBox comboUnidadUno;
-        private NumericUpDown numericUpDown1;
         private SistemaRegistro.Templates.TextBox textBox7;
         private Label label3;
         private TabPage Tecnología;
         private TabPage TiempoVálido;
         private TabPage Geografía;
-        private Button buttonSiguienteP;
         private Label label1;
         private ComboBox comboTres;
         private ComboBox comboDos;
@@ -1207,49 +1257,57 @@
         private Label label2;
         private Label label5;
         private PictureBox pictureBox1;
-        private Button buttoAtrasP;
-        private Button buttonSiguenteS;
         private Panel panel2;
-        private ComboBox comboBox1;
+        private ComboBox ComboTipoTecnologia;
         private Label label6;
-        private Button buttonAtrasR;
-        private Button buttonSiguienteT;
         private Panel panel3;
-        private Button buttonAtrasTec;
-        private Button buttonSiguienteC;
         private Label label7;
         private Panel panel5;
         private Label label11;
         private TrackBar trackZoom;
         private Button buttonGuardarG;
-        private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private DataGridView dataGridView1;
-        private ComboBox comboBox4;
-        private ComboBox comboBox2;
+        private ComboBox comboArea;
+        private ComboBox comboEstado;
         private Label label10;
         private Panel panel7;
         private Panel panel6;
         private Label label15;
         private Label label14;
         private SistemaRegistro.Templates.TextBox textProceso;
-        private SistemaRegistro.Templates.TextBox textBox5;
+        private SistemaRegistro.Templates.TextBox textOtro;
         private Label label17;
         private Label label16;
-        private SistemaRegistro.Templates.TextBox textBox1;
-        private SistemaRegistro.Templates.TextBox textBox6;
+        private SistemaRegistro.Templates.TextBox textCorreo;
+        private SistemaRegistro.Templates.TextBox textAutor;
         private Label label13;
         private Label label19;
         private Label label20;
         private SistemaRegistro.Templates.TextBox textObjetivoR;
         private SistemaRegistro.Templates.TextBox textUnidadFuncional;
-        private Button button3;
+        private Button btnEliminarImagen;
         private Label label21;
-        private SistemaRegistro.Templates.TextBox textBox3;
+        private SistemaRegistro.Templates.TextBox textCondicionesOpe;
         private Label label8;
         private Label label9;
         private Label label22;
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
-        private SistemaRegistro.Templates.TextBox textBox4;
+        private SistemaRegistro.Templates.TextBox textDescripcionPeriodo;
+        private Label label12;
+        private Label label27;
+        private Label label26;
+        private Label label25;
+        private Label label24;
+        private Label label23;
+        private Label label18;
+        private ErrorProvider errorProvider1;
+        private ComboBox ComboTecno;
+        private ComboBox ComboProducto;
+        private Templates.TextBox textValor;
+        private TextBox txtlatitud;
+        private TextBox txtlongitud;
+        private System.Windows.Forms.Timer timer1;
+        private GMap.NET.WindowsForms.GMapControl gMapControl2;
     }
 }
