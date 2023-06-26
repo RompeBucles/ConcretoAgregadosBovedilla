@@ -21,6 +21,7 @@ using System.Data.SqlClient;
 using Image = System.Drawing.Image;
 using Rectangle = System.Drawing.Rectangle;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Newtonsoft.Json.Linq;
 
 namespace SistemaRegistro
 {
@@ -47,6 +48,7 @@ namespace SistemaRegistro
         int filaSeleccionada = 0;
         double LatInicial = 19.6011941612631;
         double LngInicial = -99.140625;
+
         public ListaFormulario()
         {
             InitializeComponent();
@@ -154,17 +156,6 @@ namespace SistemaRegistro
             checkColumn.Name = "Eliminar";
             checkColumn.ReadOnly = false; // Permitir interacción del usuario
             dataGridView1.Columns.Add(checkColumn);
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                if (row.Index == 0)
-                {
-                    row.Cells["Eliminar"].ReadOnly = true;
-                }
-                else
-                {
-                    row.Cells["Eliminar"].ReadOnly = false;
-                }
-            }
 
         }
         private void ListaFormulario_Load(object sender, EventArgs e)
@@ -174,17 +165,120 @@ namespace SistemaRegistro
             tabControl2.SetBounds(tabControl2.Left, tabControl2.Top, 768, 519);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            DialogResult resut = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo);
-            if (resut == DialogResult.Yes)
-            {
 
-            }
-            else if (resut == DialogResult.No)
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
             {
-                return;
+                /*
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar") //Si la celda contiene el nombre Editar procedera a entrar en la condición.
+                {
+                    if (dataGridView1.SelectedRows.Count > 0) //Si hay mas de 0 filas entonces procedera a ejecutar el siguiente codigo.
+                    {
+                        string perfil = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+
+                        if (perfil == "Administrador")
+                        {
+                            radioBtnAdmin.Checked = true;
+                        }
+                        else if (perfil == "Usuario")
+                        {
+                            radioBtnUser.Checked = true;
+                        }
+                        //Manda a llamar todos los datos del Usuario a la otra pantalla para proceder a su correspondiente edición
+                        id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                        textNombre.Texts = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                        textApellidoP.Texts = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                        textApellidoM.Texts = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                        textCorreo.Texts = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        textTelefono.Texts = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                        textUsuario.Texts = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                        comboEstatus.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+
+                        tabControl1.SelectedTab = EditarUsuarios;
+
+                    }
+                }
+                */
+                /*
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver imagen") //Si la celda contiene el nombre ver imagen procedera a entrar en la condición.
+                {
+                    if (dataGridView1.SelectedRows.Count > 0) //Si hay mas de 0 filas entonces procedera a ejecutar el siguiente codigo.
+                    {
+                        //Mandar los datos de ese registro
+                        id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                        byte[] imageData = (byte[])dataGridView1.CurrentRow.Cells[14].Value;
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            pictureBox2.Image = Image.FromStream(ms);
+                        }
+
+                        tabControl2.SelectedTab = VerImagen;
+
+                    }
+                }
+                */
+                if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver imagen")
+                {
+                    if (dataGridView1.SelectedRows.Count > 0)
+                    {
+                        // Obtener los datos de ese registro
+                        id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+                        // Verificar si la celda de la imagen contiene un valor nulo
+                        if (!Convert.IsDBNull(dataGridView1.CurrentRow.Cells[14].Value))
+                        {
+                            byte[] imageData = (byte[])dataGridView1.CurrentRow.Cells[14].Value;
+                            using (MemoryStream ms = new MemoryStream(imageData))
+                            {
+                                pictureBox2.Image = Image.FromStream(ms);
+                            }
+
+                            tabControl2.SelectedTab = VerImagen;
+                        }
+                        else
+                        {
+                            // Mostrar un MessageBox indicando que no hay imagen disponible
+                            MessageBox.Show("Este registro no contiene una imagen");
+                        }
+
+
+                    }
+                }
+
+                /*
+                if (e.ColumnIndex == 11 && e.RowIndex != 0)
+                {
+                    var cell = dataGridView1[e.ColumnIndex, e.RowIndex] as DataGridViewCheckBoxCell;
+                    if (cell != null)
+                    {
+                        if (cell.Value != null && cell.Value is bool currentValue)
+                        {
+                            cell.Value = !currentValue;
+                            dataGridView1.EndEdit(); // Finalizar la edición de la celda
+                        }
+                    }
+                }
+                */
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Columna");
+            }
+        }
+        private void btnAtrasIma_Click(object sender, EventArgs e)
+        {
+            /*
+            if (tabControl2.SelectedTab == ListaDatos) // Primera pestaña
+            {
+                // Oculta los botones de la primera sección
+                Identificación.Visible = false;
+                Referencia.Visible = false;
+            }
+            
+            */
+            tabControl2.SelectedTab = ListaDatos;
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -327,22 +421,75 @@ namespace SistemaRegistro
 
         private void btnSeleccionarT_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in this.dataGridView1.Rows)
+            try
             {
-                row.Cells[27].Value = row.Cells[27].Value == null ? false : !(bool)row.Cells[27].Value;
+                foreach (DataGridViewRow row in this.dataGridView1.Rows)
+                {
+                    row.Cells[27].Value = row.Cells[27].Value == null ? false : !(bool)row.Cells[27].Value;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Intente de nuevo");
             }
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            DialogResult resut = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (resut == DialogResult.Yes)
+            try
             {
+                DialogResult result = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    List<DataGridViewRow> filasEliminar = new List<DataGridViewRow>();
+                    bool elementosSeleccionados = false;
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        DataGridViewCheckBoxCell checkBoxCell = row.Cells[27] as DataGridViewCheckBoxCell;
+                        if (checkBoxCell != null && checkBoxCell.Value != null)
+                        {
+                            bool isChecked = (bool)checkBoxCell.Value;
 
+                            if (isChecked)
+                            {
+                                elementosSeleccionados = true;
+                                int DatosID = Convert.ToInt32(row.Cells[0].Value); // Suponiendo que el ID del usuario está en la primera columna
+
+                                controladorDatosFormulario.EliminarDatosFormulario(DatosID);                                                   // MessageBox.Show($"{usuarioID}");
+                                // controladorUsuario.EliminarUsuario(usuarioID);
+                                filasEliminar.Add(row);
+                            }
+                        }
+                    }
+                    //solcion 2
+                    //this.Controls.Clear();
+                    //this.InitializeComponent();
+                    //CargarDG(); //Carga el DataGridView
+                    //CargarBotones(); 
+
+                    if (elementosSeleccionados)
+                    {
+                        foreach (DataGridViewRow rowEliminar in filasEliminar)
+                        {
+                            dataGridView1.Rows.Remove(rowEliminar);
+                        }
+
+                        MessageBox.Show("Registro(s) elimado(s)");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha seleccionado ningún elemento para eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else if (result == DialogResult.No)
+                {
+                    return;
+                }
             }
-            else if (resut == DialogResult.No)
+            catch (Exception ex)
             {
-                return;
+                MessageBox.Show("Intenete de nuevo");
+
             }
         }
 

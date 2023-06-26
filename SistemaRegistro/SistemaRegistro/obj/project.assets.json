@@ -1405,11 +1405,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cacam\\Documents\\GitHub\\v4\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\SistemaRegistro.csproj",
+      "projectUniqueName": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\SistemaRegistro.csproj",
       "projectName": "SistemaRegistro",
-      "projectPath": "C:\\Users\\cacam\\Documents\\GitHub\\v4\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\SistemaRegistro.csproj",
+      "projectPath": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\SistemaRegistro.csproj",
       "packagesPath": "C:\\Users\\cacam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cacam\\Documents\\GitHub\\v4\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\obj\\",
+      "outputPath": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\cacam\\AppData\\Roaming\\NuGet\\NuGet.Config",

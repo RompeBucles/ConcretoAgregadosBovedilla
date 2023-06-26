@@ -115,5 +115,18 @@ namespace SistemaRegistro.Controladores
                 MessageBox.Show($"intentalo de nuevo o mas tarde");
             }
         }
+
+        public void EliminarDatosFormulario(int id)
+        {
+
+            SqlCommand comando = new SqlCommand("eliminarDatosFormulario");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", id);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            ConexionBD.CerrarConexion();
+
+        }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H/TuVJrLnJ4MT0cVxDsDJ71zpvMzL+YLcTJPXRKAOpYo64poWuhjF5BZVeMmSmPasyu7K3no8SILnCguRI5Byg==",
+  "dgSpecHash": "uxPUC410bDdw9NblxCTVvOAWJ0eh00kFR/3VLFIiW1zJucuCFhedQAUEikx2iq2R2VijkQs6q/kyWpfXHHC+Ow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cacam\\Documents\\GitHub\\v4\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\SistemaRegistro.csproj",
+  "projectFilePath": "C:\\Users\\cacam\\Documents\\GitHub\\ConcretoAgregadosBovedilla\\SistemaRegistro\\SistemaRegistro\\SistemaRegistro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cacam\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
     "C:\\Users\\cacam\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

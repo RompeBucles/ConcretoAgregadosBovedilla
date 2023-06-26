@@ -121,6 +121,8 @@
             label10 = new Label();
             VerImagen = new TabPage();
             panel8 = new Panel();
+            btnAtrasIma = new Button();
+            pictureBox2 = new PictureBox();
             label22 = new Label();
             tabControl2.SuspendLayout();
             ListaDatos.SuspendLayout();
@@ -141,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             VerImagen.SuspendLayout();
             panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // tabControl2
@@ -153,10 +156,10 @@
             tabControl2.Controls.Add(TiempoVálido);
             tabControl2.Controls.Add(Geografía);
             tabControl2.Controls.Add(VerImagen);
-            tabControl2.Location = new Point(1, 2);
+            tabControl2.Location = new Point(6, 5);
             tabControl2.Name = "tabControl2";
             tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new Size(767, 518);
+            tabControl2.Size = new Size(763, 518);
             tabControl2.TabIndex = 24;
             // 
             // ListaDatos
@@ -169,7 +172,7 @@
             ListaDatos.Controls.Add(btnBorrar);
             ListaDatos.Location = new Point(4, 24);
             ListaDatos.Name = "ListaDatos";
-            ListaDatos.Size = new Size(759, 490);
+            ListaDatos.Size = new Size(755, 490);
             ListaDatos.TabIndex = 5;
             ListaDatos.Text = "Lista Datos";
             // 
@@ -242,6 +245,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(756, 420);
             dataGridView1.TabIndex = 73;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
             dataGridView1.RowPostPaint += dataGridView1_RowPostPaint;
             // 
@@ -302,7 +306,7 @@
             Identificación.Location = new Point(4, 24);
             Identificación.Name = "Identificación";
             Identificación.Padding = new Padding(3);
-            Identificación.Size = new Size(759, 490);
+            Identificación.Size = new Size(755, 490);
             Identificación.TabIndex = 0;
             Identificación.Text = "Identificación";
             // 
@@ -335,7 +339,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-40, 3);
+            panel1.Location = new Point(-192, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
@@ -674,7 +678,7 @@
             Referencia.Location = new Point(4, 24);
             Referencia.Name = "Referencia";
             Referencia.Padding = new Padding(3);
-            Referencia.Size = new Size(759, 490);
+            Referencia.Size = new Size(755, 490);
             Referencia.TabIndex = 1;
             Referencia.Text = "Referencia";
             // 
@@ -702,7 +706,7 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-40, 6);
+            panel4.Location = new Point(-192, 6);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
@@ -968,7 +972,7 @@
             Tecnología.Controls.Add(panel2);
             Tecnología.Location = new Point(4, 24);
             Tecnología.Name = "Tecnología";
-            Tecnología.Size = new Size(759, 490);
+            Tecnología.Size = new Size(755, 490);
             Tecnología.TabIndex = 2;
             Tecnología.Text = "Tecnología";
             // 
@@ -1077,7 +1081,7 @@
             TiempoVálido.Controls.Add(panel3);
             TiempoVálido.Location = new Point(4, 24);
             TiempoVálido.Name = "TiempoVálido";
-            TiempoVálido.Size = new Size(759, 490);
+            TiempoVálido.Size = new Size(755, 490);
             TiempoVálido.TabIndex = 3;
             TiempoVálido.Text = "TiempoVálido";
             // 
@@ -1216,7 +1220,7 @@
             Geografía.Controls.Add(panel5);
             Geografía.Location = new Point(4, 24);
             Geografía.Name = "Geografía";
-            Geografía.Size = new Size(759, 490);
+            Geografía.Size = new Size(755, 490);
             Geografía.TabIndex = 4;
             Geografía.Text = "Geografía";
             // 
@@ -1235,7 +1239,7 @@
             panel5.Controls.Add(comboBox4);
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-40, 3);
+            panel5.Location = new Point(-194, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
@@ -1373,32 +1377,65 @@
             // 
             // VerImagen
             // 
+            VerImagen.AutoScroll = true;
             VerImagen.BackColor = Color.FromArgb(242, 230, 230);
             VerImagen.Controls.Add(panel8);
             VerImagen.Location = new Point(4, 24);
             VerImagen.Name = "VerImagen";
-            VerImagen.Size = new Size(759, 490);
+            VerImagen.Size = new Size(755, 490);
             VerImagen.TabIndex = 6;
             VerImagen.Text = "Ver imagen";
             // 
             // panel8
             // 
+            panel8.Anchor = AnchorStyles.Top;
+            panel8.BackColor = Color.FromArgb(242, 230, 230);
+            panel8.Controls.Add(btnAtrasIma);
+            panel8.Controls.Add(pictureBox2);
             panel8.Controls.Add(label22);
-            panel8.Location = new Point(3, 3);
+            panel8.Location = new Point(-16, 3);
             panel8.Name = "panel8";
-            panel8.Size = new Size(753, 484);
-            panel8.TabIndex = 0;
+            panel8.Size = new Size(737, 675);
+            panel8.TabIndex = 97;
+            // 
+            // btnAtrasIma
+            // 
+            btnAtrasIma.Anchor = AnchorStyles.None;
+            btnAtrasIma.BackColor = Color.FromArgb(190, 31, 36);
+            btnAtrasIma.FlatAppearance.BorderSize = 0;
+            btnAtrasIma.FlatStyle = FlatStyle.Flat;
+            btnAtrasIma.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAtrasIma.ForeColor = SystemColors.ButtonFace;
+            btnAtrasIma.Location = new Point(304, 575);
+            btnAtrasIma.Name = "btnAtrasIma";
+            btnAtrasIma.Size = new Size(115, 35);
+            btnAtrasIma.TabIndex = 99;
+            btnAtrasIma.Text = "Atrás";
+            btnAtrasIma.UseVisualStyleBackColor = false;
+            btnAtrasIma.Click += btnAtrasIma_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.BackColor = Color.Gray;
+            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox2.Location = new Point(12, 62);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(715, 488);
+            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 98;
+            pictureBox2.TabStop = false;
             // 
             // label22
             // 
-            label22.Anchor = AnchorStyles.None;
+            label22.Anchor = AnchorStyles.Top;
             label22.AutoSize = true;
             label22.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label22.ForeColor = Color.Red;
-            label22.Location = new Point(275, 18);
+            label22.Location = new Point(304, 12);
             label22.Name = "label22";
             label22.Size = new Size(155, 19);
-            label22.TabIndex = 93;
+            label22.TabIndex = 97;
             label22.Text = "Imagen del sistema";
             // 
             // ListaFormulario
@@ -1438,6 +1475,7 @@
             VerImagen.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -1473,7 +1511,6 @@
         private Templates.TextBox textBox1;
         private Label label1;
         private Templates.TextBox textBox2;
-        private ComboBox ComboProducto;
         private ComboBox ComboTecno;
         private Templates.TextBox textOtro;
         private Label labelUsuario;
@@ -1531,7 +1568,10 @@
         private ComboBox comboBox2;
         private Label label10;
         private TabPage VerImagen;
+        private ComboBox ComboProducto;
         private Panel panel8;
+        private Button btnAtrasIma;
+        private PictureBox pictureBox2;
         private Label label22;
     }
 }
