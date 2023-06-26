@@ -50,6 +50,7 @@ namespace SistemaRegistro
 
             //int p = panel2.Width;
 
+
             dataGridView1.DataSource = dsTabla;
             //dataGridView1.ScrollBars = ScrollBars.None; //Desactivar ScrollBar del DataGridView
 
@@ -529,6 +530,14 @@ namespace SistemaRegistro
                     errorProvider1.SetError(textApellidoP, "Apellido paterno no válido");
                     retorno = false;
                 }
+                if (textApellidoM.Texts == "Ejemplo: Hernández")
+                {
+                    usu.apellidoM = null;
+                }
+                else
+                {
+                    usu.apellidoM = textApellidoM.Texts;
+                }
                 if (isEmailValid.Success)
                 {
                     usu.correo = textCorreo.Texts;
@@ -559,7 +568,7 @@ namespace SistemaRegistro
                     errorProvider1.SetError(textUsuario, "Usuario no válido");
                 }
 
-                if (textNombre.Texts == "Contraseña*")
+                if (textPassword.Texts == "Contraseña*")
                 {
 
                 }
@@ -570,7 +579,7 @@ namespace SistemaRegistro
                     {
                         if (ContraValido.Success)
                         {
-                            usu.usuario = textUsuario.Texts;
+                            usu.contrasena = textPassword.Texts;
                             errorProvider1.SetError(textPassword, String.Empty);
                         }
                         else
@@ -601,8 +610,7 @@ namespace SistemaRegistro
                 {
                     valorSeleccionadoPerfil = 2;
                 }
-                //son campos no obligatorios sse asignan sin condicional
-                usu.apellidoM = textApellidoM.Texts;
+                //son campos no obligatorios se asignan sin condicional
                 usu.perfil = valorSeleccionadoPerfil;
                 usu.estatus = comboEstatus.Text;
 

@@ -15,12 +15,21 @@ using SistemaRegistro.Controladores;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using SistemaRegistro.Modelo;
 using GMap.NET.WindowsForms.Markers;
+using System.Text.RegularExpressions;
+using iTextSharp.text.pdf.qrcode;
 
 namespace SistemaRegistro
 {
     public partial class RegistroFormulario : Form
     {
+
+        //Instacia de usuarios, para usar el motodo de validación 
         private Usuarios usuarios = new Usuarios();
+        //Instacia del modelo ingreso datos
+        modeloIngresoDatos modeloIngresoDatos = new modeloIngresoDatos();
+        //Instancia del controlador ingreso datos
+        ControladorDatosFormulario controladorDatosFormulario = new ControladorDatosFormulario();
+        String? f1, f2;
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -38,7 +47,9 @@ namespace SistemaRegistro
         {
             InitializeComponent();
             llenarCombos();
-
+            //asignamos una hora por defecto a los datetimepickers
+            FechaReferencia.Value = new DateTime(2000, 01, 01);
+            FechaDatosValidos.Value = new DateTime(2000, 01, 01);
 
             //Asigna opciones a la lista ComboProducto
             List<string> ListaProducto = new List<string>();
@@ -103,7 +114,7 @@ namespace SistemaRegistro
 
             //Asigna opciones a la lista ListaLimiteSistema
             List<string> ListaLimiteSistema = new List<string>();
-            ListaLimiteSistema.Add("Limites del sistema*");
+            ListaLimiteSistema.Add("Limites del sistema");
             ListaLimiteSistema.Add("Limitaciones presupuestarias");
             ListaLimiteSistema.Add("Limitaciones de tiempo");
             ListaLimiteSistema.Add("Limitaciones de recursos naturales");
@@ -311,7 +322,7 @@ namespace SistemaRegistro
         }
         private void textCorreo_Enter(object sender, EventArgs e)
         {
-            if (textCorreo.Texts == "ejemplo@unam.gob.mx")
+            if (textCorreo.Texts == "Ejemplo: ejemplo@unam.gob.mx")
             {
                 textCorreo.Texts = "";
                 textCorreo.ForeColor = Color.Black;
@@ -322,7 +333,7 @@ namespace SistemaRegistro
         {
             if (textCorreo.Texts == "")
             {
-                textCorreo.Texts = "ejemplo@unam.gob.mx";
+                textCorreo.Texts = "Ejemplo: ejemplo@unam.gob.mx";
                 errorProvider1.SetError(textCorreo, "Se necesita ingresar un correo");
                 textCorreo.ForeColor = Color.Gray;
             }
@@ -334,7 +345,7 @@ namespace SistemaRegistro
 
         private void textUnidadFuncional_Enter(object sender, EventArgs e)
         {
-            if (textUnidadFuncional.Texts == "Ejemplo: Elaboración de concreto simple")
+            if (textUnidadFuncional.Texts == "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava")
             {
                 textUnidadFuncional.Texts = "";
                 textUnidadFuncional.ForeColor = Color.Black;
@@ -345,7 +356,7 @@ namespace SistemaRegistro
         {
             if (textUnidadFuncional.Texts == "")
             {
-                textUnidadFuncional.Texts = "Ejemplo: Elaboración de concreto simple";
+                textUnidadFuncional.Texts = "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava";
                 errorProvider1.SetError(textUnidadFuncional, "Se necesita ingresar un nombre del flujo");
                 textUnidadFuncional.ForeColor = Color.Gray;
             }
@@ -414,7 +425,6 @@ namespace SistemaRegistro
             if (textObjetivoR.Texts == "")
             {
                 textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
-                errorProvider1.SetError(textObjetivoR, "Se necesita ingresar un objetivo");
                 textObjetivoR.ForeColor = Color.Gray;
             }
             else
@@ -425,7 +435,7 @@ namespace SistemaRegistro
 
         private void comboLimitesSistema_Enter(object sender, EventArgs e)
         {
-            if (comboLimitesSistema.Text == "Limites del sistema*")
+            if (comboLimitesSistema.Text == "Limites del sistema")
             {
                 comboLimitesSistema.Text = "";
                 comboLimitesSistema.ForeColor = Color.Black;
@@ -436,8 +446,7 @@ namespace SistemaRegistro
         {
             if (comboLimitesSistema.Text == "")
             {
-                comboLimitesSistema.Text = "Limites del sistema*";
-                errorProvider1.SetError(comboLimitesSistema, "Se necesita ingresar un objetivo");
+                comboLimitesSistema.Text = "Limites del sistema";
                 comboLimitesSistema.ForeColor = Color.Gray;
             }
             else
@@ -481,8 +490,7 @@ namespace SistemaRegistro
                     // Asignar la imagen ajustada al control PictureBox
                     pictureBox1.Image = resizedImage;
 
-                    // Asignar la imagen al modelo
-                    //modeloDatosFormulario.imagen = resizedImage;
+
                 }
             }
             catch (Exception ex)
@@ -623,6 +631,7 @@ namespace SistemaRegistro
             comboEstado.ValueMember = "valor";
 
         }
+
         private void Limpiar()
         {
             ComboProducto.Text = "Producto*";
@@ -633,11 +642,25 @@ namespace SistemaRegistro
             textOtro.ForeColor = Color.Gray;
             textProceso.Texts = "Ejemplo: Elaboración de concreto simple";
             textProceso.ForeColor = Color.Gray;
+            comboUno.SelectedIndex = -1;
+            comboDos.SelectedIndex = -1;
+            comboTres.SelectedIndex = -1;
+            comboCuatro.SelectedIndex = -1;
+            comboCinco.SelectedIndex = -1;
+            comboSeis.SelectedIndex = -1;
+            comboSiete.SelectedIndex = -1;
+            comboUno.Enabled = true;
+            comboDos.Enabled = true;
+            comboTres.Enabled = true;
+            comboCuatro.Enabled = true;
+            comboCinco.Enabled = true;
+            comboSeis.Enabled = true;
+            comboSiete.Enabled = true;
             textAutor.Texts = "Ejemplo: Centro Mario Molina";
             textAutor.ForeColor = Color.Gray;
-            textCorreo.Texts = "ejemplo@unam.gob.mx";
+            textCorreo.Texts = "Ejemplo: ejemplo@unam.gob.mx";
             textCorreo.ForeColor = Color.Gray;
-            textUnidadFuncional.Texts = "Ejemplo: Elaboración de concreto simple";
+            textUnidadFuncional.Texts = "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava";
             textUnidadFuncional.ForeColor = Color.Gray;
             comboUnidadUno.Text = "Unidad*";
             comboUnidadUno.ForeColor = Color.Gray;
@@ -645,16 +668,23 @@ namespace SistemaRegistro
             textValor.ForeColor = Color.Gray;
             textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
             textObjetivoR.ForeColor = Color.Gray;
-            comboLimitesSistema.Text = "Limites del sistema*";
+            comboLimitesSistema.Text = "Limites del sistema";
             comboLimitesSistema.ForeColor = Color.Gray;
+            pictureBox1.Image = null;
             ComboTipoTecnologia.Text = "Tipo de tecnología*";
             ComboTipoTecnologia.ForeColor = Color.Gray;
             textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
             textCondicionesOpe.ForeColor = Color.Gray;
+            FechaReferencia.Value = new DateTime(2000, 01, 01);
+            FechaDatosValidos.Value = new DateTime(2000, 01, 01);
+            textDescripcionPeriodo.Texts = "Ejemplo: Se solicita este tiempo para el análisis del estudio";
+            textDescripcionPeriodo.ForeColor = Color.Gray;
             comboEstado.Text = "Estado*";
             comboEstado.ForeColor = Color.Gray;
             comboArea.Text = "Area*";
             comboArea.ForeColor = Color.Gray;
+            txtlatitud.Texts = "Latitud";
+            txtlongitud.Texts = "Longitud";
         }
 
 
@@ -699,6 +729,7 @@ namespace SistemaRegistro
                 //ahora agregamos el mapa y el marcador al control map
 
                 gMapControl2.Overlays.Add(markerOverlay);
+
             }
             catch (Exception ex)
             {
@@ -713,11 +744,11 @@ namespace SistemaRegistro
                 filaSeleccionada = e.RowIndex;//Fila Seleccionada
                                               //Recuperamos los datos del grid y los asignamos a los texbox
                                               // txtDescripcion.Text = dataGridView1.Rows[filaSeleccionada].Cells[0].Value.ToString();
-                txtlatitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[1].Value.ToString();
-                txtlongitud.Text = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
+                txtlatitud.Texts = dataGridView1.Rows[filaSeleccionada].Cells[1].Value.ToString();
+                txtlongitud.Texts = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
 
                 //se asignan los valores del grid al macador
-                marker.Position = new PointLatLng(Convert.ToDouble(txtlatitud.Text), Convert.ToDouble(txtlongitud.Text));
+                marker.Position = new PointLatLng(Convert.ToDouble(txtlatitud.Texts), Convert.ToDouble(txtlongitud.Texts));
                 //se posiciona el foco del mapa en ese punto
                 gMapControl2.Position = marker.Position;
 
@@ -737,15 +768,15 @@ namespace SistemaRegistro
                 double lng = gMapControl2.FromLocalToLatLng(e.X, e.Y).Lng;
 
                 //se posicionan en el txt de la latitud y longitud
-                txtlatitud.Text = lat.ToString();
-                txtlongitud.Text = lng.ToString();
+                txtlatitud.Texts = lat.ToString();
+                txtlongitud.Texts = lng.ToString();
 
                 //crearemos el marcador para moverlo al lugar indicado por el usuario
                 marker.Position = new PointLatLng(lat, lng);
                 //tambien se agregara el mensaje al marcador es decir el ToolTip
                 marker.ToolTipText = string.Format("Ubicación:\n Latitud:{0}\n Longitud:{1}", lat, lng);
 
-                // CrearDireccionTrazarRuta(lat, lng);
+                //CrearDireccionTrazarRuta(lat, lng);
             }
             catch (Exception ex)
             {
@@ -764,20 +795,419 @@ namespace SistemaRegistro
         {
             gMapControl2.Zoom = trackZoom.Value;
         }
-
-        private void buttonGuardarG_Click(object sender, EventArgs e)
+        /*Implememtar cuando esten todas las validaciones en el boton guardar
+        private void ActualizarTabControl()
         {
-            DialogResult resut = MessageBox.Show("Los datos guardados correctamente", "Aviso", MessageBoxButtons.YesNo);
-            if (resut == DialogResult.Yes)
+            // Obtener el TabPage actualmente seleccionado en el TabControl
+            TabPage paginaActual = tabControl1.SelectedTab;
+
+            // Lógica para activar el icono rojo en los campos faltantes en la página actual
+            if (paginaActual == Referencia)
             {
-                tabControl1.SelectTab(Identificación);
+                if (ComboProducto.Text == "Producto*" || ComboTecno.Text == "Tecnología*" || textOtro.Texts == "Ejemplo: grava y arena" ||
+                    textProceso.Texts == "Ejemplo: Elaboración de concreto simple" || textAutor.Texts == "Ejemplo: Centro Mario Molina" || textCorreo.Texts == "ejemplo@unam.gob.mx")
+                {
+                    // Activar el icono rojo en los campos faltantes
+                   Identificación.ImageIndex = 0;
+                }
+                else
+                {
+                    // No hay campos faltantes, ocultar el icono rojo
+                   Identificación.ImageIndex = -1;
+                }
             }
-            else if (resut == DialogResult.No)
+            
+            else if (paginaActual == Tecnología)
+             {
+                if (textUnidadFuncional.Texts == "Ejemplo: Elaboración de concreto simple" || comboUnidadUno.Text == "Unidad*" || textValor.Texts == "Ejemplo: 0" ||
+                    comboLimitesSistema.Text == "Limites del sistema*" || textObjetivoR.Texts == "Ejemplo: Estimar la huella de carbono")
+                {
+                    // Activar el icono rojo en los campos faltantes
+                   
+                    Referencia.ImageIndex = 0;
+                }
+                else
+                {
+                    // No hay campos faltantes, ocultar el icono rojo
+                    Referencia.ImageIndex = -1;
+                }
+            }
+            else if (paginaActual == TiempoVálido)
             {
-                return;
+               
+            }
+
+
+        }
+        */
+        void ActualizarIconosFaltantes()
+        {
+            try
+            {
+                bool composFaltantes = false;
+                for (int i = 0; i < tabControl1.TabPages.Count; i++)
+                {
+                    TabPage tabPage = tabControl1.TabPages[i];
+
+                    // Verifica si hay campos faltantes en cada página y establece el índice de imagen del botón correspondiente
+                    if (HayCamposFaltantesEnPagina(tabPage))
+                    {
+                        tabPage.ImageIndex = 0; // Índice de imagen correspondiente al icono rojo en el ImageList
+                        composFaltantes = true;
+                    }
+                    else
+                    {
+                        tabPage.ImageIndex = -1; // Si no hay campos faltantes, establece el índice de imagen como -1 (sin icono)
+                    }
+                }
+
+                if (!composFaltantes)
+                {
+                    try
+                    {
+                        controladorDatosFormulario.InsertarDatosFormulario(modeloIngresoDatos);
+                        MessageBox.Show("Todos los campos se han guardado correctamente");
+                        Limpiar();
+                        errorProvider1.Clear();
+                        tabControl1.SelectedTab = Identificación;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al guardar los campos: " + ex.Message);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Inténtelo de nuevo o mas tarde");
             }
         }
 
+        bool HayCamposFaltantesEnPagina(TabPage tabPage)
+        {
+            bool camposFaltantes = false;
+            try
+            {
+                //validación regetx seccion identificación
+                Regex Productoo = new Regex(@"^[ A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ.,]{3,100}$");
+                Match ProductoValido = Productoo.Match(ComboProducto.Text);
+                Regex Tecnologia = new Regex(@"^[ A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ.,]{3,100}$");
+                Match TecnologiaValido = Tecnologia.Match(ComboTecno.Text);
+                Regex Otro = new Regex(@"^(?!Ejemplo: grava y arena$).{3,100}$");
+                Match OtroValido = Otro.Match(textOtro.Texts);
+                Regex Proceso = new Regex(@"^(?!Ejemplo: Elaboración de concreto simple$).{3,200}$");
+                Match ProcesoValido = Proceso.Match(textProceso.Texts);
+                Regex Autor = new Regex(@"^[ A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ.,]{3,50}$");
+                Match AutorValido = Autor.Match(textAutor.Texts);
+                Regex Email = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
+                Match EmailValid = Email.Match(textCorreo.Texts);
+                //validación regetx seccion identificación
+                Regex NombreFlujoR = new Regex(@"^(?!Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava$).{3,300}$");
+                Match NombreFlujoRValido = NombreFlujoR.Match(textUnidadFuncional.Texts);
+                Regex Valor = new Regex(@"^[0-9]+(?:\.[0-9]+)?$");
+                Match ValorValido = Valor.Match(textValor.Texts);
+                //Validación regetx seccion tecnología
+
+
+                if (tabPage == Identificación)
+                {
+                    /*
+                    if (ComboProducto.Text == "Producto*" || ComboTecno.Text == "Tecnología*" || textOtro.Texts == "Ejemplo: grava y arena" ||
+                        textProceso.Texts == "Ejemplo: Elaboración de concreto simple" || textAutor.Texts == "Ejemplo: Centro Mario Molina" || textCorreo.Texts == "Ejemplo: ejemplo@unam.gob.mx")
+                    {
+                        camposFaltantes = true;
+                    }
+                    */
+                    if (ProductoValido.Success)
+                    {
+                        modeloIngresoDatos.producto = ComboProducto.Text;
+                        errorProvider1.SetError(ComboProducto, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ComboProducto, "Se necesita ingresar un producto válido");
+                        camposFaltantes = true;
+                    }
+
+                    if (TecnologiaValido.Success)
+                    {
+                        modeloIngresoDatos.tecnologia = ComboTecno.Text;
+                        errorProvider1.SetError(ComboTecno, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ComboTecno, "Se necesita ingresar una tecnología válida");
+                        camposFaltantes = true;
+                    }
+                    if (OtroValido.Success)
+                    {
+                        modeloIngresoDatos.otro = textOtro.Texts;
+                        errorProvider1.SetError(textOtro, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textOtro, "Se necesita ingresar un dato a este campo");
+                        camposFaltantes = true;
+                    }
+
+                    if (ProcesoValido.Success)
+                    {
+                        modeloIngresoDatos.nombreProceso = textProceso.Texts;
+                        errorProvider1.SetError(textProceso, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textProceso, "Se necesita ingresar un nombre de proceso válido");
+                        camposFaltantes = true;
+                    }
+
+                    modeloIngresoDatos.tipoProceso = null;
+
+                    if (comboUno.SelectedIndex != -1)
+                        modeloIngresoDatos.tipoProceso = comboUno.SelectedItem.ToString();
+                    else if (comboDos.SelectedIndex != -1)
+                        modeloIngresoDatos.tipoProceso = comboDos.SelectedItem.ToString();
+                    else if (comboTres.SelectedIndex != -1)
+                        modeloIngresoDatos.tipoProceso = comboTres.SelectedItem.ToString();
+                    else if (comboCuatro.SelectedIndex != -1)
+                        modeloIngresoDatos.tipoProceso = comboCuatro.SelectedItem.ToString();
+                    else if (comboCinco.SelectedIndex != -1)
+                        modeloIngresoDatos.tipoProceso = comboCinco.SelectedItem.ToString();
+                    else if (comboSeis.SelectedIndex != -1)
+                        modeloIngresoDatos.tipoProceso = comboSeis.SelectedItem.ToString();
+                    else if (comboSiete.SelectedIndex != -1)
+                        modeloIngresoDatos.tipoProceso = comboSiete.SelectedItem.ToString();
+
+                    if (AutorValido.Success)
+                    {
+                        modeloIngresoDatos.autor = textAutor.Texts;
+                        errorProvider1.SetError(textAutor, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textAutor, "Se necesita ingresar un autor válido");
+                        camposFaltantes = true;
+                    }
+
+                    if (EmailValid.Success)
+                    {
+                        modeloIngresoDatos.correo = textCorreo.Texts;
+                        errorProvider1.SetError(textCorreo, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textCorreo, "Se necesita ingresar un correo válido");
+                        camposFaltantes = true;
+                    }
+
+                }
+                if (tabPage == Referencia)
+                {
+                    /*
+                    if (textUnidadFuncional.Texts == "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava" || comboUnidadUno.Text == "Unidad*" || textValor.Texts == "Ejemplo: 0")
+                    {
+                        camposFaltantes = true;
+                    }
+                    */
+                    if (NombreFlujoRValido.Success)
+                    {
+                        modeloIngresoDatos.nombreFlujoR = textUnidadFuncional.Texts;
+                        errorProvider1.SetError(textUnidadFuncional, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textUnidadFuncional, "Se necesita ingresar un nombre de flujo válido");
+                        camposFaltantes = true;
+                    }
+
+                    if (comboUnidadUno.Text == "Unidad*")
+                    {
+                        errorProvider1.SetError(comboUnidadUno, "Se necesita seleccionar una unidad");
+                        camposFaltantes = true;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.unidad = comboUnidadUno.Text;
+                        errorProvider1.SetError(comboUnidadUno, String.Empty);
+                    }
+
+                    if (ValorValido.Success)
+                    {
+                        modeloIngresoDatos.valorR = textValor.Texts;
+                        errorProvider1.SetError(textValor, String.Empty);
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textValor, "Se necesita ingresar un valor");
+                        camposFaltantes = true;
+                    }
+
+                    if (comboLimitesSistema.Text == "Limites del sistema")
+                    {
+                        modeloIngresoDatos.limitesSistema = null;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.limitesSistema = comboLimitesSistema.Text;
+                    }
+
+                    if (textObjetivoR.Texts == "Ejemplo: Estimar la huella de carbono")
+                    {
+                        modeloIngresoDatos.objetivo = null;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.objetivo = textObjetivoR.Texts;
+                    }
+
+                    //guardar imagen al modelo
+                    if (pictureBox1.Image != null)
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                            modeloIngresoDatos.imagen = ms.ToArray();
+                        }
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.imagen = null;
+                    }
+                }
+                if (tabPage == Tecnología)
+                {
+                    /*
+                    if (ComboTipoTecnologia.Text == "Tipo de tecnología*" || textCondicionesOpe.Texts == "Ejemplo: En este estudio se considera una revolvedora")
+                    {
+                        camposFaltantes = true;
+                    }
+                    */
+                    if (ComboTipoTecnologia.Text == "Tipo de tecnología*")
+                    {
+                        errorProvider1.SetError(ComboTipoTecnologia, "Se necesita seleccionar un tipo de tecnología");
+                        camposFaltantes = true;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.tipoTecnologia = ComboTipoTecnologia.Text;
+                        errorProvider1.SetError(ComboTipoTecnologia, String.Empty);
+                    }
+
+                    if (textCondicionesOpe.Texts == "Ejemplo: En este estudio se considera una revolvedora")
+                    {
+                        modeloIngresoDatos.condicionesOperacion = null;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.condicionesOperacion = textCondicionesOpe.Texts;
+                    }
+
+
+                }
+                if (tabPage == TiempoVálido)
+                {
+                    if (FechaReferencia.Text == "2000-01-01")
+                    {
+                        f1 = null;
+                    }
+                    else
+                    {
+                        f1 = FechaReferencia.Text;
+                    }
+
+                    if (FechaDatosValidos.Text == "2000-01-01")
+                    {
+                        f2 = null;
+                    }
+                    else
+                    {
+                        f2 = FechaDatosValidos.Text;
+                    }
+                    modeloIngresoDatos.fechaReferencia = f1;
+                    modeloIngresoDatos.datosValidos = f2;
+
+                    if (textDescripcionPeriodo.Texts == "Ejemplo: Se solicita este tiempo para el análisis del estudio")
+                    {
+                        modeloIngresoDatos.descripcion = null;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.descripcion = textDescripcionPeriodo.Texts;
+                    }
+
+
+                }
+                if (tabPage == Geografía)
+                {
+                    /*
+                    if (comboEstado.Text == "Estado*" || comboArea.Text == "Area*" || txtlatitud.Texts == "Latitud" || txtlatitud.Texts == "Longitud")
+                    {
+                        camposFaltantes = true;
+                       // MessageBox.Show("Falta algún campo (Estado, área, representación geográfica)");
+                    }
+                    */
+                    //se toman los valores de los combobox
+                    modeloEstado ef = (modeloEstado)comboEstado.SelectedItem;
+                    modeloArea mp = (modeloArea)comboArea.SelectedItem;
+
+                    if (comboEstado.Text == "Estado*")
+                    {
+                        errorProvider1.SetError(comboEstado, "Se necesita seleccionar un estado");
+                        camposFaltantes = true;
+                    }
+                    else
+                    {
+
+
+                        modeloIngresoDatos.id_estado = Convert.ToInt32(ef.id);
+                        errorProvider1.SetError(comboEstado, String.Empty);
+                    }
+
+                    if (comboArea.Text == "Area*")
+                    {
+                        errorProvider1.SetError(comboArea, "Se necesita seleccionar un área");
+                        camposFaltantes = true;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.id_area = Convert.ToInt32(mp.id);
+                        errorProvider1.SetError(comboArea, String.Empty);
+                    }
+
+                    if (txtlatitud.Texts == "Latitud" && txtlongitud.Texts == "Longitud")
+                    {
+                        MessageBox.Show("Falta indicar representación geográfica");
+                        camposFaltantes = true;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.latitud = txtlatitud.Texts;
+                        modeloIngresoDatos.longitud = txtlongitud.Texts;
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Inténtelo de nuevo o mas tarde");
+            }
+
+            return camposFaltantes;
+        }
+
+
+        private void buttonsTabControl_Click(object sender, EventArgs e)
+        {
+            //ActualizarTabControl();
+        }
+
+        private void buttonGuardarG_Click(object sender, EventArgs e)
+        {
+            ActualizarIconosFaltantes();
+        }
 
     }
 }

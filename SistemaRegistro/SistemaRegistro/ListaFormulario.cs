@@ -191,7 +191,7 @@ namespace SistemaRegistro
         {
 
 
-            if (e.ColumnIndex == 25 && e.RowIndex != -1)  // Se verifica que sea la columna 10 y no sea el encabezado
+            if (e.ColumnIndex == 25 && e.RowIndex != -1)
             {
                 Image someImage = Properties.Resources.lapiz;
 
@@ -205,7 +205,7 @@ namespace SistemaRegistro
                 e.Handled = true;
             }
 
-            if (e.ColumnIndex == 26 && e.RowIndex != -1)  // Se verifica que sea la columna 10 y no sea el encabezado
+            if (e.ColumnIndex == 26 && e.RowIndex != -1)
             {
                 Image someImage = Properties.Resources.ojo;
 

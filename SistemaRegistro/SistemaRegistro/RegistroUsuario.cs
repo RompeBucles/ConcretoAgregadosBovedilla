@@ -18,14 +18,18 @@ namespace SistemaRegistro
     public partial class RegistroUsuario : Form
     {
         private Conexion ConexionBD = new Conexion();
-  
+        //instancia del modelo {get; set;} 
         modeloUsuarios usu = new modeloUsuarios();
+        //Instacia de usuarios, para usar el motodo de validación 
         private Usuarios usuarios = new Usuarios();
+        //Instacia del controlador
         ControladorUsuario controladorUsuario = new ControladorUsuario();
 
         DataSet dsTabla;
         private SqlDataReader LeerFilas;
+        //variable que se usar para guadar el valor del radio button
         private int valorSeleccionadoPerfil;
+
         public RegistroUsuario()
         {
             InitializeComponent();
@@ -230,6 +234,7 @@ namespace SistemaRegistro
             textConfPassword.ForeColor = Color.Gray;
 
         }
+        //valida si se encuentra un usuario con el mismo nombre
         private bool valiUserName(string username)
         {
             List<ModeloListaUsuarios> lUsers = new ControladorListaUsuarios().obtenerListaUsuarios();
@@ -265,7 +270,7 @@ namespace SistemaRegistro
                 Match ContraValido = Contra.Match(textPassword.Texts);
 
 
-                if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textApellidoM.Texts == "Ejemplo: Hernández" || textCorreo.Texts == " ejemplo@unam.org.mx"
+                 if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textCorreo.Texts == " ejemplo@unam.org.mx"
                     || textTelefono.Texts == "Ejemplo: 2281144037" || textUsuario.Texts == "Ejemplo: jperez" || textPassword.Texts == "Contraseña*" || textConfPassword.Texts == "Contraseña*")
                 {
                     MessageBox.Show("Hay datos que aún no se han proporcionado");
@@ -291,6 +296,15 @@ namespace SistemaRegistro
                     errorProvider1.SetError(textApellidoP, "Apellido paterno no válido");
                     retorno = false;
                 }
+                if (textApellidoM.Texts == "Ejemplo: Hernández")
+                {
+                    usu.apellidoM = null;
+                }
+                else
+                {
+                    usu.apellidoM = textApellidoM.Texts;
+                }
+            
                 if (isEmailValid.Success)
                 {
                     usu.correo = textCorreo.Texts;
@@ -324,7 +338,7 @@ namespace SistemaRegistro
 
                 if (ContraValido.Success)
                 {
-                    usu.usuario = textUsuario.Texts;
+                    usu.contrasena = textPassword.Texts;
                     errorProvider1.SetError(textPassword, String.Empty);
                 }
                 else
@@ -357,7 +371,7 @@ namespace SistemaRegistro
                     valorSeleccionadoPerfil = 2;
                 }
                 //son campos no obligatorios sse asignan sin condicional
-                usu.apellidoM = textApellidoM.Texts;
+              
                 usu.perfil = valorSeleccionadoPerfil;
 
 

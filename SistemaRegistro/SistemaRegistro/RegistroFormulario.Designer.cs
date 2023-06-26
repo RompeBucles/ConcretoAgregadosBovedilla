@@ -1,4 +1,6 @@
-﻿namespace SistemaRegistro
+﻿using System.Windows.Forms;
+
+namespace SistemaRegistro
 {
     partial class RegistroFormulario
     {
@@ -29,6 +31,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroFormulario));
             tabControl1 = new TabControl();
             Identificación = new TabPage();
             panel1 = new Panel();
@@ -62,6 +65,7 @@
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
+            label28 = new Label();
             textValor = new Templates.TextBox();
             btnEliminarImagen = new Button();
             label13 = new Label();
@@ -85,19 +89,19 @@
             label6 = new Label();
             TiempoVálido = new TabPage();
             panel3 = new Panel();
+            FechaDatosValidos = new DateTimePicker();
+            FechaReferencia = new DateTimePicker();
             label8 = new Label();
             label9 = new Label();
             label22 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
             textDescripcionPeriodo = new Templates.TextBox();
             label7 = new Label();
             Geografía = new TabPage();
             panel5 = new Panel();
-            gMapControl2 = new GMap.NET.WindowsForms.GMapControl();
             panel6 = new Panel();
-            txtlongitud = new TextBox();
-            txtlatitud = new TextBox();
+            txtlongitud = new Templates.TextBox();
+            txtlatitud = new Templates.TextBox();
+            gMapControl2 = new GMap.NET.WindowsForms.GMapControl();
             panel7 = new Panel();
             label11 = new Label();
             trackZoom = new TrackBar();
@@ -106,6 +110,7 @@
             comboArea = new ComboBox();
             comboEstado = new ComboBox();
             label10 = new Label();
+            imageList1 = new ImageList(components);
             errorProvider1 = new ErrorProvider(components);
             timer1 = new System.Windows.Forms.Timer(components);
             tabControl1.SuspendLayout();
@@ -134,11 +139,13 @@
             tabControl1.Controls.Add(TiempoVálido);
             tabControl1.Controls.Add(Geografía);
             tabControl1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            tabControl1.ImageList = imageList1;
             tabControl1.Location = new Point(1, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(750, 519);
             tabControl1.TabIndex = 1;
+            tabControl1.Click += buttonsTabControl_Click;
             // 
             // Identificación
             // 
@@ -185,7 +192,7 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(-18, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
@@ -330,14 +337,14 @@
             textCorreo.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textCorreo.BorderSize = 2;
             textCorreo.ForeColor = Color.DimGray;
-            textCorreo.Location = new Point(258, 662);
+            textCorreo.Location = new Point(230, 664);
             textCorreo.Multiline = false;
             textCorreo.Name = "textCorreo";
             textCorreo.Padding = new Padding(8, 7, 8, 7);
             textCorreo.PasswordChar = false;
-            textCorreo.Size = new Size(218, 31);
+            textCorreo.Size = new Size(263, 31);
             textCorreo.TabIndex = 117;
-            textCorreo.Texts = "ejemplo@unam.gob.mx";
+            textCorreo.Texts = "Ejemplo: ejemplo@unam.gob.mx";
             textCorreo.UnderlinedStyle = true;
             textCorreo.Enter += textCorreo_Enter;
             textCorreo.Leave += textCorreo_Leave;
@@ -350,12 +357,12 @@
             textAutor.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textAutor.BorderSize = 2;
             textAutor.ForeColor = Color.DimGray;
-            textAutor.Location = new Point(258, 592);
+            textAutor.Location = new Point(235, 593);
             textAutor.Multiline = true;
             textAutor.Name = "textAutor";
             textAutor.Padding = new Padding(8, 7, 8, 7);
             textAutor.PasswordChar = false;
-            textAutor.Size = new Size(218, 32);
+            textAutor.Size = new Size(258, 32);
             textAutor.TabIndex = 115;
             textAutor.Texts = "Ejemplo: Centro Mario Molina";
             textAutor.UnderlinedStyle = true;
@@ -399,7 +406,7 @@
             textProceso.Name = "textProceso";
             textProceso.Padding = new Padding(8, 7, 8, 7);
             textProceso.PasswordChar = false;
-            textProceso.Size = new Size(277, 31);
+            textProceso.Size = new Size(305, 31);
             textProceso.TabIndex = 111;
             textProceso.Texts = "Ejemplo: Elaboración de concreto simple";
             textProceso.UnderlinedStyle = true;
@@ -580,6 +587,7 @@
             panel4.Anchor = AnchorStyles.Top;
             panel4.AutoScroll = true;
             panel4.BackColor = Color.FromArgb(242, 230, 230);
+            panel4.Controls.Add(label28);
             panel4.Controls.Add(textValor);
             panel4.Controls.Add(btnEliminarImagen);
             panel4.Controls.Add(label13);
@@ -595,10 +603,22 @@
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-36, 3);
+            panel4.Location = new Point(-18, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
+            // 
+            // label28
+            // 
+            label28.Anchor = AnchorStyles.None;
+            label28.AutoSize = true;
+            label28.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label28.ForeColor = Color.FromArgb(190, 31, 36);
+            label28.Location = new Point(19, 56);
+            label28.Name = "label28";
+            label28.Size = new Size(688, 16);
+            label28.TabIndex = 121;
+            label28.Text = "Nota: Cantidad de PRODUCTO necesarios para cumplir la FUNCIÓN  en un determinado TIEMPO y ESPACIO";
             // 
             // textValor
             // 
@@ -608,12 +628,12 @@
             textValor.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textValor.BorderSize = 2;
             textValor.ForeColor = Color.DimGray;
-            textValor.Location = new Point(231, 219);
+            textValor.Location = new Point(203, 219);
             textValor.Multiline = true;
             textValor.Name = "textValor";
             textValor.Padding = new Padding(7, 9, 7, 9);
             textValor.PasswordChar = false;
-            textValor.Size = new Size(278, 39);
+            textValor.Size = new Size(348, 39);
             textValor.TabIndex = 120;
             textValor.Texts = "Ejemplo: 0";
             textValor.UnderlinedStyle = true;
@@ -654,11 +674,11 @@
             label19.AutoSize = true;
             label19.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.FromArgb(190, 31, 36);
-            label19.Location = new Point(334, 342);
+            label19.Location = new Point(339, 278);
             label19.Name = "label19";
-            label19.Size = new Size(65, 16);
+            label19.Size = new Size(60, 16);
             label19.TabIndex = 117;
-            label19.Text = "Objetivo*";
+            label19.Text = "Objetivo";
             // 
             // label20
             // 
@@ -666,7 +686,7 @@
             label20.AutoSize = true;
             label20.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label20.ForeColor = Color.FromArgb(190, 31, 36);
-            label20.Location = new Point(267, 56);
+            label20.Location = new Point(264, 40);
             label20.Name = "label20";
             label20.Size = new Size(207, 16);
             label20.TabIndex = 116;
@@ -680,12 +700,12 @@
             textObjetivoR.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textObjetivoR.BorderSize = 2;
             textObjetivoR.ForeColor = Color.DimGray;
-            textObjetivoR.Location = new Point(231, 361);
+            textObjetivoR.Location = new Point(203, 297);
             textObjetivoR.Multiline = true;
             textObjetivoR.Name = "textObjetivoR";
             textObjetivoR.Padding = new Padding(7, 8, 7, 8);
             textObjetivoR.PasswordChar = false;
-            textObjetivoR.Size = new Size(278, 34);
+            textObjetivoR.Size = new Size(348, 34);
             textObjetivoR.TabIndex = 115;
             textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
             textObjetivoR.UnderlinedStyle = true;
@@ -700,14 +720,14 @@
             textUnidadFuncional.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textUnidadFuncional.BorderSize = 2;
             textUnidadFuncional.ForeColor = Color.DimGray;
-            textUnidadFuncional.Location = new Point(231, 75);
+            textUnidadFuncional.Location = new Point(159, 84);
             textUnidadFuncional.Multiline = true;
             textUnidadFuncional.Name = "textUnidadFuncional";
             textUnidadFuncional.Padding = new Padding(7, 8, 7, 8);
             textUnidadFuncional.PasswordChar = false;
-            textUnidadFuncional.Size = new Size(278, 34);
+            textUnidadFuncional.Size = new Size(446, 34);
             textUnidadFuncional.TabIndex = 114;
-            textUnidadFuncional.Texts = "Ejemplo: Elaboración de concreto simple";
+            textUnidadFuncional.Texts = "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava";
             textUnidadFuncional.UnderlinedStyle = true;
             textUnidadFuncional.Enter += textUnidadFuncional_Enter;
             textUnidadFuncional.Leave += textUnidadFuncional_Leave;
@@ -769,9 +789,9 @@
             comboLimitesSistema.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboLimitesSistema.FormattingEnabled = true;
             comboLimitesSistema.Items.AddRange(new object[] { "Limitaciones presupuestarias", "Limitaciones de tiempo", "Limitaciones de recursos naturales", "Limitaciones de espacio", "Limitaciones ambientales", "Limitaciones de capacidad", "Limitaciones geotécnicas", "Limitaciones tecnológicas", "Limitaciones normativas y legales", "Limitaciones de seguridad" });
-            comboLimitesSistema.Location = new Point(231, 288);
+            comboLimitesSistema.Location = new Point(203, 358);
             comboLimitesSistema.Name = "comboLimitesSistema";
-            comboLimitesSistema.Size = new Size(278, 25);
+            comboLimitesSistema.Size = new Size(348, 25);
             comboLimitesSistema.TabIndex = 76;
             comboLimitesSistema.Enter += comboLimitesSistema_Enter;
             comboLimitesSistema.Leave += comboLimitesSistema_Leave;
@@ -782,9 +802,9 @@
             comboUnidadUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboUnidadUno.FormattingEnabled = true;
             comboUnidadUno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)" });
-            comboUnidadUno.Location = new Point(231, 143);
+            comboUnidadUno.Location = new Point(203, 142);
             comboUnidadUno.Name = "comboUnidadUno";
-            comboUnidadUno.Size = new Size(278, 25);
+            comboUnidadUno.Size = new Size(348, 25);
             comboUnidadUno.TabIndex = 74;
             comboUnidadUno.Enter += comboUnidadUno_Enter;
             comboUnidadUno.Leave += comboUnidadUno_Leave;
@@ -837,7 +857,7 @@
             panel2.Controls.Add(textCondicionesOpe);
             panel2.Controls.Add(ComboTipoTecnologia);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(-3, 2);
+            panel2.Location = new Point(0, 2);
             panel2.Name = "panel2";
             panel2.Size = new Size(736, 468);
             panel2.TabIndex = 0;
@@ -850,9 +870,9 @@
             label21.ForeColor = Color.FromArgb(190, 31, 36);
             label21.Location = new Point(284, 159);
             label21.Name = "label21";
-            label21.Size = new Size(178, 16);
+            label21.Size = new Size(173, 16);
             label21.TabIndex = 114;
-            label21.Text = "Condiciones de operación*";
+            label21.Text = "Condiciones de operación";
             // 
             // textCondicionesOpe
             // 
@@ -915,17 +935,37 @@
             // 
             panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.FromArgb(242, 230, 230);
+            panel3.Controls.Add(FechaDatosValidos);
+            panel3.Controls.Add(FechaReferencia);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(label9);
             panel3.Controls.Add(label22);
-            panel3.Controls.Add(dateTimePicker2);
-            panel3.Controls.Add(dateTimePicker1);
             panel3.Controls.Add(textDescripcionPeriodo);
             panel3.Controls.Add(label7);
-            panel3.Location = new Point(-3, 2);
+            panel3.Location = new Point(0, 2);
             panel3.Name = "panel3";
             panel3.Size = new Size(739, 470);
             panel3.TabIndex = 1;
+            // 
+            // FechaDatosValidos
+            // 
+            FechaDatosValidos.CustomFormat = "yyyy-MM-dd";
+            FechaDatosValidos.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            FechaDatosValidos.Format = DateTimePickerFormat.Custom;
+            FechaDatosValidos.Location = new Point(240, 165);
+            FechaDatosValidos.Name = "FechaDatosValidos";
+            FechaDatosValidos.Size = new Size(264, 22);
+            FechaDatosValidos.TabIndex = 121;
+            // 
+            // FechaReferencia
+            // 
+            FechaReferencia.CustomFormat = "yyyy-MM-dd";
+            FechaReferencia.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            FechaReferencia.Format = DateTimePickerFormat.Custom;
+            FechaReferencia.Location = new Point(240, 96);
+            FechaReferencia.Name = "FechaReferencia";
+            FechaReferencia.Size = new Size(264, 22);
+            FechaReferencia.TabIndex = 120;
             // 
             // label8
             // 
@@ -962,22 +1002,6 @@
             label22.Size = new Size(209, 16);
             label22.TabIndex = 117;
             label22.Text = "Fecha de referencia del estudio";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker2.Location = new Point(210, 165);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(329, 25);
-            dateTimePicker2.TabIndex = 116;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(210, 96);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(329, 25);
-            dateTimePicker1.TabIndex = 115;
             // 
             // textDescripcionPeriodo
             // 
@@ -1027,10 +1051,10 @@
             // 
             panel5.Anchor = AnchorStyles.Top;
             panel5.BackColor = Color.FromArgb(242, 230, 230);
-            panel5.Controls.Add(gMapControl2);
             panel5.Controls.Add(panel6);
             panel5.Controls.Add(txtlongitud);
             panel5.Controls.Add(txtlatitud);
+            panel5.Controls.Add(gMapControl2);
             panel5.Controls.Add(panel7);
             panel5.Controls.Add(label11);
             panel5.Controls.Add(trackZoom);
@@ -1039,10 +1063,53 @@
             panel5.Controls.Add(comboArea);
             panel5.Controls.Add(comboEstado);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-36, 3);
+            panel5.Location = new Point(-16, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(475, 60);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(218, 194);
+            panel6.TabIndex = 100;
+            // 
+            // txtlongitud
+            // 
+            txtlongitud.Anchor = AnchorStyles.None;
+            txtlongitud.BackColor = SystemColors.Control;
+            txtlongitud.BorderColor = SystemColors.ControlDarkDark;
+            txtlongitud.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            txtlongitud.BorderSize = 2;
+            txtlongitud.ForeColor = Color.DimGray;
+            txtlongitud.Location = new Point(475, 206);
+            txtlongitud.Multiline = true;
+            txtlongitud.Name = "txtlongitud";
+            txtlongitud.Padding = new Padding(7, 10, 7, 10);
+            txtlongitud.PasswordChar = false;
+            txtlongitud.Size = new Size(198, 36);
+            txtlongitud.TabIndex = 117;
+            txtlongitud.Texts = "Longitud";
+            txtlongitud.UnderlinedStyle = true;
+            // 
+            // txtlatitud
+            // 
+            txtlatitud.Anchor = AnchorStyles.None;
+            txtlatitud.BackColor = SystemColors.Control;
+            txtlatitud.BorderColor = SystemColors.ControlDarkDark;
+            txtlatitud.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            txtlatitud.BorderSize = 2;
+            txtlatitud.ForeColor = Color.DimGray;
+            txtlatitud.Location = new Point(475, 168);
+            txtlatitud.Multiline = true;
+            txtlatitud.Name = "txtlatitud";
+            txtlatitud.Padding = new Padding(7, 9, 7, 9);
+            txtlatitud.PasswordChar = false;
+            txtlatitud.Size = new Size(198, 32);
+            txtlatitud.TabIndex = 116;
+            txtlatitud.Texts = "Latitud";
+            txtlatitud.UnderlinedStyle = true;
             // 
             // gMapControl2
             // 
@@ -1071,27 +1138,6 @@
             gMapControl2.Zoom = 0D;
             gMapControl2.Load += RegistroFormulario_Load;
             gMapControl2.MouseDoubleClick += gMapControl2_MouseDoubleClick;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(496, 100);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(158, 112);
-            panel6.TabIndex = 100;
-            // 
-            // txtlongitud
-            // 
-            txtlongitud.Location = new Point(496, 187);
-            txtlongitud.Name = "txtlongitud";
-            txtlongitud.Size = new Size(100, 25);
-            txtlongitud.TabIndex = 104;
-            // 
-            // txtlatitud
-            // 
-            txtlatitud.Location = new Point(496, 167);
-            txtlatitud.Name = "txtlatitud";
-            txtlatitud.Size = new Size(100, 25);
-            txtlatitud.TabIndex = 103;
             // 
             // panel7
             // 
@@ -1138,7 +1184,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(496, 110);
+            dataGridView1.Location = new Point(496, 89);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(121, 60);
@@ -1185,6 +1231,13 @@
             label10.Size = new Size(204, 19);
             label10.TabIndex = 92;
             label10.Text = "Tiempo válido del estudio";
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "circulo.png");
             // 
             // errorProvider1
             // 
@@ -1291,8 +1344,6 @@
         private Label label8;
         private Label label9;
         private Label label22;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
         private SistemaRegistro.Templates.TextBox textDescripcionPeriodo;
         private Label label12;
         private Label label27;
@@ -1305,9 +1356,13 @@
         private ComboBox ComboTecno;
         private ComboBox ComboProducto;
         private Templates.TextBox textValor;
-        private TextBox txtlatitud;
-        private TextBox txtlongitud;
         private System.Windows.Forms.Timer timer1;
         private GMap.NET.WindowsForms.GMapControl gMapControl2;
+        private ImageList imageList1;
+        private Label label28;
+        private Templates.TextBox txtlatitud;
+        private Templates.TextBox txtlongitud;
+        private DateTimePicker FechaDatosValidos;
+        private DateTimePicker FechaReferencia;
     }
 }

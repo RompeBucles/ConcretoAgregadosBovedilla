@@ -69,6 +69,7 @@
             button1 = new Button();
             tabControl1 = new TabControl();
             errorProvider1 = new ErrorProvider(components);
+            panel1 = new Panel();
             EditarUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbMostrar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbOcultar1).BeginInit();
@@ -126,7 +127,7 @@
             comboEstatus.ForeColor = Color.FromArgb(97, 97, 96);
             comboEstatus.FormattingEnabled = true;
             comboEstatus.Items.AddRange(new object[] { "Activo", "Inactivo" });
-            comboEstatus.Location = new Point(6, 380);
+            comboEstatus.Location = new Point(5, 380);
             comboEstatus.Name = "comboEstatus";
             comboEstatus.Size = new Size(196, 24);
             comboEstatus.TabIndex = 106;
@@ -137,7 +138,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(190, 31, 36);
-            label9.Location = new Point(81, 349);
+            label9.Location = new Point(80, 349);
             label9.Name = "label9";
             label9.Size = new Size(51, 16);
             label9.TabIndex = 105;
@@ -148,7 +149,7 @@
             pbMostrar1.Anchor = AnchorStyles.None;
             pbMostrar1.Cursor = Cursors.Hand;
             pbMostrar1.Image = (Image)resources.GetObject("pbMostrar1.Image");
-            pbMostrar1.Location = new Point(689, 290);
+            pbMostrar1.Location = new Point(688, 290);
             pbMostrar1.Name = "pbMostrar1";
             pbMostrar1.Size = new Size(46, 23);
             pbMostrar1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -161,7 +162,7 @@
             pbOcultar1.Anchor = AnchorStyles.None;
             pbOcultar1.Cursor = Cursors.Hand;
             pbOcultar1.Image = (Image)resources.GetObject("pbOcultar1.Image");
-            pbOcultar1.Location = new Point(689, 290);
+            pbOcultar1.Location = new Point(688, 290);
             pbOcultar1.Name = "pbOcultar1";
             pbOcultar1.Size = new Size(44, 23);
             pbOcultar1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -174,7 +175,7 @@
             pbMostrar.Anchor = AnchorStyles.None;
             pbMostrar.Cursor = Cursors.Hand;
             pbMostrar.Image = (Image)resources.GetObject("pbMostrar.Image");
-            pbMostrar.Location = new Point(416, 290);
+            pbMostrar.Location = new Point(415, 290);
             pbMostrar.Name = "pbMostrar";
             pbMostrar.Size = new Size(47, 23);
             pbMostrar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -191,7 +192,7 @@
             textConfPassword.BorderSize = 2;
             textConfPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textConfPassword.ForeColor = Color.DimGray;
-            textConfPassword.Location = new Point(537, 283);
+            textConfPassword.Location = new Point(536, 283);
             textConfPassword.Multiline = false;
             textConfPassword.Name = "textConfPassword";
             textConfPassword.Padding = new Padding(7, 8, 7, 8);
@@ -212,7 +213,7 @@
             textPassword.BorderSize = 2;
             textPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textPassword.ForeColor = Color.DimGray;
-            textPassword.Location = new Point(267, 283);
+            textPassword.Location = new Point(266, 283);
             textPassword.Multiline = false;
             textPassword.Name = "textPassword";
             textPassword.Padding = new Padding(7, 8, 7, 8);
@@ -229,7 +230,7 @@
             pbOcultar.Anchor = AnchorStyles.None;
             pbOcultar.Cursor = Cursors.Hand;
             pbOcultar.Image = (Image)resources.GetObject("pbOcultar.Image");
-            pbOcultar.Location = new Point(416, 290);
+            pbOcultar.Location = new Point(415, 290);
             pbOcultar.Name = "pbOcultar";
             pbOcultar.Size = new Size(47, 23);
             pbOcultar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -247,7 +248,7 @@
             textUsuario.Enabled = false;
             textUsuario.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textUsuario.ForeColor = Color.DimGray;
-            textUsuario.Location = new Point(6, 283);
+            textUsuario.Location = new Point(5, 283);
             textUsuario.Multiline = false;
             textUsuario.Name = "textUsuario";
             textUsuario.Padding = new Padding(7, 8, 7, 8);
@@ -268,7 +269,7 @@
             textTelefono.BorderSize = 2;
             textTelefono.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textTelefono.ForeColor = Color.DimGray;
-            textTelefono.Location = new Point(550, 159);
+            textTelefono.Location = new Point(549, 159);
             textTelefono.Multiline = false;
             textTelefono.Name = "textTelefono";
             textTelefono.Padding = new Padding(7, 8, 7, 8);
@@ -289,7 +290,7 @@
             textCorreo.BorderSize = 2;
             textCorreo.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textCorreo.ForeColor = Color.DimGray;
-            textCorreo.Location = new Point(267, 159);
+            textCorreo.Location = new Point(266, 159);
             textCorreo.Multiline = false;
             textCorreo.Name = "textCorreo";
             textCorreo.Padding = new Padding(7, 8, 7, 8);
@@ -310,7 +311,7 @@
             textApellidoM.BorderSize = 2;
             textApellidoM.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textApellidoM.ForeColor = Color.DimGray;
-            textApellidoM.Location = new Point(550, 59);
+            textApellidoM.Location = new Point(549, 59);
             textApellidoM.Multiline = false;
             textApellidoM.Name = "textApellidoM";
             textApellidoM.Padding = new Padding(7, 8, 7, 8);
@@ -333,7 +334,7 @@
             textApellidoP.Enabled = false;
             textApellidoP.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textApellidoP.ForeColor = Color.DimGray;
-            textApellidoP.Location = new Point(267, 59);
+            textApellidoP.Location = new Point(266, 59);
             textApellidoP.Multiline = false;
             textApellidoP.Name = "textApellidoP";
             textApellidoP.Padding = new Padding(7, 8, 7, 8);
@@ -355,7 +356,7 @@
             textNombre.Enabled = false;
             textNombre.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             textNombre.ForeColor = Color.DimGray;
-            textNombre.Location = new Point(6, 59);
+            textNombre.Location = new Point(5, 59);
             textNombre.Multiline = false;
             textNombre.Name = "textNombre";
             textNombre.Padding = new Padding(7, 8, 7, 8);
@@ -373,7 +374,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(190, 31, 36);
-            label4.Location = new Point(6, 252);
+            label4.Location = new Point(5, 252);
             label4.Name = "label4";
             label4.Size = new Size(60, 16);
             label4.TabIndex = 91;
@@ -385,7 +386,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(190, 31, 36);
-            label5.Location = new Point(550, 130);
+            label5.Location = new Point(549, 130);
             label5.Name = "label5";
             label5.Size = new Size(67, 16);
             label5.TabIndex = 90;
@@ -397,7 +398,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(190, 31, 36);
-            label7.Location = new Point(267, 130);
+            label7.Location = new Point(266, 130);
             label7.Name = "label7";
             label7.Size = new Size(130, 16);
             label7.TabIndex = 89;
@@ -409,7 +410,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(190, 31, 36);
-            label6.Location = new Point(550, 40);
+            label6.Location = new Point(549, 40);
             label6.Name = "label6";
             label6.Size = new Size(117, 16);
             label6.TabIndex = 88;
@@ -421,7 +422,7 @@
             label12.AutoSize = true;
             label12.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label12.ForeColor = Color.FromArgb(190, 31, 36);
-            label12.Location = new Point(267, 40);
+            label12.Location = new Point(266, 40);
             label12.Name = "label12";
             label12.Size = new Size(118, 16);
             label12.TabIndex = 87;
@@ -433,7 +434,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(190, 31, 36);
-            label13.Location = new Point(4, 40);
+            label13.Location = new Point(3, 40);
             label13.Name = "label13";
             label13.Size = new Size(62, 16);
             label13.TabIndex = 86;
@@ -445,7 +446,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(190, 31, 36);
-            label1.Location = new Point(81, 130);
+            label1.Location = new Point(80, 130);
             label1.Name = "label1";
             label1.Size = new Size(46, 16);
             label1.TabIndex = 81;
@@ -458,7 +459,7 @@
             radioBtnUser.Enabled = false;
             radioBtnUser.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             radioBtnUser.ForeColor = Color.Black;
-            radioBtnUser.Location = new Point(137, 170);
+            radioBtnUser.Location = new Point(136, 170);
             radioBtnUser.Name = "radioBtnUser";
             radioBtnUser.Size = new Size(73, 21);
             radioBtnUser.TabIndex = 80;
@@ -473,7 +474,7 @@
             radioBtnAdmin.Enabled = false;
             radioBtnAdmin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             radioBtnAdmin.ForeColor = Color.Black;
-            radioBtnAdmin.Location = new Point(12, 170);
+            radioBtnAdmin.Location = new Point(11, 170);
             radioBtnAdmin.Name = "radioBtnAdmin";
             radioBtnAdmin.Size = new Size(115, 21);
             radioBtnAdmin.TabIndex = 79;
@@ -487,7 +488,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(190, 31, 36);
-            label3.Location = new Point(550, 252);
+            label3.Location = new Point(549, 252);
             label3.Name = "label3";
             label3.Size = new Size(151, 16);
             label3.TabIndex = 78;
@@ -499,7 +500,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(190, 31, 36);
-            label2.Location = new Point(267, 252);
+            label2.Location = new Point(266, 252);
             label2.Name = "label2";
             label2.Size = new Size(135, 16);
             label2.TabIndex = 77;
@@ -513,7 +514,7 @@
             buttonCancelar_Mod.FlatStyle = FlatStyle.Flat;
             buttonCancelar_Mod.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCancelar_Mod.ForeColor = SystemColors.ButtonFace;
-            buttonCancelar_Mod.Location = new Point(492, 449);
+            buttonCancelar_Mod.Location = new Point(491, 449);
             buttonCancelar_Mod.Name = "buttonCancelar_Mod";
             buttonCancelar_Mod.Size = new Size(126, 35);
             buttonCancelar_Mod.TabIndex = 67;
@@ -529,7 +530,7 @@
             buttonGuardar_Mod.FlatStyle = FlatStyle.Flat;
             buttonGuardar_Mod.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGuardar_Mod.ForeColor = SystemColors.ButtonFace;
-            buttonGuardar_Mod.Location = new Point(643, 449);
+            buttonGuardar_Mod.Location = new Point(642, 449);
             buttonGuardar_Mod.Name = "buttonGuardar_Mod";
             buttonGuardar_Mod.Size = new Size(115, 35);
             buttonGuardar_Mod.TabIndex = 66;
@@ -543,7 +544,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(190, 31, 36);
-            label8.Location = new Point(296, 12);
+            label8.Location = new Point(295, 12);
             label8.Name = "label8";
             label8.Size = new Size(143, 19);
             label8.TabIndex = 52;
@@ -558,7 +559,7 @@
             ListaUsuario.Location = new Point(4, 24);
             ListaUsuario.Name = "ListaUsuario";
             ListaUsuario.Padding = new Padding(3);
-            ListaUsuario.Size = new Size(764, 492);
+            ListaUsuario.Size = new Size(767, 492);
             ListaUsuario.TabIndex = 0;
             ListaUsuario.Text = "Lista Usuario";
             // 
@@ -592,7 +593,7 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = SystemColors.Control;
-            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Location = new Point(2, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -626,7 +627,7 @@
             btnSeleccionT.FlatStyle = FlatStyle.Flat;
             btnSeleccionT.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnSeleccionT.ForeColor = SystemColors.ButtonFace;
-            btnSeleccionT.Location = new Point(444, 447);
+            btnSeleccionT.Location = new Point(450, 447);
             btnSeleccionT.Name = "btnSeleccionT";
             btnSeleccionT.Size = new Size(144, 39);
             btnSeleccionT.TabIndex = 72;
@@ -642,7 +643,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(608, 447);
+            button1.Location = new Point(614, 447);
             button1.Name = "button1";
             button1.Size = new Size(151, 39);
             button1.TabIndex = 71;
@@ -658,12 +659,19 @@
             tabControl1.Location = new Point(-3, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(772, 520);
+            tabControl1.Size = new Size(775, 520);
             tabControl1.TabIndex = 21;
             // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(2, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(240, 21);
+            panel1.TabIndex = 22;
             // 
             // ListarUsuario
             // 
@@ -672,6 +680,7 @@
             AutoScroll = true;
             BackColor = Color.FromArgb(242, 230, 230);
             ClientSize = new Size(768, 522);
+            Controls.Add(panel1);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "ListarUsuario";
@@ -726,5 +735,6 @@
         private Label label9;
         private ComboBox comboEstatus;
         private DataGridView dataGridView1;
+        private Panel panel1;
     }
 }
