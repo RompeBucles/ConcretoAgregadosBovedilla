@@ -192,7 +192,7 @@ namespace SistemaRegistro
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-18, 0);
+            panel1.Location = new Point(-27, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
@@ -603,7 +603,7 @@ namespace SistemaRegistro
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-18, 3);
+            panel4.Location = new Point(-27, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
@@ -955,7 +955,7 @@ namespace SistemaRegistro
             FechaDatosValidos.Location = new Point(240, 165);
             FechaDatosValidos.Name = "FechaDatosValidos";
             FechaDatosValidos.Size = new Size(264, 22);
-            FechaDatosValidos.TabIndex = 121;
+            FechaDatosValidos.TabIndex = 105;
             // 
             // FechaReferencia
             // 
@@ -965,7 +965,7 @@ namespace SistemaRegistro
             FechaReferencia.Location = new Point(240, 96);
             FechaReferencia.Name = "FechaReferencia";
             FechaReferencia.Size = new Size(264, 22);
-            FechaReferencia.TabIndex = 120;
+            FechaReferencia.TabIndex = 105;
             // 
             // label8
             // 
@@ -1063,7 +1063,7 @@ namespace SistemaRegistro
             panel5.Controls.Add(comboArea);
             panel5.Controls.Add(comboEstado);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-16, 3);
+            panel5.Location = new Point(-25, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;

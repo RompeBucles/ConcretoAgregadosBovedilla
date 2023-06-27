@@ -339,7 +339,7 @@
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(textOtro);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-192, 3);
+            panel1.Location = new Point(-208, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 747);
             panel1.TabIndex = 76;
@@ -706,7 +706,7 @@
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-192, 6);
+            panel4.Location = new Point(-208, 6);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 747);
             panel4.TabIndex = 77;
@@ -1239,7 +1239,7 @@
             panel5.Controls.Add(comboBox4);
             panel5.Controls.Add(comboBox2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-194, 3);
+            panel5.Location = new Point(-210, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(719, 1019);
             panel5.TabIndex = 2;
@@ -1384,7 +1384,6 @@
             VerImagen.Name = "VerImagen";
             VerImagen.Size = new Size(755, 490);
             VerImagen.TabIndex = 6;
-            VerImagen.Text = "Ver imagen";
             // 
             // panel8
             // 
@@ -1393,7 +1392,7 @@
             panel8.Controls.Add(btnAtrasIma);
             panel8.Controls.Add(pictureBox2);
             panel8.Controls.Add(label22);
-            panel8.Location = new Point(-16, 3);
+            panel8.Location = new Point(-32, 3);
             panel8.Name = "panel8";
             panel8.Size = new Size(737, 675);
             panel8.TabIndex = 97;

@@ -11,6 +11,7 @@ namespace SistemaRegistro.ConexionBD
   
     public class Conexion
     {
+        
         private SqlConnection ConexionBD = new SqlConnection("Server=localhost;DataBase=registroDatos; Integrated Security= true;");
      
         public SqlConnection AbrirConexion()
@@ -27,6 +28,5 @@ namespace SistemaRegistro.ConexionBD
             return ConexionBD;
 
         }
-
     }
 }

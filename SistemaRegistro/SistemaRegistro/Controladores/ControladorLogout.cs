@@ -25,7 +25,8 @@ namespace SistemaRegistro.Controladores
                 SqlDataAdapter sda = new SqlDataAdapter(comando);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-            }
+                ConexionBD.CerrarConexion();
+        }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

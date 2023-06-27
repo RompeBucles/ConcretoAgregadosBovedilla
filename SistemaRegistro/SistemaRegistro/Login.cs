@@ -3,6 +3,7 @@ using System.Data;
 using SistemaRegistro.ConexionBD;
 using SistemaRegistro.Controladores;
 using Microsoft.VisualBasic.Logging;
+using System.Threading.Tasks;
 
 namespace SistemaRegistro
 {
@@ -67,10 +68,14 @@ namespace SistemaRegistro
         }
 
         public void logear(string usuario, string password)
-
         {
             try
             {
+                if (ConexionBD == null)
+                {
+                    MessageBox.Show("Error de conexión a la base de datos");
+                }
+
                 //manda a llamar el procedimieto almacenado login que consulta si existen el usuario y la contraseña en la base de datos
                 SqlCommand comando = new SqlCommand("login");
                 comando.Connection = ConexionBD.AbrirConexion();
@@ -105,7 +110,7 @@ namespace SistemaRegistro
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show("Error conexión",e.Message);
             }
             finally
             {

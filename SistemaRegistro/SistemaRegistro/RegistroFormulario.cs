@@ -795,49 +795,161 @@ namespace SistemaRegistro
         {
             gMapControl2.Zoom = trackZoom.Value;
         }
-        /*Implememtar cuando esten todas las validaciones en el boton guardar
+
+
+        /*
         private void ActualizarTabControl()
         {
-            // Obtener el TabPage actualmente seleccionado en el TabControl
-            TabPage paginaActual = tabControl1.SelectedTab;
-
-            // Lógica para activar el icono rojo en los campos faltantes en la página actual
-            if (paginaActual == Referencia)
+            try
             {
-                if (ComboProducto.Text == "Producto*" || ComboTecno.Text == "Tecnología*" || textOtro.Texts == "Ejemplo: grava y arena" ||
-                    textProceso.Texts == "Ejemplo: Elaboración de concreto simple" || textAutor.Texts == "Ejemplo: Centro Mario Molina" || textCorreo.Texts == "ejemplo@unam.gob.mx")
+                //validación regetx seccion identificación
+                Regex Productoo = new Regex(@"^[ A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ.,]{3,100}$");
+                Match ProductoValido = Productoo.Match(ComboProducto.Text);
+                Regex Tecnologia = new Regex(@"^[ A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ.,]{3,100}$");
+                Match TecnologiaValido = Tecnologia.Match(ComboTecno.Text);
+                Regex Otro = new Regex(@"^(?!Ejemplo: grava y arena$).{3,100}$");
+                Match OtroValido = Otro.Match(textOtro.Texts);
+                Regex Proceso = new Regex(@"^(?!Ejemplo: Elaboración de concreto simple$).{3,200}$");
+                Match ProcesoValido = Proceso.Match(textProceso.Texts);
+                Regex Autor = new Regex(@"^[ A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ.,]{3,50}$");
+                Match AutorValido = Autor.Match(textAutor.Texts);
+                Regex Email = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
+                Match EmailisValid = Email.Match(textCorreo.Texts);
+                //validación regetx seccion identificación
+                Regex NombreFlujoR = new Regex(@"^(?!Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava$).{3,300}$");
+                Match NombreFlujoRValido = NombreFlujoR.Match(textUnidadFuncional.Texts);
+                Regex Valor = new Regex(@"^[0-9]+(?:\.[0-9]+)?$");
+                Match ValorValido = Valor.Match(textValor.Texts);
+                // Obtener el TabPage actualmente seleccionado en el TabControl
+                TabPage paginaActual = tabControl1.SelectedTab;
+
+
+                if (paginaActual == Referencia)
                 {
-                    // Activar el icono rojo en los campos faltantes
-                   Identificación.ImageIndex = 0;
+
+                    if (ProductoValido.Success)
+                    {
+                        errorProvider1.SetError(ComboProducto, String.Empty);
+                        // No hay campos faltantes, ocultar el icono rojo
+                        Identificación.ImageIndex = -1;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ComboProducto, "Se necesita ingresar un producto válido");
+                        // Activar el icono rojo en los campos faltantes
+                        Identificación.ImageIndex = 0;
+                    }
+
+                    if (TecnologiaValido.Success)
+                    {
+                        errorProvider1.SetError(ComboTecno, String.Empty);
+                        Identificación.ImageIndex = -1;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ComboTecno, "Se necesita ingresar una tecnología válida");
+                        Identificación.ImageIndex = 0;
+                    }
+                    if (OtroValido.Success)
+                    {
+                        errorProvider1.SetError(textOtro, String.Empty);
+                        Identificación.ImageIndex = -1;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textOtro, "Se necesita ingresar un dato a este campo");
+                        Identificación.ImageIndex = 0;
+                    }
+
+                    if (ProcesoValido.Success)
+                    {
+                        errorProvider1.SetError(textProceso, String.Empty);
+                        Identificación.ImageIndex = -1;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textProceso, "Se necesita ingresar un nombre de proceso válido");
+                        Identificación.ImageIndex = 0;
+                    }
+                    if (AutorValido.Success)
+                    {
+                        errorProvider1.SetError(textAutor, String.Empty);
+                        Identificación.ImageIndex = -1;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textAutor, "Se necesita ingresar un autor válido");
+                        Identificación.ImageIndex = 0;
+                    }
+
+                    if (EmailisValid.Success)
+                    {
+                        errorProvider1.SetError(textCorreo, String.Empty);
+                        Identificación.ImageIndex = -1;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textCorreo, "Se necesita ingresar un correo válido");
+                        Identificación.ImageIndex = 0;
+                    }
+
                 }
-                else
+
+                else if (paginaActual == Tecnología)
                 {
-                    // No hay campos faltantes, ocultar el icono rojo
-                   Identificación.ImageIndex = -1;
+
+                    if (NombreFlujoRValido.Success)
+                    {
+                        errorProvider1.SetError(textUnidadFuncional, String.Empty);
+                        Referencia.ImageIndex = -1;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textUnidadFuncional, "Se necesita ingresar un nombre de flujo válido");
+                        Referencia.ImageIndex = 0;
+                    }
+
+                    if (comboUnidadUno.Text == "Unidad*")
+                    {
+                        errorProvider1.SetError(comboUnidadUno, "Se necesita seleccionar una unidad");
+                        Referencia.ImageIndex = 0;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(comboUnidadUno, String.Empty);
+                        Referencia.ImageIndex = -1;
+                    }
+
+                    if (ValorValido.Success)
+                    {
+                        errorProvider1.SetError(textValor, String.Empty);
+                        Referencia.ImageIndex = -1;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(textValor, "Se necesita ingresar un valor");
+                        Referencia.ImageIndex = 0;
+                    }
+
                 }
-            }
-            
-            else if (paginaActual == Tecnología)
-             {
-                if (textUnidadFuncional.Texts == "Ejemplo: Elaboración de concreto simple" || comboUnidadUno.Text == "Unidad*" || textValor.Texts == "Ejemplo: 0" ||
-                    comboLimitesSistema.Text == "Limites del sistema*" || textObjetivoR.Texts == "Ejemplo: Estimar la huella de carbono")
+                else if (paginaActual == TiempoVálido)
                 {
-                    // Activar el icono rojo en los campos faltantes
-                   
-                    Referencia.ImageIndex = 0;
+
+                    if (ComboTipoTecnologia.Text == "Tipo de tecnología*")
+                    {
+                        errorProvider1.SetError(ComboTipoTecnologia, "Se necesita seleccionar un tipo de tecnología");
+                        Tecnología.ImageIndex = 0;
+                    }
+                    else
+                    {
+                        errorProvider1.SetError(ComboTipoTecnologia, String.Empty);
+                        Tecnología.ImageIndex = -1;
+                    }
                 }
-                else
-                {
-                    // No hay campos faltantes, ocultar el icono rojo
-                    Referencia.ImageIndex = -1;
-                }
-            }
-            else if (paginaActual == TiempoVálido)
+            }catch(Exception ex)
             {
-               
+                MessageBox.Show("Inténtelo de nuevo o mas tarde");
             }
-
-
         }
         */
         void ActualizarIconosFaltantes()
@@ -850,7 +962,7 @@ namespace SistemaRegistro
                     TabPage tabPage = tabControl1.TabPages[i];
 
                     // Verifica si hay campos faltantes en cada página y establece el índice de imagen del botón correspondiente
-                    if (HayCamposFaltantesEnPagina(tabPage))
+                    if (ValidadorCampos(tabPage))
                     {
                         tabPage.ImageIndex = 0; // Índice de imagen correspondiente al icono rojo en el ImageList
                         composFaltantes = true;
@@ -885,7 +997,7 @@ namespace SistemaRegistro
             }
         }
 
-        bool HayCamposFaltantesEnPagina(TabPage tabPage)
+        bool ValidadorCampos(TabPage tabPage)
         {
             bool camposFaltantes = false;
             try
@@ -913,13 +1025,7 @@ namespace SistemaRegistro
 
                 if (tabPage == Identificación)
                 {
-                    /*
-                    if (ComboProducto.Text == "Producto*" || ComboTecno.Text == "Tecnología*" || textOtro.Texts == "Ejemplo: grava y arena" ||
-                        textProceso.Texts == "Ejemplo: Elaboración de concreto simple" || textAutor.Texts == "Ejemplo: Centro Mario Molina" || textCorreo.Texts == "Ejemplo: ejemplo@unam.gob.mx")
-                    {
-                        camposFaltantes = true;
-                    }
-                    */
+
                     if (ProductoValido.Success)
                     {
                         modeloIngresoDatos.producto = ComboProducto.Text;
@@ -1005,12 +1111,7 @@ namespace SistemaRegistro
                 }
                 if (tabPage == Referencia)
                 {
-                    /*
-                    if (textUnidadFuncional.Texts == "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava" || comboUnidadUno.Text == "Unidad*" || textValor.Texts == "Ejemplo: 0")
-                    {
-                        camposFaltantes = true;
-                    }
-                    */
+
                     if (NombreFlujoRValido.Success)
                     {
                         modeloIngresoDatos.nombreFlujoR = textUnidadFuncional.Texts;
@@ -1078,12 +1179,7 @@ namespace SistemaRegistro
                 }
                 if (tabPage == Tecnología)
                 {
-                    /*
-                    if (ComboTipoTecnologia.Text == "Tipo de tecnología*" || textCondicionesOpe.Texts == "Ejemplo: En este estudio se considera una revolvedora")
-                    {
-                        camposFaltantes = true;
-                    }
-                    */
+
                     if (ComboTipoTecnologia.Text == "Tipo de tecnología*")
                     {
                         errorProvider1.SetError(ComboTipoTecnologia, "Se necesita seleccionar un tipo de tecnología");
@@ -1141,13 +1237,6 @@ namespace SistemaRegistro
                 }
                 if (tabPage == Geografía)
                 {
-                    /*
-                    if (comboEstado.Text == "Estado*" || comboArea.Text == "Area*" || txtlatitud.Texts == "Latitud" || txtlatitud.Texts == "Longitud")
-                    {
-                        camposFaltantes = true;
-                       // MessageBox.Show("Falta algún campo (Estado, área, representación geográfica)");
-                    }
-                    */
                     //se toman los valores de los combobox
                     modeloEstado ef = (modeloEstado)comboEstado.SelectedItem;
                     modeloArea mp = (modeloArea)comboArea.SelectedItem;

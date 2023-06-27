@@ -37,6 +37,7 @@ namespace SistemaRegistro.Controladores
                     });
                 }
                 dr.Close();
+                ConexionBD.CerrarConexion();
                 return oListaUsuarios;
             }
             catch (Exception ex)

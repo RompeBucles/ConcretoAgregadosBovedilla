@@ -53,8 +53,20 @@ namespace SistemaRegistro
         {
             InitializeComponent();
             CargarDG();
-        }
+            tabControl2.TabPages["VerImagen"].Visible = false;  // Oculta la pestaña visualmente
+            tabControl2.TabPages["VerImagen"].Enabled = false;
+            TabControlBotones();
 
+        }
+        private void TabControlBotones()
+        {
+            Identificación.Parent = null;
+            Referencia.Parent = null;
+            Tecnología.Parent = null;
+            TiempoVálido.Parent = null;
+            Geografía.Parent = null;
+            //VerImagen.Parent = null;
+        }
         private void CargarDG()
         {
             dsTabla = controladorDatosFormulario.SeleccionarDatosFormulario(); //La tabla se recarga con el procedimiento almacenado Seleccionar_Datos_User.
@@ -234,7 +246,8 @@ namespace SistemaRegistro
                             {
                                 pictureBox2.Image = Image.FromStream(ms);
                             }
-
+                            
+                            tabControl2.TabPages["VerImagen"].Enabled = true;
                             tabControl2.SelectedTab = VerImagen;
                         }
                         else
@@ -269,16 +282,13 @@ namespace SistemaRegistro
         }
         private void btnAtrasIma_Click(object sender, EventArgs e)
         {
-            /*
-            if (tabControl2.SelectedTab == ListaDatos) // Primera pestaña
-            {
-                // Oculta los botones de la primera sección
-                Identificación.Visible = false;
-                Referencia.Visible = false;
-            }
-            
-            */
+            tabControl2.TabPages["VerImagen"].Enabled = false;
             tabControl2.SelectedTab = ListaDatos;
+            // this.Controls.Clear();
+            // this.InitializeComponent();
+            // CargarDG();
+            // CargarBotones();
+            // TabControlBotones();
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
