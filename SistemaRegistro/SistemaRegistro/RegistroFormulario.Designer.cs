@@ -192,7 +192,7 @@ namespace SistemaRegistro
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-27, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
@@ -603,7 +603,7 @@ namespace SistemaRegistro
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-27, 3);
+            panel4.Location = new Point(0, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
@@ -789,7 +789,7 @@ namespace SistemaRegistro
             comboLimitesSistema.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboLimitesSistema.FormattingEnabled = true;
             comboLimitesSistema.Items.AddRange(new object[] { "Limitaciones presupuestarias", "Limitaciones de tiempo", "Limitaciones de recursos naturales", "Limitaciones de espacio", "Limitaciones ambientales", "Limitaciones de capacidad", "Limitaciones geotécnicas", "Limitaciones tecnológicas", "Limitaciones normativas y legales", "Limitaciones de seguridad" });
-            comboLimitesSistema.Location = new Point(203, 358);
+            comboLimitesSistema.Location = new Point(203, 373);
             comboLimitesSistema.Name = "comboLimitesSistema";
             comboLimitesSistema.Size = new Size(348, 25);
             comboLimitesSistema.TabIndex = 76;
@@ -973,7 +973,7 @@ namespace SistemaRegistro
             label8.AutoSize = true;
             label8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(190, 31, 36);
-            label8.Location = new Point(258, 266);
+            label8.Location = new Point(266, 249);
             label8.Name = "label8";
             label8.Size = new Size(226, 16);
             label8.TabIndex = 119;
@@ -1011,7 +1011,7 @@ namespace SistemaRegistro
             textDescripcionPeriodo.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textDescripcionPeriodo.BorderSize = 2;
             textDescripcionPeriodo.ForeColor = Color.DimGray;
-            textDescripcionPeriodo.Location = new Point(179, 294);
+            textDescripcionPeriodo.Location = new Point(187, 277);
             textDescripcionPeriodo.Multiline = true;
             textDescripcionPeriodo.Name = "textDescripcionPeriodo";
             textDescripcionPeriodo.Padding = new Padding(7, 8, 7, 8);
@@ -1063,14 +1063,14 @@ namespace SistemaRegistro
             panel5.Controls.Add(comboArea);
             panel5.Controls.Add(comboEstado);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-25, 3);
+            panel5.Location = new Point(0, 3);
             panel5.Name = "panel5";
-            panel5.Size = new Size(719, 1019);
+            panel5.Size = new Size(722, 1019);
             panel5.TabIndex = 2;
             // 
             // panel6
             // 
-            panel6.Location = new Point(475, 60);
+            panel6.Location = new Point(477, 60);
             panel6.Name = "panel6";
             panel6.Size = new Size(218, 194);
             panel6.TabIndex = 100;
@@ -1083,7 +1083,7 @@ namespace SistemaRegistro
             txtlongitud.BorderFocusColor = Color.FromArgb(190, 31, 36);
             txtlongitud.BorderSize = 2;
             txtlongitud.ForeColor = Color.DimGray;
-            txtlongitud.Location = new Point(475, 206);
+            txtlongitud.Location = new Point(477, 206);
             txtlongitud.Multiline = true;
             txtlongitud.Name = "txtlongitud";
             txtlongitud.Padding = new Padding(7, 10, 7, 10);
@@ -1101,7 +1101,7 @@ namespace SistemaRegistro
             txtlatitud.BorderFocusColor = Color.FromArgb(190, 31, 36);
             txtlatitud.BorderSize = 2;
             txtlatitud.ForeColor = Color.DimGray;
-            txtlatitud.Location = new Point(475, 168);
+            txtlatitud.Location = new Point(477, 168);
             txtlatitud.Multiline = true;
             txtlatitud.Name = "txtlatitud";
             txtlatitud.Padding = new Padding(7, 9, 7, 9);
@@ -1151,7 +1151,7 @@ namespace SistemaRegistro
             label11.Anchor = AnchorStyles.None;
             label11.AutoSize = true;
             label11.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(226, 235);
+            label11.Location = new Point(228, 235);
             label11.Name = "label11";
             label11.Size = new Size(233, 19);
             label11.TabIndex = 99;
@@ -1173,7 +1173,7 @@ namespace SistemaRegistro
             buttonGuardarG.FlatStyle = FlatStyle.Flat;
             buttonGuardarG.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGuardarG.ForeColor = SystemColors.ButtonFace;
-            buttonGuardarG.Location = new Point(281, 841);
+            buttonGuardarG.Location = new Point(283, 841);
             buttonGuardarG.Name = "buttonGuardarG";
             buttonGuardarG.Size = new Size(115, 35);
             buttonGuardarG.TabIndex = 97;
@@ -1198,7 +1198,7 @@ namespace SistemaRegistro
             comboArea.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboArea.FormattingEnabled = true;
             comboArea.Items.AddRange(new object[] { "Aguascalientes", "Tijuana", "La Paz", "Campeche", "Tuxtla Gutiérrez", "Chihuahua", "Zona centro", "Saltillo", "Colima", "Durango", "León", "Acapulco", "Pachuca", "Guadalajara", "Morelia", "Cuernavaca", "Tepic", "Monterrey", "Oaxaca", "Puebla-Tlaxcala", "Querétaro", "Cancún", "San Luis Potosí", "Culiacán", "Hermosillo", "Villahermosa", "Tampico", "Puebla-Tlaxcala", "Veracruz", "Mérida", "Zacatecas" });
-            comboArea.Location = new Point(212, 147);
+            comboArea.Location = new Point(214, 168);
             comboArea.Name = "comboArea";
             comboArea.Size = new Size(230, 25);
             comboArea.TabIndex = 94;
@@ -1212,7 +1212,7 @@ namespace SistemaRegistro
             comboEstado.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboEstado.FormattingEnabled = true;
             comboEstado.Items.AddRange(new object[] { "Aguascalientes", "Baja California", "Baja California Sur", "Campeche", "Chiapas", "Chihuahua", "Estado de México ", "Coahuila", "Colima", "Durango", "Guanajuato", "Guerrero", "Hidalgo", "Jalisco", "Michoacán", "Morelos", "Nayarit", "Nuevo León", "Oaxaca", "Puebla", "Querétaro ", "Quintana Roo", "San Luis Potosí ", "Sinaloa", "Sonora", "Tabasco", "Tamaulipas", "Tlaxcala", "Veracruz", "Yucatán", "Zacatecas" });
-            comboEstado.Location = new Point(212, 89);
+            comboEstado.Location = new Point(214, 89);
             comboEstado.Name = "comboEstado";
             comboEstado.Size = new Size(230, 25);
             comboEstado.TabIndex = 93;
@@ -1226,7 +1226,7 @@ namespace SistemaRegistro
             label10.AutoSize = true;
             label10.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label10.ForeColor = Color.Red;
-            label10.Location = new Point(226, 25);
+            label10.Location = new Point(228, 25);
             label10.Name = "label10";
             label10.Size = new Size(204, 19);
             label10.TabIndex = 92;

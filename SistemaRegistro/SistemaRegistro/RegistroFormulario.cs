@@ -1204,7 +1204,7 @@ namespace SistemaRegistro
                 }
                 if (tabPage == TiempoVálido)
                 {
-                    if (FechaReferencia.Text == "2000-01-01")
+                    if (FechaReferencia.Text == "2000-01-01" || FechaReferencia.Text == "1900-01-01")
                     {
                         f1 = null;
                     }
@@ -1212,8 +1212,7 @@ namespace SistemaRegistro
                     {
                         f1 = FechaReferencia.Text;
                     }
-
-                    if (FechaDatosValidos.Text == "2000-01-01")
+                    if (FechaDatosValidos.Text == "2000-01-01" || FechaReferencia.Text == "1900-01-01")
                     {
                         f2 = null;
                     }

@@ -52,10 +52,10 @@ namespace SistemaRegistro
         public ListaFormulario()
         {
             InitializeComponent();
-            CargarDG();
-            tabControl2.TabPages["VerImagen"].Visible = false;  // Oculta la pestaña visualmente
-            tabControl2.TabPages["VerImagen"].Enabled = false;
+            //lo que hace esta linea de codigo es desabilitar todos los componentes que se encuentren en esa pestaña
+            //tabControl2.TabPages["VerImagen"].Enabled = false;
             TabControlBotones();
+            CargarDG();
 
         }
         private void TabControlBotones()
@@ -65,17 +65,14 @@ namespace SistemaRegistro
             Tecnología.Parent = null;
             TiempoVálido.Parent = null;
             Geografía.Parent = null;
-            //VerImagen.Parent = null;
+            VerImagen.Parent = null;
         }
         private void CargarDG()
         {
+            dataGridView1.Columns.Clear();
             dsTabla = controladorDatosFormulario.SeleccionarDatosFormulario(); //La tabla se recarga con el procedimiento almacenado Seleccionar_Datos_User.
-
-            //int p = panel2.Width;
-
             dataGridView1.DataSource = dsTabla;
             //dataGridView1.ScrollBars = ScrollBars.None; //Desactivar ScrollBar del DataGridView
-
 
             dataGridView1.Columns[1].HeaderText = "Producto_Tecnología_otro";
             dataGridView1.Columns[5].HeaderText = "Nombre del proceso";
@@ -172,7 +169,6 @@ namespace SistemaRegistro
         }
         private void ListaFormulario_Load(object sender, EventArgs e)
         {
-            //Se genera 3 nuevas columas con botones.
             CargarBotones();
             tabControl2.SetBounds(tabControl2.Left, tabControl2.Top, 768, 519);
         }
@@ -183,54 +179,27 @@ namespace SistemaRegistro
         {
             try
             {
-                /*
+
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar") //Si la celda contiene el nombre Editar procedera a entrar en la condición.
                 {
                     if (dataGridView1.SelectedRows.Count > 0) //Si hay mas de 0 filas entonces procedera a ejecutar el siguiente codigo.
                     {
-                        string perfil = dataGridView1.CurrentRow.Cells[5].Value.ToString();
 
-                        if (perfil == "Administrador")
-                        {
-                            radioBtnAdmin.Checked = true;
-                        }
-                        else if (perfil == "Usuario")
-                        {
-                            radioBtnUser.Checked = true;
-                        }
-                        //Manda a llamar todos los datos del Usuario a la otra pantalla para proceder a su correspondiente edición
+                        //Manda a llamar todos los datos del registro para editar
                         id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                        textNombre.Texts = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-                        textApellidoP.Texts = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-                        textApellidoM.Texts = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-                        textCorreo.Texts = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-                        textTelefono.Texts = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-                        textUsuario.Texts = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-                        comboEstatus.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
 
-                        tabControl1.SelectedTab = EditarUsuarios;
+                        ListaDatos.Parent = null;
+                        VerImagen.Parent = null;
+                        Identificación.Parent = tabControl2;
+                        Referencia.Parent = tabControl2;
+                        Tecnología.Parent = tabControl2;
+                        TiempoVálido.Parent = tabControl2;
+                        Geografía.Parent = tabControl2;
+                        tabControl2.SelectedTab = Identificación;
 
                     }
                 }
-                */
-                /*
-                if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver imagen") //Si la celda contiene el nombre ver imagen procedera a entrar en la condición.
-                {
-                    if (dataGridView1.SelectedRows.Count > 0) //Si hay mas de 0 filas entonces procedera a ejecutar el siguiente codigo.
-                    {
-                        //Mandar los datos de ese registro
-                        id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                        byte[] imageData = (byte[])dataGridView1.CurrentRow.Cells[14].Value;
-                        using (MemoryStream ms = new MemoryStream(imageData))
-                        {
-                            pictureBox2.Image = Image.FromStream(ms);
-                        }
 
-                        tabControl2.SelectedTab = VerImagen;
-
-                    }
-                }
-                */
                 if (dataGridView1.Columns[e.ColumnIndex].Name == "Ver imagen")
                 {
                     if (dataGridView1.SelectedRows.Count > 0)
@@ -246,8 +215,9 @@ namespace SistemaRegistro
                             {
                                 pictureBox2.Image = Image.FromStream(ms);
                             }
-                            
-                            tabControl2.TabPages["VerImagen"].Enabled = true;
+                            ListaDatos.Parent = null;
+                            VerImagen.Parent = tabControl2;
+                            //tabControl2.TabPages["VerImagen"].Enabled = true;
                             tabControl2.SelectedTab = VerImagen;
                         }
                         else
@@ -259,36 +229,31 @@ namespace SistemaRegistro
 
                     }
                 }
-
-                /*
-                if (e.ColumnIndex == 11 && e.RowIndex != 0)
-                {
-                    var cell = dataGridView1[e.ColumnIndex, e.RowIndex] as DataGridViewCheckBoxCell;
-                    if (cell != null)
-                    {
-                        if (cell.Value != null && cell.Value is bool currentValue)
-                        {
-                            cell.Value = !currentValue;
-                            dataGridView1.EndEdit(); // Finalizar la edición de la celda
-                        }
-                    }
-                }
-                */
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Columna");
             }
         }
+        private void RegresarL_Click(object sender, EventArgs e)
+        {
+
+
+            ListaDatos.Parent = tabControl2;
+            tabControl2.SelectedTab = ListaDatos;
+            TabControlBotones();
+            CargarDG();
+            CargarBotones();
+        }
         private void btnAtrasIma_Click(object sender, EventArgs e)
         {
-            tabControl2.TabPages["VerImagen"].Enabled = false;
+            //tabControl2.TabPages["VerImagen"].Enabled = false;
+            ListaDatos.Parent = tabControl2;
             tabControl2.SelectedTab = ListaDatos;
-            // this.Controls.Clear();
-            // this.InitializeComponent();
-            // CargarDG();
-            // CargarBotones();
-            // TabControlBotones();
+            TabControlBotones();
+            CargarDG();
+            CargarBotones();
+
         }
 
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)

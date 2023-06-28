@@ -36,8 +36,6 @@ namespace SistemaRegistro
         {
 
             InitializeComponent();
-            CargarDG();
-
             //Asigna opciones a la lista desplegable
             List<string> estatus = new List<string>();
             estatus.Add("Activo");
@@ -46,14 +44,11 @@ namespace SistemaRegistro
         }
         private void CargarDG()
         {
+            //Esta linea codigo es indispensablec corrige a la hora de cargar los datos del grid, no desplaza las columnas 
+            dataGridView1.Columns.Clear();
             dsTabla = controladorUsuario.SeleccionarDatosUsuario(); //La tabla se recarga con el procedimiento almacenado Seleccionar_Datos_User.
-
-            //int p = panel2.Width;
-
-
             dataGridView1.DataSource = dsTabla;
             //dataGridView1.ScrollBars = ScrollBars.None; //Desactivar ScrollBar del DataGridView
-
 
             dataGridView1.Columns[1].HeaderText = "Nombre completo";
             dataGridView1.Columns[5].HeaderText = "Perfil";
@@ -88,15 +83,12 @@ namespace SistemaRegistro
         private void CargarBotones()
         {
             // int p = panel2.Width;
-
-
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
             editar.Name = "Editar";
             editar.Width = 90;
             editar.FlatStyle = FlatStyle.Flat;
             dataGridView1.Columns.Add(editar);
-
 
             DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
             checkColumn.HeaderText = "Eliminar";
@@ -114,11 +106,11 @@ namespace SistemaRegistro
                     row.Cells["Eliminar"].ReadOnly = false;
                 }
             }
-
         }
+
         private void ListarUsuarios_Load(object sender, EventArgs e)
         {
-            //Se genera 2 nuevas columas con botones.
+            CargarDG();
             CargarBotones();
             tabControl1.SetBounds(tabControl1.Left, tabControl1.Top, 768, 519);
         }
@@ -302,8 +294,8 @@ namespace SistemaRegistro
                                 elementosSeleccionados = true;
                                 int usuarioID = Convert.ToInt32(row.Cells[0].Value); // Suponiendo que el ID del usuario está en la primera columna
 
-                                controladorUsuario.EliminarUsuario(usuarioID);                                                   // MessageBox.Show($"{usuarioID}");
-                                                                                                                                 // controladorUsuario.EliminarUsuario(usuarioID);
+                                controladorUsuario.EliminarUsuario(usuarioID);
+                                //MessageBox.Show($"{usuarioID}");
                                 filasEliminar.Add(row);
                             }
                         }
@@ -318,7 +310,9 @@ namespace SistemaRegistro
                     {
                         foreach (DataGridViewRow rowEliminar in filasEliminar)
                         {
-                            dataGridView1.Rows.Remove(rowEliminar);
+                            // dataGridView1.Rows.Remove(rowEliminar);
+                            CargarDG(); //Carga el DataGridView
+                            CargarBotones();
                         }
 
                         MessageBox.Show("Registro(s) inhabilitado(s)");
@@ -620,9 +614,7 @@ namespace SistemaRegistro
                     controladorUsuario.EditarUsuario(usu, id);
                     MessageBox.Show("Usuario modificado con éxito");
                     tabControl1.SelectedTab = ListaUsuario;
-                    this.Controls.Clear();
-                    this.InitializeComponent();
-                    CargarDG(); //Carga el DataGridView
+                    CargarDG();
                     CargarBotones(); //Se vuelven a generar los botónes.
 
 

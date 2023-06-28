@@ -63,11 +63,11 @@
             buttonCancelar_Mod = new Button();
             buttonGuardar_Mod = new Button();
             label8 = new Label();
+            tabControl1 = new TabControl();
             ListaUsuario = new TabPage();
             dataGridView1 = new DataGridView();
             btnSeleccionT = new Button();
             button1 = new Button();
-            tabControl1 = new TabControl();
             errorProvider1 = new ErrorProvider(components);
             panel1 = new Panel();
             EditarUsuarios.SuspendLayout();
@@ -75,9 +75,9 @@
             ((System.ComponentModel.ISupportInitialize)pbOcultar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbMostrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbOcultar).BeginInit();
+            tabControl1.SuspendLayout();
             ListaUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -115,7 +115,7 @@
             EditarUsuarios.Location = new Point(4, 24);
             EditarUsuarios.Name = "EditarUsuarios";
             EditarUsuarios.Padding = new Padding(3);
-            EditarUsuarios.Size = new Size(764, 492);
+            EditarUsuarios.Size = new Size(767, 492);
             EditarUsuarios.TabIndex = 1;
             EditarUsuarios.Text = "Editar Usuario";
             // 
@@ -550,6 +550,17 @@
             label8.TabIndex = 52;
             label8.Text = "Modificar Usuario";
             // 
+            // tabControl1
+            // 
+            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tabControl1.Controls.Add(ListaUsuario);
+            tabControl1.Controls.Add(EditarUsuarios);
+            tabControl1.Location = new Point(-3, 2);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(775, 520);
+            tabControl1.TabIndex = 21;
+            // 
             // ListaUsuario
             // 
             ListaUsuario.BackColor = Color.FromArgb(242, 230, 230);
@@ -593,7 +604,7 @@
             dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = SystemColors.Control;
-            dataGridView1.Location = new Point(2, 0);
+            dataGridView1.Location = new Point(1, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -613,7 +624,7 @@
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(756, 441);
+            dataGridView1.Size = new Size(760, 438);
             dataGridView1.TabIndex = 74;
             dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellPainting += dataGridView1_CellPainting;
@@ -651,17 +662,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // tabControl1
-            // 
-            tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tabControl1.Controls.Add(ListaUsuario);
-            tabControl1.Controls.Add(EditarUsuarios);
-            tabControl1.Location = new Point(-3, 2);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(775, 520);
-            tabControl1.TabIndex = 21;
-            // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
@@ -692,9 +692,9 @@
             ((System.ComponentModel.ISupportInitialize)pbOcultar1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbMostrar).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbOcultar).EndInit();
+            tabControl1.ResumeLayout(false);
             ListaUsuario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
@@ -715,7 +715,6 @@
         private Button buttonCancelar_Mod;
         private Button buttonGuardar_Mod;
         private Label label8;
-        private TabPage ListaUsuario;
         private TabControl tabControl1;
         private SistemaRegistro.Templates.TextBox textUsuario;
         private SistemaRegistro.Templates.TextBox textTelefono;
@@ -724,8 +723,6 @@
         private SistemaRegistro.Templates.TextBox textApellidoP;
         private SistemaRegistro.Templates.TextBox textNombre;
         private ErrorProvider errorProvider1;
-        private Button btnSeleccionT;
-        private Button button1;
         private PictureBox pbMostrar1;
         private PictureBox pbOcultar1;
         private PictureBox pbMostrar;
@@ -734,7 +731,10 @@
         private PictureBox pbOcultar;
         private Label label9;
         private ComboBox comboEstatus;
-        private DataGridView dataGridView1;
         private Panel panel1;
+        private TabPage ListaUsuario;
+        private DataGridView dataGridView1;
+        private Button btnSeleccionT;
+        private Button button1;
     }
 }
