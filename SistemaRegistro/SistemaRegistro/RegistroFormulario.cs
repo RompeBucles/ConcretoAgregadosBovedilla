@@ -46,6 +46,7 @@ namespace SistemaRegistro
         public RegistroFormulario()
         {
             InitializeComponent();
+            //Estado y Area
             llenarCombos();
             //asignamos una hora por defecto a los datetimepickers
             FechaReferencia.Value = new DateTime(2000, 01, 01);
