@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            label2 = new Label();
+            label1 = new Label();
+            textBox3 = new Templates.TextBox();
+            textProceso = new Templates.TextBox();
+            label15 = new Label();
             button1 = new Button();
             label5 = new Label();
-            numericUpDown1 = new NumericUpDown();
             label3 = new Label();
             label12 = new Label();
             button8 = new Button();
@@ -41,23 +45,19 @@
             comboDos = new ComboBox();
             comboUno = new ComboBox();
             buttonSiguienteP = new Button();
-            textBox1 = new SistemaRegistro.Templates.TextBox();
+            textBox1 = new Templates.TextBox();
             ComboTecno = new ComboBox();
-            textOtro = new SistemaRegistro.Templates.TextBox();
+            textNombreFlujo = new Templates.TextBox();
             labelUsuario = new Label();
-            label15 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            textBox3 = new SistemaRegistro.Templates.TextBox();
-            textProceso = new SistemaRegistro.Templates.TextBox();
+            textValor = new Templates.TextBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
+            panel1.Controls.Add(textValor);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(textBox3);
@@ -65,7 +65,6 @@
             panel1.Controls.Add(label15);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(numericUpDown1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(button8);
@@ -77,12 +76,86 @@
             panel1.Controls.Add(buttonSiguienteP);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(ComboTecno);
-            panel1.Controls.Add(textOtro);
+            panel1.Controls.Add(textNombreFlujo);
             panel1.Controls.Add(labelUsuario);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(726, 747);
+            panel1.Size = new Size(726, 817);
             panel1.TabIndex = 77;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.None;
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(190, 31, 36);
+            label2.Location = new Point(143, 558);
+            label2.Name = "label2";
+            label2.Size = new Size(81, 16);
+            label2.TabIndex = 114;
+            label2.Text = "Comentario";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.None;
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(190, 31, 36);
+            label1.Location = new Point(370, 523);
+            label1.Name = "label1";
+            label1.Size = new Size(122, 16);
+            label1.TabIndex = 113;
+            label1.Text = "Citas-Referencias*";
+            // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.None;
+            textBox3.BackColor = SystemColors.Control;
+            textBox3.BorderColor = SystemColors.ControlDarkDark;
+            textBox3.BorderFocusColor = Color.Black;
+            textBox3.BorderSize = 2;
+            textBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.ForeColor = Color.DimGray;
+            textBox3.Location = new Point(58, 583);
+            textBox3.Multiline = false;
+            textBox3.Name = "textBox3";
+            textBox3.Padding = new Padding(7, 8, 7, 8);
+            textBox3.PasswordChar = false;
+            textBox3.Size = new Size(451, 34);
+            textBox3.TabIndex = 112;
+            textBox3.Texts = "Ejemplo: \"Expreso este comentario\"";
+            textBox3.UnderlinedStyle = true;
+            // 
+            // textProceso
+            // 
+            textProceso.Anchor = AnchorStyles.None;
+            textProceso.BackColor = SystemColors.Control;
+            textProceso.BorderColor = SystemColors.ControlDarkDark;
+            textProceso.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textProceso.BorderSize = 2;
+            textProceso.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textProceso.ForeColor = Color.DimGray;
+            textProceso.Location = new Point(347, 545);
+            textProceso.Multiline = true;
+            textProceso.Name = "textProceso";
+            textProceso.Padding = new Padding(7, 8, 7, 8);
+            textProceso.PasswordChar = false;
+            textProceso.Size = new Size(324, 34);
+            textProceso.TabIndex = 111;
+            textProceso.Texts = "Ejemplo: “Manual del Ingeniero civil”";
+            textProceso.UnderlinedStyle = true;
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.None;
+            label15.AutoSize = true;
+            label15.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.FromArgb(190, 31, 36);
+            label15.Location = new Point(98, 152);
+            label15.Name = "label15";
+            label15.Size = new Size(114, 16);
+            label15.TabIndex = 110;
+            label15.Text = "Nombre de flujo*";
             // 
             // button1
             // 
@@ -92,7 +165,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(305, 660);
+            button1.Location = new Point(306, 735);
             button1.Name = "button1";
             button1.Size = new Size(115, 35);
             button1.TabIndex = 104;
@@ -104,18 +177,11 @@
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(80, 282);
+            label5.Location = new Point(47, 320);
             label5.Name = "label5";
             label5.Size = new Size(48, 19);
             label5.TabIndex = 100;
             label5.Text = "Valor";
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(11, 304);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(211, 23);
-            numericUpDown1.TabIndex = 99;
             // 
             // label3
             // 
@@ -149,7 +215,7 @@
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button8.ForeColor = SystemColors.ButtonFace;
-            button8.Location = new Point(546, 1005);
+            button8.Location = new Point(546, 1040);
             button8.Name = "button8";
             button8.Size = new Size(115, 35);
             button8.TabIndex = 96;
@@ -159,55 +225,59 @@
             // comboBox5
             // 
             comboBox5.Anchor = AnchorStyles.None;
+            comboBox5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox5.FormattingEnabled = true;
             comboBox5.Items.AddRange(new object[] { "Elemental", "Producto", "Residuo", "Recursos", "Elemento o Compuesto", "Grupo de químicos", "Mineral, metal o agregado.", "Biológico", "Agua", "Combustibles fósiles", "Combustibles nucleares.", "Energía", "Recurso – Recurso suelo", "Recurso – Recurso aire", "Recurso – Recurso agua", "Recursos – Recursos biótico", "Recursos – Recurso ocupación y transformación del suelo", "Recursos materiales no renovables del suelo", "Recursos de elementos no renovables del suelo", "Recursos de elementos renovables del suelo", "Recursos de energía renovable del suelo (por ejemplo, \"Energía eólica\", \"Energía hidráulica; funcionamiento\", etc.)", "Recursos materiales renovables del suelo", "Recursos renovables del suelo, no especificados", "Recursos no renovables del suelo, no especificados", "Uso del suelo - Transformación del suelo", "Uso del suelo - Ocupación del suelo", "Uso del suelo -  Cultivable", "Uso del suelo – No irrigado", "Uso del suelo – Diverso, intensivo." });
-            comboBox5.Location = new Point(255, 175);
+            comboBox5.Location = new Point(365, 212);
             comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(214, 23);
+            comboBox5.Size = new Size(342, 25);
             comboBox5.TabIndex = 92;
             comboBox5.Text = "Tipo de flujo*";
             // 
             // comboBox6
             // 
             comboBox6.Anchor = AnchorStyles.None;
+            comboBox6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox6.FormattingEnabled = true;
             comboBox6.Items.AddRange(new object[] { "Emisiones - Emisiones al aire - Emisiones al aire sin especificar", "Emisiones - Emisiones al aire - Emisiones sin especificar (a largo plazo)", "Emisiones - Emisiones al aire - Emisiones al aire no urbano o de chimeneas altas (alturas mayo a 100 m)", "Emisiones - Emisiones al aire - Emisiones a la baja estratosfera y a la alta troposfera", "Emisiones - Emisiones al aire - Emisiones inorgánicas al aire", "Emisiones - Emisiones al aire - Emisiones orgánicas al aire", "Emisiones - Emisiones al aire - Emisiones radioactivas al aire", "Emisiones - Emisiones al aire – Partículas", "Emisiones - Emisiones al aire - Otras emisiones al aire", "Emisiones - Emisiones al agua - Emisiones al agua, sin especificar.", "Emisiones - Emisiones al agua – Emisiones inorgánicas al agua", "Emisiones - Emisiones al agua – Emisiones orgánicas al agua", "Emisiones - Emisiones al agua – Emisiones radioactivas al agua", "Emisiones - Emisiones al agua – Emisiones de partículas al agua", "Emisiones - Emisiones al agua – Otras Emisiones al agua", "Emisiones - Emisiones al suelo - Emisiones al suelo, sin especificar", "Emisiones - Emisiones al suelo - Emisiones al suelo agrícola", "Emisiones - Emisiones al suelo - Emisiones al suelo no agrícola", "Emisiones - Emisiones al suelo - Emisiones al suelo, sin especificar (a largo plazo)", "Emisiones - Emisiones al suelo – Emisiones inorgánicas al suelo", "Emisiones - Emisiones al suelo – Emisiones orgánicas al suelo", "Emisiones - Emisiones al suelo – Emisiones radioactivas al suelo", "Emisiones - Emisiones al suelo – Emisiones de partículas al suelo", "Emisiones - Emisiones al suelo – Otras Emisiones al suelo", "Otros flujos elementales" });
-            comboBox6.Location = new Point(491, 175);
+            comboBox6.Location = new Point(226, 353);
             comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(232, 23);
+            comboBox6.Size = new Size(484, 25);
             comboBox6.TabIndex = 93;
             comboBox6.Text = "Emisiones *";
             // 
             // comboSeis
             // 
             comboSeis.Anchor = AnchorStyles.None;
+            comboSeis.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboSeis.FormattingEnabled = true;
-            comboSeis.Items.AddRange(new object[] { "Producto_tecnología_otroEntSal", "Concreto simple,mecánico, f’c 200kg/cm2", "Agregados, mina cielo abierto, grava y arena.", "Bovedilla, terminado en planta, 60x25x20cm" });
-            comboSeis.Location = new Point(243, 80);
+            comboSeis.Location = new Point(243, 75);
             comboSeis.Name = "comboSeis";
-            comboSeis.Size = new Size(232, 23);
+            comboSeis.Size = new Size(232, 25);
             comboSeis.TabIndex = 89;
             comboSeis.Text = "Producto, tecnología*";
             // 
             // comboDos
             // 
             comboDos.Anchor = AnchorStyles.None;
+            comboDos.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboDos.FormattingEnabled = true;
             comboDos.Items.AddRange(new object[] { "Publicaciones y comunicaciones", "Reporte de entidades estatales", "Bases de datos", "Clasificaciones estadísticas", "Formatos de conjuntos de datos", "Sistemas de cumplimiento", "Cuestionarios – Encuestas", "Entrevistas", "Imágenes", "Mediciones in situ", "Otros tipos de fuentes" });
-            comboDos.Location = new Point(28, 431);
+            comboDos.Location = new Point(26, 545);
             comboDos.Name = "comboDos";
-            comboDos.Size = new Size(228, 23);
+            comboDos.Size = new Size(228, 25);
             comboDos.TabIndex = 86;
             comboDos.Text = "Adquisición de dato*";
             // 
             // comboUno
             // 
             comboUno.Anchor = AnchorStyles.None;
+            comboUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboUno.FormattingEnabled = true;
             comboUno.Items.AddRange(new object[] { "Calculado: basado en relaciones estequiométricos.", "Estimado: basado en el juicio cuantitativo de expertos.", "Literatura: Derivación desconocida, no se ninguna otra indicación sobre el origen del valor.", "Valor medido: utilice este término cuando el valor haya sido medido." });
-            comboUno.Location = new Point(495, 304);
+            comboUno.Location = new Point(490, 429);
             comboUno.Name = "comboUno";
-            comboUno.Size = new Size(231, 23);
+            comboUno.Size = new Size(231, 25);
             comboUno.TabIndex = 85;
             comboUno.Text = "Tratamiento de dato*";
             // 
@@ -219,7 +289,7 @@
             buttonSiguienteP.FlatStyle = FlatStyle.Flat;
             buttonSiguienteP.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSiguienteP.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteP.Location = new Point(846, 1329);
+            buttonSiguienteP.Location = new Point(846, 1364);
             buttonSiguienteP.Name = "buttonSiguienteP";
             buttonSiguienteP.Size = new Size(115, 35);
             buttonSiguienteP.TabIndex = 83;
@@ -234,7 +304,7 @@
             textBox1.BorderColor = SystemColors.ControlDarkDark;
             textBox1.BorderFocusColor = Color.Black;
             textBox1.BorderSize = 2;
-            textBox1.Location = new Point(811, 1249);
+            textBox1.Location = new Point(811, 1284);
             textBox1.Multiline = false;
             textBox1.Name = "textBox1";
             textBox1.Padding = new Padding(7);
@@ -247,31 +317,33 @@
             // ComboTecno
             // 
             ComboTecno.Anchor = AnchorStyles.None;
+            ComboTecno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ComboTecno.FormattingEnabled = true;
             ComboTecno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)" });
-            ComboTecno.Location = new Point(253, 304);
+            ComboTecno.Location = new Point(12, 443);
             ComboTecno.Name = "ComboTecno";
-            ComboTecno.Size = new Size(215, 23);
+            ComboTecno.Size = new Size(215, 25);
             ComboTecno.TabIndex = 30;
             ComboTecno.Text = "Unidades*";
             // 
-            // textOtro
+            // textNombreFlujo
             // 
-            textOtro.Anchor = AnchorStyles.None;
-            textOtro.BackColor = SystemColors.Control;
-            textOtro.BorderColor = SystemColors.ControlDarkDark;
-            textOtro.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textOtro.BorderSize = 2;
-            textOtro.ForeColor = Color.DimGray;
-            textOtro.Location = new Point(11, 168);
-            textOtro.Multiline = false;
-            textOtro.Name = "textOtro";
-            textOtro.Padding = new Padding(7);
-            textOtro.PasswordChar = false;
-            textOtro.Size = new Size(222, 30);
-            textOtro.TabIndex = 69;
-            textOtro.Texts = "Ejemplo: Arena de mina";
-            textOtro.UnderlinedStyle = true;
+            textNombreFlujo.Anchor = AnchorStyles.None;
+            textNombreFlujo.BackColor = SystemColors.Control;
+            textNombreFlujo.BorderColor = SystemColors.ControlDarkDark;
+            textNombreFlujo.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textNombreFlujo.BorderSize = 2;
+            textNombreFlujo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textNombreFlujo.ForeColor = Color.DimGray;
+            textNombreFlujo.Location = new Point(3, 203);
+            textNombreFlujo.Multiline = false;
+            textNombreFlujo.Name = "textNombreFlujo";
+            textNombreFlujo.Padding = new Padding(7, 8, 7, 8);
+            textNombreFlujo.PasswordChar = false;
+            textNombreFlujo.Size = new Size(342, 34);
+            textNombreFlujo.TabIndex = 69;
+            textNombreFlujo.Texts = "Ejemplo: Arena de mina";
+            textNombreFlujo.UnderlinedStyle = true;
             // 
             // labelUsuario
             // 
@@ -285,77 +357,23 @@
             labelUsuario.TabIndex = 29;
             labelUsuario.Text = "Identificación";
             // 
-            // label15
+            // textValor
             // 
-            label15.Anchor = AnchorStyles.None;
-            label15.AutoSize = true;
-            label15.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.FromArgb(190, 31, 36);
-            label15.Location = new Point(11, 149);
-            label15.Name = "label15";
-            label15.Size = new Size(114, 16);
-            label15.TabIndex = 110;
-            label15.Text = "Nombre de flujo*";
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(190, 31, 36);
-            label2.Location = new Point(143, 523);
-            label2.Name = "label2";
-            label2.Size = new Size(81, 16);
-            label2.TabIndex = 114;
-            label2.Text = "Comentario";
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(190, 31, 36);
-            label1.Location = new Point(372, 409);
-            label1.Name = "label1";
-            label1.Size = new Size(122, 16);
-            label1.TabIndex = 113;
-            label1.Text = "Citas-Referencias*";
-            // 
-            // textBox3
-            // 
-            textBox3.Anchor = AnchorStyles.None;
-            textBox3.BackColor = SystemColors.Control;
-            textBox3.BorderColor = SystemColors.ControlDarkDark;
-            textBox3.BorderFocusColor = Color.Black;
-            textBox3.BorderSize = 2;
-            textBox3.ForeColor = Color.DimGray;
-            textBox3.Location = new Point(144, 544);
-            textBox3.Multiline = false;
-            textBox3.Name = "textBox3";
-            textBox3.Padding = new Padding(7);
-            textBox3.PasswordChar = false;
-            textBox3.Size = new Size(451, 30);
-            textBox3.TabIndex = 112;
-            textBox3.Texts = "Ejemplo: \"Expreso este comentario\"";
-            textBox3.UnderlinedStyle = true;
-            // 
-            // textProceso
-            // 
-            textProceso.Anchor = AnchorStyles.None;
-            textProceso.BackColor = SystemColors.Control;
-            textProceso.BorderColor = SystemColors.ControlDarkDark;
-            textProceso.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textProceso.BorderSize = 2;
-            textProceso.ForeColor = Color.DimGray;
-            textProceso.Location = new Point(372, 428);
-            textProceso.Multiline = true;
-            textProceso.Name = "textProceso";
-            textProceso.Padding = new Padding(7);
-            textProceso.PasswordChar = false;
-            textProceso.Size = new Size(324, 30);
-            textProceso.TabIndex = 111;
-            textProceso.Texts = "Ejemplo: “Manual del Ingeniero civil”";
-            textProceso.UnderlinedStyle = true;
+            textValor.Anchor = AnchorStyles.None;
+            textValor.BackColor = SystemColors.Control;
+            textValor.BorderColor = SystemColors.ControlDarkDark;
+            textValor.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textValor.BorderSize = 2;
+            textValor.ForeColor = Color.DimGray;
+            textValor.Location = new Point(3, 342);
+            textValor.Multiline = true;
+            textValor.Name = "textValor";
+            textValor.Padding = new Padding(7, 9, 7, 9);
+            textValor.PasswordChar = false;
+            textValor.Size = new Size(180, 36);
+            textValor.TabIndex = 121;
+            textValor.Texts = "Ejemplo: 0";
+            textValor.UnderlinedStyle = true;
             // 
             // RegistroEntradasSalidas
             // 
@@ -371,7 +389,6 @@
             Text = "RegistroEntradasSalidas";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
@@ -388,16 +405,16 @@
         private Button buttonSiguienteP;
         private SistemaRegistro.Templates.TextBox textBox1;
         private ComboBox ComboTecno;
-        private SistemaRegistro.Templates.TextBox textOtro;
+        private SistemaRegistro.Templates.TextBox textNombreFlujo;
         private Label labelUsuario;
         private Label label3;
         private Label label5;
-        private NumericUpDown numericUpDown1;
         private Button button1;
         private Label label15;
         private Label label2;
         private Label label1;
         private SistemaRegistro.Templates.TextBox textBox3;
         private SistemaRegistro.Templates.TextBox textProceso;
+        private Templates.TextBox textValor;
     }
 }

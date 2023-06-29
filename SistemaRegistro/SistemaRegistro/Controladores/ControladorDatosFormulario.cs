@@ -115,7 +115,37 @@ namespace SistemaRegistro.Controladores
                 MessageBox.Show($"intentalo de nuevo o mas tarde");
             }
         }
+        public bool EditarDatosFormulario(modeloIngresoDatos datos, int id)
+        {
+            SqlCommand comando = new SqlCommand("editarDatosFormulario");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@ID", id);
+            comando.Parameters.AddWithValue("@NombreProceso", datos.nombreProceso);
+            comando.Parameters.AddWithValue("@TipoProceso", datos.tipoProceso);
+            comando.Parameters.AddWithValue("@Autor", datos.autor);
+            comando.Parameters.AddWithValue("@Correo", datos.correo);
+            comando.Parameters.AddWithValue("@NombreFlujoR", datos.nombreFlujoR);
+            comando.Parameters.AddWithValue("@Unidad", datos.unidad);
+            comando.Parameters.AddWithValue("@ValorR", datos.valorR);
+            comando.Parameters.AddWithValue("@Objetivo", datos.objetivo);
+            comando.Parameters.AddWithValue("@LimiteSistema", datos.limitesSistema);
+            comando.Parameters.AddWithValue("@Imagen", datos.imagen);
+            comando.Parameters.AddWithValue("@TipoTecnologia", datos.tipoTecnologia);
+            comando.Parameters.AddWithValue("@CondicionesOperacion", datos.condicionesOperacion);
+            comando.Parameters.AddWithValue("@FechaReferencia", datos.fechaReferencia);
+            comando.Parameters.AddWithValue("@DatosValidos", datos.datosValidos);
+            comando.Parameters.AddWithValue("@Descripcion", datos.descripcion);
+            comando.Parameters.AddWithValue("@Estado", datos.id_estado);
+            comando.Parameters.AddWithValue("@Area", datos.id_area);
+            comando.Parameters.AddWithValue("@Latitud", datos.latitud);
+            comando.Parameters.AddWithValue("@Longitud", datos.longitud);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            ConexionBD.CerrarConexion();
+            return true;
 
+        }
         public void EliminarDatosFormulario(int id)
         {
 

@@ -543,13 +543,8 @@ namespace SistemaRegistro
             if (textCondicionesOpe.Texts == "")
             {
                 textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
-                errorProvider1.SetError(textCondicionesOpe, "Se necesita ingresar una condición de operación");
                 textCondicionesOpe.ForeColor = Color.Gray;
-            }
-            else
-            {
-                errorProvider1.SetError(textCondicionesOpe, String.Empty);
-            }
+            } 
         }
         private void textDescripcionPeriodo_Enter(object sender, EventArgs e)
         {
@@ -573,7 +568,7 @@ namespace SistemaRegistro
         }
         private void comboEstado_SelectedValueChanged(object sender, EventArgs e)
         {
-            //al seleccionar la entidad federativa se toma su valor y se usa para llamar a la lista de municipios que se relacionan con esta
+
             modeloEstado ef = (modeloEstado)comboEstado.SelectedItem;
             comboArea.DataSource = new controladorArea().obtenerListaArea(ef.id);
             comboArea.ValueMember = "valor";

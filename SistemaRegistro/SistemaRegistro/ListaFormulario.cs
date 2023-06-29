@@ -32,6 +32,7 @@ namespace SistemaRegistro
         modeloIngresoDatos modeloIngresoDatos = new modeloIngresoDatos();
         //instacia controlador formualario
         ControladorDatosFormulario controladorDatosFormulario = new ControladorDatosFormulario();
+
         String? f1, f2;
         DataTable dsTabla;
         //se declaro el id del ingresoDatos para guardar y posteriormente usarlo en procedimiento almacenado de modificar
@@ -53,52 +54,12 @@ namespace SistemaRegistro
         public ListaFormulario()
         {
             InitializeComponent();
-            //lo que hace esta linea de codigo es desabilitar todos los componentes que se encuentren en esa pestaña
-            //tabControl2.TabPages["VerImagen"].Enabled = false;
             TabControlBotones();
             CargarDG();
             //Estado y Area
             llenarCombos();
             //asignamos una hora por defecto a los datetimepickers
-            FechaReferencia.Value = new DateTime(2000, 01, 01);
-            FechaDatosValidos.Value = new DateTime(2000, 01, 01);
-
-            //Asigna opciones a la lista ComboProducto
-            List<string> ListaProducto = new List<string>();
-            ListaProducto.Add("Producto*");
-            ListaProducto.Add("Cemento");
-            ListaProducto.Add("Concreto");
-            ListaProducto.Add("Acero estructural");
-            ListaProducto.Add("Ladrillos");
-            ListaProducto.Add("Madera");
-            ListaProducto.Add("Vidrio");
-            ListaProducto.Add("Aislamiento térmico");
-            ListaProducto.Add("Pinturas y recubrimientos");
-            ListaProducto.Add("Azulejos y baldosas");
-            ListaProducto.Add("Adhesivos y selladores");
-            ListaProducto.Add("Impermeabilizantes");
-            ListaProducto.Add("Sistemas de fontanería");
-            ComboProducto.DataSource = ListaProducto;
-
-            //Asigna opciones a la lista ComboTecno
-            List<string> ListaTecnologia = new List<string>();
-            ListaTecnologia.Add("Tecnología*");
-            ListaTecnologia.Add("Cemento Portland");
-            ListaTecnologia.Add("Concreto reforzado");
-            ListaTecnologia.Add("Concreto premezclado");
-            ListaTecnologia.Add("Concreto de alto rendimiento");
-            ListaTecnologia.Add("Ladrillos cerámicos");
-            ListaTecnologia.Add("Ladrillos de hormigón");
-            ListaTecnologia.Add("Acero laminado en caliente");
-            ListaTecnologia.Add("Madera laminada encolada");
-            ListaTecnologia.Add("Madera tratada");
-            ListaTecnologia.Add("Vidrio de seguridad laminado");
-            ListaTecnologia.Add("Azulejos de cerámica esmaltada");
-            ListaTecnologia.Add("Baldosas de porcelana");
-            ListaTecnologia.Add("Lana mineral");
-            ListaTecnologia.Add("Membranas asfálticas");
-            ListaTecnologia.Add("Pinturas impermeabilizantes");
-            ComboTecno.DataSource = ListaTecnologia;
+            /*
 
             //Asigna opciones a la lista comboUnidadUno
             List<string> ListaUnidadUno = new List<string>();
@@ -148,16 +109,28 @@ namespace SistemaRegistro
             ListaTipoTecnologia.Add("Antigua");
             ListaTipoTecnologia.Add("Mix.Tecnologías");
             ComboTipoTecnologia.DataSource = ListaTipoTecnologia;
+            */
 
         }
+        //Comente estas lineas de codigo, al parecer impedian que se llenara el comboEstado y Area
         private void TabControlBotones()
         {
+            //lo que hace esta linea de codigo es desabilitar todos los componentes que se encuentren en esa pestaña
+            tabControl2.TabPages["ListaDatos"].Enabled = true;
+            tabControl2.TabPages["Identificación"].Enabled = false;
+            tabControl2.TabPages["Referencia"].Enabled = false;
+            tabControl2.TabPages["Tecnología"].Enabled = false;
+            tabControl2.TabPages["TiempoVálido"].Enabled = false;
+            tabControl2.TabPages["Geografía"].Enabled = false;
+            tabControl2.TabPages["VerImagen"].Enabled = false;
+            /*
             Identificación.Parent = null;
             Referencia.Parent = null;
             Tecnología.Parent = null;
             TiempoVálido.Parent = null;
             Geografía.Parent = null;
             VerImagen.Parent = null;
+            */
         }
         private void CargarDG()
         {
@@ -264,53 +237,120 @@ namespace SistemaRegistro
             CargarBotones();
             //CargarDG();
             tabControl2.SetBounds(tabControl2.Left, tabControl2.Top, 768, 519);
-            
+
             try
             {
-                   // dt = new DataTable();
-                   // dt.Columns.Add(new DataColumn("Descripción", typeof(string)));
-                   // dt.Columns.Add(new DataColumn("Lat", typeof(double)));
-                   // dt.Columns.Add(new DataColumn("Long", typeof(double)));
+                // dt = new DataTable();
+                // dt.Columns.Add(new DataColumn("Descripción", typeof(string)));
+                // dt.Columns.Add(new DataColumn("Lat", typeof(double)));
+                // dt.Columns.Add(new DataColumn("Long", typeof(double)));
 
-                    //insertando datos al dt para mostrar en la lista
-                    //dt.Rows.Add("Ubicación", LatInicial, LngInicial);
-                    //dataGridView1.DataSource = dt;
+                //insertando datos al dt para mostrar en la lista
+                //dt.Rows.Add("Ubicación", LatInicial, LngInicial);
+                //dataGridView1.DataSource = dt;
 
-                    //desactivar las columnas de lat y long
-                     //dataGridView1.Columns[1].Visible = false;
-                     //dataGridView1.Columns[2].Visible = false;
+                //desactivar las columnas de lat y long
+                //dataGridView1.Columns[1].Visible = false;
+                //dataGridView1.Columns[2].Visible = false;
 
-                    //Creando las dimensiones del GMAPCONTROL(herramienta)
-                    gMapControl1.DragButton = MouseButtons.Left;
-                    gMapControl1.CanDragMap = true;
-                    gMapControl1.MapProvider = GMapProviders.GoogleMap;
-                    gMapControl1.Position = new PointLatLng(LatInicial, LngInicial);
-                    gMapControl1.MinZoom = 0;
-                    gMapControl1.MaxZoom = 24;
-                    gMapControl1.Zoom = 5;
-                    gMapControl1.AutoScroll = true;
+                //Creando las dimensiones del GMAPCONTROL(herramienta)
+                gMapControl1.DragButton = MouseButtons.Left;
+                gMapControl1.CanDragMap = true;
+                gMapControl1.MapProvider = GMapProviders.GoogleMap;
+                gMapControl1.Position = new PointLatLng(LatInicial, LngInicial);
+                gMapControl1.MinZoom = 0;
+                gMapControl1.MaxZoom = 24;
+                gMapControl1.Zoom = 5;
+                gMapControl1.AutoScroll = true;
 
-                    //Marcador
-                    markerOverlay = new GMapOverlay("Marcador");
-                    marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.blue);
-                    markerOverlay.Markers.Add(marker);//Agregamos al mapa
+                //Marcador
+                markerOverlay = new GMapOverlay("Marcador");
+                marker = new GMarkerGoogle(new PointLatLng(LatInicial, LngInicial), GMarkerGoogleType.blue);
+                markerOverlay.Markers.Add(marker);//Agregamos al mapa
 
-                    //agregamos un tooltip de texto a los marcadores
-                    marker.ToolTipMode = MarkerTooltipMode.Always;
-                    marker.ToolTipText = string.Format("Ubicación:\n Latitud:{0}\n Longitud:{1}", LatInicial, LngInicial);
+                //agregamos un tooltip de texto a los marcadores
+                marker.ToolTipMode = MarkerTooltipMode.Always;
+                marker.ToolTipText = string.Format("Ubicación:\n Latitud:{0}\n Longitud:{1}", LatInicial, LngInicial);
 
-                    //ahora agregamos el mapa y el marcador al control map
+                //ahora agregamos el mapa y el marcador al control map
 
-                    gMapControl1.Overlays.Add(markerOverlay);
+                gMapControl1.Overlays.Add(markerOverlay);
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Inténtelo de nuevo o mas tarde");
             }
-            
+
+        }
+        private void ComboProducto_Enter(object sender, EventArgs e)
+        {
+            if (ComboProducto.Text == "Producto*")
+            {
+                ComboProducto.Text = "";
+                ComboProducto.ForeColor = Color.Black;
+            }
         }
 
+        private void ComboProducto_Leave(object sender, EventArgs e)
+        {
+            if (ComboProducto.Text == "")
+            {
+                ComboProducto.Text = "Producto*";
+                errorProvider1.SetError(ComboProducto, "Se necesita ingresar un producto");
+                ComboProducto.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(ComboProducto, String.Empty);
+            }
+        }
+
+        private void ComboTecno_Enter(object sender, EventArgs e)
+        {
+            if (ComboTecno.Text == "Tecnología*")
+            {
+                ComboTecno.Text = "";
+                ComboTecno.ForeColor = Color.Black;
+            }
+        }
+
+        private void ComboTecno_Leave(object sender, EventArgs e)
+        {
+            if (ComboTecno.Text == "")
+            {
+                ComboTecno.Text = "Tecnología*";
+                errorProvider1.SetError(ComboTecno, "Se necesita ingresar una tecnología");
+                ComboTecno.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(ComboTecno, String.Empty);
+            }
+        }
+
+        private void textOtro_Enter(object sender, EventArgs e)
+        {
+            if (textOtro.Texts == "Ejemplo: grava y arena")
+            {
+                textOtro.Texts = "";
+                textOtro.ForeColor = Color.Black;
+            }
+        }
+
+        private void textOtro_Leave(object sender, EventArgs e)
+        {
+            if (textOtro.Texts == "")
+            {
+                textOtro.Texts = "Ejemplo: grava y arena";
+                errorProvider1.SetError(textOtro, "Se necesita ingresar un dato a este campo");
+                textOtro.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(textOtro, String.Empty);
+            }
+        }
         private void textProceso_Enter(object sender, EventArgs e)
         {
             if (textProceso.Texts == "Ejemplo: Elaboración de concreto simple")
@@ -603,8 +643,6 @@ namespace SistemaRegistro
                 MessageBox.Show("Inténtelo de nuevo o mas tarde");
             }
         }
-
-
         private void btnEliminarImagen_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
@@ -647,12 +685,7 @@ namespace SistemaRegistro
             if (textCondicionesOpe.Texts == "")
             {
                 textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
-                errorProvider1.SetError(textCondicionesOpe, "Se necesita ingresar una condición de operación");
                 textCondicionesOpe.ForeColor = Color.Gray;
-            }
-            else
-            {
-                errorProvider1.SetError(textCondicionesOpe, String.Empty);
             }
         }
         private void textDescripcionPeriodo_Enter(object sender, EventArgs e)
@@ -679,10 +712,31 @@ namespace SistemaRegistro
         */
         private void comboEstado_SelectedValueChanged(object sender, EventArgs e)
         {
-            //al seleccionar la entidad federativa se toma su valor y se usa para llamar a la lista de municipios que se relacionan con esta
-            modeloEstado ef = (modeloEstado)comboEstado.SelectedItem;
-            comboArea.DataSource = new controladorArea().obtenerListaArea(ef.id);
-            comboArea.ValueMember = "valor";
+
+            try
+            {
+                /*
+                modeloEstado ef = comboEstado.SelectedItem as modeloEstado;
+
+                if (ef != null)
+                {
+                    comboArea.DataSource = new controladorArea().obtenerListaArea(ef.id);
+                    comboArea.ValueMember = "valor";
+
+                }
+                else
+                {
+
+                }
+                */
+                modeloEstado ef = (modeloEstado)comboEstado.SelectedItem;
+                comboArea.DataSource = new controladorArea().obtenerListaArea(ef.id);
+                comboArea.ValueMember = "valor";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Intentalo mas tarde");
+            }
 
         }
         private void comboEstado_Enter(object sender, EventArgs e)
@@ -730,16 +784,70 @@ namespace SistemaRegistro
                 errorProvider1.SetError(comboArea, String.Empty);
             }
         }
+
         private void llenarCombos()
         {
 
-            //asigna la lista de entidades a el combobox 3
+            //asigna la lista de estados a el combobox 3
             comboEstado.DataSource = new controladorEstado().obtenerListaEstado();
             comboEstado.ValueMember = "valor";
 
         }
 
-
+        private void Limpiar()
+        {
+            ComboProducto.Text = "Producto*";
+            ComboProducto.ForeColor = Color.Gray;
+            ComboTecno.Text = "Tecnología*";
+            ComboTecno.ForeColor = Color.Gray;
+            textOtro.Texts = "Ejemplo: grava y arena";
+            textOtro.ForeColor = Color.Gray;
+            textProceso.Texts = "Ejemplo: Elaboración de concreto simple";
+            textProceso.ForeColor = Color.Gray;
+            comboUno.SelectedIndex = -1;
+            comboDos.SelectedIndex = -1;
+            comboTres.SelectedIndex = -1;
+            comboCuatro.SelectedIndex = -1;
+            comboCinco.SelectedIndex = -1;
+            comboSeis.SelectedIndex = -1;
+            comboSiete.SelectedIndex = -1;
+            comboUno.Enabled = true;
+            comboDos.Enabled = true;
+            comboTres.Enabled = true;
+            comboCuatro.Enabled = true;
+            comboCinco.Enabled = true;
+            comboSeis.Enabled = true;
+            comboSiete.Enabled = true;
+            textAutor.Texts = "Ejemplo: Centro Mario Molina";
+            textAutor.ForeColor = Color.Gray;
+            textCorreo.Texts = "Ejemplo: ejemplo@unam.gob.mx";
+            textCorreo.ForeColor = Color.Gray;
+            textUnidadFuncional.Texts = "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava";
+            textUnidadFuncional.ForeColor = Color.Gray;
+            comboUnidadUno.Text = "Unidad*";
+            comboUnidadUno.ForeColor = Color.Gray;
+            textValor.Texts = "Ejemplo: 0";
+            textValor.ForeColor = Color.Gray;
+            textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
+            textObjetivoR.ForeColor = Color.Gray;
+            comboLimitesSistema.Text = "Limites del sistema";
+            comboLimitesSistema.ForeColor = Color.Gray;
+            pictureBox1.Image = null;
+            ComboTipoTecnologia.Text = "Tipo de tecnología*";
+            ComboTipoTecnologia.ForeColor = Color.Gray;
+            textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
+            textCondicionesOpe.ForeColor = Color.Gray;
+            FechaReferencia.Value = new DateTime(2000, 01, 01);
+            FechaDatosValidos.Value = new DateTime(2000, 01, 01);
+            textDescripcionPeriodo.Texts = "Ejemplo: Se solicita este tiempo para el análisis del estudio";
+            textDescripcionPeriodo.ForeColor = Color.Gray;
+            comboEstado.Text = "Estado*";
+            comboEstado.ForeColor = Color.Gray;
+            comboArea.Text = "Area*";
+            comboArea.ForeColor = Color.Gray;
+            txtlatitud.Texts = "Latitud";
+            txtlongitud.Texts = "Longitud";
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -750,9 +858,77 @@ namespace SistemaRegistro
                     if (dataGridView1.SelectedRows.Count > 0) //Si hay mas de 0 filas entonces procedera a ejecutar el siguiente codigo.
                     {
 
+
                         //Manda a llamar todos los datos del registro para editar
                         id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
 
+                        ComboProducto.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+                        ComboTecno.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+                        textOtro.Texts = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+                        textProceso.Texts = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+                        comboUno.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        comboDos.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        comboTres.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        comboCuatro.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        comboCinco.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        comboSeis.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        comboSiete.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+                        textAutor.Texts = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+                        textCorreo.Texts = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+                        textUnidadFuncional.Texts = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+                        comboUnidadUno.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+                        textValor.Texts = dataGridView1.CurrentRow.Cells[11].Value.ToString();
+                        textObjetivoR.Texts = dataGridView1.CurrentRow.Cells[12].Value.ToString();
+                        comboLimitesSistema.Text = dataGridView1.CurrentRow.Cells[13].Value.ToString();
+
+                        int imageColumnIndex = 14;
+                        if (dataGridView1.CurrentRow.Cells.Count > imageColumnIndex)
+                        {
+                            byte[] imageData = dataGridView1.CurrentRow.Cells[imageColumnIndex].Value as byte[];
+
+                            if (imageData != null && imageData.Length > 0)
+                            {
+                                // Convertir los datos de imagen en una instancia de Image
+                                using (MemoryStream ms = new MemoryStream(imageData))
+                                {
+                                    pictureBox1.Image = Image.FromStream(ms);
+                                }
+                            }
+                            else
+                            {
+                                pictureBox1.Image = null; // No hay datos de imagen
+                            }
+                        }
+                        else
+                        {
+                            pictureBox1.Image = null; // No hay datos de imagen
+                        }
+                        ComboTipoTecnologia.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
+                        textCondicionesOpe.Texts = dataGridView1.CurrentRow.Cells[16].Value.ToString();
+
+
+                        string fechaReferenciaValue = dataGridView1.CurrentRow.Cells[17].Value != null ? dataGridView1.CurrentRow.Cells[17].Value.ToString() : null;
+                        string fechaDatosValidosValue = dataGridView1.CurrentRow.Cells[18].Value != null ? dataGridView1.CurrentRow.Cells[18].Value.ToString() : null;
+
+                        //Asignar los valores a los DateTimePicker o reiniciarlos si son nulos
+                        FechaReferencia.Value = !string.IsNullOrEmpty(fechaReferenciaValue) ? DateTime.Parse(fechaReferenciaValue) : new DateTime(2000, 1, 1);
+                        FechaDatosValidos.Value = !string.IsNullOrEmpty(fechaDatosValidosValue) ? DateTime.Parse(fechaDatosValidosValue) : new DateTime(2000, 1, 1);
+                        textDescripcionPeriodo.Texts = dataGridView1.CurrentRow.Cells[19].Value.ToString();
+
+                        comboEstado.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
+                        comboArea.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
+
+                        txtlatitud.Texts = dataGridView1.CurrentRow.Cells[23].Value.ToString();
+                        txtlongitud.Texts = dataGridView1.CurrentRow.Cells[24].Value.ToString();
+
+                        tabControl2.TabPages["ListaDatos"].Enabled = false;
+                        tabControl2.TabPages["Identificación"].Enabled = true;
+                        tabControl2.TabPages["Referencia"].Enabled = true;
+                        tabControl2.TabPages["Tecnología"].Enabled = true;
+                        tabControl2.TabPages["TiempoVálido"].Enabled = true;
+                        tabControl2.TabPages["Geografía"].Enabled = true;
+                        tabControl2.TabPages["VerImagen"].Enabled = false;
+                        /*
                         ListaDatos.Parent = null;
                         VerImagen.Parent = null;
                         Identificación.Parent = tabControl2;
@@ -760,6 +936,7 @@ namespace SistemaRegistro
                         Tecnología.Parent = tabControl2;
                         TiempoVálido.Parent = tabControl2;
                         Geografía.Parent = tabControl2;
+                        */
                         tabControl2.SelectedTab = Identificación;
 
                     }
@@ -780,9 +957,8 @@ namespace SistemaRegistro
                             {
                                 pictureBox2.Image = Image.FromStream(ms);
                             }
-                            ListaDatos.Parent = null;
-                            VerImagen.Parent = tabControl2;
-                            //tabControl2.TabPages["VerImagen"].Enabled = true;
+
+                            tabControl2.TabPages["VerImagen"].Enabled = true;
                             tabControl2.SelectedTab = VerImagen;
                         }
                         else
@@ -803,9 +979,9 @@ namespace SistemaRegistro
         private void RegresarL_Click(object sender, EventArgs e)
         {
 
-
             ListaDatos.Parent = tabControl2;
             tabControl2.SelectedTab = ListaDatos;
+            Limpiar();
             TabControlBotones();
             CargarDG();
             CargarBotones();
@@ -813,8 +989,10 @@ namespace SistemaRegistro
         private void btnAtrasIma_Click(object sender, EventArgs e)
         {
             //tabControl2.TabPages["VerImagen"].Enabled = false;
-            ListaDatos.Parent = tabControl2;
+            //   ListaDatos.Parent = tabControl2;
+
             tabControl2.SelectedTab = ListaDatos;
+            pictureBox1.Image = null;
             TabControlBotones();
             CargarDG();
             CargarBotones();
@@ -892,7 +1070,7 @@ namespace SistemaRegistro
             }
         }
 
-       
+
         private void SelecionarRegistro(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
@@ -900,8 +1078,8 @@ namespace SistemaRegistro
                 filaSeleccionada = e.RowIndex;//Fila Seleccionada
                                               //Recuperamos los datos del grid y los asignamos a los texbox
                                               // txtDescripcion.Text = dataGridView1.Rows[filaSeleccionada].Cells[0].Value.ToString();
-               // txtlatitud.Texts = dataGridView1.Rows[filaSeleccionada].Cells[1].Value.ToString();
-               // txtlongitud.Texts = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
+                                              // txtlatitud.Texts = dataGridView1.Rows[filaSeleccionada].Cells[1].Value.ToString();
+                                              // txtlongitud.Texts = dataGridView1.Rows[filaSeleccionada].Cells[2].Value.ToString();
 
                 //se asignan los valores del grid al macador
                 //marker.Position = new PointLatLng(Convert.ToDouble(txtlatitud.Texts), Convert.ToDouble(txtlongitud.Texts));
@@ -915,7 +1093,7 @@ namespace SistemaRegistro
             }
 
         }
-        private void gMapControl2_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void gMapControl1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             try
             {
@@ -1159,11 +1337,12 @@ namespace SistemaRegistro
                 {
                     try
                     {
-                        controladorDatosFormulario.InsertarDatosFormulario(modeloIngresoDatos);
-                        MessageBox.Show("Datos modificados correctamente");  
-                       // errorProvider1.Clear();
+                        controladorDatosFormulario.EditarDatosFormulario(modeloIngresoDatos, id);
+                        MessageBox.Show("Datos modificados correctamente");
+                        errorProvider1.Clear();
                         ListaDatos.Parent = tabControl2;
                         tabControl2.SelectedTab = ListaDatos;
+                        Limpiar();
                         TabControlBotones();
                         CargarDG();
                         CargarBotones();
@@ -1389,15 +1568,16 @@ namespace SistemaRegistro
                 }
                 if (tabPage == TiempoVálido)
                 {
-                    if (FechaReferencia.Text == "2000-01-01" || FechaReferencia.Text == "1900-01-01")
+                    if (FechaReferencia.Text == "1900-01-01" || FechaReferencia.Text == "2000-01-01")
                     {
                         f1 = null;
                     }
+
                     else
                     {
                         f1 = FechaReferencia.Text;
                     }
-                    if (FechaDatosValidos.Text == "2000-01-01" || FechaReferencia.Text == "1900-01-01")
+                    if (FechaDatosValidos.Text == "1900-01-01" || FechaDatosValidos.Text == "2000-01-01")
                     {
                         f2 = null;
                     }

@@ -192,7 +192,7 @@ namespace SistemaRegistro
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-9, 0);
+            panel1.Location = new Point(-54, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
@@ -503,7 +503,7 @@ namespace SistemaRegistro
             comboTres.DropDownStyle = ComboBoxStyle.DropDownList;
             comboTres.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboTres.FormattingEnabled = true;
-            comboTres.Items.AddRange(new object[] { "Materias primas no energéticas", "Metales y semimetales", "Productos químicos orgánicos", "Productos químicos inorgánicos", "Vidrio y cerámica", "Otros materiales minerales", "Plásticos", "Papel y cartón", "Agua", "Medios de producción agrícola", "Alimentos y materias primas renovables", "Madera", "Otros materiales" });
+            comboTres.Items.AddRange(new object[] { "Materias primas no energéticas", "Metales y semimetales", "Productos químicos orgánicos", "Productos químicos inorgánicos", "Vidrio y cerámica", "Otros materiales minerales", "Plásticos", "Papel y cartón", "Material agua", "Medios de producción agrícola", "Alimentos y materias primas renovables", "Madera", "Otros materiales" });
             comboTres.Location = new Point(91, 336);
             comboTres.Name = "comboTres";
             comboTres.Size = new Size(266, 24);
@@ -603,7 +603,7 @@ namespace SistemaRegistro
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-9, 3);
+            panel4.Location = new Point(-54, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
@@ -1063,7 +1063,7 @@ namespace SistemaRegistro
             panel5.Controls.Add(comboArea);
             panel5.Controls.Add(comboEstado);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-9, 3);
+            panel5.Location = new Point(-54, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(722, 1019);
             panel5.TabIndex = 2;

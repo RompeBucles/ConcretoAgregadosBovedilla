@@ -33,6 +33,7 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaFormulario));
             tabControl2 = new TabControl();
             ListaDatos = new TabPage();
             btnExportarCSV = new Button();
@@ -174,6 +175,7 @@
             tabControl2.SelectedIndex = 0;
             tabControl2.Size = new Size(763, 518);
             tabControl2.TabIndex = 24;
+            tabControl2.Click += buttonsTabControl_Click;
             // 
             // ListaDatos
             // 
@@ -319,7 +321,7 @@
             Identificación.Location = new Point(4, 24);
             Identificación.Name = "Identificación";
             Identificación.Padding = new Padding(3);
-            Identificación.Size = new Size(755, 490);
+            Identificación.Size = new Size(742, 490);
             Identificación.TabIndex = 0;
             Identificación.Text = "Identificación";
             // 
@@ -363,7 +365,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-21, 0);
+            panel1.Location = new Point(-63, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(729, 787);
             panel1.TabIndex = 76;
@@ -373,24 +375,20 @@
             ComboProducto.Enabled = false;
             ComboProducto.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ComboProducto.FormattingEnabled = true;
-            ComboProducto.Items.AddRange(new object[] { "Cemento", "Concreto", "Acero estructural", "Ladrillos", "Madera", "Vidrio", "Aislamiento térmico", "Pinturas y recubrimientos", "Azulejos y baldosas", "Adhesivos y selladores", "Impermeabilizantes", "Sistemas de fontanería", "Sistemas eléctricos", "Sistemas de climatización" });
             ComboProducto.Location = new Point(23, 74);
             ComboProducto.Name = "ComboProducto";
             ComboProducto.Size = new Size(222, 25);
             ComboProducto.TabIndex = 157;
-            ComboProducto.Text = "Producto*";
             // 
             // ComboTecno
             // 
             ComboTecno.Enabled = false;
             ComboTecno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             ComboTecno.FormattingEnabled = true;
-            ComboTecno.Items.AddRange(new object[] { "Cemento Portland", "Concreto reforzado", "Concreto premezclado", "Concreto de alto rendimiento", "Ladrillos cerámicos", "Ladrillos de hormigón", "Acero laminado en caliente", "Madera laminada encolada", "Madera tratada", "Vidrio de seguridad laminado", "Vidrio aislante", "Azulejos de cerámica esmaltada", "Baldosas de porcelana", "Espuma de poliestireno expandido (EPS)", "Lana mineral", "Membranas asfálticas", "Pinturas impermeabilizantes" });
             ComboTecno.Location = new Point(260, 74);
             ComboTecno.Name = "ComboTecno";
             ComboTecno.Size = new Size(219, 25);
             ComboTecno.TabIndex = 156;
-            ComboTecno.Text = "Tecnología*";
             // 
             // label27
             // 
@@ -517,6 +515,8 @@
             textCorreo.TabIndex = 146;
             textCorreo.Texts = "Ejemplo: ejemplo@unam.gob.mx";
             textCorreo.UnderlinedStyle = true;
+            textCorreo.Enter += textCorreo_Enter;
+            textCorreo.Leave += textCorreo_Leave;
             // 
             // textAutor
             // 
@@ -535,6 +535,8 @@
             textAutor.TabIndex = 145;
             textAutor.Texts = "Ejemplo: Centro Mario Molina";
             textAutor.UnderlinedStyle = true;
+            textAutor.Enter += textAutor_Enter;
+            textAutor.Leave += textAutor_Leave;
             // 
             // label15
             // 
@@ -578,6 +580,8 @@
             textProceso.TabIndex = 142;
             textProceso.Texts = "Ejemplo: Elaboración de concreto simple";
             textProceso.UnderlinedStyle = true;
+            textProceso.Enter += textProceso_Enter;
+            textProceso.Leave += textProceso_Leave;
             // 
             // textOtro
             // 
@@ -598,6 +602,8 @@
             textOtro.TabIndex = 141;
             textOtro.Texts = "Ejemplo: grava y arena";
             textOtro.UnderlinedStyle = true;
+            textOtro.Enter += textOtro_Enter;
+            textOtro.Leave += textOtro_Leave;
             // 
             // label28
             // 
@@ -622,6 +628,7 @@
             comboSiete.Name = "comboSiete";
             comboSiete.Size = new Size(266, 24);
             comboSiete.TabIndex = 139;
+            comboSiete.SelectedIndexChanged += comboSiete_SelectedIndexChanged;
             // 
             // comboSeis
             // 
@@ -634,6 +641,7 @@
             comboSeis.Name = "comboSeis";
             comboSeis.Size = new Size(265, 24);
             comboSeis.TabIndex = 138;
+            comboSeis.SelectedIndexChanged += comboSeis_SelectedIndexChanged;
             // 
             // comboCinco
             // 
@@ -646,6 +654,7 @@
             comboCinco.Name = "comboCinco";
             comboCinco.Size = new Size(266, 24);
             comboCinco.TabIndex = 137;
+            comboCinco.SelectedIndexChanged += comboCinco_SelectedIndexChanged;
             // 
             // comboCuatro
             // 
@@ -658,6 +667,7 @@
             comboCuatro.Name = "comboCuatro";
             comboCuatro.Size = new Size(265, 24);
             comboCuatro.TabIndex = 136;
+            comboCuatro.SelectedIndexChanged += comboCuatro_SelectedIndexChanged;
             // 
             // comboTres
             // 
@@ -665,11 +675,12 @@
             comboTres.DropDownStyle = ComboBoxStyle.DropDownList;
             comboTres.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboTres.FormattingEnabled = true;
-            comboTres.Items.AddRange(new object[] { "Materias primas no energéticas", "Metales y semimetales", "Productos químicos orgánicos", "Productos químicos inorgánicos", "Vidrio y cerámica", "Otros materiales minerales", "Plásticos", "Papel y cartón", "Agua", "Medios de producción agrícola", "Alimentos y materias primas renovables", "Madera", "Otros materiales" });
+            comboTres.Items.AddRange(new object[] { "Materias primas no energéticas", "Metales y semimetales", "Productos químicos orgánicos", "Productos químicos inorgánicos", "Vidrio y cerámica", "Otros materiales minerales", "Plásticos", "Papel y cartón", "Material agua", "Medios de producción agrícola", "Alimentos y materias primas renovables", "Madera", "Otros materiales" });
             comboTres.Location = new Point(78, 360);
             comboTres.Name = "comboTres";
             comboTres.Size = new Size(266, 24);
             comboTres.TabIndex = 135;
+            comboTres.SelectedIndexChanged += comboTres_SelectedIndexChanged;
             // 
             // comboDos
             // 
@@ -682,6 +693,7 @@
             comboDos.Name = "comboDos";
             comboDos.Size = new Size(265, 24);
             comboDos.TabIndex = 134;
+            comboDos.SelectedIndexChanged += comboDos_SelectedIndexChanged;
             // 
             // comboUno
             // 
@@ -694,6 +706,7 @@
             comboUno.Name = "comboUno";
             comboUno.Size = new Size(266, 24);
             comboUno.TabIndex = 133;
+            comboUno.SelectedIndexChanged += comboUno_SelectedIndexChanged;
             // 
             // label29
             // 
@@ -872,7 +885,7 @@
             panel4.Controls.Add(button5);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-21, 0);
+            panel4.Location = new Point(-49, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 1123);
             panel4.TabIndex = 77;
@@ -891,6 +904,7 @@
             btnEliminarImagen.TabIndex = 133;
             btnEliminarImagen.Text = "Eliminar imagen";
             btnEliminarImagen.UseVisualStyleBackColor = false;
+            btnEliminarImagen.Click += btnEliminarImagen_Click;
             // 
             // label19
             // 
@@ -922,6 +936,8 @@
             textObjetivoR.TabIndex = 131;
             textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
             textObjetivoR.UnderlinedStyle = true;
+            textObjetivoR.Enter += textObjetivoR_Enter;
+            textObjetivoR.Leave += textObjetivoR_Leave;
             // 
             // label31
             // 
@@ -942,17 +958,20 @@
             pictureBox1.Size = new Size(596, 474);
             pictureBox1.TabIndex = 129;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // comboLimitesSistema
             // 
             comboLimitesSistema.DropDownStyle = ComboBoxStyle.DropDownList;
             comboLimitesSistema.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboLimitesSistema.FormattingEnabled = true;
-            comboLimitesSistema.Items.AddRange(new object[] { "Limitaciones presupuestarias", "Limitaciones de tiempo", "Limitaciones de recursos naturales", "Limitaciones de espacio", "Limitaciones ambientales", "Limitaciones de capacidad", "Limitaciones geotécnicas", "Limitaciones tecnológicas", "Limitaciones normativas y legales", "Limitaciones de seguridad" });
+            comboLimitesSistema.Items.AddRange(new object[] { "Limitaciones presupuestarias", "Limitaciones de tiempo", "Limitaciones de recursos naturales", "Limitaciones de espacio", "Limitaciones ambientales", "Limitaciones de capacidad", "Limitaciones geotécnicas", "Limitaciones tecnológicas", "Limitaciones normativas y legales", "Limitaciones de seguridad", "Ninguna limitación" });
             comboLimitesSistema.Location = new Point(195, 441);
             comboLimitesSistema.Name = "comboLimitesSistema";
             comboLimitesSistema.Size = new Size(348, 25);
             comboLimitesSistema.TabIndex = 128;
+            comboLimitesSistema.Enter += comboLimitesSistema_Enter;
+            comboLimitesSistema.Leave += comboLimitesSistema_Leave;
             // 
             // label5
             // 
@@ -984,6 +1003,8 @@
             textValor.TabIndex = 126;
             textValor.Texts = "Ejemplo: 0";
             textValor.UnderlinedStyle = true;
+            textValor.Enter += textValor_Enter;
+            textValor.Leave += textValor_Leave;
             // 
             // label13
             // 
@@ -1027,6 +1048,8 @@
             textUnidadFuncional.TabIndex = 123;
             textUnidadFuncional.Texts = "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava";
             textUnidadFuncional.UnderlinedStyle = true;
+            textUnidadFuncional.Enter += textUnidadFuncional_Enter;
+            textUnidadFuncional.Leave += textUnidadFuncional_Leave;
             // 
             // comboUnidadUno
             // 
@@ -1038,6 +1061,8 @@
             comboUnidadUno.Name = "comboUnidadUno";
             comboUnidadUno.Size = new Size(348, 25);
             comboUnidadUno.TabIndex = 122;
+            comboUnidadUno.Enter += comboUnidadUno_Enter;
+            comboUnidadUno.Leave += comboUnidadUno_Leave;
             // 
             // button2
             // 
@@ -1181,7 +1206,7 @@
             Tecnología.Controls.Add(panel2);
             Tecnología.Location = new Point(4, 24);
             Tecnología.Name = "Tecnología";
-            Tecnología.Size = new Size(755, 490);
+            Tecnología.Size = new Size(742, 490);
             Tecnología.TabIndex = 2;
             Tecnología.Text = "Tecnología";
             // 
@@ -1193,7 +1218,7 @@
             panel2.Controls.Add(textCondicionesOpe);
             panel2.Controls.Add(ComboTipoTecnologia);
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(3, 4);
+            panel2.Location = new Point(-3, 4);
             panel2.Name = "panel2";
             panel2.Size = new Size(749, 483);
             panel2.TabIndex = 0;
@@ -1228,6 +1253,8 @@
             textCondicionesOpe.TabIndex = 116;
             textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
             textCondicionesOpe.UnderlinedStyle = true;
+            textCondicionesOpe.Enter += textCondicionesOpe_Enter;
+            textCondicionesOpe.Leave += textCondicionesOpe_Leave;
             // 
             // ComboTipoTecnologia
             // 
@@ -1240,6 +1267,8 @@
             ComboTipoTecnologia.Name = "ComboTipoTecnologia";
             ComboTipoTecnologia.Size = new Size(323, 25);
             ComboTipoTecnologia.TabIndex = 115;
+            ComboTipoTecnologia.Enter += ComboTipoTecnologia_Enter;
+            ComboTipoTecnologia.Leave += ComboTipoTecnologia_Leave;
             // 
             // label6
             // 
@@ -1260,7 +1289,7 @@
             TiempoVálido.Controls.Add(panel3);
             TiempoVálido.Location = new Point(4, 24);
             TiempoVálido.Name = "TiempoVálido";
-            TiempoVálido.Size = new Size(755, 490);
+            TiempoVálido.Size = new Size(742, 490);
             TiempoVálido.TabIndex = 3;
             TiempoVálido.Text = "TiempoVálido";
             // 
@@ -1275,7 +1304,7 @@
             panel3.Controls.Add(label21);
             panel3.Controls.Add(textDescripcionPeriodo);
             panel3.Controls.Add(label7);
-            panel3.Location = new Point(4, 3);
+            panel3.Location = new Point(-2, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(748, 484);
             panel3.TabIndex = 1;
@@ -1354,6 +1383,8 @@
             textDescripcionPeriodo.TabIndex = 122;
             textDescripcionPeriodo.Texts = "Ejemplo: Se solicita este tiempo para el análisis del estudio";
             textDescripcionPeriodo.UnderlinedStyle = true;
+            textDescripcionPeriodo.Enter += textDescripcionPeriodo_Enter;
+            textDescripcionPeriodo.Leave += textDescripcionPeriodo_Leave;
             // 
             // label7
             // 
@@ -1374,7 +1405,7 @@
             Geografía.Controls.Add(panel5);
             Geografía.Location = new Point(4, 24);
             Geografía.Name = "Geografía";
-            Geografía.Size = new Size(755, 490);
+            Geografía.Size = new Size(742, 490);
             Geografía.TabIndex = 4;
             Geografía.Text = "Geografía";
             // 
@@ -1394,7 +1425,7 @@
             panel5.Controls.Add(trackZoom);
             panel5.Controls.Add(dataGridView2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-21, 3);
+            panel5.Location = new Point(-63, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(732, 1019);
             panel5.TabIndex = 2;
@@ -1424,10 +1455,11 @@
             gMapControl1.Size = new Size(709, 385);
             gMapControl1.TabIndex = 120;
             gMapControl1.Zoom = 0D;
+            gMapControl1.MouseDoubleClick += gMapControl1_MouseDoubleClick;
             // 
             // panel6
             // 
-            panel6.Location = new Point(503, 45);
+            panel6.Location = new Point(503, 56);
             panel6.Name = "panel6";
             panel6.Size = new Size(211, 210);
             panel6.TabIndex = 100;
@@ -1439,6 +1471,7 @@
             txtlongitud.BorderColor = SystemColors.ControlDarkDark;
             txtlongitud.BorderFocusColor = Color.FromArgb(190, 31, 36);
             txtlongitud.BorderSize = 2;
+            txtlongitud.Enabled = false;
             txtlongitud.ForeColor = Color.DimGray;
             txtlongitud.Location = new Point(505, 189);
             txtlongitud.Multiline = true;
@@ -1457,6 +1490,7 @@
             txtlatitud.BorderColor = SystemColors.ControlDarkDark;
             txtlatitud.BorderFocusColor = Color.FromArgb(190, 31, 36);
             txtlatitud.BorderSize = 2;
+            txtlatitud.Enabled = false;
             txtlatitud.ForeColor = Color.DimGray;
             txtlatitud.Location = new Point(505, 151);
             txtlatitud.Multiline = true;
@@ -1479,6 +1513,8 @@
             comboArea.Name = "comboArea";
             comboArea.Size = new Size(230, 25);
             comboArea.TabIndex = 105;
+            comboArea.Enter += comboArea_Enter;
+            comboArea.Leave += comboArea_Leave;
             // 
             // comboEstado
             // 
@@ -1491,6 +1527,9 @@
             comboEstado.Name = "comboEstado";
             comboEstado.Size = new Size(230, 25);
             comboEstado.TabIndex = 104;
+            comboEstado.SelectedValueChanged += comboEstado_SelectedValueChanged;
+            comboEstado.Enter += comboEstado_Enter;
+            comboEstado.Leave += comboEstado_Leave;
             // 
             // buttonGuardarG
             // 
@@ -1506,6 +1545,7 @@
             buttonGuardarG.TabIndex = 103;
             buttonGuardarG.Text = "Guardar datos";
             buttonGuardarG.UseVisualStyleBackColor = false;
+            buttonGuardarG.Click += buttonGuardarG_Click;
             // 
             // panel7
             // 
@@ -1531,6 +1571,7 @@
             trackZoom.Name = "trackZoom";
             trackZoom.Size = new Size(289, 45);
             trackZoom.TabIndex = 98;
+            trackZoom.ValueChanged += trackZoom_ValueChanged;
             // 
             // dataGridView2
             // 
@@ -1560,7 +1601,7 @@
             VerImagen.Controls.Add(panel8);
             VerImagen.Location = new Point(4, 24);
             VerImagen.Name = "VerImagen";
-            VerImagen.Size = new Size(755, 490);
+            VerImagen.Size = new Size(742, 490);
             VerImagen.TabIndex = 6;
             VerImagen.Text = "Ver Imagen";
             // 
@@ -1571,7 +1612,7 @@
             panel8.Controls.Add(btnAtrasIma);
             panel8.Controls.Add(pictureBox2);
             panel8.Controls.Add(label22);
-            panel8.Location = new Point(-112, 3);
+            panel8.Location = new Point(-391, 3);
             panel8.Name = "panel8";
             panel8.Size = new Size(737, 675);
             panel8.TabIndex = 97;
@@ -1620,11 +1661,16 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
+            // 
             // imageList1
             // 
             imageList1.ColorDepth = ColorDepth.Depth8Bit;
-            imageList1.ImageSize = new Size(16, 16);
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
             imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "circulo.png");
             // 
             // ListaFormulario
             // 
@@ -1707,8 +1753,6 @@
         private PictureBox pictureBox2;
         private Label label22;
         private Button RegresarL;
-        private ComboBox ComboProducto;
-        private ComboBox ComboTecno;
         private Label label27;
         private Label label26;
         private Label label25;
@@ -1723,11 +1767,9 @@
         private Label label15;
         private Label label14;
         private Templates.TextBox textProceso;
-        private Templates.TextBox textOtro;
         private Label label28;
         private ComboBox comboSiete;
         private ComboBox comboSeis;
-        private ComboBox comboCinco;
         private ComboBox comboCuatro;
         private ComboBox comboTres;
         private ComboBox comboDos;
@@ -1749,12 +1791,10 @@
         private Label label13;
         private Label label18;
         private Templates.TextBox textUnidadFuncional;
-        private ComboBox comboUnidadUno;
         private Label label19;
         private Templates.TextBox textObjetivoR;
         private Label label31;
         private PictureBox pictureBox1;
-        private ComboBox comboLimitesSistema;
         private Button btnEliminarImagen;
         private Label label20;
         private Templates.TextBox textCondicionesOpe;
@@ -1765,13 +1805,19 @@
         private Label label9;
         private Label label21;
         private Templates.TextBox textDescripcionPeriodo;
-        private ComboBox comboArea;
-        private ComboBox comboEstado;
         private Templates.TextBox txtlongitud;
         private Templates.TextBox txtlatitud;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
         private ErrorProvider errorProvider1;
         private System.Windows.Forms.Timer timer1;
         private ImageList imageList1;
+        public ComboBox ComboProducto;
+        public ComboBox ComboTecno;
+        private Templates.TextBox textOtro;
+        private ComboBox comboCinco;
+        public ComboBox comboUnidadUno;
+        public ComboBox comboLimitesSistema;
+        public ComboBox comboArea;
+        public ComboBox comboEstado;
     }
 }
