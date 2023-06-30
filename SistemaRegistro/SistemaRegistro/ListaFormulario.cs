@@ -23,6 +23,7 @@ using Rectangle = System.Drawing.Rectangle;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
 
 namespace SistemaRegistro
 {
@@ -59,6 +60,8 @@ namespace SistemaRegistro
             //Estado y Area
             llenarCombos();
             //asignamos una hora por defecto a los datetimepickers
+            //FechaReferencia.Value = new DateTime(1900, 01, 01);
+            //FechaDatosValidos.Value = new DateTime(1900, 01, 01);
             /*
 
             //Asigna opciones a la lista comboUnidadUno
@@ -122,7 +125,8 @@ namespace SistemaRegistro
             tabControl2.TabPages["Tecnología"].Enabled = false;
             tabControl2.TabPages["TiempoVálido"].Enabled = false;
             tabControl2.TabPages["Geografía"].Enabled = false;
-            tabControl2.TabPages["VerImagen"].Enabled = false;
+            //tabControl2.TabPages["VerImagen"].Enabled = false;
+            VerImagen.Parent = null;
             /*
             Identificación.Parent = null;
             Referencia.Parent = null;
@@ -784,7 +788,15 @@ namespace SistemaRegistro
                 errorProvider1.SetError(comboArea, String.Empty);
             }
         }
-
+        /*
+        private void FechaReferencia_keyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                FechaReferencia.CustomFormat = " ";
+            }
+        }
+        */
         private void llenarCombos()
         {
 
@@ -831,6 +843,7 @@ namespace SistemaRegistro
             textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
             textObjetivoR.ForeColor = Color.Gray;
             comboLimitesSistema.Text = "Limites del sistema";
+            comboLimitesSistema.SelectedIndex = -1;
             comboLimitesSistema.ForeColor = Color.Gray;
             pictureBox1.Image = null;
             ComboTipoTecnologia.Text = "Tipo de tecnología*";
@@ -838,7 +851,7 @@ namespace SistemaRegistro
             textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
             textCondicionesOpe.ForeColor = Color.Gray;
             FechaReferencia.Value = new DateTime(2000, 01, 01);
-            FechaDatosValidos.Value = new DateTime(2000, 01, 01);
+            FechaReferencia.Value = new DateTime(2000, 01, 01);
             textDescripcionPeriodo.Texts = "Ejemplo: Se solicita este tiempo para el análisis del estudio";
             textDescripcionPeriodo.ForeColor = Color.Gray;
             comboEstado.Text = "Estado*";
@@ -847,6 +860,7 @@ namespace SistemaRegistro
             comboArea.ForeColor = Color.Gray;
             txtlatitud.Texts = "Latitud";
             txtlongitud.Texts = "Longitud";
+            errorProvider1.Clear();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -906,13 +920,12 @@ namespace SistemaRegistro
                         ComboTipoTecnologia.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
                         textCondicionesOpe.Texts = dataGridView1.CurrentRow.Cells[16].Value.ToString();
 
-
                         string fechaReferenciaValue = dataGridView1.CurrentRow.Cells[17].Value != null ? dataGridView1.CurrentRow.Cells[17].Value.ToString() : null;
                         string fechaDatosValidosValue = dataGridView1.CurrentRow.Cells[18].Value != null ? dataGridView1.CurrentRow.Cells[18].Value.ToString() : null;
 
                         //Asignar los valores a los DateTimePicker o reiniciarlos si son nulos
-                        FechaReferencia.Value = !string.IsNullOrEmpty(fechaReferenciaValue) ? DateTime.Parse(fechaReferenciaValue) : new DateTime(2000, 1, 1);
-                        FechaDatosValidos.Value = !string.IsNullOrEmpty(fechaDatosValidosValue) ? DateTime.Parse(fechaDatosValidosValue) : new DateTime(2000, 1, 1);
+                        FechaReferencia.Value = !string.IsNullOrEmpty(fechaReferenciaValue) ? DateTime.Parse(fechaReferenciaValue) : new DateTime(2000, 01, 01);
+                        FechaDatosValidos.Value = !string.IsNullOrEmpty(fechaDatosValidosValue) ? DateTime.Parse(fechaDatosValidosValue) : new DateTime(2000, 01, 01);
                         textDescripcionPeriodo.Texts = dataGridView1.CurrentRow.Cells[19].Value.ToString();
 
                         comboEstado.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
@@ -921,22 +934,16 @@ namespace SistemaRegistro
                         txtlatitud.Texts = dataGridView1.CurrentRow.Cells[23].Value.ToString();
                         txtlongitud.Texts = dataGridView1.CurrentRow.Cells[24].Value.ToString();
 
-                        tabControl2.TabPages["ListaDatos"].Enabled = false;
+                        //tabControl2.TabPages["ListaDatos"].Enabled = false;
+                        ListaDatos.Parent = null;
                         tabControl2.TabPages["Identificación"].Enabled = true;
                         tabControl2.TabPages["Referencia"].Enabled = true;
                         tabControl2.TabPages["Tecnología"].Enabled = true;
                         tabControl2.TabPages["TiempoVálido"].Enabled = true;
                         tabControl2.TabPages["Geografía"].Enabled = true;
-                        tabControl2.TabPages["VerImagen"].Enabled = false;
-                        /*
-                        ListaDatos.Parent = null;
+                        // tabControl2.TabPages["VerImagen"].Enabled = false;
                         VerImagen.Parent = null;
-                        Identificación.Parent = tabControl2;
-                        Referencia.Parent = tabControl2;
-                        Tecnología.Parent = tabControl2;
-                        TiempoVálido.Parent = tabControl2;
-                        Geografía.Parent = tabControl2;
-                        */
+                
                         tabControl2.SelectedTab = Identificación;
 
                     }
@@ -958,7 +965,9 @@ namespace SistemaRegistro
                                 pictureBox2.Image = Image.FromStream(ms);
                             }
 
-                            tabControl2.TabPages["VerImagen"].Enabled = true;
+                            //tabControl2.TabPages["VerImagen"].Enabled = true;
+                            tabControl2.TabPages["ListaDatos"].Enabled = false;
+                            VerImagen.Parent = tabControl2;
                             tabControl2.SelectedTab = VerImagen;
                         }
                         else
@@ -980,8 +989,12 @@ namespace SistemaRegistro
         {
 
             ListaDatos.Parent = tabControl2;
+            //VerImagen.Parent = tabControl2;
             tabControl2.SelectedTab = ListaDatos;
+            //Identificación.ImageIndex = null;
             Limpiar();
+            Identificación.ImageIndex = -1;
+            Referencia.ImageIndex = -1;
             TabControlBotones();
             CargarDG();
             CargarBotones();
@@ -1339,8 +1352,9 @@ namespace SistemaRegistro
                     {
                         controladorDatosFormulario.EditarDatosFormulario(modeloIngresoDatos, id);
                         MessageBox.Show("Datos modificados correctamente");
-                        errorProvider1.Clear();
-                        ListaDatos.Parent = tabControl2;
+                        
+                         ListaDatos.Parent = tabControl2;
+                       // VerImagen.Parent = tabControl2;
                         tabControl2.SelectedTab = ListaDatos;
                         Limpiar();
                         TabControlBotones();
@@ -1568,23 +1582,24 @@ namespace SistemaRegistro
                 }
                 if (tabPage == TiempoVálido)
                 {
-                    if (FechaReferencia.Text == "1900-01-01" || FechaReferencia.Text == "2000-01-01")
+                    if (FechaReferencia.Value.Date == new DateTime(2000, 1, 1) || FechaReferencia.Value.Date == new DateTime(1900, 1, 1))
                     {
                         f1 = null;
                     }
-
                     else
                     {
-                        f1 = FechaReferencia.Text;
+                        f1 = FechaReferencia.Value.ToString("yyyy-MM-dd");
                     }
-                    if (FechaDatosValidos.Text == "1900-01-01" || FechaDatosValidos.Text == "2000-01-01")
+
+                    if (FechaDatosValidos.Value.Date == new DateTime(2000, 1, 1) || FechaDatosValidos.Value.Date == new DateTime(1900, 1, 1))
                     {
                         f2 = null;
                     }
                     else
                     {
-                        f2 = FechaDatosValidos.Text;
+                        f2 = FechaDatosValidos.Value.ToString("yyyy-MM-dd");
                     }
+
                     modeloIngresoDatos.fechaReferencia = f1;
                     modeloIngresoDatos.datosValidos = f2;
 

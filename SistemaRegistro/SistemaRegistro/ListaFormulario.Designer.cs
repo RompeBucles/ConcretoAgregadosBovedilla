@@ -135,9 +135,9 @@
             btnAtrasIma = new Button();
             pictureBox2 = new PictureBox();
             label22 = new Label();
+            imageList1 = new ImageList(components);
             errorProvider1 = new ErrorProvider(components);
             timer1 = new System.Windows.Forms.Timer(components);
-            imageList1 = new ImageList(components);
             tabControl2.SuspendLayout();
             ListaDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -170,6 +170,7 @@
             tabControl2.Controls.Add(TiempoVálido);
             tabControl2.Controls.Add(Geografía);
             tabControl2.Controls.Add(VerImagen);
+            tabControl2.ImageList = imageList1;
             tabControl2.Location = new Point(6, 5);
             tabControl2.Name = "tabControl2";
             tabControl2.SelectedIndex = 0;
@@ -321,7 +322,7 @@
             Identificación.Location = new Point(4, 24);
             Identificación.Name = "Identificación";
             Identificación.Padding = new Padding(3);
-            Identificación.Size = new Size(742, 490);
+            Identificación.Size = new Size(755, 490);
             Identificación.TabIndex = 0;
             Identificación.Text = "Identificación";
             // 
@@ -365,7 +366,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-63, 0);
+            panel1.Location = new Point(-136, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(729, 787);
             panel1.TabIndex = 76;
@@ -885,7 +886,7 @@
             panel4.Controls.Add(button5);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-49, 0);
+            panel4.Location = new Point(-121, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 1123);
             panel4.TabIndex = 77;
@@ -1206,7 +1207,7 @@
             Tecnología.Controls.Add(panel2);
             Tecnología.Location = new Point(4, 24);
             Tecnología.Name = "Tecnología";
-            Tecnología.Size = new Size(742, 490);
+            Tecnología.Size = new Size(755, 490);
             Tecnología.TabIndex = 2;
             Tecnología.Text = "Tecnología";
             // 
@@ -1289,7 +1290,7 @@
             TiempoVálido.Controls.Add(panel3);
             TiempoVálido.Location = new Point(4, 24);
             TiempoVálido.Name = "TiempoVálido";
-            TiempoVálido.Size = new Size(742, 490);
+            TiempoVálido.Size = new Size(755, 490);
             TiempoVálido.TabIndex = 3;
             TiempoVálido.Text = "TiempoVálido";
             // 
@@ -1314,20 +1315,22 @@
             FechaDatosValidos.CustomFormat = "yyyy-MM-dd";
             FechaDatosValidos.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             FechaDatosValidos.Format = DateTimePickerFormat.Custom;
-            FechaDatosValidos.Location = new Point(221, 156);
+            FechaDatosValidos.Location = new Point(247, 168);
             FechaDatosValidos.Name = "FechaDatosValidos";
             FechaDatosValidos.Size = new Size(264, 22);
-            FechaDatosValidos.TabIndex = 120;
+            FechaDatosValidos.TabIndex = 126;
+            FechaDatosValidos.Value = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // FechaReferencia
             // 
             FechaReferencia.CustomFormat = "yyyy-MM-dd";
             FechaReferencia.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             FechaReferencia.Format = DateTimePickerFormat.Custom;
-            FechaReferencia.Location = new Point(221, 87);
+            FechaReferencia.Location = new Point(242, 97);
             FechaReferencia.Name = "FechaReferencia";
             FechaReferencia.Size = new Size(264, 22);
-            FechaReferencia.TabIndex = 121;
+            FechaReferencia.TabIndex = 120;
+            FechaReferencia.Value = new DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // label8
             // 
@@ -1405,7 +1408,7 @@
             Geografía.Controls.Add(panel5);
             Geografía.Location = new Point(4, 24);
             Geografía.Name = "Geografía";
-            Geografía.Size = new Size(742, 490);
+            Geografía.Size = new Size(755, 490);
             Geografía.TabIndex = 4;
             Geografía.Text = "Geografía";
             // 
@@ -1425,7 +1428,7 @@
             panel5.Controls.Add(trackZoom);
             panel5.Controls.Add(dataGridView2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-63, 3);
+            panel5.Location = new Point(-136, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(732, 1019);
             panel5.TabIndex = 2;
@@ -1601,7 +1604,7 @@
             VerImagen.Controls.Add(panel8);
             VerImagen.Location = new Point(4, 24);
             VerImagen.Name = "VerImagen";
-            VerImagen.Size = new Size(742, 490);
+            VerImagen.Size = new Size(755, 490);
             VerImagen.TabIndex = 6;
             VerImagen.Text = "Ver Imagen";
             // 
@@ -1612,7 +1615,7 @@
             panel8.Controls.Add(btnAtrasIma);
             panel8.Controls.Add(pictureBox2);
             panel8.Controls.Add(label22);
-            panel8.Location = new Point(-391, 3);
+            panel8.Location = new Point(-463, 3);
             panel8.Name = "panel8";
             panel8.Size = new Size(737, 675);
             panel8.TabIndex = 97;
@@ -1657,6 +1660,13 @@
             label22.TabIndex = 97;
             label22.Text = "Imagen del sistema";
             // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth8Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Transparent;
+            imageList1.Images.SetKeyName(0, "circulo.png");
+            // 
             // errorProvider1
             // 
             errorProvider1.ContainerControl = this;
@@ -1664,13 +1674,6 @@
             // timer1
             // 
             timer1.Tick += timer1_Tick;
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth8Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "circulo.png");
             // 
             // ListaFormulario
             // 
@@ -1799,7 +1802,6 @@
         private Label label20;
         private Templates.TextBox textCondicionesOpe;
         private ComboBox ComboTipoTecnologia;
-        private DateTimePicker FechaDatosValidos;
         private DateTimePicker FechaReferencia;
         private Label label8;
         private Label label9;
@@ -1819,5 +1821,6 @@
         public ComboBox comboLimitesSistema;
         public ComboBox comboArea;
         public ComboBox comboEstado;
+        private DateTimePicker FechaDatosValidos;
     }
 }

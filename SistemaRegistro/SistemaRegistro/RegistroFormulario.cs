@@ -544,7 +544,7 @@ namespace SistemaRegistro
             {
                 textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
                 textCondicionesOpe.ForeColor = Color.Gray;
-            } 
+            }
         }
         private void textDescripcionPeriodo_Enter(object sender, EventArgs e)
         {
@@ -998,6 +998,7 @@ namespace SistemaRegistro
             bool camposFaltantes = false;
             try
             {
+                //si alguien ve este comentario, les comparto este dato curioso, bueno desde mi punto de visata jsjs,Lo que pude aprender en c# 
                 //validación regetx seccion identificación
                 Regex Productoo = new Regex(@"^[ A-Za-züÜáéíóúáéíóúÁÉÍÓÚÑñ.,]{3,100}$");
                 Match ProductoValido = Productoo.Match(ComboProducto.Text);
@@ -1012,6 +1013,7 @@ namespace SistemaRegistro
                 Regex Email = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
                 Match EmailValid = Email.Match(textCorreo.Texts);
                 //validación regetx seccion identificación
+                //si alguien ve este comentario, les comparto este dato curioso, bueno desde mi punto de visata jsjs,Lo que pude aprender en c# es que el compnente textUnidadFuncional esta suscripto al eveto Enter y leave con un proviveError, entonces c# por jerarquia o nose valida primero el regetx por eso le puse "Ejemploo ..."
                 Regex NombreFlujoR = new Regex(@"^(?!Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava$).{3,300}$");
                 Match NombreFlujoRValido = NombreFlujoR.Match(textUnidadFuncional.Texts);
                 Regex Valor = new Regex(@"^[0-9]+(?:\.[0-9]+)?$");
@@ -1200,21 +1202,22 @@ namespace SistemaRegistro
                 }
                 if (tabPage == TiempoVálido)
                 {
-                    if (FechaReferencia.Text == "2000-01-01" || FechaReferencia.Text == "1900-01-01")
+                    if (FechaReferencia.Value.Date == new DateTime(2000, 1, 1) || FechaReferencia.Value.Date == new DateTime(1900, 1, 1))
                     {
                         f1 = null;
                     }
                     else
                     {
-                        f1 = FechaReferencia.Text;
+                        f1 = FechaReferencia.Value.ToString("yyyy-MM-dd");
                     }
-                    if (FechaDatosValidos.Text == "2000-01-01" || FechaReferencia.Text == "1900-01-01")
+
+                    if (FechaDatosValidos.Value.Date == new DateTime(2000, 1, 1) || FechaDatosValidos.Value.Date == new DateTime(1900, 1, 1))
                     {
                         f2 = null;
                     }
                     else
                     {
-                        f2 = FechaDatosValidos.Text;
+                        f2 = FechaDatosValidos.Value.ToString("yyyy-MM-dd");
                     }
                     modeloIngresoDatos.fechaReferencia = f1;
                     modeloIngresoDatos.datosValidos = f2;

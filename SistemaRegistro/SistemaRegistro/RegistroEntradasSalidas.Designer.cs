@@ -28,60 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            label4 = new Label();
+            comboRecursos = new ComboBox();
+            textValor = new Templates.TextBox();
             label2 = new Label();
             label1 = new Label();
-            textBox3 = new Templates.TextBox();
-            textProceso = new Templates.TextBox();
+            textComentario = new Templates.TextBox();
+            textCitas = new Templates.TextBox();
             label15 = new Label();
             button1 = new Button();
-            label5 = new Label();
             label3 = new Label();
             label12 = new Label();
-            button8 = new Button();
-            comboBox5 = new ComboBox();
-            comboBox6 = new ComboBox();
-            comboSeis = new ComboBox();
-            comboDos = new ComboBox();
-            comboUno = new ComboBox();
+            comboTipoFlujo = new ComboBox();
+            comboEmisiones = new ComboBox();
+            comboProductoT = new ComboBox();
+            comboAdquisicion = new ComboBox();
+            comboTratamiento = new ComboBox();
             buttonSiguienteP = new Button();
             textBox1 = new Templates.TextBox();
-            ComboTecno = new ComboBox();
+            comboUnidades = new ComboBox();
             textNombreFlujo = new Templates.TextBox();
             labelUsuario = new Label();
-            textValor = new Templates.TextBox();
+            errorProvider1 = new ErrorProvider(components);
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(comboRecursos);
             panel1.Controls.Add(textValor);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textProceso);
+            panel1.Controls.Add(textComentario);
+            panel1.Controls.Add(textCitas);
             panel1.Controls.Add(label15);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(label5);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label12);
-            panel1.Controls.Add(button8);
-            panel1.Controls.Add(comboBox5);
-            panel1.Controls.Add(comboBox6);
-            panel1.Controls.Add(comboSeis);
-            panel1.Controls.Add(comboDos);
-            panel1.Controls.Add(comboUno);
+            panel1.Controls.Add(comboTipoFlujo);
+            panel1.Controls.Add(comboEmisiones);
+            panel1.Controls.Add(comboProductoT);
+            panel1.Controls.Add(comboAdquisicion);
+            panel1.Controls.Add(comboTratamiento);
             panel1.Controls.Add(buttonSiguienteP);
             panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(ComboTecno);
+            panel1.Controls.Add(comboUnidades);
             panel1.Controls.Add(textNombreFlujo);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(0, 1);
+            panel1.Location = new Point(-63, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(726, 817);
+            panel1.Size = new Size(726, 1127);
             panel1.TabIndex = 77;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(190, 31, 36);
+            label4.Location = new Point(350, 523);
+            label4.Name = "label4";
+            label4.Size = new Size(45, 16);
+            label4.TabIndex = 123;
+            label4.Text = "Valor*";
+            // 
+            // comboRecursos
+            // 
+            comboRecursos.Anchor = AnchorStyles.None;
+            comboRecursos.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboRecursos.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboRecursos.FormattingEnabled = true;
+            comboRecursos.Items.AddRange(new object[] { "Elemento o Compuesto", "Grupo de químicos", "Mineral, metal o agregado.", "Biológico", "Agua", "Combustibles fósiles", "Combustibles nucleares.", "Energía", "Recurso – Recurso suelo", "Recurso – Recurso aire", "Recurso – Recurso agua", "Recursos – Recursos biótico", "Recursos – Recurso ocupación y transformación del suelo", "Recursos materiales no renovables del suelo", "Recursos de elementos no renovables del suelo", "Recursos de elementos renovables del suelo", "Recursos de energía renovable del suelo (por ejemplo, \"Energía eólica\", \"Energía hidráulica; funcionamiento\", etc.)", "Recursos materiales renovables del suelo", "Recursos renovables del suelo, no especificados", "Recursos no renovables del suelo, no especificados", "Uso del suelo - Transformación del suelo", "Uso del suelo - Ocupación del suelo", "Uso del suelo -  Cultivable", "Uso del suelo – No irrigado", "Uso del suelo – Diverso, intensivo." });
+            comboRecursos.Location = new Point(86, 329);
+            comboRecursos.Name = "comboRecursos";
+            comboRecursos.Size = new Size(564, 25);
+            comboRecursos.TabIndex = 122;
+            comboRecursos.Enter += comboRecursos_Enter;
+            comboRecursos.Leave += comboRecursos_Leave;
+            // 
+            // textValor
+            // 
+            textValor.Anchor = AnchorStyles.None;
+            textValor.BackColor = SystemColors.Control;
+            textValor.BorderColor = SystemColors.ControlDarkDark;
+            textValor.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textValor.BorderSize = 2;
+            textValor.ForeColor = Color.DimGray;
+            textValor.Location = new Point(265, 550);
+            textValor.Multiline = true;
+            textValor.Name = "textValor";
+            textValor.Padding = new Padding(7, 9, 7, 9);
+            textValor.PasswordChar = false;
+            textValor.Size = new Size(207, 36);
+            textValor.TabIndex = 121;
+            textValor.Texts = "Ejemplo: 0";
+            textValor.UnderlinedStyle = true;
+            textValor.Enter += textValor_Enter;
+            textValor.Leave += textValor_Leave;
             // 
             // label2
             // 
@@ -89,7 +138,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(190, 31, 36);
-            label2.Location = new Point(143, 558);
+            label2.Location = new Point(327, 932);
             label2.Name = "label2";
             label2.Size = new Size(81, 16);
             label2.TabIndex = 114;
@@ -101,49 +150,53 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(190, 31, 36);
-            label1.Location = new Point(370, 523);
+            label1.Location = new Point(311, 822);
             label1.Name = "label1";
-            label1.Size = new Size(122, 16);
+            label1.Size = new Size(117, 16);
             label1.TabIndex = 113;
-            label1.Text = "Citas-Referencias*";
+            label1.Text = "Citas-Referencias";
             // 
-            // textBox3
+            // textComentario
             // 
-            textBox3.Anchor = AnchorStyles.None;
-            textBox3.BackColor = SystemColors.Control;
-            textBox3.BorderColor = SystemColors.ControlDarkDark;
-            textBox3.BorderFocusColor = Color.Black;
-            textBox3.BorderSize = 2;
-            textBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.ForeColor = Color.DimGray;
-            textBox3.Location = new Point(58, 583);
-            textBox3.Multiline = false;
-            textBox3.Name = "textBox3";
-            textBox3.Padding = new Padding(7, 8, 7, 8);
-            textBox3.PasswordChar = false;
-            textBox3.Size = new Size(451, 34);
-            textBox3.TabIndex = 112;
-            textBox3.Texts = "Ejemplo: \"Expreso este comentario\"";
-            textBox3.UnderlinedStyle = true;
+            textComentario.Anchor = AnchorStyles.None;
+            textComentario.BackColor = SystemColors.Control;
+            textComentario.BorderColor = SystemColors.ControlDarkDark;
+            textComentario.BorderFocusColor = Color.Black;
+            textComentario.BorderSize = 2;
+            textComentario.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textComentario.ForeColor = Color.DimGray;
+            textComentario.Location = new Point(172, 956);
+            textComentario.Multiline = false;
+            textComentario.Name = "textComentario";
+            textComentario.Padding = new Padding(7, 8, 7, 8);
+            textComentario.PasswordChar = false;
+            textComentario.Size = new Size(400, 34);
+            textComentario.TabIndex = 112;
+            textComentario.Texts = "Ejemplo: Expreso este comentario";
+            textComentario.UnderlinedStyle = true;
+            textComentario.Enter += textComentario_Enter;
+            textComentario.Leave += textComentario_Leave;
             // 
-            // textProceso
+            // textCitas
             // 
-            textProceso.Anchor = AnchorStyles.None;
-            textProceso.BackColor = SystemColors.Control;
-            textProceso.BorderColor = SystemColors.ControlDarkDark;
-            textProceso.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textProceso.BorderSize = 2;
-            textProceso.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            textProceso.ForeColor = Color.DimGray;
-            textProceso.Location = new Point(347, 545);
-            textProceso.Multiline = true;
-            textProceso.Name = "textProceso";
-            textProceso.Padding = new Padding(7, 8, 7, 8);
-            textProceso.PasswordChar = false;
-            textProceso.Size = new Size(324, 34);
-            textProceso.TabIndex = 111;
-            textProceso.Texts = "Ejemplo: “Manual del Ingeniero civil”";
-            textProceso.UnderlinedStyle = true;
+            textCitas.Anchor = AnchorStyles.None;
+            textCitas.BackColor = SystemColors.Control;
+            textCitas.BorderColor = SystemColors.ControlDarkDark;
+            textCitas.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textCitas.BorderSize = 2;
+            textCitas.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textCitas.ForeColor = Color.DimGray;
+            textCitas.Location = new Point(173, 855);
+            textCitas.Multiline = true;
+            textCitas.Name = "textCitas";
+            textCitas.Padding = new Padding(7, 8, 7, 8);
+            textCitas.PasswordChar = false;
+            textCitas.Size = new Size(387, 34);
+            textCitas.TabIndex = 111;
+            textCitas.Texts = "Ejemplo: “Manual del Ingeniero civil”";
+            textCitas.UnderlinedStyle = true;
+            textCitas.Enter += textCitas_Enter;
+            textCitas.Leave += textCitas_Leave;
             // 
             // label15
             // 
@@ -151,7 +204,7 @@
             label15.AutoSize = true;
             label15.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label15.ForeColor = Color.FromArgb(190, 31, 36);
-            label15.Location = new Point(98, 152);
+            label15.Location = new Point(307, 120);
             label15.Name = "label15";
             label15.Size = new Size(114, 16);
             label15.TabIndex = 110;
@@ -165,23 +218,12 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(306, 735);
+            button1.Location = new Point(308, 1042);
             button1.Name = "button1";
             button1.Size = new Size(115, 35);
             button1.TabIndex = 104;
             button1.Text = "Guardar datos";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(47, 320);
-            label5.Name = "label5";
-            label5.Size = new Size(48, 19);
-            label5.TabIndex = 100;
-            label5.Text = "Valor";
             // 
             // label3
             // 
@@ -189,7 +231,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(288, 19);
+            label3.Location = new Point(297, 8);
             label3.Name = "label3";
             label3.Size = new Size(146, 19);
             label3.TabIndex = 98;
@@ -207,79 +249,74 @@
             label12.TabIndex = 97;
             label12.Text = "Identificación";
             // 
-            // button8
+            // comboTipoFlujo
             // 
-            button8.Anchor = AnchorStyles.None;
-            button8.BackColor = Color.FromArgb(97, 97, 96);
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button8.ForeColor = SystemColors.ButtonFace;
-            button8.Location = new Point(546, 1040);
-            button8.Name = "button8";
-            button8.Size = new Size(115, 35);
-            button8.TabIndex = 96;
-            button8.Text = "Siguiente";
-            button8.UseVisualStyleBackColor = false;
+            comboTipoFlujo.Anchor = AnchorStyles.None;
+            comboTipoFlujo.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboTipoFlujo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboTipoFlujo.FormattingEnabled = true;
+            comboTipoFlujo.Items.AddRange(new object[] { "Elemental", "Producto", "Residuo" });
+            comboTipoFlujo.Location = new Point(86, 254);
+            comboTipoFlujo.Name = "comboTipoFlujo";
+            comboTipoFlujo.Size = new Size(564, 25);
+            comboTipoFlujo.TabIndex = 92;
+            comboTipoFlujo.Enter += comboTipoFlujo_Enter;
+            comboTipoFlujo.Leave += comboTipoFlujo_Leave;
             // 
-            // comboBox5
+            // comboEmisiones
             // 
-            comboBox5.Anchor = AnchorStyles.None;
-            comboBox5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { "Elemental", "Producto", "Residuo", "Recursos", "Elemento o Compuesto", "Grupo de químicos", "Mineral, metal o agregado.", "Biológico", "Agua", "Combustibles fósiles", "Combustibles nucleares.", "Energía", "Recurso – Recurso suelo", "Recurso – Recurso aire", "Recurso – Recurso agua", "Recursos – Recursos biótico", "Recursos – Recurso ocupación y transformación del suelo", "Recursos materiales no renovables del suelo", "Recursos de elementos no renovables del suelo", "Recursos de elementos renovables del suelo", "Recursos de energía renovable del suelo (por ejemplo, \"Energía eólica\", \"Energía hidráulica; funcionamiento\", etc.)", "Recursos materiales renovables del suelo", "Recursos renovables del suelo, no especificados", "Recursos no renovables del suelo, no especificados", "Uso del suelo - Transformación del suelo", "Uso del suelo - Ocupación del suelo", "Uso del suelo -  Cultivable", "Uso del suelo – No irrigado", "Uso del suelo – Diverso, intensivo." });
-            comboBox5.Location = new Point(365, 212);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(342, 25);
-            comboBox5.TabIndex = 92;
-            comboBox5.Text = "Tipo de flujo*";
+            comboEmisiones.Anchor = AnchorStyles.None;
+            comboEmisiones.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboEmisiones.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboEmisiones.FormattingEnabled = true;
+            comboEmisiones.Items.AddRange(new object[] { "Emisiones - Emisiones al aire - Emisiones al aire sin especificar", "Emisiones - Emisiones al aire - Emisiones sin especificar (a largo plazo)", "Emisiones - Emisiones al aire - Emisiones al aire no urbano o de chimeneas altas (alturas mayo a 100 m)", "Emisiones - Emisiones al aire - Emisiones a la baja estratosfera y a la alta troposfera", "Emisiones - Emisiones al aire - Emisiones inorgánicas al aire", "Emisiones - Emisiones al aire - Emisiones orgánicas al aire", "Emisiones - Emisiones al aire - Emisiones radioactivas al aire", "Emisiones - Emisiones al aire – Partículas", "Emisiones - Emisiones al aire - Otras emisiones al aire", "Emisiones - Emisiones al agua - Emisiones al agua, sin especificar.", "Emisiones - Emisiones al agua – Emisiones inorgánicas al agua", "Emisiones - Emisiones al agua – Emisiones orgánicas al agua", "Emisiones - Emisiones al agua – Emisiones radioactivas al agua", "Emisiones - Emisiones al agua – Emisiones de partículas al agua", "Emisiones - Emisiones al agua – Otras Emisiones al agua", "Emisiones - Emisiones al suelo - Emisiones al suelo, sin especificar", "Emisiones - Emisiones al suelo - Emisiones al suelo agrícola", "Emisiones - Emisiones al suelo - Emisiones al suelo no agrícola", "Emisiones - Emisiones al suelo - Emisiones al suelo, sin especificar (a largo plazo)", "Emisiones - Emisiones al suelo – Emisiones inorgánicas al suelo", "Emisiones - Emisiones al suelo – Emisiones orgánicas al suelo", "Emisiones - Emisiones al suelo – Emisiones radioactivas al suelo", "Emisiones - Emisiones al suelo – Emisiones de partículas al suelo", "Emisiones - Emisiones al suelo – Otras Emisiones al suelo", "Otros flujos elementales" });
+            comboEmisiones.Location = new Point(86, 392);
+            comboEmisiones.Name = "comboEmisiones";
+            comboEmisiones.Size = new Size(564, 25);
+            comboEmisiones.TabIndex = 93;
+            comboEmisiones.Enter += comboEmisiones_Enter;
+            comboEmisiones.Leave += comboEmisiones_Leave;
             // 
-            // comboBox6
+            // comboProductoT
             // 
-            comboBox6.Anchor = AnchorStyles.None;
-            comboBox6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox6.FormattingEnabled = true;
-            comboBox6.Items.AddRange(new object[] { "Emisiones - Emisiones al aire - Emisiones al aire sin especificar", "Emisiones - Emisiones al aire - Emisiones sin especificar (a largo plazo)", "Emisiones - Emisiones al aire - Emisiones al aire no urbano o de chimeneas altas (alturas mayo a 100 m)", "Emisiones - Emisiones al aire - Emisiones a la baja estratosfera y a la alta troposfera", "Emisiones - Emisiones al aire - Emisiones inorgánicas al aire", "Emisiones - Emisiones al aire - Emisiones orgánicas al aire", "Emisiones - Emisiones al aire - Emisiones radioactivas al aire", "Emisiones - Emisiones al aire – Partículas", "Emisiones - Emisiones al aire - Otras emisiones al aire", "Emisiones - Emisiones al agua - Emisiones al agua, sin especificar.", "Emisiones - Emisiones al agua – Emisiones inorgánicas al agua", "Emisiones - Emisiones al agua – Emisiones orgánicas al agua", "Emisiones - Emisiones al agua – Emisiones radioactivas al agua", "Emisiones - Emisiones al agua – Emisiones de partículas al agua", "Emisiones - Emisiones al agua – Otras Emisiones al agua", "Emisiones - Emisiones al suelo - Emisiones al suelo, sin especificar", "Emisiones - Emisiones al suelo - Emisiones al suelo agrícola", "Emisiones - Emisiones al suelo - Emisiones al suelo no agrícola", "Emisiones - Emisiones al suelo - Emisiones al suelo, sin especificar (a largo plazo)", "Emisiones - Emisiones al suelo – Emisiones inorgánicas al suelo", "Emisiones - Emisiones al suelo – Emisiones orgánicas al suelo", "Emisiones - Emisiones al suelo – Emisiones radioactivas al suelo", "Emisiones - Emisiones al suelo – Emisiones de partículas al suelo", "Emisiones - Emisiones al suelo – Otras Emisiones al suelo", "Otros flujos elementales" });
-            comboBox6.Location = new Point(226, 353);
-            comboBox6.Name = "comboBox6";
-            comboBox6.Size = new Size(484, 25);
-            comboBox6.TabIndex = 93;
-            comboBox6.Text = "Emisiones *";
+            comboProductoT.Anchor = AnchorStyles.None;
+            comboProductoT.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboProductoT.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboProductoT.FormattingEnabled = true;
+            comboProductoT.Location = new Point(214, 57);
+            comboProductoT.Name = "comboProductoT";
+            comboProductoT.Size = new Size(309, 25);
+            comboProductoT.TabIndex = 89;
+            comboProductoT.Enter += comboProductoT_Enter;
+            comboProductoT.Leave += comboProducto_Leave;
             // 
-            // comboSeis
+            // comboAdquisicion
             // 
-            comboSeis.Anchor = AnchorStyles.None;
-            comboSeis.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboSeis.FormattingEnabled = true;
-            comboSeis.Location = new Point(243, 75);
-            comboSeis.Name = "comboSeis";
-            comboSeis.Size = new Size(232, 25);
-            comboSeis.TabIndex = 89;
-            comboSeis.Text = "Producto, tecnología*";
+            comboAdquisicion.Anchor = AnchorStyles.None;
+            comboAdquisicion.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboAdquisicion.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboAdquisicion.FormattingEnabled = true;
+            comboAdquisicion.Items.AddRange(new object[] { "Publicaciones y comunicaciones", "Reporte de entidades estatales", "Bases de datos", "Clasificaciones estadísticas", "Formatos de conjuntos de datos", "Sistemas de cumplimiento", "Cuestionarios – Encuestas", "Entrevistas", "Imágenes", "Mediciones in situ", "Otros tipos de fuentes" });
+            comboAdquisicion.Location = new Point(139, 740);
+            comboAdquisicion.Name = "comboAdquisicion";
+            comboAdquisicion.Size = new Size(459, 25);
+            comboAdquisicion.TabIndex = 86;
+            comboAdquisicion.Enter += comboAdquisicion_Enter;
+            comboAdquisicion.Leave += comboAdquisicion_Leave;
             // 
-            // comboDos
+            // comboTratamiento
             // 
-            comboDos.Anchor = AnchorStyles.None;
-            comboDos.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboDos.FormattingEnabled = true;
-            comboDos.Items.AddRange(new object[] { "Publicaciones y comunicaciones", "Reporte de entidades estatales", "Bases de datos", "Clasificaciones estadísticas", "Formatos de conjuntos de datos", "Sistemas de cumplimiento", "Cuestionarios – Encuestas", "Entrevistas", "Imágenes", "Mediciones in situ", "Otros tipos de fuentes" });
-            comboDos.Location = new Point(26, 545);
-            comboDos.Name = "comboDos";
-            comboDos.Size = new Size(228, 25);
-            comboDos.TabIndex = 86;
-            comboDos.Text = "Adquisición de dato*";
-            // 
-            // comboUno
-            // 
-            comboUno.Anchor = AnchorStyles.None;
-            comboUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            comboUno.FormattingEnabled = true;
-            comboUno.Items.AddRange(new object[] { "Calculado: basado en relaciones estequiométricos.", "Estimado: basado en el juicio cuantitativo de expertos.", "Literatura: Derivación desconocida, no se ninguna otra indicación sobre el origen del valor.", "Valor medido: utilice este término cuando el valor haya sido medido." });
-            comboUno.Location = new Point(490, 429);
-            comboUno.Name = "comboUno";
-            comboUno.Size = new Size(231, 25);
-            comboUno.TabIndex = 85;
-            comboUno.Text = "Tratamiento de dato*";
+            comboTratamiento.Anchor = AnchorStyles.None;
+            comboTratamiento.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboTratamiento.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboTratamiento.FormattingEnabled = true;
+            comboTratamiento.Items.AddRange(new object[] { "Calculado: basado en relaciones estequiométricos.", "Estimado: basado en el juicio cuantitativo de expertos.", "Literatura: Derivación desconocida, no se ninguna otra indicación sobre el origen del valor.", "Valor medido: utilice este término cuando el valor haya sido medido." });
+            comboTratamiento.Location = new Point(103, 649);
+            comboTratamiento.Name = "comboTratamiento";
+            comboTratamiento.Size = new Size(518, 25);
+            comboTratamiento.TabIndex = 85;
+            comboTratamiento.Enter += comboTratamiento_Enter;
+            comboTratamiento.Leave += comboTratamiento_Leave;
             // 
             // buttonSiguienteP
             // 
@@ -289,7 +326,7 @@
             buttonSiguienteP.FlatStyle = FlatStyle.Flat;
             buttonSiguienteP.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSiguienteP.ForeColor = SystemColors.ButtonFace;
-            buttonSiguienteP.Location = new Point(846, 1364);
+            buttonSiguienteP.Location = new Point(846, 1519);
             buttonSiguienteP.Name = "buttonSiguienteP";
             buttonSiguienteP.Size = new Size(115, 35);
             buttonSiguienteP.TabIndex = 83;
@@ -304,7 +341,7 @@
             textBox1.BorderColor = SystemColors.ControlDarkDark;
             textBox1.BorderFocusColor = Color.Black;
             textBox1.BorderSize = 2;
-            textBox1.Location = new Point(811, 1284);
+            textBox1.Location = new Point(811, 1439);
             textBox1.Multiline = false;
             textBox1.Name = "textBox1";
             textBox1.Padding = new Padding(7);
@@ -314,17 +351,19 @@
             textBox1.Texts = "Correo*";
             textBox1.UnderlinedStyle = true;
             // 
-            // ComboTecno
+            // comboUnidades
             // 
-            ComboTecno.Anchor = AnchorStyles.None;
-            ComboTecno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            ComboTecno.FormattingEnabled = true;
-            ComboTecno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)" });
-            ComboTecno.Location = new Point(12, 443);
-            ComboTecno.Name = "ComboTecno";
-            ComboTecno.Size = new Size(215, 25);
-            ComboTecno.TabIndex = 30;
-            ComboTecno.Text = "Unidades*";
+            comboUnidades.Anchor = AnchorStyles.None;
+            comboUnidades.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboUnidades.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            comboUnidades.FormattingEnabled = true;
+            comboUnidades.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)" });
+            comboUnidades.Location = new Point(228, 462);
+            comboUnidades.Name = "comboUnidades";
+            comboUnidades.Size = new Size(266, 25);
+            comboUnidades.TabIndex = 30;
+            comboUnidades.Enter += comboUnidades_Enter;
+            comboUnidades.Leave += comboUnidades_Leave;
             // 
             // textNombreFlujo
             // 
@@ -335,15 +374,17 @@
             textNombreFlujo.BorderSize = 2;
             textNombreFlujo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             textNombreFlujo.ForeColor = Color.DimGray;
-            textNombreFlujo.Location = new Point(3, 203);
+            textNombreFlujo.Location = new Point(139, 152);
             textNombreFlujo.Multiline = false;
             textNombreFlujo.Name = "textNombreFlujo";
             textNombreFlujo.Padding = new Padding(7, 8, 7, 8);
             textNombreFlujo.PasswordChar = false;
-            textNombreFlujo.Size = new Size(342, 34);
+            textNombreFlujo.Size = new Size(482, 34);
             textNombreFlujo.TabIndex = 69;
-            textNombreFlujo.Texts = "Ejemplo: Arena de mina";
+            textNombreFlujo.Texts = "Ejemplo: Grava 20mm";
             textNombreFlujo.UnderlinedStyle = true;
+            textNombreFlujo.Enter += textNombreFlujo_Enter;
+            textNombreFlujo.Leave += textNombreFlujo_Leave;
             // 
             // labelUsuario
             // 
@@ -357,23 +398,9 @@
             labelUsuario.TabIndex = 29;
             labelUsuario.Text = "Identificación";
             // 
-            // textValor
+            // errorProvider1
             // 
-            textValor.Anchor = AnchorStyles.None;
-            textValor.BackColor = SystemColors.Control;
-            textValor.BorderColor = SystemColors.ControlDarkDark;
-            textValor.BorderFocusColor = Color.FromArgb(190, 31, 36);
-            textValor.BorderSize = 2;
-            textValor.ForeColor = Color.DimGray;
-            textValor.Location = new Point(3, 342);
-            textValor.Multiline = true;
-            textValor.Name = "textValor";
-            textValor.Padding = new Padding(7, 9, 7, 9);
-            textValor.PasswordChar = false;
-            textValor.Size = new Size(180, 36);
-            textValor.TabIndex = 121;
-            textValor.Texts = "Ejemplo: 0";
-            textValor.UnderlinedStyle = true;
+            errorProvider1.ContainerControl = this;
             // 
             // RegistroEntradasSalidas
             // 
@@ -389,6 +416,7 @@
             Text = "RegistroEntradasSalidas";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
 
@@ -396,25 +424,26 @@
 
         private Panel panel1;
         private Label label12;
-        private Button button8;
-        private ComboBox comboBox5;
-        private ComboBox comboBox6;
-        private ComboBox comboSeis;
-        private ComboBox comboDos;
-        private ComboBox comboUno;
+        private ComboBox comboTipoFlujo;
+        private ComboBox comboEmisiones;
+        private ComboBox comboProductoT;
+        private ComboBox comboAdquisicion;
+        private ComboBox comboTratamiento;
         private Button buttonSiguienteP;
         private SistemaRegistro.Templates.TextBox textBox1;
-        private ComboBox ComboTecno;
+        private ComboBox comboUnidades;
         private SistemaRegistro.Templates.TextBox textNombreFlujo;
         private Label labelUsuario;
         private Label label3;
-        private Label label5;
         private Button button1;
         private Label label15;
         private Label label2;
         private Label label1;
-        private SistemaRegistro.Templates.TextBox textBox3;
-        private SistemaRegistro.Templates.TextBox textProceso;
+        private SistemaRegistro.Templates.TextBox textComentario;
+        private SistemaRegistro.Templates.TextBox textCitas;
         private Templates.TextBox textValor;
+        private ComboBox comboRecursos;
+        private Label label4;
+        private ErrorProvider errorProvider1;
     }
 }
