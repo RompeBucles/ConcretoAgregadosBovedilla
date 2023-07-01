@@ -112,7 +112,7 @@ namespace SistemaRegistro
             ListaUnidadUno.Add("Volumen(m³)");
             ListaUnidadUno.Add("Energia(KWh)");
             comboUnidadUno.DataSource = ListaUnidadUno;
-            
+
 
 
 

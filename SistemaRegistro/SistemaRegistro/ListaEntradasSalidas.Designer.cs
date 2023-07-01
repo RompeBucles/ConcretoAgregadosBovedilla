@@ -247,7 +247,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(textNombreFlujo);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-16, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 1127);
             panel1.TabIndex = 78;
@@ -274,7 +274,7 @@
             comboUnidades.DropDownStyle = ComboBoxStyle.DropDownList;
             comboUnidades.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboUnidades.FormattingEnabled = true;
-            comboUnidades.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)" });
+            comboUnidades.Items.AddRange(new object[] { "Área (m²)", "Volumen (m³)", "Masa (kg)", "Radioactividad (kBq)", "Unidades (ítem)", "Longitud (m)", "Tiempo (s)", "Masa*Longitud (t*km)", "Volumen*Longitud (m³*km)", "Unidades de ítems*Longitud (Ítems*km)", "Área*tiempo (m²*año)", "Volumen*tiempo (m³*año)", "Energia (kWh)", "Energía (kJ)" });
             comboUnidades.Location = new Point(243, 462);
             comboUnidades.Name = "comboUnidades";
             comboUnidades.Size = new Size(266, 25);

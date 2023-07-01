@@ -488,7 +488,7 @@ namespace SistemaRegistro
 
             }
         }
-        
+
         private bool guardar()
         {
             bool retorno = true;
@@ -502,7 +502,7 @@ namespace SistemaRegistro
 
 
 
-                if ( textNombreFlujo.Texts == "Ejemplo: Grava 20mm" || comboTipoFlujo.Text == "Tipo de flujo*"
+                if (textNombreFlujo.Texts == "Ejemplo: Grava 20mm" || comboTipoFlujo.Text == "Tipo de flujo*"
                    || comboRecursos.Text == "Recursos*" || comboUnidades.Text == "Unidad*" || textValor.Texts == "Ejemplo: 0" || comboTratamiento.Text == "Tratamiento de dato*"
                    || comboAdquisicion.Text == "Adquisición de dato*")
 
@@ -511,7 +511,7 @@ namespace SistemaRegistro
                     retorno = false;
                 }
 
-             
+
                 if (NombreFlujoValido.Success)
                 {
                     entradasSalidas.nombreFlujo = textNombreFlujo.Texts;
@@ -618,7 +618,7 @@ namespace SistemaRegistro
                 if (retorno == true)
                 {
 
-                    controladorEntradas.EditarEntradasSalidas(entradasSalidas,id);
+                    controladorEntradas.EditarEntradasSalidas(entradasSalidas, id);
                     MessageBox.Show("Registro modificado con éxito");
                     Limpiar();
                     errorProvider1.Clear();
@@ -632,7 +632,7 @@ namespace SistemaRegistro
             }
             return retorno;
         }
-        
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             guardar();
