@@ -192,7 +192,7 @@ namespace SistemaRegistro
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-18, 0);
+            panel1.Location = new Point(-27, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
@@ -603,7 +603,7 @@ namespace SistemaRegistro
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(0, 3);
+            panel4.Location = new Point(-9, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
@@ -987,9 +987,9 @@ namespace SistemaRegistro
             label9.ForeColor = Color.Crimson;
             label9.Location = new Point(299, 146);
             label9.Name = "label9";
-            label9.Size = new Size(131, 16);
+            label9.Size = new Size(136, 16);
             label9.TabIndex = 118;
-            label9.Text = "Datos Válidos hasta";
+            label9.Text = "Datos Válidos hasta*";
             // 
             // label22
             // 
@@ -999,9 +999,9 @@ namespace SistemaRegistro
             label22.ForeColor = Color.Crimson;
             label22.Location = new Point(266, 77);
             label22.Name = "label22";
-            label22.Size = new Size(209, 16);
+            label22.Size = new Size(214, 16);
             label22.TabIndex = 117;
-            label22.Text = "Fecha de referencia del estudio";
+            label22.Text = "Fecha de referencia del estudio*";
             // 
             // textDescripcionPeriodo
             // 
@@ -1063,7 +1063,7 @@ namespace SistemaRegistro
             panel5.Controls.Add(comboArea);
             panel5.Controls.Add(comboEstado);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(0, 3);
+            panel5.Location = new Point(-9, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(722, 1019);
             panel5.TabIndex = 2;
