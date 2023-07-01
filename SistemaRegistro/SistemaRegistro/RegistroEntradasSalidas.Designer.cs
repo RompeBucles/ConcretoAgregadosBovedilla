@@ -81,7 +81,7 @@
             panel1.Controls.Add(comboUnidades);
             panel1.Controls.Add(textNombreFlujo);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-63, 1);
+            panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 1127);
             panel1.TabIndex = 77;
@@ -224,6 +224,7 @@
             button1.TabIndex = 104;
             button1.Text = "Guardar datos";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += Guardar_Click;
             // 
             // label3
             // 

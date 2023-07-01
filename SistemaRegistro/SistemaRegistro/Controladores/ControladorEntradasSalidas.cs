@@ -13,11 +13,11 @@ namespace SistemaRegistro.Controladores
     public class controladorEntradasSalidas
     {
         private Conexion ConexionBD = new Conexion();
-
-        public void InsertarDatosFormulario(modeloEntrdasSalidas entrdasSalidas)
+        private SqlDataReader LeerFilas; //Permite renderizar los datos de la BD.
+        public void InsertarEntradasSalidas(modeloEntrdasSalidas entrdasSalidas)
         {
 
-            SqlCommand comando = new SqlCommand("insertarDatosFormulario");
+            SqlCommand comando = new SqlCommand("insertarEntradasSalidas");
             comando.Connection = ConexionBD.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@Producto", entrdasSalidas.id_producto);
@@ -56,6 +56,7 @@ namespace SistemaRegistro.Controladores
                     });
                 }
                 dr.Close();
+                ConexionBD.CerrarConexion();
                 return oListaProducto;
             }
             catch (Exception ex)
@@ -63,6 +64,53 @@ namespace SistemaRegistro.Controladores
                 MessageBox.Show("Error: " + ex.ToString());
                 return oListaProducto;
             }
+        }
+
+        public DataTable SeleccionarEntrasSalidas()
+        {
+            DataTable Tabla = new DataTable();
+            SqlCommand comando = new SqlCommand("seleccionarEntradasSalidas");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            LeerFilas = comando.ExecuteReader();
+            Tabla.Load(LeerFilas);
+            LeerFilas.Close();
+            ConexionBD.CerrarConexion();
+            return Tabla;
+        }
+
+        public void EliminarEntradasSalidas(int id)
+        {
+            SqlCommand comando = new SqlCommand("eliminarEntradasSalidas");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id", id);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            ConexionBD.CerrarConexion();
+        }
+
+        public bool EditarEntradasSalidas(modeloEntrdasSalidas entrdasSalidas, int id)
+        {
+            SqlCommand comando = new SqlCommand("editarEntradasSalidas");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@ID", id);
+            comando.Parameters.AddWithValue("@NombreFlujo", entrdasSalidas.nombreFlujo);
+            comando.Parameters.AddWithValue("@TipoFlujo", entrdasSalidas.tipoFlujo);
+            comando.Parameters.AddWithValue("@Recursos", entrdasSalidas.recursos);
+            comando.Parameters.AddWithValue("@Emisiones", entrdasSalidas.emisiones);
+            comando.Parameters.AddWithValue("@Valor", entrdasSalidas.valor);
+            comando.Parameters.AddWithValue("@Unidad", entrdasSalidas.unidad);
+            comando.Parameters.AddWithValue("@TratamientoDato", entrdasSalidas.tratamientoDato);
+            comando.Parameters.AddWithValue("@Adquisicion", entrdasSalidas.adquisicionDato);
+            comando.Parameters.AddWithValue("@Citas", entrdasSalidas.citaReferencia);
+            comando.Parameters.AddWithValue("@Comentario", entrdasSalidas.comentario);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            ConexionBD.CerrarConexion();
+            return true;
+
         }
 
     }

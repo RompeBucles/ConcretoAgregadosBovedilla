@@ -426,12 +426,12 @@ namespace SistemaRegistro
                 Match NombreFlujoValido = NombreFlujo.Match(textNombreFlujo.Texts);
                 Regex Valor = new Regex(@"^[0-9]+(?:\.[0-9]+)?$");
                 Match ValorValido = Valor.Match(textValor.Texts);
-            
 
 
-                if (comboProductoT.Text == "Producto*"|| textNombreFlujo.Texts == "Ejemplo: Grava 20mm" || comboTipoFlujo.Text == "Tipo de flujo*"
-                   || comboRecursos.Text == "Recursos*"|| comboUnidades.Text == "Unidad*" || textValor.Texts == "Ejemplo: 0" || comboTratamiento.Text == "Tratamiento de dato*"
-                   || comboAdquisicion.Text == "Adquisición de dato*" )
+
+                if (comboProductoT.Text == "Producto*" || textNombreFlujo.Texts == "Ejemplo: Grava 20mm" || comboTipoFlujo.Text == "Tipo de flujo*"
+                   || comboRecursos.Text == "Recursos*" || comboUnidades.Text == "Unidad*" || textValor.Texts == "Ejemplo: 0" || comboTratamiento.Text == "Tratamiento de dato*"
+                   || comboAdquisicion.Text == "Adquisición de dato*")
 
                 {
                     MessageBox.Show("No se han proporcionado algunos datos");
@@ -555,9 +555,9 @@ namespace SistemaRegistro
 
                 if (retorno == true)
                 {
-            
-                    //controladorEntradas.InsertarUsuario(entradasSalidas);
-                    MessageBox.Show("Usuario guardado con éxito");
+
+                    controladorEntradas.InsertarEntradasSalidas(entradasSalidas);
+                    MessageBox.Show("Registro guardado con éxito");
                     Limpiar();
                     errorProvider1.Clear();
                 }

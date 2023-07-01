@@ -401,7 +401,26 @@ namespace SistemaRegistro
                 MessageBox.Show($"Columna");
             }
         }
+        private void Limpiar()
+        {
+            textNombre.Texts = "Ejemplo: Juan";
+            textNombre.ForeColor = Color.Gray;
+            textApellidoP.Texts = "Ejemplo: Pérez";
+            textApellidoP.ForeColor = Color.Gray;
+            textApellidoM.Texts = "Ejemplo: Hernández";
+            textApellidoM.ForeColor = Color.Gray;
+            textCorreo.Texts = " ejemplo@unam.org.mx";
+            textCorreo.ForeColor = Color.Gray;
+            textTelefono.Texts = "Ejemplo: 2281144037";
+            textTelefono.ForeColor = Color.Gray;
+            textUsuario.Texts = "Ejemplo: jperez";
+            textUsuario.ForeColor = Color.Gray;
+            textPassword.Texts = "Contraseña*";
+            textPassword.ForeColor = Color.Gray;
+            textConfPassword.Texts = "Contraseña*";
+            textConfPassword.ForeColor = Color.Gray;
 
+        }
         private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
 
@@ -614,6 +633,7 @@ namespace SistemaRegistro
                     controladorUsuario.EditarUsuario(usu, id);
                     MessageBox.Show("Usuario modificado con éxito");
                     tabControl1.SelectedTab = ListaUsuario;
+                    Limpiar();
                     CargarDG();
                     CargarBotones(); //Se vuelven a generar los botónes.
 

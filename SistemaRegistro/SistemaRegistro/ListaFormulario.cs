@@ -943,7 +943,7 @@ namespace SistemaRegistro
                         tabControl2.TabPages["Geografía"].Enabled = true;
                         // tabControl2.TabPages["VerImagen"].Enabled = false;
                         VerImagen.Parent = null;
-                
+
                         tabControl2.SelectedTab = Identificación;
 
                     }
@@ -1352,9 +1352,9 @@ namespace SistemaRegistro
                     {
                         controladorDatosFormulario.EditarDatosFormulario(modeloIngresoDatos, id);
                         MessageBox.Show("Datos modificados correctamente");
-                        
-                         ListaDatos.Parent = tabControl2;
-                       // VerImagen.Parent = tabControl2;
+
+                        ListaDatos.Parent = tabControl2;
+                        // VerImagen.Parent = tabControl2;
                         tabControl2.SelectedTab = ListaDatos;
                         Limpiar();
                         TabControlBotones();

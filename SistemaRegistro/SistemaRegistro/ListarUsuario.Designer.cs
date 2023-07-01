@@ -518,7 +518,7 @@
             buttonCancelar_Mod.Name = "buttonCancelar_Mod";
             buttonCancelar_Mod.Size = new Size(126, 35);
             buttonCancelar_Mod.TabIndex = 67;
-            buttonCancelar_Mod.Text = "CANCELAR";
+            buttonCancelar_Mod.Text = "REGRESAR";
             buttonCancelar_Mod.UseVisualStyleBackColor = false;
             buttonCancelar_Mod.Click += buttonCancelar_Mod_Click;
             // 
@@ -668,7 +668,7 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(2, 5);
+            panel1.Location = new Point(4, 5);
             panel1.Name = "panel1";
             panel1.Size = new Size(240, 21);
             panel1.TabIndex = 22;
