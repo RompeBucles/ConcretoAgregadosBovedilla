@@ -29,7 +29,7 @@ namespace SistemaRegistro
         modeloIngresoDatos modeloIngresoDatos = new modeloIngresoDatos();
         //Instancia del controlador ingreso datos
         ControladorDatosFormulario controladorDatosFormulario = new ControladorDatosFormulario();
-        String? f1, f2;
+        String f1, f2;
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
@@ -549,6 +549,57 @@ namespace SistemaRegistro
             {
                 textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
                 textCondicionesOpe.ForeColor = Color.Gray;
+            }
+        }
+        /*
+        if (FechaReferencia.Value.Date == new DateTime(2000, 1, 1) || FechaReferencia.Value.Date == new DateTime(1900, 1, 1))
+                    {
+                        
+                        camposFaltantes = true;
+                    }
+                    else
+                    {
+                        f1 = FechaReferencia.Value.ToString("yyyy-MM-dd");
+                    }
+        */
+        private void FechaReferencia_Enter(object sender, EventArgs e)
+        {
+            if (FechaReferencia.Text == "2000-01-01")
+            {
+                FechaReferencia.ForeColor = Color.Black;
+            }
+        }
+
+        private void FechaReferencia_Leave(object sender, EventArgs e)
+        {
+            if (FechaReferencia.Text == "2000-01-01")
+            {
+                errorProvider1.SetError(FechaReferencia, "Debe ingresar una fecha de referencia válida");
+                FechaReferencia.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(FechaReferencia, String.Empty);
+            }
+        }
+        private void FechaDatosValidos_Enter(object sender, EventArgs e)
+        {
+            if (FechaDatosValidos.Text == "2000-01-01")
+            {
+                FechaDatosValidos.ForeColor = Color.Black;
+            }
+        }
+
+        private void FechaDatosValidos_Leave(object sender, EventArgs e)
+        {
+            if (FechaDatosValidos.Text == "2000-01-01")
+            {
+                errorProvider1.SetError(FechaDatosValidos, "Se ingresar una fecha de datos válida");
+                FechaDatosValidos.ForeColor = Color.Gray;
+            }
+            else
+            {
+                errorProvider1.SetError(FechaDatosValidos, String.Empty);
             }
         }
         private void textDescripcionPeriodo_Enter(object sender, EventArgs e)
@@ -1209,7 +1260,8 @@ namespace SistemaRegistro
                 {
                     if (FechaReferencia.Value.Date == new DateTime(2000, 1, 1) || FechaReferencia.Value.Date == new DateTime(1900, 1, 1))
                     {
-                        f1 = null;
+                        errorProvider1.SetError(FechaReferencia, "Se ingresar una fecha de referencia válida");
+                        camposFaltantes = true;
                     }
                     else
                     {
@@ -1218,7 +1270,8 @@ namespace SistemaRegistro
 
                     if (FechaDatosValidos.Value.Date == new DateTime(2000, 1, 1) || FechaDatosValidos.Value.Date == new DateTime(1900, 1, 1))
                     {
-                        f2 = null;
+                        errorProvider1.SetError(FechaDatosValidos, "Se ingresar una fecha de datos válida");
+                        camposFaltantes = true;
                     }
                     else
                     {

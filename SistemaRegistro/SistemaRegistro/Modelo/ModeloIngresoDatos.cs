@@ -24,8 +24,8 @@ namespace SistemaRegistro.Modelo
         public byte[]? imagen { get; set; }    
         public string tipoTecnologia { get; set; }
         public string? condicionesOperacion { get; set; }
-        public string? fechaReferencia { get; set; }
-        public string? datosValidos { get; set; }
+        public string fechaReferencia { get; set; }
+        public string datosValidos { get; set; }
         public string? descripcion { get; set; }
         public int id_estado {get; set;  }
         public int id_area {get; set;  }
