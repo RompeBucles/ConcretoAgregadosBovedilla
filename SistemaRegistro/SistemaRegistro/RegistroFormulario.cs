@@ -109,9 +109,14 @@ namespace SistemaRegistro
             ListaUnidadUno.Add("Energía (MJ)");
             ListaUnidadUno.Add("Tiempo de uso del equipo (hora)");
             ListaUnidadUno.Add("Productos líquidos (l)");
-            ListaUnidadUno.Add("Energia (KWh)");
-            ListaUnidadUno.Add("Energía (kJ)");
+            ListaUnidadUno.Add("Volumen(m³)");
+            ListaUnidadUno.Add("Energia(KWh)");
             comboUnidadUno.DataSource = ListaUnidadUno;
+            
+
+
+
+
 
             //Asigna opciones a la lista ListaLimiteSistema
             List<string> ListaLimiteSistema = new List<string>();

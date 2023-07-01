@@ -192,7 +192,7 @@ namespace SistemaRegistro
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(-9, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
@@ -603,7 +603,7 @@ namespace SistemaRegistro
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-72, 3);
+            panel4.Location = new Point(-81, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
@@ -801,7 +801,7 @@ namespace SistemaRegistro
             comboUnidadUno.DropDownStyle = ComboBoxStyle.DropDownList;
             comboUnidadUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboUnidadUno.FormattingEnabled = true;
-            comboUnidadUno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)" });
+            comboUnidadUno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)", "Energia (KWh)" });
             comboUnidadUno.Location = new Point(203, 142);
             comboUnidadUno.Name = "comboUnidadUno";
             comboUnidadUno.Size = new Size(348, 25);
@@ -1063,7 +1063,7 @@ namespace SistemaRegistro
             panel5.Controls.Add(comboArea);
             panel5.Controls.Add(comboEstado);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-72, 3);
+            panel5.Location = new Point(-81, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(722, 1019);
             panel5.TabIndex = 2;
