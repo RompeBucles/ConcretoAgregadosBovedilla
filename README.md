@@ -2,6 +2,8 @@
 1.- Instalar SQLserver Developer<br>
 2.- crear base de datos "CREATE DATABASE registroDatos"<br>
 3.- Ejecutar el "scriptBD.sql" que se encuentra en este repositorio<br>
+4.- Descargar y descomprimir el archivo .zip "Sistema" se encuentra en este repositorio<br>
+4.- Abrir el archivo de aplicacion "SistemaRegistro.exe"<br>
 <br>
 Credenciales para inciar sesión como Administrador:<br>
 Usuario:<br>
