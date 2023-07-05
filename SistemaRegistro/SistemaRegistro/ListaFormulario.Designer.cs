@@ -36,7 +36,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaFormulario));
             tabControl2 = new TabControl();
             ListaDatos = new TabPage();
+            panel9 = new Panel();
             btnExportarCSV = new Button();
+            textNusuario = new TextBox();
             dataGridView1 = new DataGridView();
             btnSeleccionarT = new Button();
             btnExportarPDF = new Button();
@@ -183,7 +185,9 @@
             // ListaDatos
             // 
             ListaDatos.BackColor = Color.FromArgb(242, 230, 230);
+            ListaDatos.Controls.Add(panel9);
             ListaDatos.Controls.Add(btnExportarCSV);
+            ListaDatos.Controls.Add(textNusuario);
             ListaDatos.Controls.Add(dataGridView1);
             ListaDatos.Controls.Add(btnSeleccionarT);
             ListaDatos.Controls.Add(btnExportarPDF);
@@ -193,6 +197,15 @@
             ListaDatos.Size = new Size(755, 490);
             ListaDatos.TabIndex = 5;
             ListaDatos.Text = "Lista Datos";
+            // 
+            // panel9
+            // 
+            panel9.Anchor = AnchorStyles.None;
+            panel9.Location = new Point(2, 439);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(84, 38);
+            panel9.TabIndex = 84;
+            panel9.Visible = false;
             // 
             // btnExportarCSV
             // 
@@ -209,6 +222,15 @@
             btnExportarCSV.Text = "Exportar como CSV";
             btnExportarCSV.UseVisualStyleBackColor = false;
             btnExportarCSV.Click += btnExportarCSV_Click;
+            // 
+            // textNusuario
+            // 
+            textNusuario.Anchor = AnchorStyles.None;
+            textNusuario.Location = new Point(3, 454);
+            textNusuario.Name = "textNusuario";
+            textNusuario.Size = new Size(83, 23);
+            textNusuario.TabIndex = 83;
+            textNusuario.Visible = false;
             // 
             // dataGridView1
             // 
@@ -370,7 +392,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-8, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(729, 787);
             panel1.TabIndex = 76;
@@ -1333,7 +1355,7 @@
             panel3.Controls.Add(label21);
             panel3.Controls.Add(textDescripcionPeriodo);
             panel3.Controls.Add(label7);
-            panel3.Location = new Point(-2, 3);
+            panel3.Location = new Point(0, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(748, 484);
             panel3.TabIndex = 1;
@@ -1460,7 +1482,7 @@
             panel5.Controls.Add(trackZoom);
             panel5.Controls.Add(dataGridView2);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-8, 3);
+            panel5.Location = new Point(0, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(732, 1019);
             panel5.TabIndex = 2;
@@ -1721,6 +1743,7 @@
             Load += ListaFormulario_Load;
             tabControl2.ResumeLayout(false);
             ListaDatos.ResumeLayout(false);
+            ListaDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             Identificación.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -1856,5 +1879,7 @@
         private DateTimePicker FechaDatosValidos;
         private Label label32;
         private Label label33;
+        private Panel panel9;
+        private TextBox textNusuario;
     }
 }

@@ -77,7 +77,7 @@ namespace SistemaRegistro
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Intentelo mas tarde"+ ex);
+                MessageBox.Show("Intentelo mas tarde" + ex);
             }
         }
     }

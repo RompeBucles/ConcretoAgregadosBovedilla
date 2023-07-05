@@ -18,12 +18,20 @@ namespace SistemaRegistro
     {
         //instancia del modelo {get; set;} 
         modeloEntrdasSalidas entradasSalidas = new modeloEntrdasSalidas();
+        //instancia del modelo {get; set;} 
+        modeloBitacora bitacora = new modeloBitacora();
         //Instacia del controlador
         controladorEntradasSalidas controladorEntradas = new controladorEntradasSalidas();
-        public RegistroEntradasSalidas()
+        //Instacia del controlador
+        ControladorBitacora controladorBitacora = new ControladorBitacora();
+        //Variable para registrar en la bitacora
+        string operacionBi = "Alta";
+        string descripcionBi = "Registro en entradas/salidas";
+        public RegistroEntradasSalidas(string usuario)
         {
             InitializeComponent();
             listarProducto();
+            textNusuario.Text = usuario;
             //Asigna opciones a la lista ComboTipoFlujo
             List<string> ListaTipoFlujo = new List<string>();
             ListaTipoFlujo.Add("Tipo de flujo*");
@@ -427,7 +435,7 @@ namespace SistemaRegistro
                    || comboAdquisicion.Text == "Adquisición de dato*")
 
                 {
-                    MessageBox.Show("No se han proporcionado algunos datos");
+                    MessageBox.Show("No se han proporcionado algunos datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     retorno = false;
                 }
 
@@ -545,12 +553,18 @@ namespace SistemaRegistro
                 {
                     entradasSalidas.comentario = textComentario.Texts;
                 }
-
+                //Estos son los registros para la bitacora
+                bitacora.operacion = operacionBi;
+                bitacora.descripcionEvento = descripcionBi;
+                bitacora.usuario = textNusuario.Text;
                 if (retorno == true)
                 {
-
+                    //Actualiza a la fecha y hora para insertar en la bitacora
+                    DateTime fechaActual = DateTime.Now;
+                    bitacora.fecha = fechaActual;
                     controladorEntradas.InsertarEntradasSalidas(entradasSalidas);
-                    MessageBox.Show("Registro guardado con éxito");
+                    controladorBitacora.InsertBitacora(bitacora);
+                    MessageBox.Show("Registro guardado con éxito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                     errorProvider1.Clear();
                 }

@@ -35,6 +35,8 @@ namespace SistemaRegistro
             tabControl1 = new TabControl();
             Identificación = new TabPage();
             panel1 = new Panel();
+            panel8 = new Panel();
+            textNusuario = new TextBox();
             ComboProducto = new ComboBox();
             ComboTecno = new ComboBox();
             label27 = new Label();
@@ -163,6 +165,8 @@ namespace SistemaRegistro
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
+            panel1.Controls.Add(panel8);
+            panel1.Controls.Add(textNusuario);
             panel1.Controls.Add(ComboProducto);
             panel1.Controls.Add(ComboTecno);
             panel1.Controls.Add(label27);
@@ -192,10 +196,28 @@ namespace SistemaRegistro
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-63, 0);
+            panel1.Location = new Point(-9, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
+            // 
+            // panel8
+            // 
+            panel8.Anchor = AnchorStyles.None;
+            panel8.Location = new Point(440, 464);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(199, 38);
+            panel8.TabIndex = 132;
+            panel8.Visible = false;
+            // 
+            // textNusuario
+            // 
+            textNusuario.Anchor = AnchorStyles.None;
+            textNusuario.Location = new Point(516, 467);
+            textNusuario.Name = "textNusuario";
+            textNusuario.Size = new Size(100, 22);
+            textNusuario.TabIndex = 131;
+            textNusuario.Visible = false;
             // 
             // ComboProducto
             // 
@@ -603,7 +625,7 @@ namespace SistemaRegistro
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-45, 3);
+            panel4.Location = new Point(-9, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
@@ -1067,7 +1089,7 @@ namespace SistemaRegistro
             panel5.Controls.Add(comboArea);
             panel5.Controls.Add(comboEstado);
             panel5.Controls.Add(label10);
-            panel5.Location = new Point(-45, 3);
+            panel5.Location = new Point(0, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(722, 1019);
             panel5.TabIndex = 2;
@@ -1368,5 +1390,7 @@ namespace SistemaRegistro
         private Templates.TextBox txtlongitud;
         private DateTimePicker FechaDatosValidos;
         private DateTimePicker FechaReferencia;
+        private Panel panel8;
+        private TextBox textNusuario;
     }
 }

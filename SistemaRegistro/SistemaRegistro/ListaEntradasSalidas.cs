@@ -20,12 +20,18 @@ namespace SistemaRegistro
         //instancia de controldor entradas salidas
         controladorEntradasSalidas controladorEntradas = new controladorEntradasSalidas();
         //instancia del modelo {get; set;} 
+        modeloBitacora bitacora = new modeloBitacora();
+        //Instacia del controlador
+        ControladorBitacora controladorBitacora = new ControladorBitacora();
+        //instancia del modelo {get; set;} 
         modeloEntrdasSalidas entradasSalidas = new modeloEntrdasSalidas();
         private int id;
-        public ListaEntradasSalidas()
+
+        public ListaEntradasSalidas(string usuario)
         {
             InitializeComponent();
             CargarDG();
+            textNusuario.Text = usuario;
         }
         private void CargarDG()
         {
@@ -434,7 +440,10 @@ namespace SistemaRegistro
         {
             try
             {
-                DialogResult result = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                //Variable para registrar en la bitacora
+                string operacionBiE = "Baja";
+                string descripcionBiE = "Eliminación de registro en estradas/salidas";
+                DialogResult result = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     List<DataGridViewRow> filasEliminar = new List<DataGridViewRow>();
@@ -469,8 +478,15 @@ namespace SistemaRegistro
                         {
                             dataGridView1.Rows.Remove(rowEliminar);
                         }
-
-                        MessageBox.Show("Registro(s) elimado(s)");
+                        //Estos son los registros para la bitacora
+                        bitacora.operacion = operacionBiE;
+                        bitacora.descripcionEvento = descripcionBiE;
+                        bitacora.usuario = textNusuario.Text;
+                        //Actualiza a la fecha y hora para insertar en la bitacora
+                        DateTime fechaActualE = DateTime.Now;
+                        bitacora.fecha = fechaActualE;
+                        controladorBitacora.InsertBitacora(bitacora);
+                        MessageBox.Show("Registro(s) elimado(s)", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -491,6 +507,9 @@ namespace SistemaRegistro
 
         private bool guardar()
         {
+            //Variable para registrar en la bitacora
+            string operacionBi = "Modificación";
+            string descripcionBi = "Datos modificados en entradas/salidas";
             bool retorno = true;
             try
             {
@@ -507,7 +526,7 @@ namespace SistemaRegistro
                    || comboAdquisicion.Text == "Adquisición de dato*")
 
                 {
-                    MessageBox.Show("No se han proporcionado algunos datos");
+                    MessageBox.Show("No se han proporcionado algunos datos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     retorno = false;
                 }
 
@@ -614,13 +633,22 @@ namespace SistemaRegistro
                 {
                     entradasSalidas.comentario = textComentario.Texts;
                 }
+                //Estos son los registros para la bitacora
+                bitacora.operacion = operacionBi;
+                bitacora.descripcionEvento = descripcionBi;
+                bitacora.usuario = textNusuario.Text;
 
                 if (retorno == true)
                 {
-
+                    //Actualiza a la fecha y hora para insertar en la bitacora
+                    DateTime fechaActual = DateTime.Now;
+                    bitacora.fecha = fechaActual;
                     controladorEntradas.EditarEntradasSalidas(entradasSalidas, id);
-                    MessageBox.Show("Registro modificado con éxito");
+                    controladorBitacora.InsertBitacora(bitacora);
+                    MessageBox.Show("Registro modificado con éxito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
+                    CargarDG();
+                    CargarBotones(); //Se vuelven a generar los botónes.
                     errorProvider1.Clear();
                     tabControl1.SelectedTab = ListaEntradas;
                 }

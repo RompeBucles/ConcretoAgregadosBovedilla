@@ -33,14 +33,12 @@ namespace SistemaRegistro
             dataGridView1.Columns[0].HeaderText = "Operación";
             dataGridView1.Columns[1].HeaderText = "Fecha y hora";
             dataGridView1.Columns[2].HeaderText = "Descripción del evento";
-            dataGridView1.Columns[3].HeaderText = "Registros";
-            dataGridView1.Columns[4].HeaderText = "Usuario";
+            dataGridView1.Columns[3].HeaderText = "Usuario";
 
             dataGridView1.Columns[0].Visible = true;//Operación
             dataGridView1.Columns[1].Visible = true;//Fecha y hora
             dataGridView1.Columns[2].Visible = true;//Descripción
-            dataGridView1.Columns[3].Visible = true;//Registros
-            dataGridView1.Columns[4].Visible = true;//Usuario
+            dataGridView1.Columns[3].Visible = true;//Usuario
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Ajusta el ancho de las columnas según el contenido de las celdas
             dataGridView1.AutoResizeColumns();

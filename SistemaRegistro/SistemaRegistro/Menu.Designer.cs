@@ -50,6 +50,7 @@
             labelPerfilU = new Label();
             labelPerfil = new Label();
             pictureBox2 = new PictureBox();
+            label1 = new Label();
             panelLateral.SuspendLayout();
             panelSubEntradas.SuspendLayout();
             panelSubFormulario.SuspendLayout();
@@ -311,6 +312,7 @@
             // panelContenedor
             // 
             panelContenedor.BackColor = Color.FromArgb(242, 230, 230);
+            panelContenedor.Controls.Add(label1);
             panelContenedor.Controls.Add(labelPerfilU);
             panelContenedor.Controls.Add(labelPerfil);
             panelContenedor.Controls.Add(pictureBox2);
@@ -354,6 +356,15 @@
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(706, 576);
+            label1.Name = "label1";
+            label1.Size = new Size(66, 15);
+            label1.TabIndex = 19;
+            label1.Text = "Versión: 1.0";
             // 
             // Menu
             // 
@@ -400,5 +411,6 @@
         private PictureBox pictureBox2;
         private Label labelPerfil;
         private Label labelPerfilU;
+        private Label label1;
     }
 }

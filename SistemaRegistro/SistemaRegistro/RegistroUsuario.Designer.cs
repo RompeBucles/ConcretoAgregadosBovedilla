@@ -56,6 +56,8 @@
             pbMostrar1 = new PictureBox();
             pbOcultar = new PictureBox();
             errorProvider1 = new ErrorProvider(components);
+            textNusuario = new TextBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pbMostrar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbOcultar1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbMostrar1).BeginInit();
@@ -452,6 +454,24 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // textNusuario
+            // 
+            textNusuario.Anchor = AnchorStyles.None;
+            textNusuario.Location = new Point(636, 12);
+            textNusuario.Name = "textNusuario";
+            textNusuario.Size = new Size(100, 23);
+            textNusuario.TabIndex = 81;
+            textNusuario.Visible = false;
+            // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.None;
+            panel1.Location = new Point(557, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(199, 38);
+            panel1.TabIndex = 82;
+            panel1.Visible = false;
+            // 
             // RegistroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -459,6 +479,8 @@
             AutoScroll = true;
             BackColor = Color.FromArgb(242, 230, 230);
             ClientSize = new Size(768, 522);
+            Controls.Add(panel1);
+            Controls.Add(textNusuario);
             Controls.Add(pbMostrar1);
             Controls.Add(pbOcultar1);
             Controls.Add(pbMostrar);
@@ -528,5 +550,7 @@
         private PictureBox pbMostrar1;
         private PictureBox pbOcultar;
         private ErrorProvider errorProvider1;
+        private TextBox textNusuario;
+        private Panel panel1;
     }
 }

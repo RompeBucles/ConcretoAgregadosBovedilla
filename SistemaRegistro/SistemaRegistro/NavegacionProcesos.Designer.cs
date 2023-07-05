@@ -73,7 +73,7 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(ComboProcesos);
             panel1.Controls.Add(label8);
-            panel1.Location = new Point(-16, 4);
+            panel1.Location = new Point(0, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(715, 630);
             panel1.TabIndex = 114;

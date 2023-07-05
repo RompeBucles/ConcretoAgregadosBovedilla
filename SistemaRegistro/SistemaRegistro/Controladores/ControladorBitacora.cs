@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaRegistro.Modelo;
 
 namespace SistemaRegistro.Controladores
 {
@@ -26,6 +27,20 @@ namespace SistemaRegistro.Controladores
             LeerFilas.Close();
             ConexionBD.CerrarConexion();
             return Tabla;
+        }
+
+        public void InsertBitacora(modeloBitacora modeloBi)
+        {
+            SqlCommand comando = new SqlCommand("insertBitacora");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Operacion", modeloBi.operacion);
+            comando.Parameters.AddWithValue("@Fecha", modeloBi.fecha);
+            comando.Parameters.AddWithValue("@DescripcionEvento", modeloBi.descripcionEvento);
+            comando.Parameters.AddWithValue("@Usuario", modeloBi.usuario);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+            ConexionBD.CerrarConexion();
         }
     }
 }

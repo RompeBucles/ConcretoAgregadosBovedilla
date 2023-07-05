@@ -27,8 +27,13 @@ namespace SistemaRegistro
         private Usuarios usuarios = new Usuarios();
         //Instacia del modelo ingreso datos
         modeloIngresoDatos modeloIngresoDatos = new modeloIngresoDatos();
+        //instancia del modelo {get; set;} 
+        modeloBitacora bitacora = new modeloBitacora();
         //Instancia del controlador ingreso datos
         ControladorDatosFormulario controladorDatosFormulario = new ControladorDatosFormulario();
+        //Instacia del controlador
+        ControladorBitacora controladorBitacora = new ControladorBitacora();
+
         String f1, f2;
         GMarkerGoogle marker;
         GMapOverlay markerOverlay;
@@ -42,10 +47,14 @@ namespace SistemaRegistro
         int filaSeleccionada = 0;
         double LatInicial = 19.6011941612631;
         double LngInicial = -99.140625;
+        //Variable para registrar en la bitacora
+        string operacionBi = "Alta";
+        string descripcionBi = "Registro datos formulario";
 
-        public RegistroFormulario()
+        public RegistroFormulario(string usuario)
         {
             InitializeComponent();
+            textNusuario.Text = usuario;
             //Estado y Area
             llenarCombos();
             //asignamos una hora por defecto a los datetimepickers
@@ -1029,8 +1038,16 @@ namespace SistemaRegistro
                 {
                     try
                     {
+                        bitacora.operacion = operacionBi;
+                        bitacora.descripcionEvento = descripcionBi;
+                        bitacora.usuario = textNusuario.Text;
+
+                        //Actualiza a la fecha y hora para insertar en la bitacora
+                        DateTime fechaActual = DateTime.Now;
+                        bitacora.fecha = fechaActual;
                         controladorDatosFormulario.InsertarDatosFormulario(modeloIngresoDatos);
-                        MessageBox.Show("Todos los campos se han guardado correctamente");
+                        controladorBitacora.InsertBitacora(bitacora);
+                        MessageBox.Show("Todos los campos se han guardado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                         errorProvider1.Clear();
                         tabControl1.SelectedTab = Identificación;
@@ -1323,7 +1340,7 @@ namespace SistemaRegistro
 
                     if (txtlatitud.Texts == "Latitud" && txtlongitud.Texts == "Longitud")
                     {
-                        MessageBox.Show("Falta indicar representación geográfica");
+                        MessageBox.Show("Falta indicar representación geográfica", "Campo faltante", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         camposFaltantes = true;
                     }
                     else

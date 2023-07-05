@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             tabControl1 = new TabControl();
             ListaEntradas = new TabPage();
+            panel2 = new Panel();
+            textNusuario = new TextBox();
             btnSeleccionarT = new Button();
             btnBorrar = new Button();
             dataGridView1 = new DataGridView();
@@ -68,6 +70,7 @@
             textNombreFlujo = new Templates.TextBox();
             labelUsuario = new Label();
             errorProvider1 = new ErrorProvider(components);
+            panel3 = new Panel();
             tabControl1.SuspendLayout();
             ListaEntradas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -81,7 +84,7 @@
             tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(ListaEntradas);
             tabControl1.Controls.Add(EditarEntradas);
-            tabControl1.Location = new Point(1, 3);
+            tabControl1.Location = new Point(1, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(765, 517);
@@ -90,6 +93,8 @@
             // ListaEntradas
             // 
             ListaEntradas.BackColor = Color.FromArgb(242, 230, 230);
+            ListaEntradas.Controls.Add(panel2);
+            ListaEntradas.Controls.Add(textNusuario);
             ListaEntradas.Controls.Add(btnSeleccionarT);
             ListaEntradas.Controls.Add(btnBorrar);
             ListaEntradas.Controls.Add(dataGridView1);
@@ -100,6 +105,24 @@
             ListaEntradas.Size = new Size(757, 489);
             ListaEntradas.TabIndex = 0;
             ListaEntradas.Text = "ListaEntradas / Salidas";
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.Location = new Point(17, 438);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(199, 38);
+            panel2.TabIndex = 84;
+            panel2.Visible = false;
+            // 
+            // textNusuario
+            // 
+            textNusuario.Anchor = AnchorStyles.None;
+            textNusuario.Location = new Point(69, 438);
+            textNusuario.Name = "textNusuario";
+            textNusuario.Size = new Size(100, 23);
+            textNusuario.TabIndex = 83;
+            textNusuario.Visible = false;
             // 
             // btnSeleccionarT
             // 
@@ -144,44 +167,44 @@
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = SystemColors.Control;
             dataGridView1.Location = new Point(2, 3);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Firebrick;
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Firebrick;
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(748, 429);
@@ -247,7 +270,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(textNombreFlujo);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(-8, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 1127);
             panel1.TabIndex = 78;
@@ -634,12 +657,20 @@
             // 
             errorProvider1.ContainerControl = this;
             // 
+            // panel3
+            // 
+            panel3.Location = new Point(0, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(267, 22);
+            panel3.TabIndex = 86;
+            // 
             // ListaEntradasSalidas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(242, 230, 230);
             ClientSize = new Size(768, 522);
+            Controls.Add(panel3);
             Controls.Add(tabControl1);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(500, 500);
@@ -648,6 +679,7 @@
             Load += ListaEntradasSalidas_Load;
             tabControl1.ResumeLayout(false);
             ListaEntradas.ResumeLayout(false);
+            ListaEntradas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             EditarEntradas.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -693,5 +725,8 @@
         public ComboBox comboProductoT;
         private ComboBox comboUnidades;
         private Button btnRegresar;
+        private Panel panel2;
+        private TextBox textNusuario;
+        private Panel panel3;
     }
 }

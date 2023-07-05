@@ -1,17 +1,9 @@
 ﻿using SistemaRegistro.ConexionBD;
 using SistemaRegistro.Controladores;
 using SistemaRegistro.Modelo;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace SistemaRegistro
 {
@@ -20,19 +12,26 @@ namespace SistemaRegistro
         private Conexion ConexionBD = new Conexion();
         //instancia del modelo {get; set;} 
         modeloUsuarios usu = new modeloUsuarios();
+        //instancia del modelo {get; set;} 
+        modeloBitacora bitacora = new modeloBitacora();
         //Instacia de usuarios, para usar el motodo de validación 
         private Usuarios usuarios = new Usuarios();
         //Instacia del controlador
         ControladorUsuario controladorUsuario = new ControladorUsuario();
+        //Instacia del controlador
+        ControladorBitacora controladorBitacora = new ControladorBitacora();
 
         DataSet dsTabla;
         private SqlDataReader LeerFilas;
         //variable que se usar para guadar el valor del radio button
         private int valorSeleccionadoPerfil;
-
-        public RegistroUsuario()
+        //Variable para registrar en la bitacora
+        string operacionBi = "Alta";
+        string descripcionBi = "Registro de un usuario";
+        public RegistroUsuario(string usuario)
         {
             InitializeComponent();
+            textNusuario.Text = usuario;
         }
 
         private void textNombre_Enter(object sender, EventArgs e)
@@ -270,10 +269,10 @@ namespace SistemaRegistro
                 Match ContraValido = Contra.Match(textPassword.Texts);
 
 
-                 if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textCorreo.Texts == " ejemplo@unam.org.mx"
-                    || textTelefono.Texts == "Ejemplo: 2281144037" || textUsuario.Texts == "Ejemplo: jperez" || textPassword.Texts == "Contraseña*" || textConfPassword.Texts == "Contraseña*")
+                if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textCorreo.Texts == " ejemplo@unam.org.mx"
+                   || textTelefono.Texts == "Ejemplo: 2281144037" || textUsuario.Texts == "Ejemplo: jperez" || textPassword.Texts == "Contraseña*" || textConfPassword.Texts == "Contraseña*")
                 {
-                    MessageBox.Show("Hay datos que aún no se han proporcionado");
+                    MessageBox.Show("Campos faltantes", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     retorno = false;
                 }
                 if (NombreValido.Success)
@@ -304,7 +303,7 @@ namespace SistemaRegistro
                 {
                     usu.apellidoM = textApellidoM.Texts;
                 }
-            
+
                 if (isEmailValid.Success)
                 {
                     usu.correo = textCorreo.Texts;
@@ -371,16 +370,24 @@ namespace SistemaRegistro
                     valorSeleccionadoPerfil = 2;
                 }
                 //son campos no obligatorios sse asignan sin condicional
-              
-                usu.perfil = valorSeleccionadoPerfil;
 
+                usu.perfil = valorSeleccionadoPerfil;
+                //Estos son los registros para la bitacora
+                bitacora.operacion = operacionBi;
+                bitacora.descripcionEvento = descripcionBi;
+                bitacora.usuario = textNusuario.Text;
 
                 if (retorno == true)
                 {
+                    //Actualiza a la fecha y hora para insertar en la bitacora
+                    DateTime fechaActual = DateTime.Now;
+                    bitacora.fecha = fechaActual;
+                    //Encripta la cadena del la contra
                     string cadenaEncriptada = Encrypt.GetSHA256(textPassword.Texts.Trim());
                     usu.contrasena = cadenaEncriptada;
                     controladorUsuario.InsertarUsuario(usu);
-                    MessageBox.Show("Usuario guardado con éxito");
+                    controladorBitacora.InsertBitacora(bitacora);
+                    MessageBox.Show("Usuario guardado con éxito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpiar();
                     pbOcultar.ResetText();
                     errorProvider1.Clear();

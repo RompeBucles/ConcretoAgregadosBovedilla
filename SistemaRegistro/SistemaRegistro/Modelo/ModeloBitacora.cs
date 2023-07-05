@@ -12,9 +12,7 @@ namespace SistemaRegistro.Modelo
         public string operacion { get; set; }
         public DateTime fecha { get; set; }
         public string descripcionEvento { get; set; }
-        public int registros { get; set; }
-        public int id_usuario { get; set; }
-        public string nombre { get; set; }
+        public string usuario { get; set; }
 
 
     }

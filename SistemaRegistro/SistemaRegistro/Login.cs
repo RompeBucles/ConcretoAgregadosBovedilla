@@ -110,7 +110,7 @@ namespace SistemaRegistro
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error conexión",e.Message);
+                MessageBox.Show("Error conexión", e.Message);
             }
             finally
             {

@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            panel2 = new Panel();
+            textNusuario = new TextBox();
             label4 = new Label();
             comboRecursos = new ComboBox();
             textValor = new Templates.TextBox();
@@ -60,6 +62,8 @@
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(textNusuario);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(comboRecursos);
             panel1.Controls.Add(textValor);
@@ -81,10 +85,28 @@
             panel1.Controls.Add(comboUnidades);
             panel1.Controls.Add(textNombreFlujo);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-9, 1);
+            panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 1127);
             panel1.TabIndex = 77;
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.Location = new Point(550, 17);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(163, 38);
+            panel2.TabIndex = 125;
+            panel2.Visible = false;
+            // 
+            // textNusuario
+            // 
+            textNusuario.Anchor = AnchorStyles.None;
+            textNusuario.Location = new Point(603, 32);
+            textNusuario.Name = "textNusuario";
+            textNusuario.Size = new Size(100, 23);
+            textNusuario.TabIndex = 124;
+            textNusuario.Visible = false;
             // 
             // label4
             // 
@@ -446,5 +468,7 @@
         private ComboBox comboRecursos;
         private Label label4;
         private ErrorProvider errorProvider1;
+        private Panel panel2;
+        private TextBox textNusuario;
     }
 }

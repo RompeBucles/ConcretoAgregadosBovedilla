@@ -31,6 +31,10 @@ namespace SistemaRegistro
     {
         //Instacia del modelo ingreso datos
         modeloIngresoDatos modeloIngresoDatos = new modeloIngresoDatos();
+        //instancia del modelo {get; set;} 
+        modeloBitacora bitacora = new modeloBitacora();
+        //Instacia del controlador
+        ControladorBitacora controladorBitacora = new ControladorBitacora();
         //instacia controlador formualario
         ControladorDatosFormulario controladorDatosFormulario = new ControladorDatosFormulario();
 
@@ -52,11 +56,12 @@ namespace SistemaRegistro
         double LatInicial = 19.6011941612631;
         double LngInicial = -99.140625;
 
-        public ListaFormulario()
+        public ListaFormulario(string usuario)
         {
             InitializeComponent();
             TabControlBotones();
             CargarDG();
+            textNusuario.Text = usuario;
             //Estado y Area
             llenarCombos();
             //asignamos una hora por defecto a los datetimepickers
@@ -1204,7 +1209,11 @@ namespace SistemaRegistro
         {
             try
             {
-                DialogResult result = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                //Variable para registrar en la bitacora
+                string operacionBiE = "Baja";
+                string descripcionBiE = "Eliminación de registro del formulario";
+
+                DialogResult result = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     List<DataGridViewRow> filasEliminar = new List<DataGridViewRow>();
@@ -1239,8 +1248,15 @@ namespace SistemaRegistro
                         {
                             dataGridView1.Rows.Remove(rowEliminar);
                         }
-
-                        MessageBox.Show("Registro(s) elimado(s)");
+                        //Estos son los registros para la bitacora
+                        bitacora.operacion = operacionBiE;
+                        bitacora.descripcionEvento = descripcionBiE;
+                        bitacora.usuario = textNusuario.Text;
+                        //Actualiza a la fecha y hora para insertar en la bitacora
+                        DateTime fechaActualE = DateTime.Now;
+                        bitacora.fecha = fechaActualE;
+                        controladorBitacora.InsertBitacora(bitacora);
+                        MessageBox.Show("Registro(s) elimado(s)", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -1371,6 +1387,9 @@ namespace SistemaRegistro
         {
             try
             {
+                //Variable para registrar en la bitacora
+                string operacionBi = "Modificación";
+                string descripcionBi = "Datos modificados de un registro del formulario";
                 bool composFaltantes = false;
                 for (int i = 0; i < tabControl2.TabPages.Count; i++)
                 {
@@ -1392,8 +1411,16 @@ namespace SistemaRegistro
                 {
                     try
                     {
+                        //Estos son los registros para la bitacora
+                        bitacora.operacion = operacionBi;
+                        bitacora.descripcionEvento = descripcionBi;
+                        bitacora.usuario = textNusuario.Text;
+                        //Actualiza a la fecha y hora para insertar en la bitacora
+                        DateTime fechaActual = DateTime.Now;
+                        bitacora.fecha = fechaActual;
                         controladorDatosFormulario.EditarDatosFormulario(modeloIngresoDatos, id);
-                        MessageBox.Show("Datos modificados correctamente");
+                        controladorBitacora.InsertBitacora(bitacora);
+                        MessageBox.Show("Datos modificados correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         ListaDatos.Parent = tabControl2;
                         // VerImagen.Parent = tabControl2;
@@ -1690,7 +1717,7 @@ namespace SistemaRegistro
 
                     if (txtlatitud.Texts == "Latitud" && txtlongitud.Texts == "Longitud")
                     {
-                        MessageBox.Show("Falta indicar representación geográfica");
+                        MessageBox.Show("Falta indicar representación geográfica", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         camposFaltantes = true;
                     }
                     else

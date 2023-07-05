@@ -28,11 +28,13 @@ namespace SistemaRegistro
         int idper;
         //instancia de conexion que no se usa
         private Conexion ConexionBD = new Conexion();
-        public Menu(Login log, string nombre, int tipo, int id)
+        //variable global para guardar el nombre de usuario
+        string usua;
+        public Menu(Login log, string usuario, int tipo, int id)
         {
             InitializeComponent();
             costomizeDesing();
-         
+            usua = usuario;
             //se asigna el tipo a la variable global
             t = tipo;
             //se manda a llamar la funcion que hace la distincion entre los tipos de usuarios
@@ -110,13 +112,13 @@ namespace SistemaRegistro
 
         private void btnRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            openContenedorForm(new RegistroUsuario());
+            openContenedorForm(new RegistroUsuario(usua));
             hideSubMenu();
         }
 
         private void btnListarUsuarios_Click(object sender, EventArgs e)
         {
-            openContenedorForm(new ListarUsuario());
+            openContenedorForm(new ListarUsuario(usua));
             hideSubMenu();
         }
 
@@ -127,13 +129,13 @@ namespace SistemaRegistro
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            openContenedorForm(new RegistroFormulario());
+            openContenedorForm(new RegistroFormulario(usua));
             hideSubMenu();
         }
 
         private void btnListaDatos_Click(object sender, EventArgs e)
         {
-            openContenedorForm(new ListaFormulario());
+            openContenedorForm(new ListaFormulario(usua));
             hideSubMenu();
         }
 
@@ -145,13 +147,13 @@ namespace SistemaRegistro
 
         private void btnRegistroEntradas_Click(object sender, EventArgs e)
         {
-            openContenedorForm(new RegistroEntradasSalidas());
+            openContenedorForm(new RegistroEntradasSalidas(usua));
             hideSubMenu();
         }
 
         private void btnListaEntradas_Click(object sender, EventArgs e)
         {
-            openContenedorForm(new ListaEntradasSalidas());
+            openContenedorForm(new ListaEntradasSalidas(usua));
             hideSubMenu();
         }
 
@@ -169,7 +171,7 @@ namespace SistemaRegistro
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            DialogResult resut = MessageBox.Show("¿Está seguro de cerrar sesión?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult resut = MessageBox.Show("¿Está seguro de cerrar sesión?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (resut == DialogResult.Yes)
             {
                 log.logoutx(idper);

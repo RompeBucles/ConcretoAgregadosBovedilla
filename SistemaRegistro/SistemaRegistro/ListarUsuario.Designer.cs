@@ -65,6 +65,8 @@
             label8 = new Label();
             tabControl1 = new TabControl();
             ListaUsuario = new TabPage();
+            panel2 = new Panel();
+            textNusuario = new TextBox();
             dataGridView1 = new DataGridView();
             btnSeleccionT = new Button();
             button1 = new Button();
@@ -555,7 +557,7 @@
             tabControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tabControl1.Controls.Add(ListaUsuario);
             tabControl1.Controls.Add(EditarUsuarios);
-            tabControl1.Location = new Point(-3, 2);
+            tabControl1.Location = new Point(-4, 2);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new Size(775, 520);
@@ -564,6 +566,8 @@
             // ListaUsuario
             // 
             ListaUsuario.BackColor = Color.FromArgb(242, 230, 230);
+            ListaUsuario.Controls.Add(panel2);
+            ListaUsuario.Controls.Add(textNusuario);
             ListaUsuario.Controls.Add(dataGridView1);
             ListaUsuario.Controls.Add(btnSeleccionT);
             ListaUsuario.Controls.Add(button1);
@@ -573,6 +577,23 @@
             ListaUsuario.Size = new Size(767, 492);
             ListaUsuario.TabIndex = 0;
             ListaUsuario.Text = "Lista Usuario";
+            // 
+            // panel2
+            // 
+            panel2.Anchor = AnchorStyles.None;
+            panel2.Location = new Point(11, 448);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(199, 38);
+            panel2.TabIndex = 83;
+            panel2.Visible = false;
+            // 
+            // textNusuario
+            // 
+            textNusuario.Location = new Point(11, 461);
+            textNusuario.Name = "textNusuario";
+            textNusuario.Size = new Size(100, 23);
+            textNusuario.TabIndex = 82;
+            textNusuario.Visible = false;
             // 
             // dataGridView1
             // 
@@ -668,7 +689,7 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(3, 5);
+            panel1.Location = new Point(2, 5);
             panel1.Name = "panel1";
             panel1.Size = new Size(240, 21);
             panel1.TabIndex = 22;
@@ -694,6 +715,7 @@
             ((System.ComponentModel.ISupportInitialize)pbOcultar).EndInit();
             tabControl1.ResumeLayout(false);
             ListaUsuario.ResumeLayout(false);
+            ListaUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
@@ -736,5 +758,7 @@
         private DataGridView dataGridView1;
         private Button btnSeleccionT;
         private Button button1;
+        private TextBox textNusuario;
+        private Panel panel2;
     }
 }

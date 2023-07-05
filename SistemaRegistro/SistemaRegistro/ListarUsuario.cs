@@ -24,15 +24,19 @@ namespace SistemaRegistro
     {
         //instacia controlados usuario
         ControladorUsuario controladorUsuario = new ControladorUsuario();
+        //Instacia del controlador
+        ControladorBitacora controladorBitacora = new ControladorBitacora();
         //instacia modelo usuario
         modeloUsuarios usu = new modeloUsuarios();
+        //instancia del modelo {get; set;} 
+        modeloBitacora bitacora = new modeloBitacora();
         private Usuarios usuarios = new Usuarios();
         DataTable dsTabla;
         //variable para guadar la información seleccionada del radio button
         private int valorSeleccionadoPerfil;
         //se declaro el id del usuario para guardar y posteriormente usarlo en procedimiento almacenado de modificar
         private int id;
-        public ListarUsuario()
+        public ListarUsuario(string usuario)
         {
 
             InitializeComponent();
@@ -41,6 +45,7 @@ namespace SistemaRegistro
             estatus.Add("Activo");
             estatus.Add("Inactivo");
             comboEstatus.DataSource = estatus;
+            textNusuario.Text = usuario;
         }
         private void CargarDG()
         {
@@ -277,6 +282,9 @@ namespace SistemaRegistro
         {
             try
             {
+                //Variable para registrar en la bitacora
+                string operacionBiE = "Baja";
+                string descripcionBiE = "Inhabilitación de usuario";
                 DialogResult result = MessageBox.Show("¿Desea eliminar los elementos seleccionados?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -314,8 +322,15 @@ namespace SistemaRegistro
                             CargarDG(); //Carga el DataGridView
                             CargarBotones();
                         }
-
-                        MessageBox.Show("Registro(s) inhabilitado(s)");
+                        //Estos son los registros para la bitacora
+                        bitacora.operacion = operacionBiE;
+                        bitacora.descripcionEvento = descripcionBiE;
+                        bitacora.usuario = textNusuario.Text;
+                        //Actualiza a la fecha y hora para insertar en la bitacora
+                        DateTime fechaActualE = DateTime.Now;
+                        bitacora.fecha = fechaActualE;
+                        controladorBitacora.InsertBitacora(bitacora);
+                        MessageBox.Show("Registro(s) inhabilitado(s)", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -498,6 +513,9 @@ namespace SistemaRegistro
 
         private bool guardar()
         {
+            //Variable para registrar en la bitacora
+            string operacionBi = "Modificación";
+            string descripcionBi = "Datos modificados de un usuario";
             bool retorno = true;
 
             try
@@ -520,7 +538,7 @@ namespace SistemaRegistro
                 if (textNombre.Texts == "Ejemplo: Juan" || textApellidoP.Texts == "Ejemplo: Pérez" || textCorreo.Texts == " ejemplo@unam.org.mx"
                     || textTelefono.Texts == "Ejemplo: 2281144037")
                 {
-                    MessageBox.Show("Hay datos que aún no se han proporcionado");
+                    MessageBox.Show("Campos faltantes", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     retorno = false;
                 }
                 if (NombreValido.Success)
@@ -626,12 +644,19 @@ namespace SistemaRegistro
                 //son campos no obligatorios se asignan sin condicional
                 usu.perfil = valorSeleccionadoPerfil;
                 usu.estatus = comboEstatus.Text;
+                //Estos son los registros para la bitacora
+                bitacora.operacion = operacionBi;
+                bitacora.descripcionEvento = descripcionBi;
+                bitacora.usuario = textNusuario.Text;
 
                 if (retorno == true)
                 {
-
+                    //Actualiza a la fecha y hora para insertar en la bitacora
+                    DateTime fechaActual = DateTime.Now;
+                    bitacora.fecha = fechaActual;
                     controladorUsuario.EditarUsuario(usu, id);
-                    MessageBox.Show("Usuario modificado con éxito");
+                    controladorBitacora.InsertBitacora(bitacora);
+                    MessageBox.Show("Usuario modificado con éxito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tabControl1.SelectedTab = ListaUsuario;
                     Limpiar();
                     CargarDG();
