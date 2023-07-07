@@ -1209,7 +1209,7 @@ namespace SistemaRegistro
         {
             try
             {
-                //Variable para registrar en la bitacora
+                //Variable para registrar en la bitácora
                 string operacionBiE = "Baja";
                 string descripcionBiE = "Eliminación de registro del formulario";
 
@@ -1218,6 +1218,8 @@ namespace SistemaRegistro
                 {
                     List<DataGridViewRow> filasEliminar = new List<DataGridViewRow>();
                     bool elementosSeleccionados = false;
+                    bool relacionadoEntradaSalida = false; // Variable para verificar si hay algún registro relacionado con entradas/salidas
+
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         DataGridViewCheckBoxCell checkBoxCell = row.Cells[27] as DataGridViewCheckBoxCell;
@@ -1230,17 +1232,21 @@ namespace SistemaRegistro
                                 elementosSeleccionados = true;
                                 int DatosID = Convert.ToInt32(row.Cells[0].Value); // Suponiendo que el ID del usuario está en la primera columna
 
-                                controladorDatosFormulario.EliminarDatosFormulario(DatosID);                                                   // MessageBox.Show($"{usuarioID}");
-                                // controladorUsuario.EliminarUsuario(usuarioID);
-                                filasEliminar.Add(row);
+                                // Verificar si se puede eliminar el registro
+                                bool puedeEliminar = controladorDatosFormulario.VerificarEliminacionPermitida(DatosID);
+
+                                if (puedeEliminar)
+                                {
+                                    controladorDatosFormulario.EliminarDatosFormulario(DatosID);
+                                    filasEliminar.Add(row);
+                                }
+                                else
+                                {
+                                    relacionadoEntradaSalida = true;
+                                }
                             }
                         }
                     }
-                    //solcion 2
-                    //this.Controls.Clear();
-                    //this.InitializeComponent();
-                    //CargarDG(); //Carga el DataGridView
-                    //CargarBotones(); 
 
                     if (elementosSeleccionados)
                     {
@@ -1248,15 +1254,24 @@ namespace SistemaRegistro
                         {
                             dataGridView1.Rows.Remove(rowEliminar);
                         }
-                        //Estos son los registros para la bitacora
+
+                        // Estos son los registros para la bitácora
                         bitacora.operacion = operacionBiE;
                         bitacora.descripcionEvento = descripcionBiE;
                         bitacora.usuario = textNusuario.Text;
-                        //Actualiza a la fecha y hora para insertar en la bitacora
+                        // Actualiza a la fecha y hora para insertar en la bitácora
                         DateTime fechaActualE = DateTime.Now;
                         bitacora.fecha = fechaActualE;
                         controladorBitacora.InsertBitacora(bitacora);
-                        MessageBox.Show("Registro(s) elimado(s)", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        if (relacionadoEntradaSalida)
+                        {
+                            MessageBox.Show("No se puede eliminar el registro seleccionado debido a que está relacionado con entradas/salidas.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registro(s) eliminado(s)", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                     else
                     {
@@ -1270,8 +1285,7 @@ namespace SistemaRegistro
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Intenete de nuevo");
-
+                MessageBox.Show("Intente de nuevo");
             }
         }
 

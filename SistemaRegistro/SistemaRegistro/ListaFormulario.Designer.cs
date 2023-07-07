@@ -936,7 +936,7 @@
             panel4.Controls.Add(button5);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-8, 0);
+            panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(738, 1123);
             panel4.TabIndex = 77;
@@ -1669,7 +1669,7 @@
             panel8.Controls.Add(btnAtrasIma);
             panel8.Controls.Add(pictureBox2);
             panel8.Controls.Add(label22);
-            panel8.Location = new Point(-8, 3);
+            panel8.Location = new Point(0, 3);
             panel8.Name = "panel8";
             panel8.Size = new Size(737, 675);
             panel8.TabIndex = 97;

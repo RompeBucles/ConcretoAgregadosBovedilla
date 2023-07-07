@@ -196,7 +196,7 @@ namespace SistemaRegistro
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-9, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
@@ -625,7 +625,7 @@ namespace SistemaRegistro
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-9, 3);
+            panel4.Location = new Point(-18, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;

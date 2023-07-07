@@ -32,8 +32,8 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             btnEntrar = new Button();
-            textPassword = new SistemaRegistro.Templates.TextBox();
-            textUsuario = new SistemaRegistro.Templates.TextBox();
+            textPassword = new Templates.TextBox();
+            textUsuario = new Templates.TextBox();
             label11 = new Label();
             label1 = new Label();
             pbMostrar = new PictureBox();
@@ -187,6 +187,7 @@
             Controls.Add(label11);
             Controls.Add(label1);
             Controls.Add(pbOcultar);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(500, 500);
             Name = "Login";
             Text = "Login";

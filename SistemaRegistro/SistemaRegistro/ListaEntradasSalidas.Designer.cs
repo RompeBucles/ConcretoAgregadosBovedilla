@@ -270,7 +270,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(textNombreFlujo);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(-8, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 1127);
             panel1.TabIndex = 78;
@@ -659,7 +659,7 @@
             // 
             // panel3
             // 
-            panel3.Location = new Point(0, 3);
+            panel3.Location = new Point(2, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(267, 22);
             panel3.TabIndex = 86;

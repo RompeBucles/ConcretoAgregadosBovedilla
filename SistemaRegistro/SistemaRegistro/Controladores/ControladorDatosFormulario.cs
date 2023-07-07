@@ -146,13 +146,25 @@ namespace SistemaRegistro.Controladores
             return true;
 
         }
+        public bool VerificarEliminacionPermitida(int id)
+        {
+            // Realiza una consulta en la tabla entradasSalidas para verificar si existen registros relacionados con el ID dado
+            SqlCommand comando = new SqlCommand("SELECT COUNT(*) FROM entradasSalidas WHERE id_producto = @Id");
+            comando.Connection = ConexionBD.AbrirConexion();
+            comando.Parameters.AddWithValue("@Id", id);
+
+            int count = Convert.ToInt32(comando.ExecuteScalar());
+            ConexionBD.CerrarConexion();
+
+            return count == 0; // Si count es 0, no existen registros relacionados, por lo que la eliminación está permitida
+        }
         public void EliminarDatosFormulario(int id)
         {
 
-            SqlCommand comando = new SqlCommand("EliminarRegistroYEntradas");
+            SqlCommand comando = new SqlCommand("eliminarDatosF");
             comando.Connection = ConexionBD.AbrirConexion();
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@ID", id);
+            comando.Parameters.AddWithValue("@Id", id);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             ConexionBD.CerrarConexion();

@@ -90,7 +90,7 @@ namespace SistemaRegistro
                 if (dt.Rows.Count == 1)
                 {
                     this.Hide();
-                   
+
                     //this.Close();
                     if (dt.Rows[0][1].ToString() == "Administrador")
                     {
