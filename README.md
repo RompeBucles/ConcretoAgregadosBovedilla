@@ -10,7 +10,7 @@ Usuario:<br>
 admin<br>
 Contraseña:<br>
 admin<br>
-*-*-*-*-*-*-*--*-*-**<br>
+*-*-*-*-*-*-*--*-*-**-<br>
 Credenciales para inciar sesión como Usuario:<br>
 Usuario:<br>
 usuario<br>
