@@ -115,6 +115,8 @@ namespace SistemaRegistro
             imageList1 = new ImageList(components);
             errorProvider1 = new ErrorProvider(components);
             timer1 = new System.Windows.Forms.Timer(components);
+            label29 = new Label();
+            label30 = new Label();
             tabControl1.SuspendLayout();
             Identificación.SuspendLayout();
             panel1.SuspendLayout();
@@ -165,6 +167,8 @@ namespace SistemaRegistro
             // 
             panel1.Anchor = AnchorStyles.Top;
             panel1.BackColor = Color.FromArgb(242, 230, 230);
+            panel1.Controls.Add(label30);
+            panel1.Controls.Add(label29);
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(textNusuario);
             panel1.Controls.Add(ComboProducto);
@@ -196,7 +200,7 @@ namespace SistemaRegistro
             panel1.Controls.Add(label1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(-9, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(736, 779);
             panel1.TabIndex = 76;
@@ -625,7 +629,7 @@ namespace SistemaRegistro
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-18, 3);
+            panel4.Location = new Point(0, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(735, 990);
             panel4.TabIndex = 77;
@@ -1273,6 +1277,30 @@ namespace SistemaRegistro
             // 
             timer1.Tick += timer1_Tick;
             // 
+            // label29
+            // 
+            label29.Anchor = AnchorStyles.None;
+            label29.AutoSize = true;
+            label29.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label29.ForeColor = Color.FromArgb(190, 31, 36);
+            label29.Location = new Point(37, 51);
+            label29.Name = "label29";
+            label29.Size = new Size(69, 16);
+            label29.TabIndex = 133;
+            label29.Text = "Producto*";
+            // 
+            // label30
+            // 
+            label30.Anchor = AnchorStyles.None;
+            label30.AutoSize = true;
+            label30.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label30.ForeColor = Color.FromArgb(190, 31, 36);
+            label30.Location = new Point(274, 51);
+            label30.Name = "label30";
+            label30.Size = new Size(82, 16);
+            label30.TabIndex = 134;
+            label30.Text = "Tecnología*";
+            // 
             // RegistroFormulario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1392,5 +1420,7 @@ namespace SistemaRegistro
         private DateTimePicker FechaReferencia;
         private Panel panel8;
         private TextBox textNusuario;
+        private Label label30;
+        private Label label29;
     }
 }
