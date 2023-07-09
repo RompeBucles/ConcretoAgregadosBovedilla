@@ -508,6 +508,7 @@
             Controls.Add(pbOcultar);
             ForeColor = Color.FromArgb(190, 31, 36);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RegistroUsuario";
             Text = "RegistroUsuario";
             ((System.ComponentModel.ISupportInitialize)pbMostrar).EndInit();

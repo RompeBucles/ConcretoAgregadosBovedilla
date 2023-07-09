@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>Logo-UNAM.ico</ApplicationIcon>
+    <ApplicationIcon>iiges.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Logo-UNAM.ico" />
+    <Content Include="iiges.ico" />
   </ItemGroup>
 
   <ItemGroup>

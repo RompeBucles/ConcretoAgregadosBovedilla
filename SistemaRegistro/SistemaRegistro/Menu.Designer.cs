@@ -47,10 +47,10 @@
             btnUsuarios = new Button();
             pictureBox1 = new PictureBox();
             panelContenedor = new Panel();
+            label1 = new Label();
             labelPerfilU = new Label();
             labelPerfil = new Label();
             pictureBox2 = new PictureBox();
-            label1 = new Label();
             panelLateral.SuspendLayout();
             panelSubEntradas.SuspendLayout();
             panelSubFormulario.SuspendLayout();
@@ -322,6 +322,15 @@
             panelContenedor.Size = new Size(784, 600);
             panelContenedor.TabIndex = 1;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(706, 576);
+            label1.Name = "label1";
+            label1.Size = new Size(66, 15);
+            label1.TabIndex = 19;
+            label1.Text = "Versión: 1.0";
+            // 
             // labelPerfilU
             // 
             labelPerfilU.Anchor = AnchorStyles.None;
@@ -357,15 +366,6 @@
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(706, 576);
-            label1.Name = "label1";
-            label1.Size = new Size(66, 15);
-            label1.TabIndex = 19;
-            label1.Text = "Versión: 1.0";
-            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -373,6 +373,7 @@
             ClientSize = new Size(984, 600);
             Controls.Add(panelContenedor);
             Controls.Add(panelLateral);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(980, 600);
             Name = "Menu";
             Text = "Menu";

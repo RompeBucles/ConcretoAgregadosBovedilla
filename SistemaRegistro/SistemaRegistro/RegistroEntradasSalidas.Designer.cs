@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroEntradasSalidas));
             panel1 = new Panel();
             panel2 = new Panel();
             textNusuario = new TextBox();
@@ -85,7 +86,7 @@
             panel1.Controls.Add(comboUnidades);
             panel1.Controls.Add(textNombreFlujo);
             panel1.Controls.Add(labelUsuario);
-            panel1.Location = new Point(0, 1);
+            panel1.Location = new Point(-9, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(726, 1127);
             panel1.TabIndex = 77;
@@ -434,6 +435,7 @@
             ClientSize = new Size(736, 500);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(500, 500);
             Name = "RegistroEntradasSalidas";
             Text = "RegistroEntradasSalidas";
