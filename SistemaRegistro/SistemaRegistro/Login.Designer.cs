@@ -113,7 +113,7 @@
             textUsuario.ForeColor = SystemColors.GrayText;
             textUsuario.Location = new Point(359, 309);
             textUsuario.Margin = new Padding(3, 4, 3, 4);
-            textUsuario.Multiline = true;
+            textUsuario.Multiline = false;
             textUsuario.Name = "textUsuario";
             textUsuario.Padding = new Padding(8, 9, 8, 9);
             textUsuario.PasswordChar = false;

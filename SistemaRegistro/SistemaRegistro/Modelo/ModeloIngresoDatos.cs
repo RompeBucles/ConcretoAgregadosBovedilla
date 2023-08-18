@@ -21,7 +21,9 @@ namespace SistemaRegistro.Modelo
         public string valorR { get; set; }
         public string? objetivo {get; set;}
         public string? limitesSistema { get; set; }
-        public byte[]? imagen { get; set; }    
+        public byte[]? imagen { get; set; }
+        public byte[]? imagenDos { get; set; }
+        public string? urlRepositorio { get; set; }
         public string tipoTecnologia { get; set; }
         public string? condicionesOperacion { get; set; }
         public string fechaReferencia { get; set; }
@@ -31,8 +33,9 @@ namespace SistemaRegistro.Modelo
         public int id_area {get; set;  }
         public string latitud { get; set;}
         public string longitud { get; set; }
+        public string? observaciones { get; set; }
 
 
-       
+
     }
 }

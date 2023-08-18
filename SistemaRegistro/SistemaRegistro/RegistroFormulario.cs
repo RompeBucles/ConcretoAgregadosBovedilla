@@ -17,6 +17,7 @@ using SistemaRegistro.Modelo;
 using GMap.NET.WindowsForms.Markers;
 using System.Text.RegularExpressions;
 using iTextSharp.text.pdf.qrcode;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace SistemaRegistro
 {
@@ -121,11 +122,6 @@ namespace SistemaRegistro
             ListaUnidadUno.Add("Volumen(m³)");
             ListaUnidadUno.Add("Energia(KWh)");
             comboUnidadUno.DataSource = ListaUnidadUno;
-
-
-
-
-
 
             //Asigna opciones a la lista ListaLimiteSistema
             List<string> ListaLimiteSistema = new List<string>();
@@ -513,11 +509,106 @@ namespace SistemaRegistro
                 MessageBox.Show("Inténtelo de nuevo o mas tarde");
             }
         }
-
-
         private void btnEliminarImagen_Click(object sender, EventArgs e)
         {
             pictureBox1.Image = null;
+        }
+        private void radioBtnImagenUno_CheckedChanged(object sender, EventArgs e)
+        {
+            //si el radio button de imagen es desseleccionado
+            if (!radioBtnImagenUno.Checked)
+            {
+                //el panel de otra imagen deja de ser visible
+                panelOtraImaUno.Visible = false;
+                pictureBox2.Image = null;
+            }
+            else
+            {
+                //de lo contrario el panel otra imagen es visible y el repositorio desaparece
+                panelOtraImaUno.Visible = true;
+                panelRepoUno.Visible = false;
+            }
+
+        }
+        //acciones al cambiar la seleccion del boton repositorio
+        private void radioBtnRepoUno_CheckedChanged(object sender, EventArgs e)
+        {
+            //si el radio button de repositorio es desselccionado
+            if (!radioBtnRepoUno.Checked)
+            {
+                //el panel de repositorio deja de ser visible
+                panelRepoUno.Visible = false;
+                textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+                textRepositorio.ForeColor = Color.Gray;
+            }
+            else
+            {
+                //de lo contrario el panel repositorio es visible y otra imagen deja de ser visible
+                panelRepoUno.Visible = true;
+                panelOtraImaUno.Visible = false;
+            }
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Crear una instancia de OpenFileDialog
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                // Establecer las propiedades del OpenFileDialog
+                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif|Todos los archivos|*.*";
+                openFileDialog.Title = "Seleccionar imagen";
+
+                // Mostrar el cuadro de diálogo para seleccionar un archivo
+                DialogResult result = openFileDialog.ShowDialog();
+
+                // Verificar si se seleccionó un archivo y se hizo clic en "Aceptar"
+                if (result == DialogResult.OK)
+                {
+                    // Obtener la ruta del archivo seleccionado
+                    string imagePath = openFileDialog.FileName;
+
+                    // Cargar la imagen original
+                    Image originalImage = Image.FromFile(imagePath);
+
+                    // Definir el tamaño deseado para el PictureBox
+                    int pictureBoxWidth = pictureBox2.Width;
+                    int pictureBoxHeight = pictureBox2.Height;
+
+                    // Crear una versión en miniatura de la imagen con el tamaño deseado
+                    Image resizedImage = originalImage.GetThumbnailImage(pictureBoxWidth, pictureBoxHeight, null, IntPtr.Zero);
+
+                    // Asignar la imagen ajustada al control PictureBox
+                    pictureBox2.Image = resizedImage;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Inténtelo de nuevo o mas tarde");
+            }
+        }
+        private void btnEliminarImagenDos_Click(object sender, EventArgs e)
+        {
+            pictureBox2.Image = null;
+        }
+        private void textRepositorio_Enter(object sender, EventArgs e)
+        {
+            if (textRepositorio.Texts == "Ejemplo: https://drive.google.com/file/imagen/view")
+            {
+                textRepositorio.Texts = "";
+                textRepositorio.ForeColor = Color.Black;
+            }
+        }
+
+        private void textRepositorio_Leave(object sender, EventArgs e)
+        {
+            if (textRepositorio.Texts == "")
+            {
+                textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+                textRepositorio.ForeColor = Color.Gray;
+            }
         }
 
         private void ComboTipoTecnologia_Enter(object sender, EventArgs e)
@@ -684,6 +775,23 @@ namespace SistemaRegistro
                 errorProvider1.SetError(comboArea, String.Empty);
             }
         }
+        private void textObservaciones_Enter(object sender, EventArgs e)
+        {
+            if (textObservaciones.Texts == "Ejemplo: Información puede ser usada en varios estados.")
+            {
+                textObservaciones.Texts = "";
+                textObservaciones.ForeColor = Color.Black;
+            }
+        }
+
+        private void textObservaciones_Leave(object sender, EventArgs e)
+        {
+            if (textObservaciones.Texts == "")
+            {
+                textObservaciones.Texts = "Ejemplo: Información puede ser usada en varios estados.";
+                textObservaciones.ForeColor = Color.Gray;
+            }
+        }
         private void llenarCombos()
         {
 
@@ -732,6 +840,9 @@ namespace SistemaRegistro
             comboLimitesSistema.Text = "Limites del sistema";
             comboLimitesSistema.ForeColor = Color.Gray;
             pictureBox1.Image = null;
+            pictureBox2.Image = null;
+            textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+            textRepositorio.ForeColor = Color.Gray;
             ComboTipoTecnologia.Text = "Tipo de tecnología*";
             ComboTipoTecnologia.ForeColor = Color.Gray;
             textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
@@ -746,6 +857,8 @@ namespace SistemaRegistro
             comboArea.ForeColor = Color.Gray;
             txtlatitud.Texts = "Latitud";
             txtlongitud.Texts = "Longitud";
+            textObservaciones.Texts = "Ejemplo: Información puede ser usada en varios estados.";
+            textObservaciones.ForeColor = Color.Gray;
         }
 
 
@@ -1086,11 +1199,13 @@ namespace SistemaRegistro
                 Regex Email = new Regex(@"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$");
                 Match EmailValid = Email.Match(textCorreo.Texts);
                 //validación regetx seccion identificación
-                //si alguien ve este comentario, les comparto este dato curioso, bueno desde mi punto de visata jsjs,Lo que pude aprender en c# es que el compnente textUnidadFuncional esta suscripto al eveto Enter y leave con un proviveError, entonces c# por jerarquia o nose valida primero el regetx por eso le puse "Ejemploo ..."
+                //si alguien ve este comentario, les comparto este dato curioso, bueno desde mi punto de visata jsjs,Lo que pude aprender en c# es que el compnente textUnidadFuncional esta suscrito al eveto Enter y leave con un proviveError, entonces c# por jerarquia o nose valida primero el regetx por eso le puse "Ejemploo ..."
                 Regex NombreFlujoR = new Regex(@"^(?!Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava$).{3,300}$");
                 Match NombreFlujoRValido = NombreFlujoR.Match(textUnidadFuncional.Texts);
                 Regex Valor = new Regex(@"^[0-9]+(?:\.[0-9]+)?$");
                 Match ValorValido = Valor.Match(textValor.Texts);
+                //Regex URL = new Regex(@"^https?:\/\/[\w\-]+(\.[\w\-]+)+[#?]?.{0,300}$");
+                //Match ValorUrl = URL.Match(textRepositorio.Texts);
                 //Validación regetx seccion tecnología
 
 
@@ -1247,6 +1362,29 @@ namespace SistemaRegistro
                     {
                         modeloIngresoDatos.imagen = null;
                     }
+
+                    //guardar imagenDos al modelo
+                    if (pictureBox2.Image != null)
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            pictureBox2.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                            modeloIngresoDatos.imagenDos = ms.ToArray();
+                        }
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.imagenDos = null;
+                    }
+
+                    if (textRepositorio.Texts == "Ejemplo: https://drive.google.com/file/imagen/view")
+                    {
+                        modeloIngresoDatos.urlRepositorio = null;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.urlRepositorio = textRepositorio.Texts;
+                    }
                 }
                 if (tabPage == Tecnología)
                 {
@@ -1348,6 +1486,14 @@ namespace SistemaRegistro
                         modeloIngresoDatos.latitud = txtlatitud.Texts;
                         modeloIngresoDatos.longitud = txtlongitud.Texts;
 
+                    }
+                    if (textObservaciones.Texts == "Ejemplo: Información puede ser usada en varios estados.")
+                    {
+                        modeloIngresoDatos.observaciones = null;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.observaciones = textObservaciones.Texts;
                     }
                 }
 

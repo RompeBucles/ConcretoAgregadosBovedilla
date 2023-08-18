@@ -325,11 +325,12 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(706, 576);
             label1.Name = "label1";
-            label1.Size = new Size(66, 15);
+            label1.Size = new Size(71, 15);
             label1.TabIndex = 19;
-            label1.Text = "Versión: 1.0";
+            label1.Text = "Versión: 1.1";
             // 
             // labelPerfilU
             // 

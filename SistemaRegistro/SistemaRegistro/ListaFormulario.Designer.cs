@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaFormulario));
             tabControl2 = new TabControl();
             ListaDatos = new TabPage();
+            btnSeleccionarE = new Button();
             panel9 = new Panel();
             btnExportarCSV = new Button();
             textNusuario = new TextBox();
             dataGridView1 = new DataGridView();
             btnSeleccionarT = new Button();
-            btnExportarPDF = new Button();
             btnBorrar = new Button();
             Identificación = new TabPage();
             panel1 = new Panel();
@@ -84,11 +84,19 @@
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
+            panelRepoUno = new Panel();
+            label36 = new Label();
+            textRepositorio = new Templates.TextBox();
+            panel10 = new Panel();
+            radioBtnRepoUno = new RadioButton();
+            radioBtnImagenUno = new RadioButton();
+            label35 = new Label();
+            label34 = new Label();
             btnEliminarImagen = new Button();
             label19 = new Label();
             textObjetivoR = new Templates.TextBox();
             label31 = new Label();
-            pictureBox1 = new PictureBox();
+            pictureBoxUno = new PictureBox();
             comboLimitesSistema = new ComboBox();
             label5 = new Label();
             textValor = new Templates.TextBox();
@@ -96,15 +104,14 @@
             label18 = new Label();
             textUnidadFuncional = new Templates.TextBox();
             comboUnidadUno = new ComboBox();
-            button2 = new Button();
-            button7 = new Button();
-            button6 = new Button();
             buttoAtrasP = new Button();
             buttonSiguenteS = new Button();
-            button4 = new Button();
-            button5 = new Button();
             textBox7 = new Templates.TextBox();
             label3 = new Label();
+            panelOtraImaUno = new Panel();
+            btnBoImaDos = new Button();
+            btnEliminarImagenDos = new Button();
+            pictureBoxDos = new PictureBox();
             Tecnología = new TabPage();
             panel2 = new Panel();
             label20 = new Label();
@@ -122,6 +129,8 @@
             label7 = new Label();
             Geografía = new TabPage();
             panel5 = new Panel();
+            label37 = new Label();
+            textObservaciones = new Templates.TextBox();
             gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             panel6 = new Panel();
             txtlongitud = new Templates.TextBox();
@@ -137,8 +146,19 @@
             VerImagen = new TabPage();
             panel8 = new Panel();
             btnAtrasIma = new Button();
-            pictureBox2 = new PictureBox();
+            panelRepoDos = new Panel();
+            btnCopiar = new Button();
+            label38 = new Label();
+            textRepositorioDos = new Templates.TextBox();
+            panel11 = new Panel();
+            radioBtnRepoDos = new RadioButton();
+            radioBtnImagenDos = new RadioButton();
+            pictureBoxTres = new PictureBox();
             label22 = new Label();
+            panelOtraImaDos = new Panel();
+            button1 = new Button();
+            button2 = new Button();
+            pictureBoxCuatro = new PictureBox();
             imageList1 = new ImageList(components);
             errorProvider1 = new ErrorProvider(components);
             timer1 = new System.Windows.Forms.Timer(components);
@@ -149,7 +169,11 @@
             panel1.SuspendLayout();
             Referencia.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelRepoUno.SuspendLayout();
+            panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUno).BeginInit();
+            panelOtraImaUno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDos).BeginInit();
             Tecnología.SuspendLayout();
             panel2.SuspendLayout();
             TiempoVálido.SuspendLayout();
@@ -160,7 +184,11 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             VerImagen.SuspendLayout();
             panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panelRepoDos.SuspendLayout();
+            panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTres).BeginInit();
+            panelOtraImaDos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCuatro).BeginInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
@@ -185,18 +213,34 @@
             // ListaDatos
             // 
             ListaDatos.BackColor = Color.FromArgb(242, 230, 230);
+            ListaDatos.Controls.Add(btnSeleccionarE);
             ListaDatos.Controls.Add(panel9);
             ListaDatos.Controls.Add(btnExportarCSV);
             ListaDatos.Controls.Add(textNusuario);
             ListaDatos.Controls.Add(dataGridView1);
             ListaDatos.Controls.Add(btnSeleccionarT);
-            ListaDatos.Controls.Add(btnExportarPDF);
             ListaDatos.Controls.Add(btnBorrar);
             ListaDatos.Location = new Point(4, 24);
             ListaDatos.Name = "ListaDatos";
             ListaDatos.Size = new Size(755, 490);
             ListaDatos.TabIndex = 5;
             ListaDatos.Text = "Lista Datos";
+            // 
+            // btnSeleccionarE
+            // 
+            btnSeleccionarE.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSeleccionarE.BackColor = Color.FromArgb(190, 31, 36);
+            btnSeleccionarE.FlatAppearance.BorderSize = 0;
+            btnSeleccionarE.FlatStyle = FlatStyle.Flat;
+            btnSeleccionarE.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnSeleccionarE.ForeColor = SystemColors.ButtonFace;
+            btnSeleccionarE.Location = new Point(92, 445);
+            btnSeleccionarE.Name = "btnSeleccionarE";
+            btnSeleccionarE.Size = new Size(151, 39);
+            btnSeleccionarE.TabIndex = 85;
+            btnSeleccionarE.Text = "Seleccionar todo";
+            btnSeleccionarE.UseVisualStyleBackColor = false;
+            btnSeleccionarE.Click += btnSeleccionarE_Click;
             // 
             // panel9
             // 
@@ -243,44 +287,44 @@
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.Sunken;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = SystemColors.Control;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = SystemColors.Control;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = SystemColors.Control;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.Firebrick;
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.Firebrick;
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(756, 420);
@@ -304,23 +348,6 @@
             btnSeleccionarT.Text = "Seleccionar todo";
             btnSeleccionarT.UseVisualStyleBackColor = false;
             btnSeleccionarT.Click += btnSeleccionarT_Click;
-            // 
-            // btnExportarPDF
-            // 
-            btnExportarPDF.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnExportarPDF.BackColor = Color.FromArgb(190, 31, 36);
-            btnExportarPDF.FlatAppearance.BorderSize = 0;
-            btnExportarPDF.FlatStyle = FlatStyle.Flat;
-            btnExportarPDF.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnExportarPDF.ForeColor = SystemColors.ButtonFace;
-            btnExportarPDF.Location = new Point(92, 445);
-            btnExportarPDF.Name = "btnExportarPDF";
-            btnExportarPDF.Size = new Size(151, 39);
-            btnExportarPDF.TabIndex = 71;
-            btnExportarPDF.Text = "Exportar como PDF";
-            btnExportarPDF.UseVisualStyleBackColor = false;
-            btnExportarPDF.Visible = false;
-            btnExportarPDF.Click += btnExportarPDF_Click;
             // 
             // btnBorrar
             // 
@@ -392,7 +419,7 @@
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(labelUsuario);
             panel1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(-1, 0);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(729, 787);
             panel1.TabIndex = 76;
@@ -578,11 +605,11 @@
             textAutor.BorderSize = 2;
             textAutor.ForeColor = Color.DimGray;
             textAutor.Location = new Point(209, 606);
-            textAutor.Multiline = true;
+            textAutor.Multiline = false;
             textAutor.Name = "textAutor";
             textAutor.Padding = new Padding(9, 7, 9, 7);
             textAutor.PasswordChar = false;
-            textAutor.Size = new Size(295, 34);
+            textAutor.Size = new Size(295, 31);
             textAutor.TabIndex = 145;
             textAutor.Texts = "Ejemplo: Centro Mario Molina";
             textAutor.UnderlinedStyle = true;
@@ -915,11 +942,14 @@
             // 
             panel4.Anchor = AnchorStyles.Top;
             panel4.BackColor = Color.FromArgb(242, 230, 230);
+            panel4.Controls.Add(panelRepoUno);
+            panel4.Controls.Add(panel10);
+            panel4.Controls.Add(label34);
             panel4.Controls.Add(btnEliminarImagen);
             panel4.Controls.Add(label19);
             panel4.Controls.Add(textObjetivoR);
             panel4.Controls.Add(label31);
-            panel4.Controls.Add(pictureBox1);
+            panel4.Controls.Add(pictureBoxUno);
             panel4.Controls.Add(comboLimitesSistema);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(textValor);
@@ -927,19 +957,116 @@
             panel4.Controls.Add(label18);
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(comboUnidadUno);
-            panel4.Controls.Add(button2);
-            panel4.Controls.Add(button7);
-            panel4.Controls.Add(button6);
             panel4.Controls.Add(buttoAtrasP);
             panel4.Controls.Add(buttonSiguenteS);
-            panel4.Controls.Add(button4);
-            panel4.Controls.Add(button5);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
+            panel4.Controls.Add(panelOtraImaUno);
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(738, 1123);
+            panel4.Size = new Size(738, 1600);
             panel4.TabIndex = 77;
+            // 
+            // panelRepoUno
+            // 
+            panelRepoUno.Controls.Add(label36);
+            panelRepoUno.Controls.Add(textRepositorio);
+            panelRepoUno.Location = new Point(64, 1049);
+            panelRepoUno.Name = "panelRepoUno";
+            panelRepoUno.Size = new Size(623, 506);
+            panelRepoUno.TabIndex = 137;
+            // 
+            // label36
+            // 
+            label36.Anchor = AnchorStyles.None;
+            label36.AutoSize = true;
+            label36.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label36.ForeColor = Color.FromArgb(190, 31, 36);
+            label36.Location = new Point(250, 33);
+            label36.Name = "label36";
+            label36.Size = new Size(105, 16);
+            label36.TabIndex = 136;
+            label36.Text = "URL repositorio";
+            // 
+            // textRepositorio
+            // 
+            textRepositorio.Anchor = AnchorStyles.None;
+            textRepositorio.BackColor = SystemColors.Control;
+            textRepositorio.BorderColor = SystemColors.ControlDarkDark;
+            textRepositorio.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textRepositorio.BorderSize = 2;
+            textRepositorio.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textRepositorio.ForeColor = Color.DimGray;
+            textRepositorio.Location = new Point(106, 77);
+            textRepositorio.Multiline = false;
+            textRepositorio.Name = "textRepositorio";
+            textRepositorio.Padding = new Padding(7, 20, 7, 20);
+            textRepositorio.PasswordChar = false;
+            textRepositorio.Size = new Size(391, 60);
+            textRepositorio.TabIndex = 135;
+            textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+            textRepositorio.UnderlinedStyle = true;
+            textRepositorio.Enter += textRepositorio_Enter;
+            textRepositorio.Leave += textRepositorio_Leave;
+            // 
+            // panel10
+            // 
+            panel10.Controls.Add(radioBtnRepoUno);
+            panel10.Controls.Add(radioBtnImagenUno);
+            panel10.Controls.Add(label35);
+            panel10.Location = new Point(13, 981);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(716, 63);
+            panel10.TabIndex = 135;
+            // 
+            // radioBtnRepoUno
+            // 
+            radioBtnRepoUno.Anchor = AnchorStyles.None;
+            radioBtnRepoUno.AutoSize = true;
+            radioBtnRepoUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBtnRepoUno.Location = new Point(385, 41);
+            radioBtnRepoUno.Name = "radioBtnRepoUno";
+            radioBtnRepoUno.Size = new Size(94, 21);
+            radioBtnRepoUno.TabIndex = 131;
+            radioBtnRepoUno.Text = "Repositorio";
+            radioBtnRepoUno.UseVisualStyleBackColor = true;
+            radioBtnRepoUno.CheckedChanged += radioBtnRepoUno_CheckedChanged;
+            // 
+            // radioBtnImagenUno
+            // 
+            radioBtnImagenUno.Anchor = AnchorStyles.None;
+            radioBtnImagenUno.AutoSize = true;
+            radioBtnImagenUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBtnImagenUno.Location = new Point(235, 41);
+            radioBtnImagenUno.Name = "radioBtnImagenUno";
+            radioBtnImagenUno.Size = new Size(99, 21);
+            radioBtnImagenUno.TabIndex = 130;
+            radioBtnImagenUno.Text = "Otra imagen";
+            radioBtnImagenUno.UseVisualStyleBackColor = true;
+            radioBtnImagenUno.CheckedChanged += radioBtnImagenUno_CheckedChanged;
+            // 
+            // label35
+            // 
+            label35.Anchor = AnchorStyles.None;
+            label35.AutoSize = true;
+            label35.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label35.Location = new Point(177, 3);
+            label35.Name = "label35";
+            label35.Size = new Size(364, 19);
+            label35.TabIndex = 129;
+            label35.Text = "Agregar más imágenes, selecciona una opción";
+            // 
+            // label34
+            // 
+            label34.Anchor = AnchorStyles.None;
+            label34.AutoSize = true;
+            label34.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label34.ForeColor = Color.FromArgb(190, 31, 36);
+            label34.Location = new Point(345, 207);
+            label34.Name = "label34";
+            label34.Size = new Size(45, 16);
+            label34.TabIndex = 134;
+            label34.Text = "Valor*";
             // 
             // btnEliminarImagen
             // 
@@ -949,7 +1076,7 @@
             btnEliminarImagen.FlatStyle = FlatStyle.Flat;
             btnEliminarImagen.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminarImagen.ForeColor = SystemColors.ButtonFace;
-            btnEliminarImagen.Location = new Point(314, 1035);
+            btnEliminarImagen.Location = new Point(301, 924);
             btnEliminarImagen.Name = "btnEliminarImagen";
             btnEliminarImagen.Size = new Size(121, 36);
             btnEliminarImagen.TabIndex = 133;
@@ -963,7 +1090,7 @@
             label19.AutoSize = true;
             label19.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.FromArgb(190, 31, 36);
-            label19.Location = new Point(345, 339);
+            label19.Location = new Point(330, 355);
             label19.Name = "label19";
             label19.Size = new Size(60, 16);
             label19.TabIndex = 132;
@@ -978,12 +1105,12 @@
             textObjetivoR.BorderSize = 2;
             textObjetivoR.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             textObjetivoR.ForeColor = Color.DimGray;
-            textObjetivoR.Location = new Point(195, 371);
-            textObjetivoR.Multiline = true;
+            textObjetivoR.Location = new Point(181, 374);
+            textObjetivoR.Multiline = false;
             textObjetivoR.Name = "textObjetivoR";
             textObjetivoR.Padding = new Padding(7, 9, 7, 9);
             textObjetivoR.PasswordChar = false;
-            textObjetivoR.Size = new Size(348, 39);
+            textObjetivoR.Size = new Size(348, 36);
             textObjetivoR.TabIndex = 131;
             textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
             textObjetivoR.UnderlinedStyle = true;
@@ -995,21 +1122,21 @@
             label31.Anchor = AnchorStyles.None;
             label31.AutoSize = true;
             label31.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label31.Location = new Point(298, 502);
+            label31.Location = new Point(281, 448);
             label31.Name = "label31";
             label31.Size = new Size(155, 19);
             label31.TabIndex = 130;
             label31.Text = "Imagen del sistema";
             // 
-            // pictureBox1
+            // pictureBoxUno
             // 
-            pictureBox1.BackColor = Color.Gray;
-            pictureBox1.Location = new Point(72, 538);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(596, 474);
-            pictureBox1.TabIndex = 129;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pictureBoxUno.BackColor = Color.Gray;
+            pictureBoxUno.Location = new Point(103, 470);
+            pictureBoxUno.Name = "pictureBoxUno";
+            pictureBoxUno.Size = new Size(528, 448);
+            pictureBoxUno.TabIndex = 129;
+            pictureBoxUno.TabStop = false;
+            pictureBoxUno.Click += pictureBox1_Click;
             // 
             // comboLimitesSistema
             // 
@@ -1017,7 +1144,7 @@
             comboLimitesSistema.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboLimitesSistema.FormattingEnabled = true;
             comboLimitesSistema.Items.AddRange(new object[] { "Limitaciones presupuestarias", "Limitaciones de tiempo", "Limitaciones de recursos naturales", "Limitaciones de espacio", "Limitaciones ambientales", "Limitaciones de capacidad", "Limitaciones geotécnicas", "Limitaciones tecnológicas", "Limitaciones normativas y legales", "Limitaciones de seguridad", "Ninguna limitación" });
-            comboLimitesSistema.Location = new Point(195, 441);
+            comboLimitesSistema.Location = new Point(187, 295);
             comboLimitesSistema.Name = "comboLimitesSistema";
             comboLimitesSistema.Size = new Size(348, 25);
             comboLimitesSistema.TabIndex = 128;
@@ -1030,7 +1157,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(190, 31, 36);
-            label5.Location = new Point(17, 85);
+            label5.Location = new Point(26, 65);
             label5.Name = "label5";
             label5.Size = new Size(688, 16);
             label5.TabIndex = 127;
@@ -1045,12 +1172,12 @@
             textValor.BorderSize = 2;
             textValor.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             textValor.ForeColor = Color.DimGray;
-            textValor.Location = new Point(195, 267);
-            textValor.Multiline = true;
+            textValor.Location = new Point(187, 226);
+            textValor.Multiline = false;
             textValor.Name = "textValor";
             textValor.Padding = new Padding(7, 10, 7, 10);
             textValor.PasswordChar = false;
-            textValor.Size = new Size(348, 44);
+            textValor.Size = new Size(348, 38);
             textValor.TabIndex = 126;
             textValor.Texts = "Ejemplo: 0";
             textValor.UnderlinedStyle = true;
@@ -1063,7 +1190,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(190, 31, 36);
-            label13.Location = new Point(345, 248);
+            label13.Location = new Point(345, 234);
             label13.Name = "label13";
             label13.Size = new Size(45, 16);
             label13.TabIndex = 125;
@@ -1075,7 +1202,7 @@
             label18.AutoSize = true;
             label18.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label18.ForeColor = Color.FromArgb(190, 31, 36);
-            label18.Location = new Point(258, 69);
+            label18.Location = new Point(267, 49);
             label18.Name = "label18";
             label18.Size = new Size(207, 16);
             label18.TabIndex = 124;
@@ -1090,12 +1217,12 @@
             textUnidadFuncional.BorderSize = 2;
             textUnidadFuncional.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             textUnidadFuncional.ForeColor = Color.DimGray;
-            textUnidadFuncional.Location = new Point(157, 116);
-            textUnidadFuncional.Multiline = true;
+            textUnidadFuncional.Location = new Point(144, 103);
+            textUnidadFuncional.Multiline = false;
             textUnidadFuncional.Name = "textUnidadFuncional";
             textUnidadFuncional.Padding = new Padding(7, 9, 7, 9);
             textUnidadFuncional.PasswordChar = false;
-            textUnidadFuncional.Size = new Size(446, 39);
+            textUnidadFuncional.Size = new Size(446, 36);
             textUnidadFuncional.TabIndex = 123;
             textUnidadFuncional.Texts = "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava";
             textUnidadFuncional.UnderlinedStyle = true;
@@ -1108,57 +1235,12 @@
             comboUnidadUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboUnidadUno.FormattingEnabled = true;
             comboUnidadUno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)", "Energia (KWh)" });
-            comboUnidadUno.Location = new Point(195, 199);
+            comboUnidadUno.Location = new Point(187, 163);
             comboUnidadUno.Name = "comboUnidadUno";
             comboUnidadUno.Size = new Size(348, 25);
             comboUnidadUno.TabIndex = 122;
             comboUnidadUno.Enter += comboUnidadUno_Enter;
             comboUnidadUno.Leave += comboUnidadUno_Leave;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.None;
-            button2.BackColor = Color.FromArgb(190, 31, 36);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(575, 1128);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 36);
-            button2.TabIndex = 114;
-            button2.Text = "Eliminar imagen";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            button7.Anchor = AnchorStyles.None;
-            button7.BackColor = Color.FromArgb(190, 31, 36);
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button7.ForeColor = SystemColors.ButtonFace;
-            button7.Location = new Point(469, 1208);
-            button7.Name = "button7";
-            button7.Size = new Size(115, 35);
-            button7.TabIndex = 90;
-            button7.Text = "Atrás";
-            button7.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            button6.Anchor = AnchorStyles.None;
-            button6.BackColor = Color.FromArgb(190, 31, 36);
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button6.ForeColor = SystemColors.ButtonFace;
-            button6.Location = new Point(700, 1207);
-            button6.Name = "button6";
-            button6.Size = new Size(115, 35);
-            button6.TabIndex = 89;
-            button6.Text = "Siguiente";
-            button6.UseVisualStyleBackColor = false;
             // 
             // buttoAtrasP
             // 
@@ -1168,7 +1250,7 @@
             buttoAtrasP.FlatStyle = FlatStyle.Flat;
             buttoAtrasP.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttoAtrasP.ForeColor = SystemColors.ButtonFace;
-            buttoAtrasP.Location = new Point(724, 1522);
+            buttoAtrasP.Location = new Point(724, 1761);
             buttoAtrasP.Name = "buttoAtrasP";
             buttoAtrasP.Size = new Size(115, 35);
             buttoAtrasP.TabIndex = 87;
@@ -1183,43 +1265,13 @@
             buttonSiguenteS.FlatStyle = FlatStyle.Flat;
             buttonSiguenteS.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonSiguenteS.ForeColor = SystemColors.ButtonFace;
-            buttonSiguenteS.Location = new Point(965, 1521);
+            buttonSiguenteS.Location = new Point(965, 1760);
             buttonSiguenteS.Name = "buttonSiguenteS";
             buttonSiguenteS.Size = new Size(115, 35);
             buttonSiguenteS.TabIndex = 86;
             buttonSiguenteS.Text = "Siguiente";
             buttonSiguenteS.UseVisualStyleBackColor = false;
             buttonSiguenteS.Visible = false;
-            // 
-            // button4
-            // 
-            button4.Anchor = AnchorStyles.None;
-            button4.BackColor = Color.FromArgb(97, 97, 96);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.ForeColor = SystemColors.ButtonFace;
-            button4.Location = new Point(689, 1336);
-            button4.Name = "button4";
-            button4.Size = new Size(115, 35);
-            button4.TabIndex = 81;
-            button4.Text = "Atras";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.Anchor = AnchorStyles.None;
-            button5.BackColor = Color.FromArgb(97, 97, 96);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = SystemColors.ButtonFace;
-            button5.Location = new Point(892, 1336);
-            button5.Name = "button5";
-            button5.Size = new Size(115, 35);
-            button5.TabIndex = 80;
-            button5.Text = "Siguiente";
-            button5.UseVisualStyleBackColor = false;
             // 
             // textBox7
             // 
@@ -1228,7 +1280,7 @@
             textBox7.BorderColor = SystemColors.ControlDarkDark;
             textBox7.BorderFocusColor = Color.Black;
             textBox7.BorderSize = 2;
-            textBox7.Location = new Point(923, 593);
+            textBox7.Location = new Point(923, 832);
             textBox7.Multiline = false;
             textBox7.Name = "textBox7";
             textBox7.Padding = new Padding(7);
@@ -1249,6 +1301,57 @@
             label3.Size = new Size(91, 19);
             label3.TabIndex = 29;
             label3.Text = "Referencia";
+            // 
+            // panelOtraImaUno
+            // 
+            panelOtraImaUno.Controls.Add(btnBoImaDos);
+            panelOtraImaUno.Controls.Add(btnEliminarImagenDos);
+            panelOtraImaUno.Controls.Add(pictureBoxDos);
+            panelOtraImaUno.Location = new Point(65, 1049);
+            panelOtraImaUno.Name = "panelOtraImaUno";
+            panelOtraImaUno.Size = new Size(630, 506);
+            panelOtraImaUno.TabIndex = 136;
+            // 
+            // btnBoImaDos
+            // 
+            btnBoImaDos.Anchor = AnchorStyles.None;
+            btnBoImaDos.BackColor = Color.FromArgb(190, 31, 36);
+            btnBoImaDos.FlatAppearance.BorderSize = 0;
+            btnBoImaDos.FlatStyle = FlatStyle.Flat;
+            btnBoImaDos.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBoImaDos.ForeColor = SystemColors.ButtonFace;
+            btnBoImaDos.Location = new Point(265, 463);
+            btnBoImaDos.Name = "btnBoImaDos";
+            btnBoImaDos.Size = new Size(121, 36);
+            btnBoImaDos.TabIndex = 138;
+            btnBoImaDos.Text = "Eliminar imagen";
+            btnBoImaDos.UseVisualStyleBackColor = false;
+            btnBoImaDos.Click += btnEliminarImagenDos_Click;
+            // 
+            // btnEliminarImagenDos
+            // 
+            btnEliminarImagenDos.Anchor = AnchorStyles.None;
+            btnEliminarImagenDos.BackColor = Color.FromArgb(190, 31, 36);
+            btnEliminarImagenDos.FlatAppearance.BorderSize = 0;
+            btnEliminarImagenDos.FlatStyle = FlatStyle.Flat;
+            btnEliminarImagenDos.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarImagenDos.ForeColor = SystemColors.ButtonFace;
+            btnEliminarImagenDos.Location = new Point(447, 666);
+            btnEliminarImagenDos.Name = "btnEliminarImagenDos";
+            btnEliminarImagenDos.Size = new Size(121, 36);
+            btnEliminarImagenDos.TabIndex = 125;
+            btnEliminarImagenDos.Text = "Eliminar imagen";
+            btnEliminarImagenDos.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxDos
+            // 
+            pictureBoxDos.BackColor = Color.Gray;
+            pictureBoxDos.Location = new Point(46, 9);
+            pictureBoxDos.Name = "pictureBoxDos";
+            pictureBoxDos.Size = new Size(528, 448);
+            pictureBoxDos.TabIndex = 123;
+            pictureBoxDos.TabStop = false;
+            pictureBoxDos.Click += pictureBoxDos_Click;
             // 
             // Tecnología
             // 
@@ -1296,11 +1399,11 @@
             textCondicionesOpe.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             textCondicionesOpe.ForeColor = Color.DimGray;
             textCondicionesOpe.Location = new Point(194, 191);
-            textCondicionesOpe.Multiline = true;
+            textCondicionesOpe.Multiline = false;
             textCondicionesOpe.Name = "textCondicionesOpe";
             textCondicionesOpe.Padding = new Padding(7, 9, 7, 9);
             textCondicionesOpe.PasswordChar = false;
-            textCondicionesOpe.Size = new Size(360, 39);
+            textCondicionesOpe.Size = new Size(360, 36);
             textCondicionesOpe.TabIndex = 116;
             textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
             textCondicionesOpe.UnderlinedStyle = true;
@@ -1432,11 +1535,11 @@
             textDescripcionPeriodo.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             textDescripcionPeriodo.ForeColor = Color.DimGray;
             textDescripcionPeriodo.Location = new Point(167, 270);
-            textDescripcionPeriodo.Multiline = true;
+            textDescripcionPeriodo.Multiline = false;
             textDescripcionPeriodo.Name = "textDescripcionPeriodo";
             textDescripcionPeriodo.Padding = new Padding(7, 9, 7, 9);
             textDescripcionPeriodo.PasswordChar = false;
-            textDescripcionPeriodo.Size = new Size(395, 39);
+            textDescripcionPeriodo.Size = new Size(395, 36);
             textDescripcionPeriodo.TabIndex = 122;
             textDescripcionPeriodo.Texts = "Ejemplo: Se solicita este tiempo para el análisis del estudio";
             textDescripcionPeriodo.UnderlinedStyle = true;
@@ -1470,6 +1573,8 @@
             // 
             panel5.Anchor = AnchorStyles.Top;
             panel5.BackColor = Color.FromArgb(242, 230, 230);
+            panel5.Controls.Add(label37);
+            panel5.Controls.Add(textObservaciones);
             panel5.Controls.Add(gMapControl1);
             panel5.Controls.Add(panel6);
             panel5.Controls.Add(txtlongitud);
@@ -1486,6 +1591,39 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(732, 1019);
             panel5.TabIndex = 2;
+            // 
+            // label37
+            // 
+            label37.Anchor = AnchorStyles.None;
+            label37.AutoSize = true;
+            label37.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label37.ForeColor = Color.FromArgb(190, 31, 36);
+            label37.Location = new Point(329, 792);
+            label37.Name = "label37";
+            label37.Size = new Size(100, 16);
+            label37.TabIndex = 123;
+            label37.Text = "Observaciones";
+            // 
+            // textObservaciones
+            // 
+            textObservaciones.Anchor = AnchorStyles.None;
+            textObservaciones.BackColor = SystemColors.Control;
+            textObservaciones.BorderColor = SystemColors.ControlDarkDark;
+            textObservaciones.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textObservaciones.BorderSize = 2;
+            textObservaciones.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textObservaciones.ForeColor = Color.DimGray;
+            textObservaciones.Location = new Point(164, 825);
+            textObservaciones.Multiline = false;
+            textObservaciones.Name = "textObservaciones";
+            textObservaciones.Padding = new Padding(7, 10, 7, 10);
+            textObservaciones.PasswordChar = false;
+            textObservaciones.Size = new Size(459, 40);
+            textObservaciones.TabIndex = 122;
+            textObservaciones.Texts = "Ejemplo: Información puede ser usada en varios estados.";
+            textObservaciones.UnderlinedStyle = true;
+            textObservaciones.Enter += textObservaciones_Enter;
+            textObservaciones.Leave += textObservaciones_Leave;
             // 
             // gMapControl1
             // 
@@ -1596,7 +1734,7 @@
             buttonGuardarG.FlatStyle = FlatStyle.Flat;
             buttonGuardarG.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGuardarG.ForeColor = SystemColors.ButtonFace;
-            buttonGuardarG.Location = new Point(307, 800);
+            buttonGuardarG.Location = new Point(315, 902);
             buttonGuardarG.Name = "buttonGuardarG";
             buttonGuardarG.Size = new Size(115, 35);
             buttonGuardarG.TabIndex = 103;
@@ -1667,11 +1805,14 @@
             panel8.Anchor = AnchorStyles.Top;
             panel8.BackColor = Color.FromArgb(242, 230, 230);
             panel8.Controls.Add(btnAtrasIma);
-            panel8.Controls.Add(pictureBox2);
+            panel8.Controls.Add(panelRepoDos);
+            panel8.Controls.Add(panel11);
+            panel8.Controls.Add(pictureBoxTres);
             panel8.Controls.Add(label22);
+            panel8.Controls.Add(panelOtraImaDos);
             panel8.Location = new Point(0, 3);
             panel8.Name = "panel8";
-            panel8.Size = new Size(737, 675);
+            panel8.Size = new Size(737, 1200);
             panel8.TabIndex = 97;
             // 
             // btnAtrasIma
@@ -1682,25 +1823,119 @@
             btnAtrasIma.FlatStyle = FlatStyle.Flat;
             btnAtrasIma.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnAtrasIma.ForeColor = SystemColors.ButtonFace;
-            btnAtrasIma.Location = new Point(304, 575);
+            btnAtrasIma.Location = new Point(332, 1069);
             btnAtrasIma.Name = "btnAtrasIma";
             btnAtrasIma.Size = new Size(115, 35);
-            btnAtrasIma.TabIndex = 99;
+            btnAtrasIma.TabIndex = 140;
             btnAtrasIma.Text = "Atrás";
             btnAtrasIma.UseVisualStyleBackColor = false;
             btnAtrasIma.Click += btnAtrasIma_Click;
             // 
-            // pictureBox2
+            // panelRepoDos
             // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox2.BackColor = Color.Gray;
-            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
-            pictureBox2.Location = new Point(12, 62);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(715, 488);
-            pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox2.TabIndex = 98;
-            pictureBox2.TabStop = false;
+            panelRepoDos.Controls.Add(btnCopiar);
+            panelRepoDos.Controls.Add(label38);
+            panelRepoDos.Controls.Add(textRepositorioDos);
+            panelRepoDos.Location = new Point(75, 564);
+            panelRepoDos.Name = "panelRepoDos";
+            panelRepoDos.Size = new Size(623, 506);
+            panelRepoDos.TabIndex = 139;
+            // 
+            // btnCopiar
+            // 
+            btnCopiar.Anchor = AnchorStyles.None;
+            btnCopiar.BackColor = Color.FromArgb(190, 31, 36);
+            btnCopiar.FlatAppearance.BorderSize = 0;
+            btnCopiar.FlatStyle = FlatStyle.Flat;
+            btnCopiar.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCopiar.ForeColor = SystemColors.ButtonFace;
+            btnCopiar.Location = new Point(257, 127);
+            btnCopiar.Name = "btnCopiar";
+            btnCopiar.Size = new Size(115, 35);
+            btnCopiar.TabIndex = 141;
+            btnCopiar.Text = "Copiar URL";
+            btnCopiar.UseVisualStyleBackColor = false;
+            btnCopiar.Click += buttonCopiar_Click;
+            // 
+            // label38
+            // 
+            label38.Anchor = AnchorStyles.None;
+            label38.AutoSize = true;
+            label38.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label38.ForeColor = Color.FromArgb(190, 31, 36);
+            label38.Location = new Point(257, 20);
+            label38.Name = "label38";
+            label38.Size = new Size(105, 16);
+            label38.TabIndex = 136;
+            label38.Text = "URL repositorio";
+            // 
+            // textRepositorioDos
+            // 
+            textRepositorioDos.Anchor = AnchorStyles.None;
+            textRepositorioDos.BackColor = SystemColors.Control;
+            textRepositorioDos.BorderColor = SystemColors.ControlDarkDark;
+            textRepositorioDos.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textRepositorioDos.BorderSize = 2;
+            textRepositorioDos.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            textRepositorioDos.ForeColor = Color.DimGray;
+            textRepositorioDos.Location = new Point(112, 49);
+            textRepositorioDos.Multiline = false;
+            textRepositorioDos.Name = "textRepositorioDos";
+            textRepositorioDos.Padding = new Padding(7, 20, 7, 20);
+            textRepositorioDos.PasswordChar = false;
+            textRepositorioDos.Size = new Size(402, 60);
+            textRepositorioDos.TabIndex = 135;
+            textRepositorioDos.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+            textRepositorioDos.UnderlinedStyle = true;
+            // 
+            // panel11
+            // 
+            panel11.Controls.Add(radioBtnRepoDos);
+            panel11.Controls.Add(radioBtnImagenDos);
+            panel11.Location = new Point(3, 511);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(716, 47);
+            panel11.TabIndex = 136;
+            // 
+            // radioBtnRepoDos
+            // 
+            radioBtnRepoDos.Anchor = AnchorStyles.None;
+            radioBtnRepoDos.AutoSize = true;
+            radioBtnRepoDos.Enabled = false;
+            radioBtnRepoDos.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBtnRepoDos.Location = new Point(391, 15);
+            radioBtnRepoDos.Name = "radioBtnRepoDos";
+            radioBtnRepoDos.Size = new Size(94, 21);
+            radioBtnRepoDos.TabIndex = 131;
+            radioBtnRepoDos.Text = "Repositorio";
+            radioBtnRepoDos.UseVisualStyleBackColor = true;
+            radioBtnRepoDos.CheckedChanged += radioBtnRepoDos_CheckedChanged;
+            // 
+            // radioBtnImagenDos
+            // 
+            radioBtnImagenDos.Anchor = AnchorStyles.None;
+            radioBtnImagenDos.AutoSize = true;
+            radioBtnImagenDos.Enabled = false;
+            radioBtnImagenDos.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBtnImagenDos.Location = new Point(241, 15);
+            radioBtnImagenDos.Name = "radioBtnImagenDos";
+            radioBtnImagenDos.Size = new Size(99, 21);
+            radioBtnImagenDos.TabIndex = 130;
+            radioBtnImagenDos.Text = "Otra imagen";
+            radioBtnImagenDos.UseVisualStyleBackColor = true;
+            radioBtnImagenDos.CheckedChanged += radioBtnImagenDos_CheckedChanged;
+            // 
+            // pictureBoxTres
+            // 
+            pictureBoxTres.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBoxTres.BackColor = Color.Gray;
+            pictureBoxTres.BorderStyle = BorderStyle.Fixed3D;
+            pictureBoxTres.Location = new Point(118, 57);
+            pictureBoxTres.Name = "pictureBoxTres";
+            pictureBoxTres.Size = new Size(528, 448);
+            pictureBoxTres.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBoxTres.TabIndex = 98;
+            pictureBoxTres.TabStop = false;
             // 
             // label22
             // 
@@ -1713,6 +1948,55 @@
             label22.Size = new Size(155, 19);
             label22.TabIndex = 97;
             label22.Text = "Imagen del sistema";
+            // 
+            // panelOtraImaDos
+            // 
+            panelOtraImaDos.Controls.Add(button1);
+            panelOtraImaDos.Controls.Add(button2);
+            panelOtraImaDos.Controls.Add(pictureBoxCuatro);
+            panelOtraImaDos.Location = new Point(76, 564);
+            panelOtraImaDos.Name = "panelOtraImaDos";
+            panelOtraImaDos.Size = new Size(630, 506);
+            panelOtraImaDos.TabIndex = 138;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(190, 31, 36);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ButtonFace;
+            button1.Location = new Point(480, 666);
+            button1.Name = "button1";
+            button1.Size = new Size(121, 36);
+            button1.TabIndex = 138;
+            button1.Text = "Eliminar imagen";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.Anchor = AnchorStyles.None;
+            button2.BackColor = Color.FromArgb(190, 31, 36);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = SystemColors.ButtonFace;
+            button2.Location = new Point(662, 869);
+            button2.Name = "button2";
+            button2.Size = new Size(121, 36);
+            button2.TabIndex = 125;
+            button2.Text = "Eliminar imagen";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // pictureBoxCuatro
+            // 
+            pictureBoxCuatro.BackColor = Color.Gray;
+            pictureBoxCuatro.Location = new Point(46, 9);
+            pictureBoxCuatro.Name = "pictureBoxCuatro";
+            pictureBoxCuatro.Size = new Size(528, 448);
+            pictureBoxCuatro.TabIndex = 123;
+            pictureBoxCuatro.TabStop = false;
             // 
             // imageList1
             // 
@@ -1751,7 +2035,13 @@
             Referencia.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelRepoUno.ResumeLayout(false);
+            panelRepoUno.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUno).EndInit();
+            panelOtraImaUno.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDos).EndInit();
             Tecnología.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -1766,7 +2056,13 @@
             VerImagen.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panelRepoDos.ResumeLayout(false);
+            panelRepoDos.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxTres).EndInit();
+            panelOtraImaDos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCuatro).EndInit();
             ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
         }
@@ -1778,7 +2074,6 @@
         private Button btnExportarCSV;
         private DataGridView dataGridView1;
         private Button btnSeleccionarT;
-        private Button btnExportarPDF;
         private Button btnBorrar;
         private TabPage Identificación;
         private Panel panel1;
@@ -1807,8 +2102,7 @@
         private Label label10;
         private TabPage VerImagen;
         private Panel panel8;
-        private Button btnAtrasIma;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxTres;
         private Label label22;
         private Button RegresarL;
         private Label label27;
@@ -1835,13 +2129,8 @@
         private Label label29;
         private Label label30;
         private Panel panel4;
-        private Button button2;
-        private Button button7;
-        private Button button6;
         private Button buttoAtrasP;
         private Button buttonSiguenteS;
-        private Button button4;
-        private Button button5;
         private Templates.TextBox textBox7;
         private Label label3;
         private Label label5;
@@ -1852,7 +2141,7 @@
         private Label label19;
         private Templates.TextBox textObjetivoR;
         private Label label31;
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxUno;
         private Button btnEliminarImagen;
         private Label label20;
         private Templates.TextBox textCondicionesOpe;
@@ -1881,5 +2170,32 @@
         private Label label33;
         private Panel panel9;
         private TextBox textNusuario;
+        private Button btnSeleccionarE;
+        private Label label34;
+        private Panel panel10;
+        private RadioButton radioBtnRepoUno;
+        private RadioButton radioBtnImagenUno;
+        private Label label35;
+        private Panel panelRepoUno;
+        private Label label36;
+        private Templates.TextBox textRepositorio;
+        private Panel panelOtraImaUno;
+        private Button btnEliminarImagenDos;
+        private PictureBox pictureBoxDos;
+        private Button btnBoImaDos;
+        private Label label37;
+        private Templates.TextBox textObservaciones;
+        private Panel panelRepoDos;
+        private Label label38;
+        private Templates.TextBox textRepositorioDos;
+        private Panel panelOtraImaDos;
+        private Button button1;
+        private Button button2;
+        private PictureBox pictureBoxCuatro;
+        private Panel panel11;
+        private RadioButton radioBtnRepoDos;
+        private RadioButton radioBtnImagenDos;
+        private Button btnAtrasIma;
+        private Button btnCopiar;
     }
 }

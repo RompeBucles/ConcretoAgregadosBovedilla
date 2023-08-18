@@ -24,11 +24,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace SistemaRegistro
 {
     public partial class ListaFormulario : Form
     {
+
         //Instacia del modelo ingreso datos
         modeloIngresoDatos modeloIngresoDatos = new modeloIngresoDatos();
         //instancia del modelo {get; set;} 
@@ -37,7 +39,8 @@ namespace SistemaRegistro
         ControladorBitacora controladorBitacora = new ControladorBitacora();
         //instacia controlador formualario
         ControladorDatosFormulario controladorDatosFormulario = new ControladorDatosFormulario();
-
+        //Ver imagen variable
+        string repositorioDos;
         String f1, f2;
         DataTable dsTabla;
         //se declaro el id del ingresoDatos para guardar y posteriormente usarlo en procedimiento almacenado de modificar
@@ -158,17 +161,19 @@ namespace SistemaRegistro
             dataGridView1.Columns[11].HeaderText = "Valor referencia";
             dataGridView1.Columns[12].HeaderText = "Objetivo";
             dataGridView1.Columns[13].HeaderText = "Limites del sistema";
-            dataGridView1.Columns[15].HeaderText = "Tipo de tecnología";
-            dataGridView1.Columns[16].HeaderText = "Condiciones de operacíon";
-            dataGridView1.Columns[17].HeaderText = "Fecha de referencia del estudio";
-            dataGridView1.Columns[18].HeaderText = "Datos válidos hasta";
-            dataGridView1.Columns[19].HeaderText = "Descripción";
-            dataGridView1.Columns[20].HeaderText = "Nombre del estado";
-            dataGridView1.Columns[21].HeaderText = "Nombre del área";
-            dataGridView1.Columns[22].HeaderText = "Representatividad geografíca";
+            dataGridView1.Columns[16].HeaderText = "URL repositorio";
+            dataGridView1.Columns[17].HeaderText = "Tipo de tecnología";
+            dataGridView1.Columns[18].HeaderText = "Condiciones de operacíon";
+            dataGridView1.Columns[19].HeaderText = "Fecha de referencia del estudio";
+            dataGridView1.Columns[20].HeaderText = "Datos válidos hasta";
+            dataGridView1.Columns[21].HeaderText = "Descripción";
+            dataGridView1.Columns[22].HeaderText = "Nombre del estado";
+            dataGridView1.Columns[23].HeaderText = "Nombre del área";
+            dataGridView1.Columns[24].HeaderText = "Representatividad geografíca";
+            dataGridView1.Columns[25].HeaderText = "Observaciones";
 
 
-            dataGridView1.Columns[0].Visible = false;//ID no visible
+            dataGridView1.Columns[0].Visible = false;//ID 
             dataGridView1.Columns[1].Visible = true;//producto, tecnología, otro
             dataGridView1.Columns[1].ReadOnly = true;//producto, tecnología, otro
             dataGridView1.Columns[2].Visible = false;//Producto
@@ -193,24 +198,30 @@ namespace SistemaRegistro
             dataGridView1.Columns[13].Visible = true;//limitesSistema 
             dataGridView1.Columns[13].ReadOnly = true;//limitesSistema
             dataGridView1.Columns[14].Visible = false;//imagen
-            dataGridView1.Columns[15].Visible = true;//tipoTecnologia 
-            dataGridView1.Columns[15].ReadOnly = true;//tipoTecnologia
-            dataGridView1.Columns[16].Visible = true;//condicionesOperacion 
-            dataGridView1.Columns[16].ReadOnly = true;//condicionesOperacion 
-            dataGridView1.Columns[17].Visible = true;//fechaReferencia 
-            dataGridView1.Columns[17].ReadOnly = true;//fechaReferencia 
-            dataGridView1.Columns[18].Visible = true;//datosValidos 
-            dataGridView1.Columns[18].ReadOnly = true;//datosValidos 
-            dataGridView1.Columns[19].Visible = true;//descripcion 
-            dataGridView1.Columns[19].ReadOnly = true;//descripcion 
-            dataGridView1.Columns[20].Visible = true;//valorEstado
-            dataGridView1.Columns[20].ReadOnly = true;//valorEstado
-            dataGridView1.Columns[21].Visible = true;//valorArea
-            dataGridView1.Columns[21].ReadOnly = true;//valorArea
-            dataGridView1.Columns[22].Visible = true;//representacionGeografica
-            dataGridView1.Columns[22].ReadOnly = true;//representacionGeografica
-            dataGridView1.Columns[23].Visible = false;//latitud
-            dataGridView1.Columns[24].Visible = false;//longitud
+            dataGridView1.Columns[15].Visible = false;//imagenDos
+            dataGridView1.Columns[16].Visible = true;//URL repositorio
+            dataGridView1.Columns[16].ReadOnly = true;//URL repositorio
+            dataGridView1.Columns[16].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;//URL repositorio                                       //
+            dataGridView1.Columns[17].Visible = true;//tipoTecnologia 
+            dataGridView1.Columns[17].ReadOnly = true;//tipoTecnologia
+            dataGridView1.Columns[18].Visible = true;//condicionesOperacion 
+            dataGridView1.Columns[18].ReadOnly = true;//condicionesOperacion 
+            dataGridView1.Columns[19].Visible = true;//fechaReferencia 
+            dataGridView1.Columns[19].ReadOnly = true;//fechaReferencia 
+            dataGridView1.Columns[20].Visible = true;//datosValidos 
+            dataGridView1.Columns[20].ReadOnly = true;//datosValidos 
+            dataGridView1.Columns[21].Visible = true;//descripcion 
+            dataGridView1.Columns[21].ReadOnly = true;//descripcion 
+            dataGridView1.Columns[22].Visible = true;//valorEstado
+            dataGridView1.Columns[22].ReadOnly = true;//valorEstado
+            dataGridView1.Columns[23].Visible = true;//valorArea
+            dataGridView1.Columns[23].ReadOnly = true;//valorArea
+            dataGridView1.Columns[24].Visible = true;//representacionGeografica
+            dataGridView1.Columns[24].ReadOnly = true;//representacionGeografica
+            dataGridView1.Columns[25].Visible = false;//latitud
+            dataGridView1.Columns[26].Visible = false;//longitud
+            dataGridView1.Columns[27].Visible = true;//observaciones
+            dataGridView1.Columns[27].ReadOnly = true;//observaciones
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells; // Ajusta el ancho de las columnas según el contenido de las celdas
             dataGridView1.AutoResizeColumns();
@@ -219,6 +230,11 @@ namespace SistemaRegistro
 
         private void CargarBotones()
         {
+            DataGridViewCheckBoxColumn checkColumnE = new DataGridViewCheckBoxColumn();
+            checkColumnE.HeaderText = "Seleccionar";
+            checkColumnE.Name = "Seleccionar";
+            checkColumnE.ReadOnly = false; // Permitir interacción del usuario
+            dataGridView1.Columns.Add(checkColumnE);
 
             DataGridViewButtonColumn editar = new DataGridViewButtonColumn();
             editar.HeaderText = "Editar";
@@ -609,8 +625,6 @@ namespace SistemaRegistro
             }
         }
 
-
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             try
@@ -635,14 +649,14 @@ namespace SistemaRegistro
                     Image originalImage = Image.FromFile(imagePath);
 
                     // Definir el tamaño deseado para el PictureBox
-                    int pictureBoxWidth = pictureBox1.Width;
-                    int pictureBoxHeight = pictureBox1.Height;
+                    int pictureBoxWidth = pictureBoxUno.Width;
+                    int pictureBoxHeight = pictureBoxUno.Height;
 
                     // Crear una versión en miniatura de la imagen con el tamaño deseado
                     Image resizedImage = originalImage.GetThumbnailImage(pictureBoxWidth, pictureBoxHeight, null, IntPtr.Zero);
 
                     // Asignar la imagen ajustada al control PictureBox
-                    pictureBox1.Image = resizedImage;
+                    pictureBoxUno.Image = resizedImage;
 
 
                 }
@@ -654,7 +668,141 @@ namespace SistemaRegistro
         }
         private void btnEliminarImagen_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image = null;
+            pictureBoxUno.Image = null;
+        }
+        private void radioBtnImagenUno_CheckedChanged(object sender, EventArgs e)
+        {
+            //si el radio button de imagen es desseleccionado
+            if (!radioBtnImagenUno.Checked)
+            {
+                //el panel de otra imagen deja de ser visible
+                panelOtraImaUno.Visible = false;
+                pictureBoxDos.Image = null;
+            }
+            else
+            {
+                //de lo contrario el panel otra imagen es visible y el repositorio desaparece
+                panelOtraImaUno.Visible = true;
+                panelRepoUno.Visible = false;
+            }
+
+        }
+        //acciones al cambiar la seleccion del boton repositorio
+        private void radioBtnRepoUno_CheckedChanged(object sender, EventArgs e)
+        {
+            //si el radio button de repositorio es desselccionado
+            if (!radioBtnRepoUno.Checked)
+            {
+                //el panel de repositorio deja de ser visible
+                panelRepoUno.Visible = false;
+                textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+                textRepositorio.ForeColor = Color.Gray;
+            }
+            else
+            {
+                //de lo contrario el panel repositorio es visible y otra imagen deja de ser visible
+                panelRepoUno.Visible = true;
+                panelOtraImaUno.Visible = false;
+            }
+        }
+        //Estos dos eventos radioBtnImagenDos_CheckedChanged y radioBtnRepoDos_CheckedChanged Los estoy usuando para el boton "Ver Imagen"
+        private void radioBtnImagenDos_CheckedChanged(object sender, EventArgs e)
+        {
+            //si el radio button de imagen es desseleccionado
+            if (!radioBtnImagenDos.Checked)
+            {
+                //el panel de otra imagen deja de ser visible
+                panelOtraImaDos.Visible = false;
+                pictureBoxCuatro.Image = null;
+            }
+            else
+            {
+                //de lo contrario el panel otra imagen es visible y el repositorio desaparece
+                panelOtraImaDos.Visible = true;
+                panelRepoDos.Visible = false;
+            }
+
+        }
+        //acciones al cambiar la seleccion del boton repositorio
+        private void radioBtnRepoDos_CheckedChanged(object sender, EventArgs e)
+        {
+            //si el radio button de repositorio es desselccionado
+            if (!radioBtnRepoDos.Checked)
+            {
+                //el panel de repositorio deja de ser visible
+                panelRepoDos.Visible = false;
+                textRepositorioDos.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+                textRepositorioDos.ForeColor = Color.Gray;
+            }
+            else
+            {
+                //de lo contrario el panel repositorio es visible y otra imagen deja de ser visible
+                panelRepoDos.Visible = true;
+                panelOtraImaDos.Visible = false;
+            }
+        }
+        private void pictureBoxDos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Crear una instancia de OpenFileDialog
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+
+                // Establecer las propiedades del OpenFileDialog
+                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif|Todos los archivos|*.*";
+                openFileDialog.Title = "Seleccionar imagen";
+
+                // Mostrar el cuadro de diálogo para seleccionar un archivo
+                DialogResult result = openFileDialog.ShowDialog();
+
+                // Verificar si se seleccionó un archivo y se hizo clic en "Aceptar"
+                if (result == DialogResult.OK)
+                {
+                    // Obtener la ruta del archivo seleccionado
+                    string imagePath = openFileDialog.FileName;
+
+                    // Cargar la imagen original
+                    Image originalImage = Image.FromFile(imagePath);
+
+                    // Definir el tamaño deseado para el PictureBox
+                    int pictureBoxWidth = pictureBoxDos.Width;
+                    int pictureBoxHeight = pictureBoxDos.Height;
+
+                    // Crear una versión en miniatura de la imagen con el tamaño deseado
+                    Image resizedImage = originalImage.GetThumbnailImage(pictureBoxWidth, pictureBoxHeight, null, IntPtr.Zero);
+
+                    // Asignar la imagen ajustada al control PictureBox
+                    pictureBoxDos.Image = resizedImage;
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Inténtelo de nuevo o mas tarde");
+            }
+        }
+        private void btnEliminarImagenDos_Click(object sender, EventArgs e)
+        {
+            pictureBoxDos.Image = null;
+        }
+
+        private void textRepositorio_Enter(object sender, EventArgs e)
+        {
+            if (textRepositorio.Texts == "Ejemplo: https://drive.google.com/file/imagen/view")
+            {
+                textRepositorio.Texts = "";
+                textRepositorio.ForeColor = Color.Black;
+            }
+        }
+
+        private void textRepositorio_Leave(object sender, EventArgs e)
+        {
+            if (textRepositorio.Texts == "")
+            {
+                textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+                textRepositorio.ForeColor = Color.Gray;
+            }
         }
 
         private void ComboTipoTecnologia_Enter(object sender, EventArgs e)
@@ -833,6 +981,24 @@ namespace SistemaRegistro
                 errorProvider1.SetError(comboArea, String.Empty);
             }
         }
+        private void textObservaciones_Enter(object sender, EventArgs e)
+        {
+            if (textObservaciones.Texts == "Ejemplo: Información puede ser usada en varios estados.")
+            {
+                textObservaciones.Texts = "";
+                textObservaciones.ForeColor = Color.Black;
+            }
+        }
+
+        private void textObservaciones_Leave(object sender, EventArgs e)
+        {
+            if (textObservaciones.Texts == "")
+            {
+                textObservaciones.Texts = "Ejemplo: Información puede ser usada en varios estados.";
+                textObservaciones.ForeColor = Color.Gray;
+            }
+        }
+
         /*
         private void FechaReferencia_keyDown(object sender, KeyEventArgs e)
         {
@@ -890,7 +1056,10 @@ namespace SistemaRegistro
             comboLimitesSistema.Text = "Limites del sistema";
             comboLimitesSistema.SelectedIndex = -1;
             comboLimitesSistema.ForeColor = Color.Gray;
-            pictureBox1.Image = null;
+            pictureBoxUno.Image = null;
+            pictureBoxDos.Image = null;
+            textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+            textRepositorio.ForeColor = Color.Gray;
             ComboTipoTecnologia.Text = "Tipo de tecnología*";
             ComboTipoTecnologia.ForeColor = Color.Gray;
             textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
@@ -905,6 +1074,8 @@ namespace SistemaRegistro
             comboArea.ForeColor = Color.Gray;
             txtlatitud.Texts = "Latitud";
             txtlongitud.Texts = "Longitud";
+            textObservaciones.Texts = "Ejemplo: Información puede ser usada en varios estados.";
+            textObservaciones.ForeColor = Color.Gray;
             errorProvider1.Clear();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -950,34 +1121,74 @@ namespace SistemaRegistro
                                 // Convertir los datos de imagen en una instancia de Image
                                 using (MemoryStream ms = new MemoryStream(imageData))
                                 {
-                                    pictureBox1.Image = Image.FromStream(ms);
+                                    pictureBoxUno.Image = Image.FromStream(ms);
                                 }
                             }
                             else
                             {
-                                pictureBox1.Image = null; // No hay datos de imagen
+                                pictureBoxUno.Image = null; // No hay datos de imagen
                             }
                         }
                         else
                         {
-                            pictureBox1.Image = null; // No hay datos de imagen
+                            pictureBoxUno.Image = null; // No hay datos de imagen
                         }
-                        ComboTipoTecnologia.Text = dataGridView1.CurrentRow.Cells[15].Value.ToString();
-                        textCondicionesOpe.Texts = dataGridView1.CurrentRow.Cells[16].Value.ToString();
 
-                        string fechaReferenciaValue = dataGridView1.CurrentRow.Cells[17].Value != null ? dataGridView1.CurrentRow.Cells[17].Value.ToString() : null;
-                        string fechaDatosValidosValue = dataGridView1.CurrentRow.Cells[18].Value != null ? dataGridView1.CurrentRow.Cells[18].Value.ToString() : null;
+                        int imageColumnIndexDos = 15;
+                        if (dataGridView1.CurrentRow.Cells.Count > imageColumnIndexDos)
+                        {
+                            byte[] imageDataDos = dataGridView1.CurrentRow.Cells[imageColumnIndexDos].Value as byte[];
+
+                            if (imageDataDos != null && imageDataDos.Length > 0)
+                            {
+                                radioBtnImagenUno.Checked = true;
+                                // Convertir los datos de imagen en una instancia de Image
+                                using (MemoryStream ms = new MemoryStream(imageDataDos))
+                                {
+                                    pictureBoxDos.Image = Image.FromStream(ms);
+
+                                }
+
+                            }
+                            else
+                            {
+                                pictureBoxDos.Image = null; // No hay datos de imagen
+                            }
+                        }
+                        else
+                        {
+                            pictureBoxUno.Image = null; // No hay datos de imagen
+                        }
+
+                        textRepositorio.Texts = dataGridView1.CurrentRow.Cells[16].Value.ToString();
+                        string repositorio = dataGridView1.CurrentRow.Cells[16].Value.ToString();
+
+                        if (!string.IsNullOrEmpty(repositorio))
+                        {
+                            radioBtnRepoUno.Checked = true;
+                        }
+                        else
+                        {
+                            radioBtnRepoUno.Checked = false;
+                        }
+
+                        ComboTipoTecnologia.Text = dataGridView1.CurrentRow.Cells[17].Value.ToString();
+                        textCondicionesOpe.Texts = dataGridView1.CurrentRow.Cells[18].Value.ToString();
+
+                        string fechaReferenciaValue = dataGridView1.CurrentRow.Cells[19].Value != null ? dataGridView1.CurrentRow.Cells[19].Value.ToString() : null;
+                        string fechaDatosValidosValue = dataGridView1.CurrentRow.Cells[20].Value != null ? dataGridView1.CurrentRow.Cells[20].Value.ToString() : null;
 
                         //Asignar los valores a los DateTimePicker o reiniciarlos si son nulos
                         FechaReferencia.Value = !string.IsNullOrEmpty(fechaReferenciaValue) ? DateTime.Parse(fechaReferenciaValue) : new DateTime(2000, 01, 01);
                         FechaDatosValidos.Value = !string.IsNullOrEmpty(fechaDatosValidosValue) ? DateTime.Parse(fechaDatosValidosValue) : new DateTime(2000, 01, 01);
-                        textDescripcionPeriodo.Texts = dataGridView1.CurrentRow.Cells[19].Value.ToString();
+                        textDescripcionPeriodo.Texts = dataGridView1.CurrentRow.Cells[21].Value.ToString();
 
-                        comboEstado.Text = dataGridView1.CurrentRow.Cells[20].Value.ToString();
-                        comboArea.Text = dataGridView1.CurrentRow.Cells[21].Value.ToString();
+                        comboEstado.Text = dataGridView1.CurrentRow.Cells[22].Value.ToString();
+                        comboArea.Text = dataGridView1.CurrentRow.Cells[23].Value.ToString();
 
-                        txtlatitud.Texts = dataGridView1.CurrentRow.Cells[23].Value.ToString();
-                        txtlongitud.Texts = dataGridView1.CurrentRow.Cells[24].Value.ToString();
+                        txtlatitud.Texts = dataGridView1.CurrentRow.Cells[25].Value.ToString();
+                        txtlongitud.Texts = dataGridView1.CurrentRow.Cells[26].Value.ToString();
+                        textObservaciones.Texts = dataGridView1.CurrentRow.Cells[27].Value.ToString();
 
                         //tabControl2.TabPages["ListaDatos"].Enabled = false;
                         ListaDatos.Parent = null;
@@ -998,6 +1209,74 @@ namespace SistemaRegistro
                 {
                     if (dataGridView1.SelectedRows.Count > 0)
                     {
+                        //tabControl2.TabPages["VerImagen"].Enabled = true;
+                        tabControl2.TabPages["ListaDatos"].Enabled = false;
+                        VerImagen.Parent = tabControl2;
+                        tabControl2.SelectedTab = VerImagen;
+
+                        id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                        int imageColumnIndexTres = 14;
+                        if (dataGridView1.CurrentRow.Cells.Count > imageColumnIndexTres)
+                        {
+                            byte[] imageDataTres = dataGridView1.CurrentRow.Cells[imageColumnIndexTres].Value as byte[];
+
+                            if (imageDataTres != null && imageDataTres.Length > 0)
+                            {
+                                // Convertir los datos de imagen en una instancia de Image
+                                using (MemoryStream ms = new MemoryStream(imageDataTres))
+                                {
+                                    pictureBoxTres.Image = Image.FromStream(ms);
+                                }
+
+                            }
+                            else
+                            {
+                                pictureBoxTres.Image = null; // No hay datos de imagen
+                            }
+                        }
+                        else
+                        {
+                            pictureBoxTres.Image = null; // No hay datos de imagen
+                        }
+
+                        int imageColumnIndexCuatro = 15;
+                        if (dataGridView1.CurrentRow.Cells.Count > imageColumnIndexCuatro)
+                        {
+                            byte[] imageDataCuatro = dataGridView1.CurrentRow.Cells[imageColumnIndexCuatro].Value as byte[];
+
+                            if (imageDataCuatro != null && imageDataCuatro.Length > 0)
+                            {
+                                radioBtnImagenDos.Checked = true;
+                                // Convertir los datos de imagen en una instancia de Image
+                                using (MemoryStream ms = new MemoryStream(imageDataCuatro))
+                                {
+                                    pictureBoxCuatro.Image = Image.FromStream(ms);
+
+                                }
+                            }
+                            else
+                            {
+                                pictureBoxCuatro.Image = null; // No hay datos de imagen
+                            }
+                        }
+                        else
+                        {
+                            pictureBoxCuatro.Image = null; // No hay datos de imagen
+                        }
+
+                        textRepositorioDos.Texts = dataGridView1.CurrentRow.Cells[16].Value.ToString();
+                        repositorioDos = dataGridView1.CurrentRow.Cells[16].Value.ToString();
+
+                        if (!string.IsNullOrEmpty(repositorioDos))
+                        {
+                            radioBtnRepoDos.Checked = true;
+                        }
+                        else
+                        {
+                            radioBtnRepoDos.Checked = false;
+                        }
+
+                        /*
                         // Obtener los datos de ese registro
                         id = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
 
@@ -1007,7 +1286,7 @@ namespace SistemaRegistro
                             byte[] imageData = (byte[])dataGridView1.CurrentRow.Cells[14].Value;
                             using (MemoryStream ms = new MemoryStream(imageData))
                             {
-                                pictureBox2.Image = Image.FromStream(ms);
+                                pictureBoxTres.Image = Image.FromStream(ms);
                             }
 
                             //tabControl2.TabPages["VerImagen"].Enabled = true;
@@ -1021,15 +1300,31 @@ namespace SistemaRegistro
                             MessageBox.Show("Este registro no contiene una imagen");
                         }
 
-
+                        */
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Columna");
+                MessageBox.Show($"Columna{ex}");
             }
         }
+        private void buttonCopiar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Copiar el texto al portapapeles
+                Clipboard.SetText(repositorioDos);
+
+                // Opcional: Mostrar un mensaje para indicar que se ha copiado el texto
+                MessageBox.Show("Texto copiado al portapapeles ", "Copia exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No hay texto para copiar");
+            }
+        }
+
         private void RegresarL_Click(object sender, EventArgs e)
         {
 
@@ -1052,7 +1347,10 @@ namespace SistemaRegistro
             //   ListaDatos.Parent = tabControl2;
 
             tabControl2.SelectedTab = ListaDatos;
-            pictureBox1.Image = null;
+            pictureBoxTres.Image = null;
+            pictureBoxCuatro.Image = null;
+            textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+            textRepositorio.ForeColor = Color.Gray;
             TabControlBotones();
             CargarDG();
             CargarBotones();
@@ -1063,7 +1361,7 @@ namespace SistemaRegistro
         {
 
 
-            if (e.ColumnIndex == 25 && e.RowIndex != -1)
+            if (e.ColumnIndex == 29 && e.RowIndex != -1)
             {
                 Image someImage = Properties.Resources.lapiz;
 
@@ -1077,7 +1375,7 @@ namespace SistemaRegistro
                 e.Handled = true;
             }
 
-            if (e.ColumnIndex == 26 && e.RowIndex != -1)
+            if (e.ColumnIndex == 30 && e.RowIndex != -1)
             {
                 Image someImage = Properties.Resources.ojo;
 
@@ -1196,7 +1494,7 @@ namespace SistemaRegistro
             {
                 foreach (DataGridViewRow row in this.dataGridView1.Rows)
                 {
-                    row.Cells[27].Value = row.Cells[27].Value == null ? false : !(bool)row.Cells[27].Value;
+                    row.Cells[31].Value = row.Cells[31].Value == null ? false : !(bool)row.Cells[31].Value;
                 }
             }
             catch (Exception ex)
@@ -1222,7 +1520,7 @@ namespace SistemaRegistro
 
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        DataGridViewCheckBoxCell checkBoxCell = row.Cells[27] as DataGridViewCheckBoxCell;
+                        DataGridViewCheckBoxCell checkBoxCell = row.Cells[31] as DataGridViewCheckBoxCell;
                         if (checkBoxCell != null && checkBoxCell.Value != null)
                         {
                             bool isChecked = (bool)checkBoxCell.Value;
@@ -1293,16 +1591,27 @@ namespace SistemaRegistro
         {
             try
             {
-
-
-                //declara el filedialog
+                // Declara el filedialog
                 using (var fd = new SaveFileDialog())
                 {
-                    //en casi de dar aceptar
+                    // En caso de dar aceptar
                     if (fd.ShowDialog() == DialogResult.OK)
                     {
-                        //genera el csv y lo guarda en la direccion dada por el filedialog
-                        controladorDatosFormulario.aCSV(dataGridView1, @"" + fd.FileName + ".csv");
+                        // Filtra y obtiene solo las filas seleccionadas por el usuario
+                        var filasSeleccionadas = dataGridView1.Rows.Cast<DataGridViewRow>()
+                            .Where(row => Convert.ToBoolean(row.Cells["Seleccionar"].Value) == true)
+                            .ToList();
+
+                        // Verifica si hay filas seleccionadas
+                        if (filasSeleccionadas.Count > 0)
+                        {
+                            // Genera el CSV y lo guarda en la dirección dada por el filedialog
+                            controladorDatosFormulario.aCSV(dataGridView1, filasSeleccionadas, @"" + fd.FileName + ".csv");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se han seleccionado filas para exportar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
@@ -1312,88 +1621,18 @@ namespace SistemaRegistro
             }
         }
 
-        private void btnExportarPDF_Click(object sender, EventArgs e)
+        private void btnSeleccionarE_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dataGridView1.Rows.Count > 0)
+                foreach (DataGridViewRow row in this.dataGridView1.Rows)
                 {
-                    SaveFileDialog save = new SaveFileDialog();
-                    save.Filter = "PDF (*.pdf)|*.pdf";
-                    save.FileName = "Result.pdf";
-                    bool ErrorMessage = false;
-                    if (save.ShowDialog() == DialogResult.OK)
-                    {
-                        if (File.Exists(save.FileName))
-                        {
-                            try
-                            {
-                                File.Delete(save.FileName);
-                            }
-                            catch (Exception ex)
-                            {
-                                ErrorMessage = true;
-                                MessageBox.Show("No se pueden escribir datos en el disco" + ex.Message);
-                            }
-                        }
-                        if (!ErrorMessage)
-                        {
-                            try
-                            {
-                                PdfPTable pTable = new PdfPTable(dataGridView1.Columns.Count);
-                                pTable.DefaultCell.Padding = 2;
-                                pTable.WidthPercentage = 200;
-                                pTable.HorizontalAlignment = Element.ALIGN_LEFT;
-                                foreach (DataGridViewColumn col in dataGridView1.Columns)
-                                {
-                                    PdfPCell pCell = new PdfPCell(new Phrase(col.HeaderText));
-                                    pTable.AddCell(pCell);
-                                }
-
-                                foreach (DataGridViewRow viewRow in dataGridView1.Rows)
-                                {
-                                    foreach (DataGridViewCell dcell in viewRow.Cells)
-                                    {
-                                        if (dcell.Value != null)
-                                        {
-                                            pTable.AddCell(dcell.Value.ToString());
-                                        }
-                                        else
-                                        {
-                                            pTable.AddCell(string.Empty);
-                                        }
-                                    }
-                                }
-
-                                using (FileStream fileStream = new FileStream(save.FileName, FileMode.Create))
-
-                                {
-
-                                    Document document = new Document(PageSize.A4, 8f, 16f, 16f, 8f);
-                                    PdfWriter.GetInstance(document, fileStream);
-                                    document.Open();
-                                    document.Add(pTable);
-                                    document.Close();
-                                    fileStream.Close();
-                                }
-                                MessageBox.Show("Exportación de datos con éxito", "info");
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show("Error al exportar datos" + ex.Message);
-                            }
-                        }
-                    }
-                }
-                else
-
-                {
-                    MessageBox.Show("ningún record fue encontrado", "Info");
+                    row.Cells[28].Value = row.Cells[28].Value == null ? false : !(bool)row.Cells[28].Value;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Intentelo de nuevo o mas tarde");
+                MessageBox.Show("Intente de nuevo");
             }
         }
 
@@ -1625,17 +1864,39 @@ namespace SistemaRegistro
                     }
 
                     //guardar imagen al modelo
-                    if (pictureBox1.Image != null)
+                    if (pictureBoxUno.Image != null)
                     {
                         using (MemoryStream ms = new MemoryStream())
                         {
-                            pictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                            pictureBoxUno.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                             modeloIngresoDatos.imagen = ms.ToArray();
                         }
                     }
                     else
                     {
                         modeloIngresoDatos.imagen = null;
+                    }
+                    //guardar imagenDos al modelo
+                    if (pictureBoxDos.Image != null)
+                    {
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            pictureBoxDos.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                            modeloIngresoDatos.imagenDos = ms.ToArray();
+                        }
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.imagenDos = null;
+                    }
+
+                    if (textRepositorio.Texts == "Ejemplo: https://drive.google.com/file/imagen/view")
+                    {
+                        modeloIngresoDatos.urlRepositorio = null;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.urlRepositorio = textRepositorio.Texts;
                     }
                 }
                 if (tabPage == Tecnología)
@@ -1739,6 +2000,14 @@ namespace SistemaRegistro
                         modeloIngresoDatos.latitud = txtlatitud.Texts;
                         modeloIngresoDatos.longitud = txtlongitud.Texts;
 
+                    }
+                    if (textObservaciones.Texts == "Ejemplo: Información puede ser usada en varios estados.")
+                    {
+                        modeloIngresoDatos.observaciones = null;
+                    }
+                    else
+                    {
+                        modeloIngresoDatos.observaciones = textObservaciones.Texts;
                     }
                 }
 

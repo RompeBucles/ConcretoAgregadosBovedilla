@@ -35,6 +35,8 @@ namespace SistemaRegistro.Controladores
             comando.Parameters.AddWithValue("@Objetivo", datos.objetivo);
             comando.Parameters.AddWithValue("@LimiteSistema", datos.limitesSistema);
             comando.Parameters.AddWithValue("@Imagen", datos.imagen);
+            comando.Parameters.AddWithValue("@ImagenDos", datos.imagenDos);
+            comando.Parameters.AddWithValue("@UrlRepositorio", datos.urlRepositorio);
             comando.Parameters.AddWithValue("@TipoTecnologia", datos.tipoTecnologia);
             comando.Parameters.AddWithValue("@CondicionesOperacion", datos.condicionesOperacion);
             comando.Parameters.AddWithValue("@FechaReferencia", datos.fechaReferencia);
@@ -43,7 +45,8 @@ namespace SistemaRegistro.Controladores
             comando.Parameters.AddWithValue("@Estado", datos.id_estado);
             comando.Parameters.AddWithValue("@Area", datos.id_area);
             comando.Parameters.AddWithValue("@Latitud", datos.latitud);
-            comando.Parameters.AddWithValue("@Longitud ", datos.longitud);
+            comando.Parameters.AddWithValue("@Longitud", datos.longitud);
+            comando.Parameters.AddWithValue("@Observaciones", datos.observaciones);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             ConexionBD.CerrarConexion();
@@ -62,12 +65,12 @@ namespace SistemaRegistro.Controladores
             return Tabla;
         }
 
-        public void aCSV(DataGridView dg, string ar)
+        public void aCSV(DataGridView dg, List<DataGridViewRow> filasSeleccionadas, string ar)
         {
             try
             {
-                // Prueba que el DataGridView no esté vacío
-                if (dg.RowCount > 0)
+                // Prueba que haya filas seleccionadas
+                if (filasSeleccionadas.Count > 0)
                 {
                     using (StreamWriter swOut = new StreamWriter(ar, false, Encoding.UTF8))
                     {
@@ -85,8 +88,8 @@ namespace SistemaRegistro.Controladores
                         // Escribir el encabezado de las columnas visibles
                         swOut.WriteLine(string.Join(",", columnHeaders));
 
-                        // Escribir los datos de las filas
-                        foreach (DataGridViewRow row in dg.Rows)
+                        // Escribir los datos de las filas seleccionadas
+                        foreach (DataGridViewRow row in filasSeleccionadas)
                         {
                             var cellValues = new List<string>();
 
@@ -110,11 +113,12 @@ namespace SistemaRegistro.Controladores
                     MessageBox.Show("Archivo CSV exportado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show($"intentalo de nuevo o mas tarde");
+                MessageBox.Show($"Inténtalo de nuevo o más tarde");
             }
         }
+
         public bool EditarDatosFormulario(modeloIngresoDatos datos, int id)
         {
             SqlCommand comando = new SqlCommand("editarDatosFormulario");
@@ -131,6 +135,8 @@ namespace SistemaRegistro.Controladores
             comando.Parameters.AddWithValue("@Objetivo", datos.objetivo);
             comando.Parameters.AddWithValue("@LimiteSistema", datos.limitesSistema);
             comando.Parameters.AddWithValue("@Imagen", datos.imagen);
+            comando.Parameters.AddWithValue("@ImagenDos", datos.imagenDos);
+            comando.Parameters.AddWithValue("@UrlRepositorio", datos.urlRepositorio);
             comando.Parameters.AddWithValue("@TipoTecnologia", datos.tipoTecnologia);
             comando.Parameters.AddWithValue("@CondicionesOperacion", datos.condicionesOperacion);
             comando.Parameters.AddWithValue("@FechaReferencia", datos.fechaReferencia);
@@ -140,6 +146,7 @@ namespace SistemaRegistro.Controladores
             comando.Parameters.AddWithValue("@Area", datos.id_area);
             comando.Parameters.AddWithValue("@Latitud", datos.latitud);
             comando.Parameters.AddWithValue("@Longitud", datos.longitud);
+            comando.Parameters.AddWithValue("@Observaciones", datos.observaciones);
             comando.ExecuteNonQuery();
             comando.Parameters.Clear();
             ConexionBD.CerrarConexion();

@@ -689,9 +689,9 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(-1, 5);
+            panel1.Location = new Point(-1, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(240, 21);
+            panel1.Size = new Size(240, 24);
             panel1.TabIndex = 22;
             // 
             // ListarUsuario

@@ -47,7 +47,7 @@ namespace SistemaRegistro
         {
             try
             {
-                SqlCommand comando = new SqlCommand("SELECT a.NombreProceso as Proceso, CONCAT(a.producto, ', ', a.tecnologia, ', ', a.otro) AS producto_tecnologia, a.nombreFlujoR as NombreFlujo, a.valorR as ValorR, a.unidad as UnidadR, b.valor as Estado , c.valor as Area, CONCAT(a.latitud, ', ', a.longitud) AS representacionGeografica FROM ingresoDatos AS a JOIN estado AS b ON a.id_estado = b.id JOIN area AS c ON a.id_area = c.id where NombreProceso =@nombreProceso");
+                SqlCommand comando = new SqlCommand("SELECT a.NombreProceso as Proceso, CONCAT(a.producto, ', ', a.tecnologia, ', ', a.otro) AS producto_tecnologia, a.nombreFlujoR as NombreFlujo, a.valorR as ValorR, a.unidad as UnidadR, b.valor as Estado , c.valor as Area, CONCAT(a.latitud, ', ', a.longitud) AS representacionGeografica, a.observaciones FROM ingresoDatos AS a JOIN estado AS b ON a.id_estado = b.id JOIN area AS c ON a.id_area = c.id where NombreProceso =@nombreProceso");
                 //SqlCommand comando = new SqlCommand("SELECT a.NombreProceso, CONCAT(a.producto, ', ', a.tecnologia, ', ', a.otro) AS producto_tecnologia, a.nombreFlujoR, a.valorR, a.unidad, b.valor, c.valor CONCAT(a.latitud, ', ', a.longitud) AS representacionGeografica FROM ingresoDatos AS a JOIN estado AS b ON a.id_estado = b.id JOIN area AS c ON a.id_area = c.id");
                 comando.Parameters.AddWithValue("@nombreProceso", ComboProcesos.Text);
                 comando.Connection = ConexionBD.AbrirConexion();
@@ -62,15 +62,17 @@ namespace SistemaRegistro
                     string valorE = dr["Estado"].ToString();
                     string valorA = dr["Area"].ToString();
                     string representacion = dr["representacionGeografica"].ToString();
+                    string observaciones = dr["observaciones"].ToString();
 
-                    textNombreP.Texts = nombreProceso;
-                    textProductoT.Texts = prodcutoT;
-                    textNombreR.Texts = nombreFlujo;
-                    textValorR.Texts = valor;
-                    textUnidad.Texts = unidadR;
-                    textEstado.Texts = valorE;
-                    textArea.Texts = valorA;
-                    textRepresentacion.Texts = representacion;
+                    boxNombreP.Text = nombreProceso;
+                    boxTecnologia.Text = prodcutoT;
+                    boxFlujoR.Text = nombreFlujo;
+                    labelValorR.Text = valor;
+                    labelUnidad.Text = unidadR;
+                    labelEstado.Text = valorE;
+                    labelArea.Text = valorA;
+                    labelGeografia.Text = representacion;
+                    groupBoxObservaciones.Text = observaciones;
                 }
                 dr.Close();
                 ConexionBD.CerrarConexion();

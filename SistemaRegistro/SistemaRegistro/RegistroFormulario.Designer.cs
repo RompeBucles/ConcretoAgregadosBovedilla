@@ -69,6 +69,13 @@ namespace SistemaRegistro
             labelUsuario = new Label();
             Referencia = new TabPage();
             panel4 = new Panel();
+            panelRepoUno = new Panel();
+            label32 = new Label();
+            textRepositorio = new Templates.TextBox();
+            panel9 = new Panel();
+            radioBtnRepoUno = new RadioButton();
+            radioBtnImagenUno = new RadioButton();
+            label34 = new Label();
             label28 = new Label();
             textValor = new Templates.TextBox();
             btnEliminarImagen = new Button();
@@ -79,12 +86,13 @@ namespace SistemaRegistro
             textUnidadFuncional = new Templates.TextBox();
             label5 = new Label();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
-            button1 = new Button();
             comboLimitesSistema = new ComboBox();
             comboUnidadUno = new ComboBox();
             textBox7 = new Templates.TextBox();
             label3 = new Label();
+            panelOtraImaUno = new Panel();
+            btnEliminarImagenDos = new Button();
+            pictureBox2 = new PictureBox();
             Tecnología = new TabPage();
             panel2 = new Panel();
             label21 = new Label();
@@ -102,6 +110,8 @@ namespace SistemaRegistro
             label7 = new Label();
             Geografía = new TabPage();
             panel5 = new Panel();
+            label33 = new Label();
+            textObservaciones = new Templates.TextBox();
             panel6 = new Panel();
             txtlongitud = new Templates.TextBox();
             txtlatitud = new Templates.TextBox();
@@ -122,7 +132,11 @@ namespace SistemaRegistro
             panel1.SuspendLayout();
             Referencia.SuspendLayout();
             panel4.SuspendLayout();
+            panelRepoUno.SuspendLayout();
+            panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelOtraImaUno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             Tecnología.SuspendLayout();
             panel2.SuspendLayout();
             TiempoVálido.SuspendLayout();
@@ -408,11 +422,11 @@ namespace SistemaRegistro
             textAutor.BorderSize = 2;
             textAutor.ForeColor = Color.DimGray;
             textAutor.Location = new Point(235, 593);
-            textAutor.Multiline = true;
+            textAutor.Multiline = false;
             textAutor.Name = "textAutor";
             textAutor.Padding = new Padding(8, 7, 8, 7);
             textAutor.PasswordChar = false;
-            textAutor.Size = new Size(258, 32);
+            textAutor.Size = new Size(258, 31);
             textAutor.TabIndex = 115;
             textAutor.Texts = "Ejemplo: Centro Mario Molina";
             textAutor.UnderlinedStyle = true;
@@ -637,6 +651,8 @@ namespace SistemaRegistro
             panel4.Anchor = AnchorStyles.Top;
             panel4.AutoScroll = true;
             panel4.BackColor = Color.FromArgb(242, 230, 230);
+            panel4.Controls.Add(panelRepoUno);
+            panel4.Controls.Add(panel9);
             panel4.Controls.Add(label28);
             panel4.Controls.Add(textValor);
             panel4.Controls.Add(btnEliminarImagen);
@@ -647,16 +663,105 @@ namespace SistemaRegistro
             panel4.Controls.Add(textUnidadFuncional);
             panel4.Controls.Add(label5);
             panel4.Controls.Add(pictureBox1);
-            panel4.Controls.Add(button2);
-            panel4.Controls.Add(button1);
             panel4.Controls.Add(comboLimitesSistema);
             panel4.Controls.Add(comboUnidadUno);
             panel4.Controls.Add(textBox7);
             panel4.Controls.Add(label3);
-            panel4.Location = new Point(-9, 3);
+            panel4.Controls.Add(panelOtraImaUno);
+            panel4.Location = new Point(0, 3);
             panel4.Name = "panel4";
-            panel4.Size = new Size(735, 990);
+            panel4.Size = new Size(735, 1600);
             panel4.TabIndex = 77;
+            // 
+            // panelRepoUno
+            // 
+            panelRepoUno.Controls.Add(label32);
+            panelRepoUno.Controls.Add(textRepositorio);
+            panelRepoUno.Location = new Point(57, 1039);
+            panelRepoUno.Name = "panelRepoUno";
+            panelRepoUno.Size = new Size(623, 506);
+            panelRepoUno.TabIndex = 130;
+            // 
+            // label32
+            // 
+            label32.Anchor = AnchorStyles.None;
+            label32.AutoSize = true;
+            label32.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label32.ForeColor = Color.FromArgb(190, 31, 36);
+            label32.Location = new Point(252, 27);
+            label32.Name = "label32";
+            label32.Size = new Size(105, 16);
+            label32.TabIndex = 136;
+            label32.Text = "URL repositorio";
+            // 
+            // textRepositorio
+            // 
+            textRepositorio.Anchor = AnchorStyles.None;
+            textRepositorio.BackColor = SystemColors.Control;
+            textRepositorio.BorderColor = SystemColors.ControlDarkDark;
+            textRepositorio.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textRepositorio.BorderSize = 2;
+            textRepositorio.ForeColor = Color.DimGray;
+            textRepositorio.Location = new Point(108, 62);
+            textRepositorio.Multiline = false;
+            textRepositorio.Name = "textRepositorio";
+            textRepositorio.Padding = new Padding(7, 18, 7, 18);
+            textRepositorio.PasswordChar = false;
+            textRepositorio.Size = new Size(402, 52);
+            textRepositorio.TabIndex = 135;
+            textRepositorio.Texts = "Ejemplo: https://drive.google.com/file/imagen/view";
+            textRepositorio.UnderlinedStyle = true;
+            textRepositorio.Enter += textRepositorio_Enter;
+            textRepositorio.Leave += textRepositorio_Leave;
+            // 
+            // panel9
+            // 
+            panel9.Controls.Add(radioBtnRepoUno);
+            panel9.Controls.Add(radioBtnImagenUno);
+            panel9.Controls.Add(label34);
+            panel9.Location = new Point(5, 972);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(716, 63);
+            panel9.TabIndex = 127;
+            // 
+            // radioBtnRepoUno
+            // 
+            radioBtnRepoUno.Anchor = AnchorStyles.None;
+            radioBtnRepoUno.AutoSize = true;
+            radioBtnRepoUno.Checked = true;
+            radioBtnRepoUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBtnRepoUno.Location = new Point(386, 40);
+            radioBtnRepoUno.Name = "radioBtnRepoUno";
+            radioBtnRepoUno.Size = new Size(94, 21);
+            radioBtnRepoUno.TabIndex = 131;
+            radioBtnRepoUno.TabStop = true;
+            radioBtnRepoUno.Text = "Repositorio";
+            radioBtnRepoUno.UseVisualStyleBackColor = true;
+            radioBtnRepoUno.CheckedChanged += radioBtnRepoUno_CheckedChanged;
+            // 
+            // radioBtnImagenUno
+            // 
+            radioBtnImagenUno.Anchor = AnchorStyles.None;
+            radioBtnImagenUno.AutoSize = true;
+            radioBtnImagenUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            radioBtnImagenUno.Location = new Point(236, 40);
+            radioBtnImagenUno.Name = "radioBtnImagenUno";
+            radioBtnImagenUno.Size = new Size(99, 21);
+            radioBtnImagenUno.TabIndex = 130;
+            radioBtnImagenUno.Text = "Otra imagen";
+            radioBtnImagenUno.UseVisualStyleBackColor = true;
+            radioBtnImagenUno.CheckedChanged += radioBtnImagenUno_CheckedChanged;
+            // 
+            // label34
+            // 
+            label34.Anchor = AnchorStyles.None;
+            label34.AutoSize = true;
+            label34.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label34.Location = new Point(178, 2);
+            label34.Name = "label34";
+            label34.Size = new Size(364, 19);
+            label34.TabIndex = 129;
+            label34.Text = "Agregar más imágenes, selecciona una opción";
             // 
             // label28
             // 
@@ -664,7 +769,7 @@ namespace SistemaRegistro
             label28.AutoSize = true;
             label28.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label28.ForeColor = Color.FromArgb(190, 31, 36);
-            label28.Location = new Point(19, 56);
+            label28.Location = new Point(14, 72);
             label28.Name = "label28";
             label28.Size = new Size(688, 16);
             label28.TabIndex = 121;
@@ -678,12 +783,12 @@ namespace SistemaRegistro
             textValor.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textValor.BorderSize = 2;
             textValor.ForeColor = Color.DimGray;
-            textValor.Location = new Point(203, 219);
-            textValor.Multiline = true;
+            textValor.Location = new Point(187, 226);
+            textValor.Multiline = false;
             textValor.Name = "textValor";
             textValor.Padding = new Padding(7, 9, 7, 9);
             textValor.PasswordChar = false;
-            textValor.Size = new Size(348, 39);
+            textValor.Size = new Size(348, 34);
             textValor.TabIndex = 120;
             textValor.Texts = "Ejemplo: 0";
             textValor.UnderlinedStyle = true;
@@ -698,7 +803,7 @@ namespace SistemaRegistro
             btnEliminarImagen.FlatStyle = FlatStyle.Flat;
             btnEliminarImagen.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminarImagen.ForeColor = SystemColors.ButtonFace;
-            btnEliminarImagen.Location = new Point(327, 925);
+            btnEliminarImagen.Location = new Point(302, 908);
             btnEliminarImagen.Name = "btnEliminarImagen";
             btnEliminarImagen.Size = new Size(121, 36);
             btnEliminarImagen.TabIndex = 119;
@@ -712,7 +817,7 @@ namespace SistemaRegistro
             label13.AutoSize = true;
             label13.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.FromArgb(190, 31, 36);
-            label13.Location = new Point(354, 200);
+            label13.Location = new Point(343, 207);
             label13.Name = "label13";
             label13.Size = new Size(45, 16);
             label13.TabIndex = 118;
@@ -724,7 +829,7 @@ namespace SistemaRegistro
             label19.AutoSize = true;
             label19.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.FromArgb(190, 31, 36);
-            label19.Location = new Point(339, 278);
+            label19.Location = new Point(337, 355);
             label19.Name = "label19";
             label19.Size = new Size(60, 16);
             label19.TabIndex = 117;
@@ -736,7 +841,7 @@ namespace SistemaRegistro
             label20.AutoSize = true;
             label20.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label20.ForeColor = Color.FromArgb(190, 31, 36);
-            label20.Location = new Point(264, 40);
+            label20.Location = new Point(267, 56);
             label20.Name = "label20";
             label20.Size = new Size(207, 16);
             label20.TabIndex = 116;
@@ -750,12 +855,12 @@ namespace SistemaRegistro
             textObjetivoR.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textObjetivoR.BorderSize = 2;
             textObjetivoR.ForeColor = Color.DimGray;
-            textObjetivoR.Location = new Point(203, 297);
-            textObjetivoR.Multiline = true;
+            textObjetivoR.Location = new Point(181, 374);
+            textObjetivoR.Multiline = false;
             textObjetivoR.Name = "textObjetivoR";
             textObjetivoR.Padding = new Padding(7, 8, 7, 8);
             textObjetivoR.PasswordChar = false;
-            textObjetivoR.Size = new Size(348, 34);
+            textObjetivoR.Size = new Size(348, 32);
             textObjetivoR.TabIndex = 115;
             textObjetivoR.Texts = "Ejemplo: Estimar la huella de carbono";
             textObjetivoR.UnderlinedStyle = true;
@@ -770,12 +875,12 @@ namespace SistemaRegistro
             textUnidadFuncional.BorderFocusColor = Color.FromArgb(190, 31, 36);
             textUnidadFuncional.BorderSize = 2;
             textUnidadFuncional.ForeColor = Color.DimGray;
-            textUnidadFuncional.Location = new Point(159, 84);
-            textUnidadFuncional.Multiline = true;
+            textUnidadFuncional.Location = new Point(144, 103);
+            textUnidadFuncional.Multiline = false;
             textUnidadFuncional.Name = "textUnidadFuncional";
             textUnidadFuncional.Padding = new Padding(7, 8, 7, 8);
             textUnidadFuncional.PasswordChar = false;
-            textUnidadFuncional.Size = new Size(446, 34);
+            textUnidadFuncional.Size = new Size(446, 32);
             textUnidadFuncional.TabIndex = 114;
             textUnidadFuncional.Texts = "Ejemplo: Producción de un kilogramo de arena y un kilogramo de grava";
             textUnidadFuncional.UnderlinedStyle = true;
@@ -787,7 +892,7 @@ namespace SistemaRegistro
             label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(298, 426);
+            label5.Location = new Point(292, 432);
             label5.Name = "label5";
             label5.Size = new Size(155, 19);
             label5.TabIndex = 85;
@@ -796,42 +901,12 @@ namespace SistemaRegistro
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.Gray;
-            pictureBox1.Location = new Point(91, 448);
+            pictureBox1.Location = new Point(110, 454);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(596, 474);
+            pictureBox1.Size = new Size(528, 448);
             pictureBox1.TabIndex = 82;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.None;
-            button2.BackColor = Color.FromArgb(97, 97, 96);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(480, 1176);
-            button2.Name = "button2";
-            button2.Size = new Size(115, 35);
-            button2.TabIndex = 81;
-            button2.Text = "Atras";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.None;
-            button1.BackColor = Color.FromArgb(97, 97, 96);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(683, 1176);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 35);
-            button1.TabIndex = 80;
-            button1.Text = "Siguiente";
-            button1.UseVisualStyleBackColor = false;
             // 
             // comboLimitesSistema
             // 
@@ -839,7 +914,7 @@ namespace SistemaRegistro
             comboLimitesSistema.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboLimitesSistema.FormattingEnabled = true;
             comboLimitesSistema.Items.AddRange(new object[] { "Limitaciones presupuestarias", "Limitaciones de tiempo", "Limitaciones de recursos naturales", "Limitaciones de espacio", "Limitaciones ambientales", "Limitaciones de capacidad", "Limitaciones geotécnicas", "Limitaciones tecnológicas", "Limitaciones normativas y legales", "Limitaciones de seguridad" });
-            comboLimitesSistema.Location = new Point(203, 373);
+            comboLimitesSistema.Location = new Point(187, 295);
             comboLimitesSistema.Name = "comboLimitesSistema";
             comboLimitesSistema.Size = new Size(348, 25);
             comboLimitesSistema.TabIndex = 76;
@@ -852,7 +927,7 @@ namespace SistemaRegistro
             comboUnidadUno.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             comboUnidadUno.FormattingEnabled = true;
             comboUnidadUno.Items.AddRange(new object[] { "Área (m²)", "Área (ha)", "Área*Tiempo (m²*año)", "Capacidad de peso (kg*s)", "Capacidad de volumen (l*hora)", "Capacidad de conversión de energía (MW)", "Densidad (kg*l)", "Masa (kg)", "Capacidad de peso (kg*s)", "Longitud (m)", "Servicio de transporte (ton*km)", "Servicio de transporte (persona*km)", "Metro*año (m*año)", "Unidad (item)", "Electricidad (kWh)", "Energía (MJ)", "Tiempo de uso del equipo (hora)", "Productos líquidos (l)", "Volumen (m³)", "Energia (KWh)", "Energía (kJ)", "Energia (KWh)" });
-            comboUnidadUno.Location = new Point(203, 142);
+            comboUnidadUno.Location = new Point(187, 163);
             comboUnidadUno.Name = "comboUnidadUno";
             comboUnidadUno.Size = new Size(348, 25);
             comboUnidadUno.TabIndex = 74;
@@ -866,7 +941,7 @@ namespace SistemaRegistro
             textBox7.BorderColor = SystemColors.ControlDarkDark;
             textBox7.BorderFocusColor = Color.Black;
             textBox7.BorderSize = 2;
-            textBox7.Location = new Point(916, 776);
+            textBox7.Location = new Point(910, 1095);
             textBox7.Multiline = false;
             textBox7.Name = "textBox7";
             textBox7.Padding = new Padding(7, 8, 7, 8);
@@ -882,11 +957,46 @@ namespace SistemaRegistro
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(326, 13);
+            label3.Location = new Point(312, 13);
             label3.Name = "label3";
             label3.Size = new Size(91, 19);
             label3.TabIndex = 29;
             label3.Text = "Referencia";
+            // 
+            // panelOtraImaUno
+            // 
+            panelOtraImaUno.Controls.Add(btnEliminarImagenDos);
+            panelOtraImaUno.Controls.Add(pictureBox2);
+            panelOtraImaUno.Location = new Point(58, 1039);
+            panelOtraImaUno.Name = "panelOtraImaUno";
+            panelOtraImaUno.Size = new Size(630, 506);
+            panelOtraImaUno.TabIndex = 128;
+            // 
+            // btnEliminarImagenDos
+            // 
+            btnEliminarImagenDos.Anchor = AnchorStyles.None;
+            btnEliminarImagenDos.BackColor = Color.FromArgb(190, 31, 36);
+            btnEliminarImagenDos.FlatAppearance.BorderSize = 0;
+            btnEliminarImagenDos.FlatStyle = FlatStyle.Flat;
+            btnEliminarImagenDos.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEliminarImagenDos.ForeColor = SystemColors.ButtonFace;
+            btnEliminarImagenDos.Location = new Point(232, 463);
+            btnEliminarImagenDos.Name = "btnEliminarImagenDos";
+            btnEliminarImagenDos.Size = new Size(121, 36);
+            btnEliminarImagenDos.TabIndex = 125;
+            btnEliminarImagenDos.Text = "Eliminar imagen";
+            btnEliminarImagenDos.UseVisualStyleBackColor = false;
+            btnEliminarImagenDos.Click += btnEliminarImagenDos_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Gray;
+            pictureBox2.Location = new Point(46, 9);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(528, 448);
+            pictureBox2.TabIndex = 123;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // Tecnología
             // 
@@ -933,11 +1043,11 @@ namespace SistemaRegistro
             textCondicionesOpe.BorderSize = 2;
             textCondicionesOpe.ForeColor = Color.DimGray;
             textCondicionesOpe.Location = new Point(193, 178);
-            textCondicionesOpe.Multiline = true;
+            textCondicionesOpe.Multiline = false;
             textCondicionesOpe.Name = "textCondicionesOpe";
             textCondicionesOpe.Padding = new Padding(7, 8, 7, 8);
             textCondicionesOpe.PasswordChar = false;
-            textCondicionesOpe.Size = new Size(360, 34);
+            textCondicionesOpe.Size = new Size(360, 32);
             textCondicionesOpe.TabIndex = 113;
             textCondicionesOpe.Texts = "Ejemplo: En este estudio se considera una revolvedora";
             textCondicionesOpe.UnderlinedStyle = true;
@@ -1105,6 +1215,8 @@ namespace SistemaRegistro
             // 
             panel5.Anchor = AnchorStyles.Top;
             panel5.BackColor = Color.FromArgb(242, 230, 230);
+            panel5.Controls.Add(label33);
+            panel5.Controls.Add(textObservaciones);
             panel5.Controls.Add(panel6);
             panel5.Controls.Add(txtlongitud);
             panel5.Controls.Add(txtlatitud);
@@ -1121,6 +1233,38 @@ namespace SistemaRegistro
             panel5.Name = "panel5";
             panel5.Size = new Size(722, 1019);
             panel5.TabIndex = 2;
+            // 
+            // label33
+            // 
+            label33.Anchor = AnchorStyles.None;
+            label33.AutoSize = true;
+            label33.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label33.ForeColor = Color.FromArgb(190, 31, 36);
+            label33.Location = new Point(304, 783);
+            label33.Name = "label33";
+            label33.Size = new Size(100, 16);
+            label33.TabIndex = 121;
+            label33.Text = "Observaciones";
+            // 
+            // textObservaciones
+            // 
+            textObservaciones.Anchor = AnchorStyles.None;
+            textObservaciones.BackColor = SystemColors.Control;
+            textObservaciones.BorderColor = SystemColors.ControlDarkDark;
+            textObservaciones.BorderFocusColor = Color.FromArgb(190, 31, 36);
+            textObservaciones.BorderSize = 2;
+            textObservaciones.ForeColor = Color.DimGray;
+            textObservaciones.Location = new Point(127, 810);
+            textObservaciones.Multiline = false;
+            textObservaciones.Name = "textObservaciones";
+            textObservaciones.Padding = new Padding(7, 9, 7, 9);
+            textObservaciones.PasswordChar = false;
+            textObservaciones.Size = new Size(459, 34);
+            textObservaciones.TabIndex = 120;
+            textObservaciones.Texts = "Ejemplo: Información puede ser usada en varios estados.";
+            textObservaciones.UnderlinedStyle = true;
+            textObservaciones.Enter += textObservaciones_Enter;
+            textObservaciones.Leave += textObservaciones_Leave;
             // 
             // panel6
             // 
@@ -1227,7 +1371,7 @@ namespace SistemaRegistro
             buttonGuardarG.FlatStyle = FlatStyle.Flat;
             buttonGuardarG.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             buttonGuardarG.ForeColor = SystemColors.ButtonFace;
-            buttonGuardarG.Location = new Point(283, 841);
+            buttonGuardarG.Location = new Point(303, 915);
             buttonGuardarG.Name = "buttonGuardarG";
             buttonGuardarG.Size = new Size(115, 35);
             buttonGuardarG.TabIndex = 97;
@@ -1320,7 +1464,13 @@ namespace SistemaRegistro
             Referencia.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panelRepoUno.ResumeLayout(false);
+            panelRepoUno.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelOtraImaUno.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             Tecnología.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -1344,8 +1494,6 @@ namespace SistemaRegistro
         private Label labelUsuario;
         private TabPage Referencia;
         private Panel panel4;
-        private Button button2;
-        private Button button1;
         private ComboBox comboLimitesSistema;
         private ComboBox comboUnidadUno;
         private SistemaRegistro.Templates.TextBox textBox7;
@@ -1423,5 +1571,18 @@ namespace SistemaRegistro
         private TextBox textNusuario;
         private Label label30;
         private Label label29;
+        private Label label33;
+        private Templates.TextBox textObservaciones;
+        private Label label31;
+        private Panel panel9;
+        private Label label34;
+        private RadioButton radioBtnImagenUno;
+        private RadioButton radioBtnRepoUno;
+        private Panel panelOtraImaUno;
+        private PictureBox pictureBox2;
+        private Button btnEliminarImagenDos;
+        private Panel panelRepoUno;
+        private Label label32;
+        private Templates.TextBox textRepositorio;
     }
 }
